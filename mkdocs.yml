@@ -1,0 +1,253 @@
+# Project information
+site_name: BELMADY ML
+site_author: Abdellatif BELMADY
+edit_uri: https://github.com/abdellatif-belmady/BELMADY-ML/tree/main/docs
+site_description: >-
+  BELMADY ML is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
+  the machine learning books he has read and also free courses on the main points of machine learning and deep learning.
+
+# Repository
+repo_name: abdellatif-belmady/BELMADY-ML
+repo_url: https://github.com/abdellatif-belmady/BELMADY-ML
+
+# Copyright
+copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
+
+# Configuration
+theme:
+  language: en
+  
+  logo: assets/logo.png
+
+  favicon: assets/logo.png
+
+  name: material
+  
+  features:
+    - content.action.edit
+    # - announce.dismiss
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    #- navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - navigation.expand
+    - navigation.footer
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/abdellatif-belmady
+    - icon: fontawesome/brands/linkedIn
+      link: https://www.linkedin.com/in/abdellatif-belmady-ab999a133/
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/abdellatif.belmady
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@otherways8368/featured
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/abdellatifbelmady/
+     
+# Page tree
+nav:
+  - BELMADY ?: index.md
+  - Services:
+    - services/index.md
+    - Detection of persons authorized to access a room: services/1.md
+    - Detection and extraction of texts: services/2.md
+    - Tracking and analysis of the movement of people: services/3.md
+    - Detection and counting of people in a place: services/4.md
+    - Detection of strange people: services/5.md
+    - Detection of the presence/absence of employees at their work stations: services/6.md
+  - Projects:
+    - projects/index.md
+    - Interactive dashboard: projects/Interactive dashboard.md
+    - Telegram bot: projects/Telegram bot.md
+    - YOLOv7 : projects/YOLOv7.md
+  - Books:
+    - books/index.md
+    - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
+      - Preface:
+        - The Machine Learning Tsunami: books/Hands on machine learning/Preface/2.1. The Machine Learning Tsunami.md
+        - Machine Learning in Your Projects: books/Hands on machine learning/Preface/2.2. Machine Learning in Your Projects.md
+        - Objective and Approach: books/Hands on machine learning/Preface/2.3. Objective and Approach.md
+        - Prerequisites: books/Hands on machine learning/Preface/2.4. Prerequisites.md
+        - Roadmap: books/Hands on machine learning/Preface/2.5. Roadmap.md
+        - Other Resources: books/Hands on machine learning/Preface/2.6. Other Resources.md
+        - Conventions Used in This Book: books/Hands on machine learning/Preface/2.7. Conventions Used in This Book.md
+        - Code Examples: books/Hands on machine learning/Preface/2.8. Code Examples.md
+        - Using Code Examples: books/Hands on machine learning/Preface/2.9. Using Code Examples.md
+        - O’Reilly Safari: books/Hands on machine learning/Preface/3.1.  O’Reilly Safari.md
+        - How to Contact Us: books/Hands on machine learning/Preface/3.2. How to Contact Us.md
+        - Changes in the Second Edition: books/Hands on machine learning/Preface/3.3. Changes in the Second Edition.md
+        - Acknowledgments: books/Hands on machine learning/Preface/3.4. Acknowledgments.md
+      - The Fundamentals of Machine Learning:
+        - The Machine Learning Landscape: books/Hands on machine learning/The Fundamentals of Machine Learning/3.1. The Machine Learning Landscape.md
+        - End-to-End Machine Learning Project: books/Hands on machine learning/The Fundamentals of Machine Learning/3.2. End-to-End Machine Learning Project.md
+        - Classification: books/Hands on machine learning/The Fundamentals of Machine Learning/3.3. Classification.md
+        - Training Models: books/Hands on machine learning/The Fundamentals of Machine Learning/3.4. Training Models.md
+        - Support Vector Machines: books/Hands on machine learning/The Fundamentals of Machine Learning/3.5. Support Vector Machines.md
+        - Decision Trees: books/Hands on machine learning/The Fundamentals of Machine Learning/3.6. Decision Trees.md
+        - Ensemble Learning and Random Forests: books/Hands on machine learning/The Fundamentals of Machine Learning/3.7. Ensemble Learning and Random Forests.md
+        - Dimensionality Reduction: books/Hands on machine learning/The Fundamentals of Machine Learning/3.8. Dimensionality Reduction.md
+        - Unsupervised Learning Techniques: books/Hands on machine learning/The Fundamentals of Machine Learning/3.9. Unsupervised Learning Techniques.md
+      - Neural Networks and Deep Learning:
+        - Introduction to Artificial Neural Networks with Keras: books/Hands on machine learning/Neural Networks and Deep Learning/4.1. Introduction to Artificial Neural Networks with Keras.md
+        - Training Deep Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.2. Training Deep Neural Networks.md
+        - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.3. Custom Models and Training with TensorFlow.md
+        - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.4. Loading and Preprocessing Data with TensorFlow.md
+        - Deep Computer Vision Using Convolutional Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.5. Deep Computer Vision Using Convolutional Neural Networks.md
+      - About the Author: books/Hands on machine learning/About the Author.md
+      - Colophon: books/Hands on machine learning/Colophon.md
+  - Courses: 
+    - courses/index.md
+    - Natural Language Processing: 
+      - Introduction:
+        - What is NLP?: courses/Natural Language Processing/What is NLP.md
+        - History of NLP: courses/Natural Language Processing/History of NLP.md
+        - Challenges: courses/Natural Language Processing/Challenges.md
+        - Applications: courses/Natural Language Processing/Applications.md
+      - Bases of NLP:
+        - Libraries: courses/Natural Language Processing/Libraries.md
+        - Reading Text: courses/Natural Language Processing/Reading Text.md
+        - Handling PDF: courses/Natural Language Processing/Handling PDF.md
+        - Search in Text: courses/Natural Language Processing/Search in Text.md
+      - Tools of NLP:
+        - Tokenization: courses/Natural Language Processing/Tokenization.md
+        - Sentence Segmentation: courses/Natural Language Processing/Sentence Segmentation.md
+        - Part of Speech (POS): courses/Natural Language Processing/Part of Speech.md
+        - Stemming & Lemmatization: courses/Natural Language Processing/Stemming & Lemmatization.md
+        - Named-Entity Recognition (NER): courses/Natural Language Processing/Named-Entity Recognition.md
+        - Stopwords: courses/Natural Language Processing/Stopwords.md
+        - Matchers: courses/Natural Language Processing/Matchers.md
+        - Syntactic Structure: courses/Natural Language Processing/Syntactic Structure.md
+        - Text Visualization: courses/Natural Language Processing/Text Visualization.md
+      - Simple Analysis:
+        - Word Meaning: courses/Natural Language Processing/Word Meaning.md
+        - Word Embedding: courses/Natural Language Processing/Word Embedding.md
+        - Text Vectors: courses/Natural Language Processing/Text Vectors.md
+        - Word2Vec: courses/Natural Language Processing/Word2Vec.md
+        - Bag Of Words (BOW): courses/Natural Language Processing/Bag Of Words.md
+        - TF-IDF: courses/Natural Language Processing/TF-IDF.md
+        - Text Similarity: courses/Natural Language Processing/Text Similarity.md
+        - Distributional Similarity: courses/Natural Language Processing/Distributional Similarity.md
+      - Advanced Analysis: 
+        - Text Classification: courses/Natural Language Processing/Text Classification.md
+        - Text Clustering: courses/Natural Language Processing/Text Clustering.md
+        - Latent Dirichlet Allocation (LDA): courses/Natural Language Processing/Latent Dirichlet Allocation.md
+        - Non-Negative Matrix Factorization (NMF): courses/Natural Language Processing/Non-Negative Matrix Factorization.md
+        - GloVe: courses/Natural Language Processing/GloVe.md
+        - Lexicons: courses/Natural Language Processing/Lexicons.md
+        - NGrams: courses/Natural Language Processing/NGrams.md
+        - Langague Modeling: courses/Natural Language Processing/Langague Modeling.md
+        - Text Generation: courses/Natural Language Processing/Text Generation.md
+        - Sentimental Analysis: courses/Natural Language Processing/Sentimental Analysis.md
+        - Naïve Bayes: courses/Natural Language Processing/Naïve Bayes.md
+        - Vader: courses/Natural Language Processing/Vader.md
+        - Auto Correct: courses/Natural Language Processing/Auto Correct.md
+        - Answering Questions: courses/Natural Language Processing/Answering Questions.md
+        - Summarization: courses/Natural Language Processing/Summarization.md
+      - Data Collection:
+        - Tweet Collecting: courses/Natural Language Processing/Tweet Collecting.md
+        - Data Scraping: courses/Natural Language Processing/Data Scraping.md
+        - Information Extraction: courses/Natural Language Processing/Information Extraction.md
+        - Information Retrieval: courses/Natural Language Processing/Information Retrieval.md
+        - Relative Extraction: courses/Natural Language Processing/Relative Extraction.md
+        - Search Engine: courses/Natural Language Processing/Search Engine.md
+      - RNN:
+        - RNN: courses/Natural Language Processing/RNN.md
+        - LSTM: courses/Natural Language Processing/LSTM.md
+        - GRU: courses/Natural Language Processing/GRU.md
+        - TNN: courses/Natural Language Processing/TNN.md
+        - CNN: courses/Natural Language Processing/CNN.md
+      - Modern Technics:
+        - Teacher Forcing: courses/Natural Language Processing/Teacher Forcing.md
+        - Attention Models: courses/Natural Language Processing/Attention Models.md
+        - Hugging Face: courses/Natural Language Processing/Hugging Face.md
+        - Bert: courses/Natural Language Processing/Bert.md
+        - FastText: courses/Natural Language Processing/FastText.md
+        - Gensim: courses/Natural Language Processing/Gensim.md
+        - Chatbot: courses/Natural Language Processing/Chatbot.md
+        - Translation: courses/Natural Language Processing/Translation.md
+
+
+
+
+
+
+
+
+
