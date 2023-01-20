@@ -20,4 +20,7 @@ jobs:
       - run : pip install pillow
       - run: pip install --force-reinstall mkdocs-material>=5.0.0b2
       - run: pip install pymdown-extensions
+      - run: pip install pygments
+      - run: pip install mkdocs-htmlproofer-plugin
       - run: mkdocs gh-deploy --force --clean --verbose
+
