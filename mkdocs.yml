@@ -108,18 +108,18 @@ markdown_extensions:
   - pymdownx.superfences
 
 # Customization
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/abdellatif-belmady
-    - icon: fontawesome/brands/linkedIn
-      link: https://www.linkedin.com/in/abdellatif-belmady-ab999a133/
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/abdellatif.belmady
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/@otherways8368/featured
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/abdellatifbelmady/
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/abdellatif-belmady
+#     - icon: fontawesome/brands/linkedIn
+#       link: https://www.linkedin.com/in/abdellatif-belmady-ab999a133/
+#     - icon: fontawesome/brands/facebook
+#       link: https://www.facebook.com/abdellatif.belmady
+#     - icon: fontawesome/brands/youtube
+#       link: https://www.youtube.com/@otherways8368/featured
+#     - icon: fontawesome/brands/instagram
+#       link: https://www.instagram.com/abdellatifbelmady/
      
 # Page tree
 nav:
