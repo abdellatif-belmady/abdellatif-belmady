@@ -17,9 +17,9 @@ copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
 theme:
   language: en
   
-  logo: assets/logo.png
+  logo: assets/images/logo.png
 
-  favicon: assets/logo.png
+  favicon: assets/images/logo.png
 
   name: material
   
@@ -48,13 +48,13 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indigo
+      primary: light blue
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
+      primary: light blue
       accent: indigo
       toggle:
         icon: material/brightness-4
