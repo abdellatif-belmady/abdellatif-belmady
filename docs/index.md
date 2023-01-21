@@ -13,7 +13,7 @@ title: About Me
   <div class="sidebarparent">
     <div class="sidebar">
      <center>
-     <p><img src="https://drive.google.com/file/d/1BBGScP54CToSs_EcNhFQNk5SOSejK-Ip/view?usp=share_link" alt="Profile Picture" class="profilepic"></p>
+     <p><img src="assets/images/logo.png" alt="Profile Picture" class="profilepic"></p>
       <h1>Abdellatif BELMADY</h1>
       <h2>Morocco, Casablanca</h2>
       <h3>Data Scientist<h3>
