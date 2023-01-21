@@ -16,7 +16,8 @@ copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
 # Configuration
 theme:
   language: en
-  
+  custom_dir: overrides
+
   logo: assets/images/logo.png
 
   favicon: assets/images/logo.png
@@ -64,10 +65,16 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+plugins:
+  - search
+  - tags
 
 # Extensions
 markdown_extensions:
   - abbr
+  - extra
+  - meta
+  - smarty
   - admonition
   - attr_list
   - def_list
@@ -106,6 +113,12 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+extra_css:
+  - assets/css/extra.css
+
+
+
 
 # Customization
 # extra:
