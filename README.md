@@ -15,14 +15,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
----
-hide:
-  - navigation
-  - toc
-title: About Me
----
 
-<link rel="stylesheet" href="../../assets/css/about.css">
+
+<link rel="stylesheet" href="assets/css/about.css">
 
 <script src="https://kit.fontawesome.com/79ff35ecec.js" crossorigin="anonymous"></script>
 
