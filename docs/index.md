@@ -108,7 +108,7 @@ title: About Me
       </p>
      <h2><i class="fas fa-map-marker-alt"></i> Where I'm Located -</h2>
       <center>
-        <iframe width="100%" height="350" style="margin-bottom: 12px; border:0 " loading="lazy" allowfullscreen src="https://www.google.com/maps/place/%C3%89cole+centrale+Casablanca/@33.4800803,-7.6226301,17z/data=!3m1!4b1!4m5!3m4!1s0xda62dfb0bd98e83:0x6c5587c807a6f58e!8m2!3d33.4800758!4d-7.6204414?hl=fr"></iframe> 
+        <iframe width="100%" height="350" style="margin-bottom: 12px; border:0 " loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.8183321003753!2d-7.622630085316603!3d33.480080255112334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62dfb0bd98e83%3A0x6c5587c807a6f58e!2s%C3%89cole%20centrale%20Casablanca!5e0!3m2!1sfr!2sma!4v1674305579490!5m2!1sfr!2sma"></iframe> 
       </center>
      <h2><i class="fas fa-city"></i> Community Involvement -</h2>
       <p>
@@ -152,3 +152,5 @@ title: About Me
     </div>
   </div>
 </div>
+
+
