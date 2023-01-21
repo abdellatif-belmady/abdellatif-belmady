@@ -54,7 +54,7 @@ Here are some ideas to get you started:
      <p><a href="https://rhythmlink.com/"><img src="assets/images/logo_png.png" alt="RLI Logo" class="logo" style="width:55px;margin-top: 6px;"></a><strong>CEO and Founder - Other Ways</strong><span class="date" style=" color: inherit;">2022-Present</span><br>The third eye that you need</p>
       <p>Currently,the possession and installation of cameras are indispensable in large organizations and in any sector But despite their usefulness,these cameras still work in a traditional way in front of the evolution of thedigital and intelligent world.Our solutions opt for intelligent cameras that integrate new technologies Having smart cameras brings many advantages to your work and your business.
       </p>
-      <p><a href="https://www.youngengineersoftoday.com/"><img src="https://drive.google.com/file/d/1BBGScP54CToSs_EcNhFQNk5SOSejK-Ip/view?usp=share_link" alt="YEOT Logo" class="logo" style="width:80px;margin-top: 8px;"></a><strong>Machine Learning Intern</strong><span class="date" style=" color: inherit;">2022</span><br>6 PERFORM · Internship</p>
+      <p><a href="https://www.linkedin.com/company/6-perform/about/"><img src="https://drive.google.com/file/d/1BBGScP54CToSs_EcNhFQNk5SOSejK-Ip/view?usp=share_link" alt="YEOT Logo" class="logo" style="width:80px;margin-top: 8px;"></a><strong>Machine Learning Intern</strong><span class="date" style=" color: inherit;">2022</span><br>6 PERFORM · Internship</p>
       <ul>
         <li>Images collection(using the Imageye extention). 
         <li>Image annotation with labelImg.exe. 
