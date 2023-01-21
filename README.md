@@ -18,6 +18,7 @@ Here are some ideas to get you started:
 
 
 <link rel="stylesheet" href="assets/css/about.css">
+<link rel="stylesheet" href="assets/css/extra.css">
 
 <!-- <script src="https://kit.fontawesome.com/79ff35ecec.js" crossorigin="anonymous"></script> -->
 
