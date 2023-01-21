@@ -39,16 +39,19 @@ title: About Me
       <div class="underline"></div>
       <p><strong>Hey! I’m Abdellatif BELMADY,</strong> I graduated from Ecole Centrale Casablanca with a degree in data science and digitalization. My professional philosophy is "Structuring and analyzing data allows me to build the story behind it in order to improve the future".</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
-     <p><a href="https://rhythmlink.com/"><img src="https://teddywarner.org/images/About/rythemlink.png" alt="RLI Logo" class="logo" style="width:55px;margin-top: 6px;"></a><strong>RHYTHMLINK INTERNATIONAL</strong><span class="date" style=" color: inherit;">2022-Present</span><br>R&D Engineering Intern</p>
+     <p><a href="https://rhythmlink.com/"><img src="assets/images/logo_png.png" alt="RLI Logo" class="logo" style="width:55px;margin-top: 6px;"></a><strong>CEO and Founder - Other Ways</strong><span class="date" style=" color: inherit;">2022-Present</span><br>The third eye that you need</p>
+      <p>Currently,the possession and installation of cameras are indispensable in large organizations and in any sector But despite their usefulness,these cameras still work in a traditional way in front of the evolution of thedigital and intelligent world.Our solutions opt for intelligent cameras that integrate new technologies Having smart cameras brings many advantages to your work and your business.
+      </p>
+      <p><a href="https://www.youngengineersoftoday.com/"><img src="assets/images/perform.jpg" alt="YEOT Logo" class="logo" style="width:80px;margin-top: 8px;"></a><strong>Machine Learning Intern</strong><span class="date" style=" color: inherit;">2022</span><br>6 PERFORM · Internship</p>
       <ul>
-        <li>Rapid mechanical prototyping with digital fabrication
-        <li>Electronic system development
-        </li>
-      </ul>
-      <p><a href="https://www.youngengineersoftoday.com/"><img src="https://teddywarner.org/images/About/yeot.png" alt="YEOT Logo" class="logo" style="width:80px;margin-top: 8px;"></a><strong>YOUNG ENGINEERS OF TODAY</strong><span class="date" style=" color: inherit;">2020-Present</span><br>Teaching Assistant</p>
-      <ul>
-        <li>Co-Instructing a fabrication course for middle & high school students
-        <li>Facilitating STEAM summer classes for children ages 4 to 16
+        <li>Images collection(using the Imageye extention). 
+        <li>Image annotation with labelImg.exe. 
+        <li>Training of Deep Learning models using the YOLO version 4 algorithm. 
+        <li>Detection and recognition of surgical instruments. 
+        <li>Detection of mask wearing. 
+        <li>Detection of medical caps. 
+        <li>Detection of gowns. 
+        <li>Writing of scripts in Python. 
         </li>
       </ul>
       <p><a href="https://www.charlottelatin.org/academics/steam"><img src="https://teddywarner.org/images/About/fablogo.png" alt="Fab Logo" class="logo" style="width:38px;margin-top: 6px;"></a><strong>CHARLOTTE LATIN FAB LAB</strong><span class="date" style=" color: inherit;">2020-Present</span><br>Freelance Research and Development</p>
