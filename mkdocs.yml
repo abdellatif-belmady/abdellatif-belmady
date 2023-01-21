@@ -16,7 +16,7 @@ copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
 # Configuration
 theme:
   language: en
-  custom_dir: overrides
+
 
   logo: assets/images/logo.png
 
