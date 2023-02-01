@@ -139,14 +139,6 @@ extra:
 # Page tree
 nav:
   - BELMADY ?: index.md
-  # - Services:
-  #   - services/index.md
-  #   - Detection of persons authorized to access a room: services/1.md
-  #   - Detection and extraction of texts: services/2.md
-  #   - Tracking and analysis of the movement of people: services/3.md
-  #   - Detection and counting of people in a place: services/4.md
-  #   - Detection of strange people: services/5.md
-  #   - Detection of the presence/absence of employees at their work stations: services/6.md
   - Projects:
     - Spam Datasets: projects/spam datasets.md
     - Ozone Datasets: projects/ozone datasets.md
@@ -256,7 +248,14 @@ nav:
         - Gensim: courses/Natural Language Processing/Gensim.md
         - Chatbot: courses/Natural Language Processing/Chatbot.md
         - Translation: courses/Natural Language Processing/Translation.md
-
+  - Services:
+    - services/index.md
+    - Detection of persons authorized to access a room: services/1.md
+    - Detection and extraction of texts: services/2.md
+    - Tracking and analysis of the movement of people: services/3.md
+    - Detection and counting of people in a place: services/4.md
+    - Detection of strange people: services/5.md
+    - Detection of the presence/absence of employees at their work stations: services/6.md
 
 
 
