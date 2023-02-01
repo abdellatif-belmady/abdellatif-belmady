@@ -40,7 +40,7 @@ title: About Me
       <p><strong>Hey! I’m Abdellatif BELMADY,</strong> I graduated from Ecole Centrale Casablanca with a degree in data science and digitalization. My professional philosophy is "Structuring and analyzing data allows me to build the story behind it in order to improve the future".</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
      <p><a href="https://www.linkedin.com/company/other-ways25/"><img src="assets/images/logo_png.png" alt="Other Ways Logo" class="logo" style="width:55px;margin-top: 6px;"></a><strong>CEO and Founder - Other Ways</strong><span class="date" style=" color: inherit;">2022-Present</span><br>The third eye that you need</p>
-      <p>Currently,the possession and installation of cameras are indispensable in large organizations and in any sector But despite their usefulness,these cameras still work in a traditional way in front of the evolution of thedigital and intelligent world.Our solutions opt for intelligent cameras that integrate new technologies Having smart cameras brings many advantages to your work and your business.
+      <p>Currently, the possession and installation of cameras are indispensable in large organizations and in any sector. But despite their usefulness,these cameras still work in a traditional way in front of the evolution of the digital and intelligent world. Our solutions opt for intelligent cameras that integrate new technologies. Having smart cameras brings many advantages to your work and your business.
       </p>
       <p><a href="https://www.linkedin.com/company/6-perform/"><img src="assets/images/perform.jpg" alt="Perform 6 Logo" class="logo" style="width:80px;margin-top: 8px;"></a><strong>Machine Learning Intern</strong><span class="date" style=" color: inherit;">2022</span><br>6 PERFORM · Internship</p>
       <ul>
@@ -75,41 +75,25 @@ title: About Me
       </center>
      <h2><i class="fas fa-city"></i> Community Involvement -</h2>
       <p>
-        <strong>Charlotte Latin School Engineering Club Leader</strong>, Planning and facilitating club meetings (Aug 2020 - Present)
+        <strong>The Enactus association at Ecole Centrale Casablanca</strong>, Active member (Aug 2020 - Jan 2021)
       </p>
       <p>
-        <strong><a href="https://fabacademy.org/2021/labs/charlotte/">Charlotte Latin Fab Lab</a></strong> Community member, student & volunteer. (Aug 2018 - Present / 70.5 Volunteer Hours)
+        <strong>The Rotaract Association at Ecole Centrale Casablanca</strong> Community member, student & volunteer. (Aug 2020 - July 2021)
       </p>
       <p>
-        <strong><a href="https://sites.google.com/charlottelatin.net/toe-hawking/home">Toe Hawks</a></strong>, Custom shoe insole aiming towards helping out youth affected by idiopathic toe walking. (Oct 2018 - Feb 2019)
+        <strong>The association CentraleComm' at the Ecole Centrale Casablanca</strong> Community member, student & volunteer. (Aug 2020 - July 2021)
       </p>
       <p>
-        <strong>YEOT Summer Camp Counselor</strong>, Volunteer summer camp counselor for Young Engineers of Today's Racing Drones & Starwars Camps. (July 2020 / 57 Volunteer Hours) 
-      </p>
-      <p>
-        <strong><a href="https://www.instagram.com/p/COdXD7fJ5Zl/?">Covid-19 Shields</a></strong>, Designing, manufacturing, and delivering of shields and barriers to prevent the spread of Covid-19 through the school year in our FabLab. (Jul 2020 – Aug 2020 / 72 Volunteer Hours)
-      </p>
-      <p>
-        <strong><a href="https://photos.app.goo.gl/kWnrCmx1bZPvqDK29">D is for Desk</a></strong>, A friend of mine's Eagle Scout Project, we built Toe Hawks for the D is for Desk charity. (Nov 2020 / 17 Volunteer Hours) 
-      </p>
-      <center>
-       <p>--- Total Service - <strong>218.0 Hours</strong> ---</p>
-      </center>
-      <p>
-     <h2><a href="https://www.instagram.com/teddymakesstuff/">@Teddymakesstuff</a> On <i class="fa fa-instagram"></i> <span class="instatext">Instagram</span> -</h2>
+     <h2><a href="https://www.instagram.com/abdellatifbelmady/">@abdellatifbelmady</a> On <i class="fa fa-instagram"></i> <span class="instatext">Instagram</span> -</h2>
       <center class="instafeed">
         <span class="instalight">
-          <div data-mc-src="d8c73608-fcc8-4290-8302-9ada8c38e0f5#instagram"></div>
-          <script src="https://cdn2.woxo.tech/a.js#624e1b157fd2b900217e7b0d" async data-usrc></script>
-        </span>
-        <span class="instadark">
-          <div data-mc-src="5e60f977-523e-4cdd-82b3-56e287242388#instagram"></div>   
-          <script src="https://cdn2.woxo.tech/a.js#624e1b157fd2b900217e7b0d" async data-usrc></script>
+          <div data-mc-src="a08a2c3e-3751-4445-9e3c-96c46c439863#null"></div>
+          <script src="https://cdn2.woxo.tech/a.js#63d9a26430b9879a303c6456" async data-usrc></script>
         </span>
       </center>
      <h2><i class="fas fa-headphones-alt"></i> What I'm Listening To -</h2>
       <p class="music">
-       <a href="https://open.spotify.com/user/mskz5e4dyzv4cb4kkn73iipq0?si=5eba25ddc4f74313">
+       <a href="https://open.spotify.com/user/31mvzj3gzwywq54tvf2ofmw2z3ju">
         <img src="https://novatorem-oqoqm52ci-twarner491.vercel.app/api/spotify" alt="Spotify">
        </a>
     </div>

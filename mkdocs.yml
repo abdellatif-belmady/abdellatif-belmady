@@ -25,6 +25,7 @@ theme:
   name: material
   
   features:
+    - content.code.copy
     - content.action.edit
     # - announce.dismiss
     - content.code.annotate
@@ -122,18 +123,18 @@ extra_css:
 
 
 # Customization
-# extra:
-#   social:
-#     - icon: fontawesome/brands/github
-#       link: https://github.com/abdellatif-belmady
-#     - icon: fontawesome/brands/linkedIn
-#       link: https://www.linkedin.com/in/abdellatif-belmady-ab999a133/
-#     - icon: fontawesome/brands/facebook
-#       link: https://www.facebook.com/abdellatif.belmady
-#     - icon: fontawesome/brands/youtube
-#       link: https://www.youtube.com/@otherways8368/featured
-#     - icon: fontawesome/brands/instagram
-#       link: https://www.instagram.com/abdellatifbelmady/
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/abdellatif-belmady
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/abdellatif-belmady-ab999a133/
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/abdellatif.belmady
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@otherways8368/featured
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/abdellatifbelmady/
      
 # Page tree
 nav:
@@ -147,10 +148,9 @@ nav:
     - Detection of strange people: services/5.md
     - Detection of the presence/absence of employees at their work stations: services/6.md
   - Projects:
-    - projects/index.md
-    - Interactive dashboard: projects/Interactive dashboard.md
-    - Telegram bot: projects/Telegram bot.md
-    - YOLOv7 : projects/YOLOv7.md
+    - Spam Datasets: projects/spam datasets.md
+    - Ozone Datasets: projects/ozone datasets.md
+    - Boston Datasets: projects/boston datasets.md
   - Books:
     - books/index.md
     - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
