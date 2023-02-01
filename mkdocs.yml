@@ -185,7 +185,7 @@ nav:
       - Simple Analysis: courses/Natural Language Processing/simple.md
       - Advanced Analysis: courses/Natural Language Processing/advanced.md
       - Data Collection: courses/Natural Language Processing/collection.md
-      - RNN: courses/Natural Language Processing/rnn.md
+      - RNN: courses/Natural Language Processing/reseaunn.md
       - Modern Technics: courses/Natural Language Processing/modern.md
   - Services:
     - Creation of professional documentation: services/documentation.md
