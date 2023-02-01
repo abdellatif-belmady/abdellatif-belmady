@@ -144,7 +144,6 @@ nav:
     - Ozone Datasets: projects/ozone datasets.md
     - Boston Datasets: projects/boston datasets.md
   - Books:
-    - books/index.md
     - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
       - Preface:
         - The Machine Learning Tsunami: books/Hands on machine learning/Preface/2.1. The Machine Learning Tsunami.md
@@ -179,83 +178,17 @@ nav:
       - About the Author: books/Hands on machine learning/About the Author.md
       - Colophon: books/Hands on machine learning/Colophon.md
   - Courses: 
-    - courses/index.md
     - Natural Language Processing: 
-      - Introduction:
-        - What is NLP?: courses/Natural Language Processing/What is NLP.md
-        - History of NLP: courses/Natural Language Processing/History of NLP.md
-        - Challenges: courses/Natural Language Processing/Challenges.md
-        - Applications: courses/Natural Language Processing/Applications.md
-      - Bases of NLP:
-        - Libraries: courses/Natural Language Processing/Libraries.md
-        - Reading Text: courses/Natural Language Processing/Reading Text.md
-        - Handling PDF: courses/Natural Language Processing/Handling PDF.md
-        - Search in Text: courses/Natural Language Processing/Search in Text.md
-      - Tools of NLP:
-        - Tokenization: courses/Natural Language Processing/Tokenization.md
-        - Sentence Segmentation: courses/Natural Language Processing/Sentence Segmentation.md
-        - Part of Speech (POS): courses/Natural Language Processing/Part of Speech.md
-        - Stemming & Lemmatization: courses/Natural Language Processing/Stemming & Lemmatization.md
-        - Named-Entity Recognition (NER): courses/Natural Language Processing/Named-Entity Recognition.md
-        - Stopwords: courses/Natural Language Processing/Stopwords.md
-        - Matchers: courses/Natural Language Processing/Matchers.md
-        - Syntactic Structure: courses/Natural Language Processing/Syntactic Structure.md
-        - Text Visualization: courses/Natural Language Processing/Text Visualization.md
-      - Simple Analysis:
-        - Word Meaning: courses/Natural Language Processing/Word Meaning.md
-        - Word Embedding: courses/Natural Language Processing/Word Embedding.md
-        - Text Vectors: courses/Natural Language Processing/Text Vectors.md
-        - Word2Vec: courses/Natural Language Processing/Word2Vec.md
-        - Bag Of Words (BOW): courses/Natural Language Processing/Bag Of Words.md
-        - TF-IDF: courses/Natural Language Processing/TF-IDF.md
-        - Text Similarity: courses/Natural Language Processing/Text Similarity.md
-        - Distributional Similarity: courses/Natural Language Processing/Distributional Similarity.md
-      - Advanced Analysis: 
-        - Text Classification: courses/Natural Language Processing/Text Classification.md
-        - Text Clustering: courses/Natural Language Processing/Text Clustering.md
-        - Latent Dirichlet Allocation (LDA): courses/Natural Language Processing/Latent Dirichlet Allocation.md
-        - Non-Negative Matrix Factorization (NMF): courses/Natural Language Processing/Non-Negative Matrix Factorization.md
-        - GloVe: courses/Natural Language Processing/GloVe.md
-        - Lexicons: courses/Natural Language Processing/Lexicons.md
-        - NGrams: courses/Natural Language Processing/NGrams.md
-        - Langague Modeling: courses/Natural Language Processing/Langague Modeling.md
-        - Text Generation: courses/Natural Language Processing/Text Generation.md
-        - Sentimental Analysis: courses/Natural Language Processing/Sentimental Analysis.md
-        - Naïve Bayes: courses/Natural Language Processing/Naïve Bayes.md
-        - Vader: courses/Natural Language Processing/Vader.md
-        - Auto Correct: courses/Natural Language Processing/Auto Correct.md
-        - Answering Questions: courses/Natural Language Processing/Answering Questions.md
-        - Summarization: courses/Natural Language Processing/Summarization.md
-      - Data Collection:
-        - Tweet Collecting: courses/Natural Language Processing/Tweet Collecting.md
-        - Data Scraping: courses/Natural Language Processing/Data Scraping.md
-        - Information Extraction: courses/Natural Language Processing/Information Extraction.md
-        - Information Retrieval: courses/Natural Language Processing/Information Retrieval.md
-        - Relative Extraction: courses/Natural Language Processing/Relative Extraction.md
-        - Search Engine: courses/Natural Language Processing/Search Engine.md
-      - RNN:
-        - RNN: courses/Natural Language Processing/RNN.md
-        - LSTM: courses/Natural Language Processing/LSTM.md
-        - GRU: courses/Natural Language Processing/GRU.md
-        - TNN: courses/Natural Language Processing/TNN.md
-        - CNN: courses/Natural Language Processing/CNN.md
-      - Modern Technics:
-        - Teacher Forcing: courses/Natural Language Processing/Teacher Forcing.md
-        - Attention Models: courses/Natural Language Processing/Attention Models.md
-        - Hugging Face: courses/Natural Language Processing/Hugging Face.md
-        - Bert: courses/Natural Language Processing/Bert.md
-        - FastText: courses/Natural Language Processing/FastText.md
-        - Gensim: courses/Natural Language Processing/Gensim.md
-        - Chatbot: courses/Natural Language Processing/Chatbot.md
-        - Translation: courses/Natural Language Processing/Translation.md
+      - Introduction: courses/Natural Language Processing/introduction.md
+      - Bases of NLP: courses/Natural Language Processing/bases.md
+      - Tools of NLP: courses/Natural Language Processing/tools.md
+      - Simple Analysis: courses/Natural Language Processing/simple.md
+      - Advanced Analysis: courses/Natural Language Processing/advanced.md
+      - Data Collection: courses/Natural Language Processing/collection.md
+      - RNN: courses/Natural Language Processing/rnn.md
+      - Modern Technics: courses/Natural Language Processing/modern.md
   - Services:
-    - services/index.md
-    - Detection of persons authorized to access a room: services/1.md
-    - Detection and extraction of texts: services/2.md
-    - Tracking and analysis of the movement of people: services/3.md
-    - Detection and counting of people in a place: services/4.md
-    - Detection of strange people: services/5.md
-    - Detection of the presence/absence of employees at their work stations: services/6.md
+    - Creation of professional documentation: services/documentation.md
 
 
 
