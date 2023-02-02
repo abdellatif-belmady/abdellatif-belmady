@@ -179,7 +179,7 @@ nav:
       - Colophon: books/Hands on machine learning/Colophon.md
   - Courses: 
     - Natural Language Processing: 
-      - Introduction: courses/Natural Language Processing/introduction.md
+      - courses/Natural Language Processing/index.md
       - Bases of NLP: courses/Natural Language Processing/bases.md
       - Tools of NLP: courses/Natural Language Processing/tools.md
       - Simple Analysis: courses/Natural Language Processing/simple.md
