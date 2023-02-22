@@ -143,6 +143,7 @@ nav:
     - Spam Datasets: projects/spam datasets.md
     - Ozone Datasets: projects/ozone datasets.md
     - Boston Datasets: projects/boston datasets.md
+    - Abstractive Summarization: projects/abstractive summarization.md
   - Books:
     - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
       - Preface:
