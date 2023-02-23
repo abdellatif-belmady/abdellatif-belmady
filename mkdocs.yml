@@ -20,7 +20,7 @@ theme:
 
   logo: assets/images/logo.png
 
-  favicon: assets/images/logo.png
+  favicon: assets/images/favicon.png
 
   name: material
   
@@ -50,14 +50,14 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: light blue
-      accent: indigo
+      primary: black
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: light blue
-      accent: indigo
+      primary: black
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -145,52 +145,52 @@ nav:
     - Boston Datasets: projects/boston datasets.md
     - Abstractive Summarization: projects/abstractive summarization.md
     - Big-Data For IOT: projects/big data for iot.md
-  - Books:
-    - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
-      - Preface:
-        - The Machine Learning Tsunami: books/Hands on machine learning/Preface/2.1. The Machine Learning Tsunami.md
-        - Machine Learning in Your Projects: books/Hands on machine learning/Preface/2.2. Machine Learning in Your Projects.md
-        - Objective and Approach: books/Hands on machine learning/Preface/2.3. Objective and Approach.md
-        - Prerequisites: books/Hands on machine learning/Preface/2.4. Prerequisites.md
-        - Roadmap: books/Hands on machine learning/Preface/2.5. Roadmap.md
-        - Other Resources: books/Hands on machine learning/Preface/2.6. Other Resources.md
-        - Conventions Used in This Book: books/Hands on machine learning/Preface/2.7. Conventions Used in This Book.md
-        - Code Examples: books/Hands on machine learning/Preface/2.8. Code Examples.md
-        - Using Code Examples: books/Hands on machine learning/Preface/2.9. Using Code Examples.md
-        - O’Reilly Safari: books/Hands on machine learning/Preface/3.1.  O’Reilly Safari.md
-        - How to Contact Us: books/Hands on machine learning/Preface/3.2. How to Contact Us.md
-        - Changes in the Second Edition: books/Hands on machine learning/Preface/3.3. Changes in the Second Edition.md
-        - Acknowledgments: books/Hands on machine learning/Preface/3.4. Acknowledgments.md
-      - The Fundamentals of Machine Learning:
-        - The Machine Learning Landscape: books/Hands on machine learning/The Fundamentals of Machine Learning/3.1. The Machine Learning Landscape.md
-        - End-to-End Machine Learning Project: books/Hands on machine learning/The Fundamentals of Machine Learning/3.2. End-to-End Machine Learning Project.md
-        - Classification: books/Hands on machine learning/The Fundamentals of Machine Learning/3.3. Classification.md
-        - Training Models: books/Hands on machine learning/The Fundamentals of Machine Learning/3.4. Training Models.md
-        - Support Vector Machines: books/Hands on machine learning/The Fundamentals of Machine Learning/3.5. Support Vector Machines.md
-        - Decision Trees: books/Hands on machine learning/The Fundamentals of Machine Learning/3.6. Decision Trees.md
-        - Ensemble Learning and Random Forests: books/Hands on machine learning/The Fundamentals of Machine Learning/3.7. Ensemble Learning and Random Forests.md
-        - Dimensionality Reduction: books/Hands on machine learning/The Fundamentals of Machine Learning/3.8. Dimensionality Reduction.md
-        - Unsupervised Learning Techniques: books/Hands on machine learning/The Fundamentals of Machine Learning/3.9. Unsupervised Learning Techniques.md
-      - Neural Networks and Deep Learning:
-        - Introduction to Artificial Neural Networks with Keras: books/Hands on machine learning/Neural Networks and Deep Learning/4.1. Introduction to Artificial Neural Networks with Keras.md
-        - Training Deep Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.2. Training Deep Neural Networks.md
-        - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.3. Custom Models and Training with TensorFlow.md
-        - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.4. Loading and Preprocessing Data with TensorFlow.md
-        - Deep Computer Vision Using Convolutional Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.5. Deep Computer Vision Using Convolutional Neural Networks.md
-      - About the Author: books/Hands on machine learning/About the Author.md
-      - Colophon: books/Hands on machine learning/Colophon.md
+  - Books: books/not yet.md
+    # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
+    #   - Preface:
+    #     - The Machine Learning Tsunami: books/Hands on machine learning/Preface/2.1. The Machine Learning Tsunami.md
+    #     - Machine Learning in Your Projects: books/Hands on machine learning/Preface/2.2. Machine Learning in Your Projects.md
+    #     - Objective and Approach: books/Hands on machine learning/Preface/2.3. Objective and Approach.md
+    #     - Prerequisites: books/Hands on machine learning/Preface/2.4. Prerequisites.md
+    #     - Roadmap: books/Hands on machine learning/Preface/2.5. Roadmap.md
+    #     - Other Resources: books/Hands on machine learning/Preface/2.6. Other Resources.md
+    #     - Conventions Used in This Book: books/Hands on machine learning/Preface/2.7. Conventions Used in This Book.md
+    #     - Code Examples: books/Hands on machine learning/Preface/2.8. Code Examples.md
+    #     - Using Code Examples: books/Hands on machine learning/Preface/2.9. Using Code Examples.md
+    #     - O’Reilly Safari: books/Hands on machine learning/Preface/3.1.  O’Reilly Safari.md
+    #     - How to Contact Us: books/Hands on machine learning/Preface/3.2. How to Contact Us.md
+    #     - Changes in the Second Edition: books/Hands on machine learning/Preface/3.3. Changes in the Second Edition.md
+    #     - Acknowledgments: books/Hands on machine learning/Preface/3.4. Acknowledgments.md
+    #   - The Fundamentals of Machine Learning:
+    #     - The Machine Learning Landscape: books/Hands on machine learning/The Fundamentals of Machine Learning/3.1. The Machine Learning Landscape.md
+    #     - End-to-End Machine Learning Project: books/Hands on machine learning/The Fundamentals of Machine Learning/3.2. End-to-End Machine Learning Project.md
+    #     - Classification: books/Hands on machine learning/The Fundamentals of Machine Learning/3.3. Classification.md
+    #     - Training Models: books/Hands on machine learning/The Fundamentals of Machine Learning/3.4. Training Models.md
+    #     - Support Vector Machines: books/Hands on machine learning/The Fundamentals of Machine Learning/3.5. Support Vector Machines.md
+    #     - Decision Trees: books/Hands on machine learning/The Fundamentals of Machine Learning/3.6. Decision Trees.md
+    #     - Ensemble Learning and Random Forests: books/Hands on machine learning/The Fundamentals of Machine Learning/3.7. Ensemble Learning and Random Forests.md
+    #     - Dimensionality Reduction: books/Hands on machine learning/The Fundamentals of Machine Learning/3.8. Dimensionality Reduction.md
+    #     - Unsupervised Learning Techniques: books/Hands on machine learning/The Fundamentals of Machine Learning/3.9. Unsupervised Learning Techniques.md
+    #   - Neural Networks and Deep Learning:
+    #     - Introduction to Artificial Neural Networks with Keras: books/Hands on machine learning/Neural Networks and Deep Learning/4.1. Introduction to Artificial Neural Networks with Keras.md
+    #     - Training Deep Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.2. Training Deep Neural Networks.md
+    #     - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.3. Custom Models and Training with TensorFlow.md
+    #     - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.4. Loading and Preprocessing Data with TensorFlow.md
+    #     - Deep Computer Vision Using Convolutional Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.5. Deep Computer Vision Using Convolutional Neural Networks.md
+    #   - About the Author: books/Hands on machine learning/About the Author.md
+    #   - Colophon: books/Hands on machine learning/Colophon.md
   - Courses: 
     - Algorithmes de machine learning: 
       - courses/Algorithmes de machine learning/index.md
-    - Natural Language Processing: 
-      - courses/Natural Language Processing/index.md
-      - Bases of NLP: courses/Natural Language Processing/bases.md
-      - Tools of NLP: courses/Natural Language Processing/tools.md
-      - Simple Analysis: courses/Natural Language Processing/simple.md
-      - Advanced Analysis: courses/Natural Language Processing/advanced.md
-      - Data Collection: courses/Natural Language Processing/collection.md
-      - RNN: courses/Natural Language Processing/reseaunn.md
-      - Modern Technics: courses/Natural Language Processing/modern.md
+    # - Natural Language Processing: 
+    #   - courses/Natural Language Processing/index.md
+    #   - Bases of NLP: courses/Natural Language Processing/bases.md
+    #   - Tools of NLP: courses/Natural Language Processing/tools.md
+    #   - Simple Analysis: courses/Natural Language Processing/simple.md
+    #   - Advanced Analysis: courses/Natural Language Processing/advanced.md
+    #   - Data Collection: courses/Natural Language Processing/collection.md
+    #   - RNN: courses/Natural Language Processing/reseaunn.md
+    #   - Modern Technics: courses/Natural Language Processing/modern.md
   - Services:
     - Creation of professional documentation: services/documentation.md
 
