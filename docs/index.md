@@ -35,7 +35,7 @@ title: About Me
   </div>
   <div class="stuff__container">
     <div class="stuff__content">
-     <span class="resume" style=" color: inherit;"><a href="https://drive.google.com/file/d/1p_1YsjjlWAc7FWTrR3HKoJFbE7OdHC8S/view?usp=share_link">Export Resume <i class="far fa-file-alt"></i></a></span><h1>About Me</h1>
+     <span class="resume" style=" color: inherit;"><a href="https://drive.google.com/file/d/1CC96BkrGPqif_FTdfO4V8mb_SQHoFw9U/view?usp=share_link">Export Resume <i class="far fa-file-alt"></i></a></span><h1>About Me</h1>
       <div class="underline"></div>
       <p><strong>Hey! I’m Abdellatif BELMADY,</strong> I graduated from Ecole Centrale Casablanca with a degree in data science and digitalization. My professional philosophy is "Structuring and analyzing data allows me to build the story behind it in order to improve the future".</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
