@@ -63,6 +63,7 @@ title: About Me
       </ul>
      <h2><i class="fas fa-graduation-cap"></i> Education -</h2>
       <p><a href="http://www.centrale-casablanca.ma/fr/"><img src="assets/images/ecc.png" alt="Ecole Centrale Casablanca Logo" class="logo" style="margin-top: 7px;width:70px;"></a><strong>Data Science and digitalization</strong><span class="date" style=" color: inherit;">2020-Present</span><br>Ecole Centrale Casablanca</p><p> </p>
+      <hr>
       <p><a href="https://fabacademy.org/"><img src="assets/images/prepa.jpg" alt="CPGE Logo" class="logo" style="margin-top: 7px;width:70px;"></a><strong>Physics Chemistry Engineering Science</strong><span class="date" style=" color: inherit;">2018-2020</span><br>Preparatory Classes Errazi, El Jadida</p>
      <h2><i class="fas fa-award"></i> Honors & Awards -</h2>
       <p>
