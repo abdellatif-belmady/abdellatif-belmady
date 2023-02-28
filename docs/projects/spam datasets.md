@@ -1,8 +1,9 @@
 ## **Introduction**
 
-L'objectif de ce projet était d'entraîner un réseau neuronal à classer les courriels comme « spam » ou « non spam ». Ceci a été fait sur le jeu de données Spambase fourni par le référentiel d'apprentissage automatique de l'UCI, qui contient 57 features représentant la fréquence des mots dans 4601 emails.
+!!! Info "Membres du groupe"
+    L'objectif de ce projet était d'entraîner un réseau neuronal à classer les courriels comme « spam » ou « non spam ». Ceci a été fait sur le jeu de données Spambase     fourni par le référentiel d'apprentissage automatique de l'UCI, qui contient 57 features représentant la fréquence des mots dans 4601 emails.
 
-Pour notre label (Spam) ; « spam » a été codé comme 1 pour la classe positive et « non spam » a été a été codé comme 0 pour la classe négative.
+    Pour notre label (Spam) ; « spam » a été codé comme 1 pour la classe positive et « non spam » a été a été codé comme 0 pour la classe négative.
 
 ## **Préparation des données**
 
