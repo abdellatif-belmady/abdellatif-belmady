@@ -161,7 +161,10 @@ pred= model.predict(x_test_norm)
 print(np.sqrt(mean_squared_error(y_test,pred)))
 ```
 ## **Implémentation d'une Régression Linéaire**
-J'ai également mis en œuvre une régression linéaire et j’ai obtenu un score de 0,625 pour les données de test et un score de 0,646 pour les données de validation.
+
+!!! Info ""
+    J'ai également mis en œuvre une régression linéaire et j’ai obtenu un score de 0,625 pour les données de test et un score de 0,646 pour les données de validation.
+
 ```py
 from sklearn.linear_model import LinearRegression
 
