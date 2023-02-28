@@ -34,12 +34,18 @@ spam.head(5)
 # Afficher quelques informations du dataset
 spam.info()
 ```
-D'après le résultat de la méthode ***« info() »***, il apparaît que tous les features sont de type float ce qui facilitera notre étude ultérieure (pas besoin de faire une feature engineering).
+
+!!! Info ""
+    D'après le résultat de la méthode ***« info() »***, il apparaît que tous les features sont de type float ce qui facilitera notre étude ultérieure (pas besoin de faire une feature engineering).
+
 ```py
 # Afficher quelques statistiques du dataset
 spam.describe()
 ```
-J'ai également fait une analyse des distributions des données pour avoir une idée sur les lois suivies par les différents features, ainsi veuillez trouver ci-dessous le résultat obtenu et qui montre que la plupart des features ne suivent pas une distribution gaussienne.
+
+!!! Info ""
+    J'ai également fait une analyse des distributions des données pour avoir une idée sur les lois suivies par les différents features, ainsi veuillez trouver ci-dessous le résultat obtenu et qui montre que la plupart des features ne suivent pas une distribution gaussienne.
+
 ```py
 # Afficher quelques statistiques du dataset
 spam.describe()
@@ -95,9 +101,11 @@ x_train_norm = (x_train-min_x_train)/(max_x_train-min_x_train)
 x_test_norm = (x_test-min_x_train)/(max_x_train-min_x_train)
 x_val_norm = (x_valid-min_x_train)/(max_x_train-min_x_train)
 ```
-La structure du perceptron se compose ***d'une couche d'entrée avec 57 neurones*** correspondant à chacune des 57 features, ***d'une couche cachée avec 12 neurones*** et ***d'une couche de sortie avec 2 neurones*** : le premier peut être interprété comme la probabilité qu'un email soit « non-spam » et le second comme la probabilité de "spam". Le neurone de sortie ayant la probabilité la plus élevée détermine la classification d'un email.
 
-La ***fonction sigmoïde*** a été choisie comme fonction d'activation pour chacune des trois couches, l'entropie croisée binaire comme loss function, et l'algorithme ***Adam optimizer*** pour son adaptative learning rate and momentum.
+!!! Info ""
+    La structure du perceptron se compose ***d'une couche d'entrée avec 57 neurones*** correspondant à chacune des 57 features, ***d'une couche cachée avec 12 neurones*** et ***d'une couche de sortie avec 2 neurones*** : le premier peut être interprété comme la probabilité qu'un email soit « non-spam » et le second comme la probabilité de "spam". Le neurone de sortie ayant la probabilité la plus élevée détermine la classification d'un email.
+
+    La ***fonction sigmoïde*** a été choisie comme fonction d'activation pour chacune des trois couches, l'entropie croisée binaire comme loss function, et l'algorithme ***Adam optimizer*** pour son adaptative learning rate and momentum.
 
 ![L’architecture de réseau de neurones](../assets/images/archi.jpg)
 
@@ -161,7 +169,8 @@ plt.show()
 ??? success "Output"
     ![Précision](../assets/images/precision.png)
 
-Ce modèle de réseau neuronal a donné un score de 0,924 pour les données de test et un score de 0,937 pour les données de validation, ce qui est très satisfaisant.
+!!! Info ""
+    Ce modèle de réseau neuronal a donné un score de 0,924 pour les données de test et un score de 0,937 pour les données de validation, ce qui est très satisfaisant.
 
 ## **Implémentation d’une Régression Logistique**
 ```py
@@ -182,7 +191,9 @@ print("Test Accuracy Score", score_test_log_reg)
 score_valid_log_reg = log_reg.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_log_reg)
 ```
-J'ai également mis en œuvre une régression logistique et j’ai obtenu un score de 0,876 pour les données de test et un score de 0,895 pour les données de validation.
+
+!!! Info ""
+    J'ai également mis en œuvre une régression logistique et j’ai obtenu un score de 0,876 pour les données de test et un score de 0,895 pour les données de validation.
 
 ## **Implémentation d’un SVM**
 ```py
@@ -203,7 +214,9 @@ print("Test Accuracy Score", score_test_svc)
 score_valid_svc = svm.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_svc)
 ```
-Un SVC a également été mis en place et a donné un score de 0,931 pour les données de test et un score de 0,932 pour les données de validation.
+
+!!! Info ""
+    Un SVC a également été mis en place et a donné un score de 0,931 pour les données de test et un score de 0,932 pour les données de validation.
 
 ## **Implémentation d’un Random Forest**
 ```py
@@ -224,14 +237,18 @@ print("Test Accuracy Score", score_test_rdf)
 score_valid_rdf = rdf.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_rdf)
 ```
-Pour avoir une idée de tous les modèles de machine learning, j'ai mis en œuvre un Random Forest qui a donné un score de 0,884 pour les données de test et un score de 0,904 pour les données de validation.
+
+!!! Info ""
+    Pour avoir une idée de tous les modèles de machine learning, j'ai mis en œuvre un Random Forest qui a donné un score de 0,884 pour les données de test et un score de 0,904 pour les données de validation.
 
 ## **Conclusion**
-Pour conclure, voici un tableau qui résume les différents scores de tous les modèles que j'ai mis en place :
 
-|Modèle	                    |Score (test dataset)	    |Score (validation dataset)
-|---------------------------|---------------------------|--------------------------
-|Réseau de neurones (DNN)	|0.9246376811594202	        |0.9246376811594202
-|Régression Logistique	    |0.8768115942028986	        |0.8951406649616368
-|SVM (SVC)	                |0.9318840579710145	        |0.9322250639386189
-|Random Forest	            |0.8840579710144928	        |0.9040920716112532
+!!! Info "Conclusion"
+    Pour conclure, voici un tableau qui résume les différents scores de tous les modèles que j'ai mis en place :
+
+    |Modèle	                    |Score (test dataset)	    |Score (validation dataset)
+    |---------------------------|---------------------------|--------------------------
+    |Réseau de neurones (DNN)	|0.9246376811594202	        |0.9246376811594202
+    |Régression Logistique	    |0.8768115942028986	        |0.8951406649616368
+    |SVM (SVC)	                |0.9318840579710145	        |0.9322250639386189
+    |Random Forest	            |0.8840579710144928	        |0.9040920716112532
