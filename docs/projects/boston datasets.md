@@ -254,9 +254,10 @@ dataset.info()
 
     memory usage: 55.5 KB
 
-- Le Dataset contient ***506 lignes*** et ***14 colonnes***.
+!!! Info ""
+    - Le Dataset contient ***506 lignes*** et ***14 colonnes***.
 
-- toutes les colonnes sont de type ***float64***.
+    - toutes les colonnes sont de type ***float64***.
 
 ```py
 # Afficher une description statistique de la dataset
