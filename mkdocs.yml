@@ -25,6 +25,7 @@ theme:
   name: material
   
   features:
+    - content.code.select
     - content.code.copy
     - content.action.edit
     # - announce.dismiss
