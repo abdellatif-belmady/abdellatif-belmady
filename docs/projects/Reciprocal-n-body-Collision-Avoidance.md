@@ -1039,7 +1039,7 @@ draw(exits, obstacles, obstacles_cir, size_scene, [], 0, 'gemoetrie.png', play=T
 
 ??? Output
 
-    ![image](assets/images/download.png)
+    ![image](../assets/images/download.png)
 
 ## **Champs de directions**
 
@@ -1069,7 +1069,7 @@ adjust_FM()
 ```
 ??? Output
 
-    ![image](assets/images/2.png)
+    ![image](../assets/images/2.png)
 
 ## **Simulation**
 
@@ -1133,4 +1133,4 @@ record_video(speed = 25)
 
 ??? Output
 
-    ![video](assets/videos/video.gif)
+    ![video](../assets/videos/video.gif)
