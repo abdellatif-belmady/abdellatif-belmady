@@ -318,11 +318,6 @@ np.fromfunction(my_function, (3, 2, 10))
 
 
 
-
-
-
-
-
 ## **Array data**
 
 ## **Reshaping an array**
