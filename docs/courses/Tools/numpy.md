@@ -316,9 +316,82 @@ np.fromfunction(my_function, (3, 2, 10))
 !!! Info "" 
     So the terms `x`, `y` and `z` in the expression `x + 10 * y + 100 * z` above are in fact `ndarrays` (we will discuss arithmetic operations on arrays below). The point is that the function `my_function` is only called once, instead of once per element. This makes initialization very efficient.
 
-
-
 ## **Array data**
+
+### **dtype**
+
+!!! Info "" 
+    NumPy's `ndarrays` are also efficient in part because all their elements must have the same type (usually numbers). You can check what the data type is by looking at the `dtype` attribute:
+
+```py
+c = np.arange(1, 5)
+print(c.dtype, c)
+```
+
+??? Output "Output"
+    int64 [1 2 3 4]
+
+```py
+c = np.arange(1.0, 5.0)
+print(c.dtype, c)
+```
+??? Output "Output"
+    float64 [ 1.  2.  3.  4.]
+
+!!! Info "" 
+    Instead of letting NumPy guess what data type to use, you can set it explicitly when creating an array by setting the `dtype` parameter:
+
+??? Output "Output"
+    complex64 [ 1.+0.j  2.+0.j  3.+0.j  4.+0.j]
+
+!!! Info "" 
+    Available data types include `int8`, `int16`, `int32`, `int64`, `uint8`|`16`|`32`|`64`, `float16`|`32`|`64` and `complex64`|`128`. Check out [the documentation](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html) for the full list.
+
+### **itemsize**
+
+!!! Info ""
+    The `itemsize` attribute returns the size (in bytes) of each item:
+
+```py
+e = np.arange(1, 5, dtype=np.complex64)
+e.itemsize
+```
+
+??? Output "Output"
+    8
+
+### **data buffer**
+
+!!! Info ""
+    An array's data is actually stored in memory as a flat (one dimensional) byte buffer. It is available via the `data` attribute (you will rarely need it, though).
+
+```py
+f = np.array([[1,2],[1000, 2000]], dtype=np.int32)
+f.data
+```
+
+??? Output "Output"
+    <read-write buffer for 0x10f8a18a0, size 16, offset 0 at 0x10f9dbbb0>
+
+!!! Info ""
+    In python 2, `f.data` is a buffer. In python 3, it is a memoryview.
+
+```py
+if (hasattr(f.data, "tobytes")):
+    data_bytes = f.data.tobytes() # python 3
+else:
+    data_bytes = memoryview(f.data).tobytes() # python 2
+
+data_bytes
+```
+
+??? Output "Output"
+    '\x01\x00\x00\x00\x02\x00\x00\x00\xe8\x03\x00\x00\xd0\x07\x00\x00'
+
+!!! Info ""
+    Several `ndarrays` can share the same data buffer, meaning that modifying one will also modify the others. We will see an example in a minute.
+
+
 
 ## **Reshaping an array**
 
