@@ -185,6 +185,7 @@ nav:
     #   - About the Author: books/Hands on machine learning/About the Author.md
     #   - Colophon: books/Hands on machine learning/Colophon.md
   - Courses: 
+    - Tools - NumPy: courses/Tools/numpy.md
     - Algorithmes de machine learning: 
       - courses/Algorithmes de machine learning/index.md
     # - Natural Language Processing: 
