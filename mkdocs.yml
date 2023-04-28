@@ -6,8 +6,8 @@ docs_dir: web/
 theme:
     font: false
     name: material
-    logo: 'logo.svg'
-    favicon: 'favicon.ico'
+    logo: 'logo.png'
+    favicon: 'logo.png'
     palette:
       - scheme: default
         primary: black
