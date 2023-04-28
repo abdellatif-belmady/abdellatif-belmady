@@ -56,6 +56,8 @@ theme:
 extra_css:
     - 'stylesheets/extra.css'
     - 'stylesheets/fonts.css'
+    - 'assets/css/extra.css'
+    - 'assets/css/about.css'
 
 # Customization
 extra:
