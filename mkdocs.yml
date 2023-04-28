@@ -73,8 +73,7 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/abdellatifbelmady/
 
-site_url: https://www.msys2.org
-repo_url: https://github.com/msys2/msys2.github.io
+repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
 edit_uri: edit/source/web/
 
 markdown_extensions:
