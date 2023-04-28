@@ -1,67 +1,45 @@
-name: github pages
+name: build
 
 on:
-  workflow_dispatch:
-  pull_request:
   push:
-    branches-ignore:
+    branches:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Python (pip)
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-          architecture: 'x64'
-          cache: 'pip'
-          cache-dependency-path: .github/workflows/main.yml
-
+      - run : pip install mkdocs >=1.1.2
+      - run : pip install mkdocs-git-committers-plugin-2>=1.1.1
+      - run : pip install mkdocs-git-revision-date-localized-plugin>=1.0
+      - run : pip install mkdocs-minify-plugin>=0.3
+      - run : pip install mkdocs-rss-plugin>=1.2
+      - run : pip install mkdocs-redirects>=1.0
+      - run : pip install pillow
+      - run: pip install --force-reinstall mkdocs-material>=5.0.0b2
+      - run: pip install pymdown-extensions
+      - run: pip install pygments
+      - run: pip install mkdocs-htmlproofer-plugin
+      - run: mkdocs gh-deploy --force --clean --verbose
       - name: Install poetry
         run: |
           python3 -m pip install --upgrade poetry==1.4.0
-
       - name: Setup Python (poetry)
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
           architecture: 'x64'
           cache: 'poetry'
-
       - name: Install dependencies
         run: |
           poetry install
-
       - run: poetry run mkdocs build
-
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
           name: website
           path: ./site
-
-  deploy:
-    runs-on: ubuntu-20.04
-    needs: build
-    concurrency: ci-${{ github.ref }}
-    permissions:
-      contents: write
-    if: github.repository != 'msys2/msys2.github.io' || (github.event_name != 'pull_request' && github.ref == 'refs/heads/source')
-    steps:
-      - name: Download Results
-        uses: actions/download-artifact@v3
-        with:
-          name: website
-          path: ./site
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          publish_branch: main
-          cname: www.msys2.org
