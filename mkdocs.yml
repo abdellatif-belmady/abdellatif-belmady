@@ -1,128 +1,61 @@
-# Project information
-site_name: BELMADY ML
-site_author: Abdellatif BELMADY
-edit_uri: https://github.com/abdellatif-belmady/abdellatif-belmady/tree/main/docs
+site_name: Abdellatif BELMADY
 site_description: >-
-  BELMADY ML is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
+  Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
   the machine learning books he has read and also free courses on the main points of machine learning and deep learning.
-
-# Repository
-repo_name: abdellatif-belmady/abdellatif-belmady
-repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
-
-# Copyright
-copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
-
-# Configuration
+docs_dir: web/
 theme:
-  language: en
+    font: false
+    name: material
+    logo: 'logo.svg'
+    favicon: 'favicon.ico'
+    palette:
+      - scheme: default
+        media: "(prefers-color-scheme: light)"
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+        primary: 'indigo'
+        accent: 'indigo'
+      - scheme: slate
+        media: "(prefers-color-scheme: dark)"
+        toggle:
+          icon: material/brightness-4
+          name: Switch to light mode
+        primary: 'blue'
+        accent: 'blue'
 
+    features:
+        - navigation.instant
+        - content.action.edit
+        - content.code.copy
+        - content.code.select
+        # - announce.dismiss
+        - content.code.annotate
+        # - content.tabs.link
+        - content.tooltips
+        # - header.autohide
+        # - navigation.expand
+        - navigation.indexes
+        # - navigation.instant
+        # - navigation.prune
+        #- navigation.sections
+        - navigation.tabs
+        # - navigation.tabs.sticky
+        - navigation.top
+        - navigation.tracking
+        - search.highlight
+        - search.share
+        - search.suggest
+        - toc.follow
+        - navigation.expand
+        - navigation.footer
+        # - toc.integrate
 
-  logo: assets/images/logo.png
-
-  favicon: assets/images/favicon.png
-
-  name: material
-  
-  features:
-    - content.code.select
-    - content.code.copy
-    - content.action.edit
-    # - announce.dismiss
-    - content.code.annotate
-    # - content.tabs.link
-    - content.tooltips
-    # - header.autohide
-    # - navigation.expand
-    - navigation.indexes
-    # - navigation.instant
-    # - navigation.prune
-    #- navigation.sections
-    - navigation.tabs
-    # - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-    - navigation.expand
-    - navigation.footer
-    # - toc.integrate
-  palette:
-    - scheme: default
-      primary: black
-      accent: amber
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: amber
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  
-  font:
-    text: Roboto
-    code: Roboto Mono
-
-plugins:
-  - search
-  - tags
-
-# Extensions
-markdown_extensions:
-  - abbr
-  - extra
-  - meta
-  - smarty
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
-  - pymdownx.superfences
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+    custom_dir: overrides
 
 extra_css:
-  - assets/css/extra.css
-  - assets/css/about.css
-  - stylesheets/extra.css
-
-
-
+    - 'stylesheets/extra.css'
+    - 'stylesheets/fonts.css'
 
 # Customization
 extra:
@@ -137,10 +70,40 @@ extra:
       link: https://www.youtube.com/@otherways8368/featured
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/abdellatifbelmady/
-     
-# Page tree
+
+site_url: https://www.msys2.org
+repo_url: https://github.com/msys2/msys2.github.io
+edit_uri: edit/source/web/
+
+markdown_extensions:
+    - meta
+    - attr_list
+    - codehilite
+    - sane_lists
+    - admonition
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+
 nav:
-  - BELMADY ?: index.md
+  - Home: index.md
   - Projects:
     - Spam Datasets: projects/spam datasets.md
     - Ozone Datasets: projects/ozone datasets.md
@@ -200,11 +163,3 @@ nav:
     #   - Modern Technics: courses/Natural Language Processing/modern.md
   - Services: services/documentation.md
     # - Creation of professional documentation: services/documentation.md
-
-
-
-
-
-
-
-
