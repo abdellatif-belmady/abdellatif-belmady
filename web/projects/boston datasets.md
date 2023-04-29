@@ -1,20 +1,19 @@
 ## **Bibliothèques**
 
-!!! Info "Bibliothèques"
-    Tout d'abord, exécutons la cellule ci-dessous pour importer tous les paquets dont vous aurez besoin au cours de cette étude.
+Tout d'abord, exécutons la cellule ci-dessous pour importer tous les paquets dont vous aurez besoin au cours de cette étude.
 
-    - [pandas](https://pandas.pydata.org/) est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données.
+- [pandas](https://pandas.pydata.org/) est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse des données.
 
-    - [numpy](https://numpy.org/doc/1.20/) est une bibliothèque pour langage de programmation Python, destinée à manipuler des matrices ou tableaux multidimensionnels ainsi que des fonctions mathématiques opérant sur ces tableaux.
+- [numpy](https://numpy.org/doc/1.20/) est une bibliothèque pour langage de programmation Python, destinée à manipuler des matrices ou tableaux multidimensionnels ainsi que des fonctions mathématiques opérant sur ces tableaux.
 
-    - [matplotlib](http://matplotlib.org) est une bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous forme de graphiques.
+- [matplotlib](http://matplotlib.org) est une bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous forme de graphiques.
 
-    - [seaborn](https://seaborn.pydata.org/) est une bibliothèque de visualisation Python basée sur matplotlib. Elle fournit une interface de haut niveau pour dessiner des graphiques statistiques attrayants.
+- [seaborn](https://seaborn.pydata.org/) est une bibliothèque de visualisation Python basée sur matplotlib. Elle fournit une interface de haut niveau pour dessiner des graphiques statistiques attrayants.
 
-    - [keras](https://keras.io/) est l'API de haut niveau de TensorFlow.
+- [keras](https://keras.io/) est l'API de haut niveau de TensorFlow.
 
-    - [sklearn](https://scikit-learn.org/stable/) est une bibliothèque libre Python destinée à l'apprentissage automatique. 
-    - [pickle](https://docs.python.org/3/library/pickle.html) est principalement utilisé pour sérialiser et désérialiser une structure objet Python. En d'autres termes, c'est le processus de conversion d'un objet Python en un flux d'octets pour le stocker dans un fichier/base de données, maintenir l'état du programme entre les sessions ou transporter des données sur le réseau.
+- [sklearn](https://scikit-learn.org/stable/) est une bibliothèque libre Python destinée à l'apprentissage automatique. 
+- [pickle](https://docs.python.org/3/library/pickle.html) est principalement utilisé pour sérialiser et désérialiser une structure objet Python. En d'autres termes, c'est le processus de conversion d'un objet Python en un flux d'octets pour le stocker dans un fichier/base de données, maintenir l'état du programme entre les sessions ou transporter des données sur le réseau.
 
 ```py
 import numpy as np
@@ -35,36 +34,35 @@ from sklearn.linear_model import LinearRegression
 
 ### **Définition des colonnes**
 
-!!! Info "Définition des colonnes"
-    Dans le domaine de la science des données, la première chose à faire est de bien comprendre les données, ainsi et dans ce même sens, nous avons défini les colonnes comme suit :
+Dans le domaine de la science des données, la première chose à faire est de bien comprendre les données, ainsi et dans ce même sens, nous avons défini les colonnes comme suit :
 
-    - `CRIM`: per capita crime rate by town.
+- `CRIM`: per capita crime rate by town.
 
-    - `ZN`: proportion of residential land zoned for lots over 25,000 sq.ft.
+- `ZN`: proportion of residential land zoned for lots over 25,000 sq.ft.
 
-    - `INDUS`: proportion of non-retail business acres per town.
+- `INDUS`: proportion of non-retail business acres per town.
 
-    - `CHAS`: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
+- `CHAS`: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
 
-    - `NOX`: nitric oxides concentration (parts per 10 million).
+- `NOX`: nitric oxides concentration (parts per 10 million).
 
-    - `RM`: average number of rooms per dwelling.
+- `RM`: average number of rooms per dwelling.
 
-    - `AGE`: proportion of owner-occupied units built prior to 1940.
+- `AGE`: proportion of owner-occupied units built prior to 1940.
 
-    - `DIS`: weighted distances to five Boston employment centres.
+- `DIS`: weighted distances to five Boston employment centres.
 
-    - `RAD`: index of accessibility to radial highways.
+- `RAD`: index of accessibility to radial highways.
 
-    - `TAX`: full-value property-tax rate per $10,000.
+- `TAX`: full-value property-tax rate per $10,000.
 
-    - `PTRATIO`: pupil-teacher ratio by town.
+- `PTRATIO`: pupil-teacher ratio by town.
 
-    - `B`: 1000(Bk - 0.63)^2 where Bk is the proportion of black people by town.
+- `B`: 1000(Bk - 0.63)^2 where Bk is the proportion of black people by town.
 
-    - `LSTAT`: % lower status of the population.
+- `LSTAT`: % lower status of the population.
 
-    - `MEDV`: our ***Target***, Median value of owner-occupied homes in $1000's
+- `MEDV`: our ***Target***, Median value of owner-occupied homes in $1000's
 
 ### **Feature engineering**
 
@@ -254,10 +252,8 @@ dataset.info()
 
     memory usage: 55.5 KB
 
-!!! Info ""
-    - Le Dataset contient ***506 lignes*** et ***14 colonnes***.
-
-    - toutes les colonnes sont de type ***float64***.
+- Le Dataset contient **506 lignes** et **14 colonnes**.
+- toutes les colonnes sont de type **float64**.
 
 ```py
 # Afficher une description statistique de la dataset
@@ -297,16 +293,14 @@ dataset.isnull().sum()
     |MEDV       |0             |
 
     dtype: int64
-
-!!! Info ""
-    Nous notons que le dataset ne contient pas de valeurs ***NaN***.
+!!! Note
+    Nous notons que le dataset ne contient pas de valeurs **``NaN``**.
 
 ## **Vizualisation des données**
 
 ### **Matrice de corrélation**
 
-!!! Info ""
-    La matrice de corrélation indique les valeurs de corrélation, qui mesurent le degré de relation linéaire entre chaque paire de variables. Les valeurs de corrélation peuvent être comprises entre -1 et +1. Si les deux variables ont tendance à augmenter et à diminuer en même temps, la valeur de corrélation est positive. Lorsqu'une variable augmente alors que l'autre diminue, la valeur de corrélation est négative.
+La matrice de corrélation indique les valeurs de corrélation, qui mesurent le degré de relation linéaire entre chaque paire de variables. Les valeurs de corrélation peuvent être comprises entre -1 et +1. Si les deux variables ont tendance à augmenter et à diminuer en même temps, la valeur de corrélation est positive. Lorsqu'une variable augmente alors que l'autre diminue, la valeur de corrélation est négative.
 
 ```py
 # Afficher la matrice de corrélation
@@ -316,7 +310,7 @@ sns.heatmap(data=matriceCorr, annot = True)
 ??? success "Output"
     ![Matrice de Corrélation](../assets/images/matcorr.png)
 
-!!! Info ""
+!!! Note
     Nous notons qu'il y a plusieurs correlations entre les colonnes, mais nous n'allons pas prendre en considération ces corrélations pour l'instant parce que les réseaux de neuronnes peuvent détecter les corrélations ainsi les traiter. 
 
 ### **Représentations des colonnes deux à deux**
@@ -372,8 +366,7 @@ sns.regplot(x="PTRATIO",y="MEDV",data=dataset)
 
 ### **Préparation des des vecteurs d'entrainement**
 
-!!! Info ""
-    Maintenant nous allons implémenter et entrainer plusieurs modèles de machine learning afin de choisir le meilleur, mais avant nous devons définir les ***features***, le ***target*** et décomposer le dataset en data d'entrainement et data du test.  
+Maintenant nous allons implémenter et entrainer plusieurs modèles de machine learning afin de choisir le meilleur, mais avant nous devons définir les ***features***, le ***target*** et décomposer le dataset en data d'entrainement et data du test.  
 
 ```py
 # Définir les features

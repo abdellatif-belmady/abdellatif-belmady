@@ -1,8 +1,7 @@
 
 ## **Introduction**
 
-!!! Info ""
-    Le jeu de données contient 1464 observations (journalières, du 01/04/1995 au 30/09/2002, à Rennes).
+Le jeu de données contient 1464 observations (journalières, du 01/04/1995 au 30/09/2002, à Rennes).
 
 ## **Préparation des données**
 ```py
@@ -21,8 +20,7 @@ from tensorflow.keras.layers import Dense
 from sklearn.metrics import mean_squared_error
 ```
 
-!!! Info ""
-    Lors de l'importation des données, j'ai remplacé la colonne index par la colonne des dates.
+Lors de l'importation des données, j'ai remplacé la colonne index par la colonne des dates.
 
 ```py
 # Importer le datasets + remplacer la colonne des indexes par celle des dates
@@ -61,8 +59,7 @@ sns.heatmap(data=matriceCorr, annot = True)
 ozone.isnull().sum()
 ```
 
-!!! Info ""
-    J'ai ensuite remarqué qu'il y avait des valeurs manquantes dans l'ensemble de données. Pour résoudre ce problème, j'ai remplacé ces valeurs par la moyenne en utilisant « SimpleImputer ».
+J'ai ensuite remarqué qu'il y avait des valeurs manquantes dans l'ensemble de données. Pour résoudre ce problème, j'ai remplacé ces valeurs par la moyenne en utilisant « SimpleImputer ».
 
 ```py
 # Remplir les valeurs manquentes par la mayenne
@@ -86,6 +83,7 @@ ozone_complet = pd.DataFrame(ozone_complet, columns=ozone.columns)
 ozone_complet.isnull().sum()
 ```
 ## **Implémentation d’un modèle de réseau de neurones**
+
 ```py
 # Division de données en données d'entrainement, du test et de validation
 
@@ -125,10 +123,8 @@ x_test_norm = (x_test-min_x_train)/(max_x_train-min_x_train)
 x_val_norm = (x_valid-min_x_train)/(max_x_train-min_x_train)
 ```
 
-!!! Info ""
-    La structure du perceptron se compose ***d'une couche d'entrée avec 22 neurones*** correspondant à chacune des 22 features, de ***deux couches cachées avec 5 neurones*** par chacune et ***d'une couche de sortie avec un seul neurone*** qui donnera la valeur prédite de ***« maxO3 »***.
-    La ***fonction ReLu*** a été choisie comme fonction d'activation pour chacune des trois couches, ***mean square error*** comme loss function, et l'algorithme ***Adam optimizer*** pour son adaptative learning rate and momentum.
-
+La structure du perceptron se compose **d'une couche d'entrée avec 22 neurones** correspondant à chacune des 22 features, de **deux couches cachées avec 5 neurones** par chacune et **d'une couche de sortie avec un seul neurone** qui donnera la valeur prédite de **``maxO3``**.
+La **``fonction ReLu``** a été choisie comme fonction d'activation pour chacune des trois couches, **``mean square error``** comme loss function, et l'algorithme **``Adam optimizer``** pour son adaptative learning rate and momentum.
 
 ```py
 ## Implémentation de modèle DNN
@@ -162,8 +158,7 @@ print(np.sqrt(mean_squared_error(y_test,pred)))
 ```
 ## **Implémentation d'une Régression Linéaire**
 
-!!! Info ""
-    J'ai également mis en œuvre une régression linéaire et j’ai obtenu un score de 0,625 pour les données de test et un score de 0,646 pour les données de validation.
+J'ai également mis en œuvre une régression linéaire et j’ai obtenu un score de 0,625 pour les données de test et un score de 0,646 pour les données de validation.
 
 ```py
 from sklearn.linear_model import LinearRegression
@@ -185,8 +180,7 @@ print("Test Accuracy Score", score_valid_lin_reg)
 ```
 ## **Implémentation d’un SVR**
 
-!!! Info ""
-    Un SVR a également été mis en place et a donné un score de 0,489 pour les données de test et un score de 0,519 pour les données de validation.
+Un SVR a également été mis en place et a donné un score de 0,489 pour les données de test et un score de 0,519 pour les données de validation.
 
 ```py
 from sklearn.svm import SVR
@@ -208,11 +202,10 @@ print("Test Accuracy Score", score_valid_svr)
 ```
 ## **Conclusion**
 
-!!! Info ""
-    Pour conclure, voici un tableau qui résume les différents scores de tous les modèles que j'ai mis en place :
+Pour conclure, voici un tableau qui résume les différents scores de tous les modèles que j'ai mis en place :
 
-    |Modèle	                    |Score (test dataset)	    |Score (validation dataset)
-    |---------------------------|---------------------------|--------------------------
-    |Réseau de neurones (DNN)	|mean square error : 36.827398008235775
-    |Régression Linéaire	    |0.6250066102296177         |0.6463044934834267
-    |SVM (SVR)	                |0.4895962389393179	        |0.5192747605192083
+|Modèle	                    |Score (test dataset)	    |Score (validation dataset)
+|---------------------------|---------------------------|--------------------------
+|Réseau de neurones (DNN)	|mean square error : 36.827398008235775
+|Régression Linéaire	    |0.6250066102296177         |0.6463044934834267
+|SVM (SVR)	                |0.4895962389393179	        |0.5192747605192083

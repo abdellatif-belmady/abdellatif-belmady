@@ -2,29 +2,27 @@
 
 ## **Importer les Packages**
 
-!!! Note "Packages"
+- [NumPy](https://numpy.org/) : NumPy est une bibliothèque Python populaire pour le calcul scientifique qui fournit des structures de données pour la représentation de tableaux multidimensionnels et des fonctions pour manipuler ces tableaux.
 
-    - [NumPy](https://numpy.org/) : NumPy est une bibliothèque Python populaire pour le calcul scientifique qui fournit des structures de données pour la représentation de tableaux multidimensionnels et des fonctions pour manipuler ces tableaux.
+- [Matplotlib](https://matplotlib.org/) : Matplotlib est une bibliothèque en Python utilisée pour tracer des graphiques et des visualisations.
 
-    - [Matplotlib](https://matplotlib.org/) : Matplotlib est une bibliothèque en Python utilisée pour tracer des graphiques et des visualisations.
+- [heapq](https://docs.python.org/3/library/heapq.html) : heapq est un module Python qui implémente les algorithmes d'heaps ou de tas pour des structures de données.
 
-    - [heapq](https://docs.python.org/3/library/heapq.html) : heapq est un module Python qui implémente les algorithmes d'heaps ou de tas pour des structures de données.
+- [math](https://docs.python.org/3/library/math.html) : Le module math en Python fournit des fonctions mathématiques courantes, telles que les fonctions trigonométriques, exponentielles, logarithmiques, etc.
 
-    - [math](https://docs.python.org/3/library/math.html) : Le module math en Python fournit des fonctions mathématiques courantes, telles que les fonctions trigonométriques, exponentielles, logarithmiques, etc.
+- [CVXOPT](https://cvxopt.org/) : CVXOPT est une bibliothèque open source Python pour l'optimisation convexe. Elle est utilisée pour résoudre des problèmes d'optimisation convexe tels que la programmation linéaire, la programmation quadratique, la programmation semi-définie, la programmation convexe et autres. Elle fournit des solveurs rapides et précis pour les problèmes d'optimisation convexe, y compris des interfaces pour les solvers externes.
 
-    - [CVXOPT](https://cvxopt.org/) : CVXOPT est une bibliothèque open source Python pour l'optimisation convexe. Elle est utilisée pour résoudre des problèmes d'optimisation convexe tels que la programmation linéaire, la programmation quadratique, la programmation semi-définie, la programmation convexe et autres. Elle fournit des solveurs rapides et précis pour les problèmes d'optimisation convexe, y compris des interfaces pour les solvers externes.
+- [random](https://www.geeksforgeeks.org/python-random-module/) : The random module in Python provides a suite of functions for generating random numbers.
 
-    - [random](https://www.geeksforgeeks.org/python-random-module/) : The random module in Python provides a suite of functions for generating random numbers.
+- [time](https://docs.python.org/3/library/time.html) : Le module time est un module Python qui fournit diverses fonctions permettant de manipuler le temps.
 
-    - [time](https://docs.python.org/3/library/time.html) : Le module time est un module Python qui fournit diverses fonctions permettant de manipuler le temps.
+- [cv2](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) : cv2 is a library for computer vision and image processing. It is a Python wrapper for OpenCV (Open Source Computer Vision), which is a C++ library that includes numerous computer vision algorithms.
 
-    - [cv2](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) : cv2 is a library for computer vision and image processing. It is a Python wrapper for OpenCV (Open Source Computer Vision), which is a C++ library that includes numerous computer vision algorithms.
+- [IPython](https://ipython.org/) : La bibliothèque IPython fournit un certain nombre d'outils pour faciliter le développement et l'analyse de données en Python.
 
-    - [IPython](https://ipython.org/) : La bibliothèque IPython fournit un certain nombre d'outils pour faciliter le développement et l'analyse de données en Python.
+- [tqdm](https://tqdm.github.io/) : tqdm is a Python package that provides a progress bar visualization for iterative tasks, making it easy to see how far along a task is and how much longer it is expected to take.
 
-    - [tqdm](https://tqdm.github.io/) : tqdm is a Python package that provides a progress bar visualization for iterative tasks, making it easy to see how far along a task is and how much longer it is expected to take.
-
-```py
+```py linenums="1" title="Packages"
 import numpy
 from numpy.linalg import norm
 from numpy import dot,array
@@ -48,33 +46,33 @@ from tqdm import tqdm
 
 ## **Initialiser la géométrie**
 
-!!! Note "draw"
+### **draw**
 
-    On commence par définir la fonction `draw` qui prend plusieurs arguments en entrée et qui trace une scène avec des agents et des obstacles.
+On commence par définir la fonction `draw` qui prend plusieurs arguments en entrée et qui trace une scène avec des agents et des obstacles.
 
-    Les arguments en entrée sont:
+Les arguments en entrée sont:
 
-    ***Ex :*** une liste des sorties de la scène
+**``Ex`` :** une liste des sorties de la scène
 
-    ***Obs :*** une liste des obstacles rectangulaires
+**``Obs`` :** une liste des obstacles rectangulaires
 
-    ***Obs_cir :*** une liste des obstacles circulaires
+**``Obs_cir`` :** une liste des obstacles circulaires
 
-    ***scene :*** une paire (L, l) qui représente les dimensions de la scène
+**``scene`` :** une paire (L, l) qui représente les dimensions de la scène
 
-    ***agents :*** une liste d'agents, où chaque agent est représenté par sa position, sa taille et sa couleur
+**``agents`` :** une liste d'agents, où chaque agent est représenté par sa position, sa taille et sa couleur
 
-    ***t :*** temps de simulation
+**``t`` :** temps de simulation
 
-    ***savepath :*** le chemin pour enregistrer la figure générée
+**``savepath`` :** le chemin pour enregistrer la figure générée
 
-    ***play :*** un booléen qui spécifie si l'animation doit être affichée ou non
+**``play`` :** un booléen qui spécifie si l'animation doit être affichée ou non
 
-    La fonction commence par créer une figure et un axe avec une taille déterminée par la dimension de la scène. Ensuite, elle dessine les obstacles, les sorties et les agents sur la figure. Les obstacles rectangulaires sont représentés par des rectangles noirs, les obstacles circulaires par des cercles noirs, les sorties par des rectangles orange et les agents par des cercles de couleur.
+La fonction commence par créer une figure et un axe avec une taille déterminée par la dimension de la scène. Ensuite, elle dessine les obstacles, les sorties et les agents sur la figure. Les obstacles rectangulaires sont représentés par des rectangles noirs, les obstacles circulaires par des cercles noirs, les sorties par des rectangles orange et les agents par des cercles de couleur.
 
-    Enfin, la fonction sauvegarde la figure à l'emplacement spécifié par "savepath". Si "play" est faux, la figure est fermée.
+Enfin, la fonction sauvegarde la figure à l'emplacement spécifié par "savepath". Si "play" est faux, la figure est fermée.
 
-```py
+```py linenums="19" title="draw"
 def draw(Ex, Obs, Obs_cir, scene, agents, t, savepath, play = False):
     
     L , l = scene
@@ -129,21 +127,21 @@ def draw(Ex, Obs, Obs_cir, scene, agents, t, savepath, play = False):
 
 -------------------------
 
-!!! Note "record_video"
+### **record_video**
 
-    La fonction appelée `record_video` prend un argument optionnel speed (dont la valeur par défaut est 25). Le but de cette fonction est de créer une vidéo à partir d'une séquence d'images sauvegardées dans un répertoire, et de sauvegarder le fichier vidéo résultant dans le répertoire de travail actuel. Les arguments passés à cette fonction sont les suivants :
+La fonction appelée `record_video` prend un argument optionnel speed (dont la valeur par défaut est 25). Le but de cette fonction est de créer une vidéo à partir d'une séquence d'images sauvegardées dans un répertoire, et de sauvegarder le fichier vidéo résultant dans le répertoire de travail actuel. Les arguments passés à cette fonction sont les suivants :
 
-    ***speed :*** une valeur entière représentant le nombre d'images par seconde de la vidéo résultante (c'est-à-dire le taux de rafraîchissement de la vidéo).
+**``speed`` :** une valeur entière représentant le nombre d'images par seconde de la vidéo résultante (c'est-à-dire le taux de rafraîchissement de la vidéo).
 
-    La fonction commence par imprimer un message indiquant qu'elle commence l'enregistrement de la vidéo. Ensuite, elle lit la première image de la séquence d'images pour déterminer les dimensions de la vidéo.
+La fonction commence par imprimer un message indiquant qu'elle commence l'enregistrement de la vidéo. Ensuite, elle lit la première image de la séquence d'images pour déterminer les dimensions de la vidéo.
 
-    Elle crée ensuite un objet VideoWriter en utilisant la méthode ***cv2.VideoWriter*** d'OpenCV, en spécifiant le nom du fichier de sortie, le codec vidéo (dans ce cas ***XVID***), le taux de rafraîchissement et les dimensions de la vidéo (basées sur les dimensions de la première image).
+Elle crée ensuite un objet VideoWriter en utilisant la méthode **cv2.VideoWriter** d'OpenCV, en spécifiant le nom du fichier de sortie, le codec vidéo (dans ce cas **XVID**), le taux de rafraîchissement et les dimensions de la vidéo (basées sur les dimensions de la première image).
 
-    Ensuite, elle boucle sur les images restantes de la séquence et ajoute chacune à la vidéo à l'aide de la méthode ***video.write()***. Les images sont lues en utilisant la méthode ***cv2.imread()*** d'OpenCV, qui lit une image à partir d'un chemin de fichier spécifié.
+Ensuite, elle boucle sur les images restantes de la séquence et ajoute chacune à la vidéo à l'aide de la méthode **video.write()**. Les images sont lues en utilisant la méthode **cv2.imread()** d'OpenCV, qui lit une image à partir d'un chemin de fichier spécifié.
 
-    Enfin, la fonction nettoie toutes les fenêtres qui ont pu être créées pendant le processus et libère l'objet vidéo. Elle affiche un message indiquant que la vidéo a été sauvegardée.
+Enfin, la fonction nettoie toutes les fenêtres qui ont pu être créées pendant le processus et libère l'objet vidéo. Elle affiche un message indiquant que la vidéo a été sauvegardée.
 
-```py
+```py linenums="69" title="record_video"
 def record_video(speed = 25):
     print('Recording video ...')
     frame = cv2.imread('DossierImages/simulation' + str(10) + '.jpg')
@@ -162,25 +160,25 @@ def record_video(speed = 25):
 
 -----------------------
 
-!!! Note "generate_indiv"
+### **generate_indiv(N)**
 
-    La fonction `generate_indiv(N)` crée une liste de N agents en vérifiant qu'ils ne se chevauchent pas et ne traversent pas les obstacles. Voici les étapes principales :
+La fonction `generate_indiv(N)` crée une liste de N agents en vérifiant qu'ils ne se chevauchent pas et ne traversent pas les obstacles. Voici les étapes principales :
 
-    - [x] La fonction définit la taille de la scène, ainsi que des variables pour la distance minimale entre les agents et pour le rayon de chaque agent.
+- [x] La fonction définit la taille de la scène, ainsi que des variables pour la distance minimale entre les agents et pour le rayon de chaque agent.
 
-    - [x] La fonction crée une liste vide L qui contiendra les agents, puis elle commence une boucle qui s'arrêtera quand il y aura N agents dans la liste L.
+- [x] La fonction crée une liste vide L qui contiendra les agents, puis elle commence une boucle qui s'arrêtera quand il y aura N agents dans la liste L.
 
-    - [x] À chaque itération de la boucle, la fonction génère une position aléatoire pour un nouvel agent en utilisant des fonctions aléatoires et l'ajoute à une liste temporaire q, qui contient les positions de tous les agents déjà créés, ainsi que les rayons de ces agents, qui sont stockés dans la liste R.
+- [x] À chaque itération de la boucle, la fonction génère une position aléatoire pour un nouvel agent en utilisant des fonctions aléatoires et l'ajoute à une liste temporaire q, qui contient les positions de tous les agents déjà créés, ainsi que les rayons de ces agents, qui sont stockés dans la liste R.
 
-    - [x] Ensuite, la fonction vérifie s'il y a une collision entre le nouvel agent et les agents déjà créés. Si c'est le cas, la variable choc est définie sur True, ce qui signifie qu'il y a eu une collision et que le nouvel agent ne sera pas ajouté à la liste L.
+- [x] Ensuite, la fonction vérifie s'il y a une collision entre le nouvel agent et les agents déjà créés. Si c'est le cas, la variable choc est définie sur True, ce qui signifie qu'il y a eu une collision et que le nouvel agent ne sera pas ajouté à la liste L.
 
-    - [x] Ensuite, la fonction vérifie si le nouvel agent entre en collision avec un obstacle. Si c'est le cas, la variable choc est définie sur True.
+- [x] Ensuite, la fonction vérifie si le nouvel agent entre en collision avec un obstacle. Si c'est le cas, la variable choc est définie sur True.
 
-    - [x] Si le nouvel agent ne provoque pas de collision, il est ajouté à la liste L.
+- [x] Si le nouvel agent ne provoque pas de collision, il est ajouté à la liste L.
 
-    - [x] Lorsque N agents ont été créés et ajoutés à la liste L, la fonction retourne cette liste.
+- [x] Lorsque N agents ont été créés et ajoutés à la liste L, la fonction retourne cette liste.
 
-```py
+```py linenums="83" title="generate_indiv"
 def generate_indiv(N):
 
     def rand_float_range(start, end):
@@ -232,15 +230,15 @@ def generate_indiv(N):
 
 -----------------------
 
-!!! Note "maxiMini & plot_directions"
+### **maxiMini & plot_directions**
 
-    La première fonction, nommée `maxiMini(FX,FY)`, prend en entrée deux listes ***FX*** et ***FY***, contenant des valeurs de directions. Cette fonction parcourt les deux listes et recherche la valeur maximale et la valeur minimale des directions dans chaque liste. Elle retourne ensuite ces deux valeurs.
+La première fonction, nommée `maxiMini(FX,FY)`, prend en entrée deux listes **FX** et **FY**, contenant des valeurs de directions. Cette fonction parcourt les deux listes et recherche la valeur maximale et la valeur minimale des directions dans chaque liste. Elle retourne ensuite ces deux valeurs.
 
-    La deuxième fonction, nommée `plot_directions(FX,FY)`, prend également en entrée deux listes ***FX*** et ***FY***. Cette fonction affiche deux graphiques côte à côte : un pour les directions selon X et un pour les directions selon Y. Les directions sont représentées par des couleurs sur chaque graphique, et les couleurs correspondent à des valeurs. Les valeurs minimales et maximales sont obtenues en appelant la fonction `maxiMini(FX,FY)`. Les graphiques sont affichés à l'aide de la bibliothèque Matplotlib. Enfin, cette fonction retourne les graphiques affichés.
+La deuxième fonction, nommée `plot_directions(FX,FY)`, prend également en entrée deux listes **FX** et **FY**. Cette fonction affiche deux graphiques côte à côte : un pour les directions selon X et un pour les directions selon Y. Les directions sont représentées par des couleurs sur chaque graphique, et les couleurs correspondent à des valeurs. Les valeurs minimales et maximales sont obtenues en appelant la fonction `maxiMini(FX,FY)`. Les graphiques sont affichés à l'aide de la bibliothèque Matplotlib. Enfin, cette fonction retourne les graphiques affichés.
 
-    En résumé, ces deux fonctions permettent de visualiser les directions de mouvement à partir de listes de directions selon X et Y.
+En résumé, ces deux fonctions permettent de visualiser les directions de mouvement à partir de listes de directions selon X et Y.
 
-```py
+```py linenums="130" title="maxiMini & plot_directions"
 def maxiMini(FX,FY):
   maxi = 0
   Mini = 0
@@ -278,13 +276,13 @@ def plot_directions(FX,FY):
 
 -------------------------------------
 
-!!! Note "Exit"
+### **Exit**
 
-    Ce code définit une classe `Exit` qui représente une sortie. La classe possède un constructeur ***(__init__)*** qui prend en argument ***une position***, ***une largeur*** et ***une hauteur*** de la sortie. La position est un tuple de deux éléments représentant les coordonnées (x, y) du coin supérieur gauche de la sortie.
+Ce code définit une classe `Exit` qui représente une sortie. La classe possède un constructeur **(__init__)** qui prend en argument **une position**, **une largeur** et **une hauteur** de la sortie. La position est un tuple de deux éléments représentant les coordonnées (x, y) du coin supérieur gauche de la sortie.
 
-    Le constructeur initialise les attributs position, width et height de la classe avec les valeurs passées en argument.
+Le constructeur initialise les attributs position, width et height de la classe avec les valeurs passées en argument.
 
-```py
+```py linenums="163" title="Exit"
 class Exit:
   
     def __init__(self,position,width,height):
@@ -296,13 +294,13 @@ class Exit:
 
 ------------------
 
-!!! Note "Obstacle"
+### **Obstacle**
 
-    La classe `Obstacle` a pour but de représenter un obstacle dans une simulation. Elle possède trois attributs : ***position***, ***width*** et ***height***, qui correspondent respectivement à la position de l'obstacle et à sa largeur et hauteur.
+La classe `Obstacle` a pour but de représenter un obstacle dans une simulation. Elle possède trois attributs : **position**, **width** et **height**, qui correspondent respectivement à la position de l'obstacle et à sa largeur et hauteur.
 
-    La méthode ***__repr__*** de la classe est une méthode spéciale qui renvoie une chaîne de caractères représentant l'objet. Dans ce cas précis, elle renvoie une chaîne de caractères contenant la position de l'obstacle ainsi que les coordonnées de ses coins (en supposant que la position correspond au coin en bas à gauche).
+La méthode **__repr__** de la classe est une méthode spéciale qui renvoie une chaîne de caractères représentant l'objet. Dans ce cas précis, elle renvoie une chaîne de caractères contenant la position de l'obstacle ainsi que les coordonnées de ses coins (en supposant que la position correspond au coin en bas à gauche).
 
-```py
+```py linenums="170" title="Obstacle"
 class Obstacle():
 
     def __init__(self, position,width,height):
@@ -317,13 +315,13 @@ class Obstacle():
 
 -----------------------------------
 
-!!! Note "Obstacle_Cir"
+### **Obstacle_Cir**
 
-    Ce code définit une classe `Obstacle_Cir` qui représente un obstacle circulaire.
+Ce code définit une classe `Obstacle_Cir` qui représente un obstacle circulaire.
 
-    La classe a un constructeur `***__init__*** qui prend deux paramètres, ***position*** et ***rayon***, qui sont utilisés pour initialiser les attributs de l'objet. L'attribut position est un tuple qui représente la position du centre de l'obstacle sur l'espace de simulation et l'attribut rayon est un nombre flottant qui représente le rayon de l'obstacle.
+La classe a un constructeur **__init__** qui prend deux paramètres, **position** et **rayon**, qui sont utilisés pour initialiser les attributs de l'objet. L'attribut position est un tuple qui représente la position du centre de l'obstacle sur l'espace de simulation et l'attribut rayon est un nombre flottant qui représente le rayon de l'obstacle.
 
-```py
+```py linenums="180" title="Obstacle_Cir"
 class Obstacle_Cir():
 
     def __init__(self, position,rayon):

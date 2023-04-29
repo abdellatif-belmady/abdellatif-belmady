@@ -1,7 +1,5 @@
 # Profilage des chauffeurs
 
-## **Membres du groupe**
-
 !!! Info "Membres du groupe"
     - [Abdellatif BELMADY](https://github.com/Abdellatif-belmady/)
     - [Fatine BOUSSATTINE](https://github.com/FatineDev/)
@@ -20,11 +18,7 @@ library(lubridate)    # manipulation des dates
 library(tidyverse)    # méta-package d'Hadley Wickham
 ```
 
-
-
-!!! Info "getwd()"
-
-    `getwd()` est une fonction qui permet de récupérer le chemin absolu du répertoire de travail actuel.
+`getwd()` est une fonction qui permet de récupérer le chemin absolu du répertoire de travail actuel.
 
 ```r linenums="7"
 getwd()
@@ -36,13 +30,11 @@ getwd()
 
 ## **Importer la data**
 
-!!! Info "Importer la data"
+- Le premier fichier, `casabound.geojson`, est lu à l'aide de la fonction **st_read()** de la bibliothèque **sf**. Cette fonction est utilisée pour lire des fichiers de données spatiales tels que des fichiers shapefile, des fichiers GeoJSON, etc. Ici, il lit un fichier GeoJSON nommé "casabound.geojson" et stocke les données dans un objet nommé **casaBound**.
 
-    - Le premier fichier, `casabound.geojson`, est lu à l'aide de la fonction ***st_read()*** de la bibliothèque ***sf***. Cette fonction est utilisée pour lire des fichiers de données spatiales tels que des fichiers shapefile, des fichiers GeoJSON, etc. Ici, il lit un fichier GeoJSON nommé "casabound.geojson" et stocke les données dans un objet nommé ***casaBound***.
+- Le deuxième fichier, `heetchmarchcrop.Rds`, est lu à l'aide de la fonction **readRDS()**. Cette fonction est utilisée pour lire des fichiers de données R sauvegardés en utilisant la fonction **saveRDS()**. Ici, il lit un fichier RDS nommé heetchmarchcrop.Rds et stocke les données dans un objet nommé **heetchPoints**.
 
-    - Le deuxième fichier, `heetchmarchcrop.Rds`, est lu à l'aide de la fonction ***readRDS()***. Cette fonction est utilisée pour lire des fichiers de données R sauvegardés en utilisant la fonction ***saveRDS()***. Ici, il lit un fichier RDS nommé heetchmarchcrop.Rds et stocke les données dans un objet nommé ***heetchPoints***.
-
-    - Le troisième fichier, `osmfeatures.Rds`, est également lu à l'aide de la fonction ***readRDS()***. Comme le deuxième fichier, il s'agit d'un fichier RDS et est lu dans un objet nommé ***osmFeatures***.
+- Le troisième fichier, `osmfeatures.Rds`, est également lu à l'aide de la fonction **readRDS()**. Comme le deuxième fichier, il s'agit d'un fichier RDS et est lu dans un objet nommé **osmFeatures**.
 
 ```r linenums="8"
 casaBound <- st_read("DATA/casabound.geojson")
@@ -57,17 +49,13 @@ osmFeatures <- readRDS("DATA/osmfeatures.Rds")
 
 ## **Définir la problématique**
 
-!!! Note "Problématique"
-
-    A travers ce travail, nous cherchons à identifier les conducteurs qui respectent les règles de conduite et à évaluer leur sécurité sur la route, pour ce faire, nous nous concentrerons sur le calcul de la vitesse moyenne des conducteurs.
+  A travers ce travail, nous cherchons à identifier les conducteurs qui respectent les règles de conduite et à évaluer leur sécurité sur la route, pour ce faire, nous nous concentrerons sur le calcul de la vitesse moyenne des conducteurs.
 
 ## **Résoudre la problématique**
 
-!!! Info "Nombre de chauffeurs"
+  Ce code R `length(unique(heetchPoints$driver_id))` calcule le nombre de valeurs uniques dans la colonne **driver_id** de l'objet **heetchPoints**.
 
-    Ce code R `length(unique(heetchPoints$driver_id))` calcule le nombre de valeurs uniques dans la colonne ***driver_id*** de l'objet ***heetchPoints***.
-
-    La fonction ***unique()*** est utilisée pour extraire les valeurs uniques de la colonne driver_id. Ensuite, la fonction ***length()*** est utilisée pour renvoyer le nombre d'éléments dans le vecteur résultant.
+  La fonction **unique()** est utilisée pour extraire les valeurs uniques de la colonne driver_id. Ensuite, la fonction **length()** est utilisée pour renvoyer le nombre d'éléments dans le vecteur résultant.
 
 ```r linenums="11" title="Nombre de chauffeurs"
 length(unique(heetchPoints$driver_id))
@@ -75,31 +63,29 @@ length(unique(heetchPoints$driver_id))
 ??? success "Output"
     [1] 1309
 
-!!! Info "Défenir la fonction qui calcul la moyenne des vitesses d'un chauffeur sur un jour"
+Le code R présenté ci-dessous est une fonction appelée `my_function`, qui prend un argument **id_driver**. La fonction effectue les opérations suivantes:
 
-    Le code R présenté ci-dessous est une fonction appelée `my_function`, qui prend un argument ***id_driver***. La fonction effectue les opérations suivantes:
+1. Initialise une variable **i** à zéro.
 
-    1. Initialise une variable ***i*** à zéro.
+2. Affiche la valeur de **i**.
 
-    2. Affiche la valeur de ***i***.
+3. Filtre la table **heetchPoints** en fonction de la valeur **id_driver**.
 
-    3. Filtre la table ***heetchPoints*** en fonction de la valeur ***id_driver***.
+4. Trier la table **driver** en fonction de la colonne **location_at_local_time**.
 
-    4. Trier la table ***driver*** en fonction de la colonne ***location_at_local_time***.
+6. Effectue une projection de la table **driver_tri** dans une projection cartographique spécifique (**crs = 26191**).
 
-    6. Effectue une projection de la table ***driver_tri*** dans une projection cartographique spécifique (***crs = 26191***).
+7. Calcule les distances entre tous les points dans la table **driver_tri** à l'aide de la fonction **st_distance**.
 
-    7. Calcule les distances entre tous les points dans la table ***driver_tri*** à l'aide de la fonction ***st_distance***.
+8. Calcule la différence de temps entre chaque deux points consécutifs dans la table **driver_tri** à l'aide de la fonction **difftime**.
 
-    8. Calcule la différence de temps entre chaque deux points consécutifs dans la table ***driver_tri*** à l'aide de la fonction ***difftime***.
+9. Filtre la table **driver_tri** pour conserver uniquement les points ayant une différence de temps entre 0.016 et 0.025 heures.
 
-    9. Filtre la table ***driver_tri*** pour conserver uniquement les points ayant une différence de temps entre 0.016 et 0.025 heures.
+10. Calcule la vitesse entre chaque deux points successifs en divisant la distance sur le temps.
 
-    10. Calcule la vitesse entre chaque deux points successifs en divisant la distance sur le temps.
+11. Filtre la table **driver_tri_2** pour ne conserver que les points ayant une vitesse entre 6 et 120 km/h.
 
-    11. Filtre la table ***driver_tri_2*** pour ne conserver que les points ayant une vitesse entre 6 et 120 km/h.
-
-    12. Retourne la moyenne des vitesses de la table ***driver_tri_3***.
+12. Retourne la moyenne des vitesses de la table **driver_tri_3**.
 
 ```r linenums="12" title="Défenir la fonction qui calcul la moyenne des vitesses d'un chauffeur sur un jour"
 i = 0
@@ -177,18 +163,15 @@ my_function <- function (id_driver){
   return (mean(driver_tri_3$vitesse))
 }
 ```
+Le code ci-dessous commence par créer un objet de type **data.frame** appelé **vitesse_table** à l'aide de la fonction **data.frame()**.
 
-!!! Info "Calculons la moyenne des vitesse de tous les chauffeurs"
+Ensuite, la boucle **for** est utilisée pour itérer sur une liste de trois valeurs de l'ID de conducteur **driver_id** comprises entre 10 et 12 inclusivement.
 
-    Le code ci-dessous commence par créer un objet de type ***data.frame*** appelé ***vitesse_table*** à l'aide de la fonction ***data.frame()***.
+À chaque itération, le code crée une **liste driver_list** avec deux éléments : le premier est l'ID du conducteur et le deuxième est le résultat de la fonction **my_function()** avec l'ID du conducteur en argument.
 
-    Ensuite, la boucle ***for*** est utilisée pour itérer sur une liste de trois valeurs de l'ID de conducteur ***driver_id*** comprises entre 10 et 12 inclusivement.
+Enfin, la fonction **rbind()** est utilisée pour ajouter la liste **driver_list** en tant que nouvelle ligne à la fin du **data.frame** ***vitesse_table**.
 
-    À chaque itération, le code crée une ***liste driver_list*** avec deux éléments : le premier est l'ID du conducteur et le deuxième est le résultat de la fonction ***my_function()*** avec l'ID du conducteur en argument.
-
-    Enfin, la fonction ***rbind()*** est utilisée pour ajouter la liste ***driver_list*** en tant que nouvelle ligne à la fin du ***data.frame*** ***vitesse_table***.
-
-    Ainsi, à la fin de la boucle ***for***, ***vitesse_table*** contiendra une liste de conducteurs avec leurs ID et la valeur de la vitesse obtenue à l'aide de la fonction ***my_function()***.
+Ainsi, à la fin de la boucle **for**, **vitesse_table** contiendra une liste de conducteurs avec leurs ID et la valeur de la vitesse obtenue à l'aide de la fonction **my_function()**.
 
 ```r linenums="86" title="Calculons la moyenne des vitesse de tous les chauffeurs"
 vitesse_table <- data.frame()

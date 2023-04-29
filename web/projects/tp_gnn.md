@@ -1,7 +1,6 @@
 # TP: Réseaux de neurones graphiques
 
-!!! Info ""
-    Dans ce TP, on va appliquer les concepts d'extraction de caractéristiques et de node embedding sur un dataset classique [Karate Club Network](https://en.wikipedia.org/wiki/Zachary%27s_karate_club).
+Dans ce TP, on va appliquer les concepts d'extraction de caractéristiques et de node embedding sur un dataset classique [Karate Club Network](https://en.wikipedia.org/wiki/Zachary%27s_karate_club).
 
 ## **Représentation graphique avec networkx**
 
@@ -11,8 +10,7 @@ import networkx as nx
 
 ### **Zachary's karate club network**
 
-!!! Info ""
-    Zachary's karate club est un graphe décrivant un réseau social de 34 membres d'un club de karaté. Les liens représentent les interactions entre les membres en dehors du club.
+Zachary's karate club est un graphe décrivant un réseau social de 34 membres d'un club de karaté. Les liens représentent les interactions entre les membres en dehors du club.
 
 ```py
 G = nx.karate_club_graph()
@@ -108,10 +106,9 @@ print("La centralité intermédiaire du noeud numéro 5 est : {}".format(closene
 ??? success "Output"
     La centralité intermédiaire du noeud numéro 5 est : 0.38372093023255816
 
-## **2 Graphe en Tenseur**
+## **Graphe en Tenseur**
 
-!!! Info ""
-    Nous allons transformer le graphe  G  en tenseur Pytorch.
+Nous allons transformer le graphe  G  en tenseur Pytorch.
 
 ```py
 import torch
@@ -223,8 +220,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 ```
 
-!!! Info ""
-    On va utiliser ici le module [nn.Embedding](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html) de PyTorch.
+On va utiliser ici le module [nn.Embedding](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html) de PyTorch.
 
 ```py
 # Initialisation de la couche d'embeddings
@@ -237,7 +233,7 @@ print('Embedding layer: {}'.format(emb_sample))
 ??? success "Output"
     Embedding layer: Embedding(4, 8)
 
-!!! Info ""
+!!! Info
     On peut sélectionner l'embedding d'un objet en utilisant l'indice correspondant.
 
 ```py
@@ -271,12 +267,9 @@ print(emb_sample(ids))
     tensor([[1., 1., 1., 1., 1., 1., 1., 1.],
             [1., 1., 1., 1., 1., 1., 1., 1.]], grad_fn=<EmbeddingBackward0>)
 
-!!! Info ""
-    On va appliquer à cela au jeu de données Zachary's karaté club.
-
-    On veut associer un vecteur de dimension 16 à chaque noeud du graphe.
-    on veut initialiser la matrice avec une distribution uniforme dans  [0,1]  en utilisant [torch.rand](https://pytorch.org/docs/stable/generated/torch.rand.html).
-
+On va appliquer à cela au jeu de données Zachary's karaté club.
+On va associer un vecteur de dimension 16 à chaque noeud du graphe.
+on va initialiser la matrice avec une distribution uniforme dans  [0,1]  en utilisant [torch.rand](https://pytorch.org/docs/stable/generated/torch.rand.html).
 
 ```py
 torch.manual_seed(1)
@@ -316,9 +309,7 @@ print(emb(ids))
 
 ### **Visualisation des embeddings**
 
-!!! Info ""
-    Nous allons projet les embeddings inialisés ci-dessous en deux dimensions afin de les visualiser.
-
+Nous allons projet les embeddings inialisés ci-dessous en deux dimensions afin de les visualiser.
 
 ```py
 def visualize_emb(emb):

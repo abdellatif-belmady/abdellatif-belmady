@@ -3,6 +3,8 @@ site_description: >-
   Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
   the machine learning books he has read and also free courses on the main points of machine learning and deep learning.
 docs_dir: web/
+
+# Configuration
 theme:
     font: false
     name: material
@@ -73,9 +75,14 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/abdellatifbelmady/
 
+# Repository
 repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
 edit_uri: edit/source/web/
 
+# Copyright
+copyright: Copyright &copy; 2022 - 2023 Abdellatif BELMADY
+
+# Extensions
 markdown_extensions:
     - meta
     - attr_list
@@ -103,6 +110,7 @@ markdown_extensions:
         custom_checkbox: true
     - pymdownx.tilde
 
+# Page tree
 nav:
   - Home: index.md
   - Projects:
@@ -111,7 +119,7 @@ nav:
     - Boston Datasets: projects/boston datasets.md
     - TP_GNN : projects/tp_gnn.md
     - Abstractive Summarization: projects/abstractive summarization.md
-    - Big-Data For IOT: projects/big data for iot.md
+    - Big-Data For IoT: projects/big data for iot.md
     - Profilage des chauffeurs: projects/projet R.md
     - Reciprocal n-body Collision Avoidance : projects/Reciprocal-n-body-Collision-Avoidance.md
     - Algorithmes Génétiques 2, Peindre Vermeer : projects/Painting Vermeer.md
