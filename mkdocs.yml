@@ -161,6 +161,8 @@ nav:
     - Tools - NumPy: courses/Tools/numpy.md
     - Algorithmes de machine learning: 
       - courses/Algorithmes de machine learning/index.md
+    - Computer Vision:
+      - courses/Computer Vision/yolonas.md
     # - Natural Language Processing: 
     #   - courses/Natural Language Processing/index.md
     #   - Bases of NLP: courses/Natural Language Processing/bases.md
