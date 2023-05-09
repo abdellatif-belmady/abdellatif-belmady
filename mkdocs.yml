@@ -49,9 +49,12 @@ theme:
         - search.share
         - search.suggest
         - toc.follow
-        - navigation.expand
+        # - navigation.expand
         - navigation.footer
         # - toc.integrate
+        - navigation.path
+        - navigation.indexes
+        - content.code.select
 
     custom_dir: overrides
 
@@ -95,8 +98,8 @@ markdown_extensions:
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
-    - pymdownx.emoji:
-        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    # - pymdownx.emoji:
+    #     emoji_generator: !!python/name:pymdownx.emoji.to_svg
     - pymdownx.inlinehilite
     - pymdownx.magiclink
     - pymdownx.mark
@@ -109,6 +112,10 @@ markdown_extensions:
     - pymdownx.tasklist:
         custom_checkbox: true
     - pymdownx.tilde
+    - md_in_html
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
 
 # Page tree
 nav:
@@ -123,6 +130,24 @@ nav:
     - Profilage des chauffeurs: projects/projet R.md
     - Reciprocal n-body Collision Avoidance : projects/Reciprocal-n-body-Collision-Avoidance.md
     - Algorithmes Génétiques 2, Peindre Vermeer : projects/Painting Vermeer.md
+  - Documentations:
+    - Libraries:
+      - Documentations/Libraries/index.md
+      - NumPy: Documentations/Libraries/numpy.md
+    - Machine Learning Algorithms: 
+      - Documentations/Machine Learning Algorithms/index.md
+    - Computer Vision Algorithms:
+      - Documentations/Computer Vision Algorithms/index.md
+      - YOLO-NAS: Documentations/Computer Vision Algorithms/yolonas.md
+    # - Natural Language Processing: 
+    #   - courses/Natural Language Processing/index.md
+    #   - Bases of NLP: courses/Natural Language Processing/bases.md
+    #   - Tools of NLP: courses/Natural Language Processing/tools.md
+    #   - Simple Analysis: courses/Natural Language Processing/simple.md
+    #   - Advanced Analysis: courses/Natural Language Processing/advanced.md
+    #   - Data Collection: courses/Natural Language Processing/collection.md
+    #   - RNN: courses/Natural Language Processing/reseaunn.md
+    #   - Modern Technics: courses/Natural Language Processing/modern.md
   - Books: books/not yet.md
     # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
     #   - Preface:
@@ -157,20 +182,5 @@ nav:
     #     - Deep Computer Vision Using Convolutional Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.5. Deep Computer Vision Using Convolutional Neural Networks.md
     #   - About the Author: books/Hands on machine learning/About the Author.md
     #   - Colophon: books/Hands on machine learning/Colophon.md
-  - Courses: 
-    - Tools - NumPy: courses/Tools/numpy.md
-    - Algorithmes de machine learning: 
-      - courses/Algorithmes de machine learning/index.md
-    - Computer Vision:
-      - courses/Computer Vision/yolonas.md
-    # - Natural Language Processing: 
-    #   - courses/Natural Language Processing/index.md
-    #   - Bases of NLP: courses/Natural Language Processing/bases.md
-    #   - Tools of NLP: courses/Natural Language Processing/tools.md
-    #   - Simple Analysis: courses/Natural Language Processing/simple.md
-    #   - Advanced Analysis: courses/Natural Language Processing/advanced.md
-    #   - Data Collection: courses/Natural Language Processing/collection.md
-    #   - RNN: courses/Natural Language Processing/reseaunn.md
-    #   - Modern Technics: courses/Natural Language Processing/modern.md
   - Services: services/documentation.md
     # - Creation of professional documentation: services/documentation.md
