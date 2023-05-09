@@ -1,7 +1,5 @@
 # NumPy
 
-:simple-linkedin:
-
 !!! Info ""
     NumPy is the fundamental library for scientific computing with Python. NumPy is centered around a powerful N-dimensional array object, and it also contains useful linear algebra, Fourier transform, and random number functions.
 
