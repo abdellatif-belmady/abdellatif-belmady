@@ -1,12 +1,11 @@
 # NumPy
 
-!!! Info ""
-    NumPy is the fundamental library for scientific computing with Python. NumPy is centered around a powerful N-dimensional array object, and it also contains useful linear algebra, Fourier transform, and random number functions.
+
+NumPy is the fundamental library for scientific computing with Python. NumPy is centered around a powerful N-dimensional array object, and it also contains useful linear algebra, Fourier transform, and random number functions.
 
 ## **Creating Arrays**
 
-!!! Info ""
-    Now let's import `numpy`. Most people import it as `np`:
+Now let's import `numpy`. Most people import it as `np`:
 
 ```py
 import numpy as np
@@ -14,8 +13,7 @@ import numpy as np
 
 ### **np.zeros**
 
-!!! Info ""
-    The `zeros` function creates an array containing any number of zeros:
+The `zeros` function creates an array containing any number of zeros:
 
 ```py
 np.zeros(5)
@@ -24,8 +22,7 @@ np.zeros(5)
 ??? Output "Output"
     array([0., 0., 0., 0., 0.])
 
-!!! Info ""
-    It's just as easy to create a 2D array (ie. a matrix) by providing a tuple with the desired number of rows and columns. For example, here's a 3x4 matrix:
+It's just as easy to create a 2D array (ie. a matrix) by providing a tuple with the desired number of rows and columns. For example, here's a 3x4 matrix:
 
 ```py
 np.zeros((3,4))
@@ -37,23 +34,21 @@ np.zeros((3,4))
 
 ### **Some vocabulary**
 
-!!! Info ""
+- In NumPy, each dimension is called an ***axis***.
 
-    - In NumPy, each dimension is called an ***axis***.
+- The number of axes is called the ***rank***.
 
-    - The number of axes is called the ***rank***.
+    - For example, the above 3x4 matrix is an array of rank 2 (it is 2-dimensional).
 
-        - For example, the above 3x4 matrix is an array of rank 2 (it is 2-dimensional).
+    - The first axis has length 3, the second has length 4.
 
-        - The first axis has length 3, the second has length 4.
+- An array's list of axis lengths is called the ***shape*** of the array.
 
-    - An array's list of axis lengths is called the ***shape*** of the array.
+    - For example, the above matrix's shape is `(3, 4)`.
 
-        - For example, the above matrix's shape is `(3, 4)`.
+    - The rank is equal to the shape's length.
 
-        - The rank is equal to the shape's length.
-
-    - The ***size*** of an array is the total number of elements, which is the product of all axis lengths (eg. 3*4=12)
+- The ***size*** of an array is the total number of elements, which is the product of all axis lengths (eg. 3*4=12)
 
 ```py
 a = np.zeros((3,4))
@@ -85,8 +80,7 @@ a.size
 
 ### **N-dimensional arrays**
 
-!!! Info ""
-    You can also create an N-dimensional array of arbitrary rank. For example, here's a 3D array (rank=3), with shape `(2,3,4)`:
+You can also create an N-dimensional array of arbitrary rank. For example, here's a 3D array (rank=3), with shape `(2,3,4)`:
 
 ```py
 np.zeros((2,3,4))
@@ -103,8 +97,7 @@ np.zeros((2,3,4))
 
 ### **Array type**
 
-!!! Info ""
-    NumPy arrays have the type `ndarrays`:
+NumPy arrays have the type `ndarrays`:
 
 ```py
 type(np.zeros((3,4)))
@@ -115,10 +108,9 @@ type(np.zeros((3,4)))
 
 ### **np.ones**
 
-!!! Info ""
-    Many other NumPy functions create ndarrays.
+Many other NumPy functions create ndarrays.
 
-    Here's a 3x4 matrix full of ones:
+Here's a 3x4 matrix full of ones:
 
 ```py
 np.ones((3,4))
@@ -131,8 +123,7 @@ np.ones((3,4))
         
 ### **np.full**
 
-!!! Info ""
-    Creates an array of the given shape initialized with the given value. Here's a 3x4 matrix full of `π`.
+Creates an array of the given shape initialized with the given value. Here's a 3x4 matrix full of `π`.
 
 ```py
 np.full((3,4), np.pi)
@@ -145,8 +136,7 @@ np.full((3,4), np.pi)
 
 ### **np.empty**
 
-!!! Info ""
-    An uninitialized 2x3 array (its content is not predictable, as it is whatever is in memory at that point):
+An uninitialized 2x3 array (its content is not predictable, as it is whatever is in memory at that point):
 
 ```py
 np.empty((2,3))
@@ -158,8 +148,7 @@ np.empty((2,3))
 
 ### **np.array**
 
-!!! Info ""
-    Of course you can initialize an `ndarray` using a regular python array. Just call the `array` function:
+Of course you can initialize an `ndarray` using a regular python array. Just call the `array` function:
 
 ```py
 np.array([[1,2,3,4], [10, 20, 30, 40]])
@@ -171,8 +160,7 @@ np.array([[1,2,3,4], [10, 20, 30, 40]])
 
 ### **np.arange**
 
-!!! Info ""
-    You can create an `ndarray` using NumPy's `arange` function, which is similar to python's built-in `range` function:
+You can create an `ndarray` using NumPy's `arange` function, which is similar to python's built-in `range` function:
 
 ```py
 np.arange(1, 5)
@@ -181,8 +169,7 @@ np.arange(1, 5)
 ??? Output "Output"
     array([1, 2, 3, 4])
 
-!!! Info ""
-    It also works with floats:
+It also works with floats:
 
 ```py
 np.arange(1.0, 5.0)
@@ -191,8 +178,7 @@ np.arange(1.0, 5.0)
 ??? Output "Output"
     array([1., 2., 3., 4.])
 
-!!! Info ""
-    Of course you can provide a step parameter:
+Of course you can provide a step parameter:
 
 ```py
 np.arange(1, 5, 0.5)
@@ -201,8 +187,7 @@ np.arange(1, 5, 0.5)
 ??? Output "Output"
     array([1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5])
 
-!!! Info ""
-    However, when dealing with floats, the exact number of elements in the array is not always predictible. For example, consider this:
+However, when dealing with floats, the exact number of elements in the array is not always predictible. For example, consider this:
 
 ```py
 print(np.arange(0, 5/3, 1/3)) # depending on floating point errors, the max value is 4/3 or 5/3.
@@ -217,8 +202,7 @@ print(np.arange(0, 5/3, 0.333333334))
 
 ### **np.linspace**
 
-!!! Info ""
-    For this reason, it is generally preferable to use the `linspace` function instead of `arange` when working with floats. The `linspace` function returns an array containing a specific number of points evenly distributed between two values (note that the maximum value is included, contrary to `arange`):
+For this reason, it is generally preferable to use the `linspace` function instead of `arange` when working with floats. The `linspace` function returns an array containing a specific number of points evenly distributed between two values (note that the maximum value is included, contrary to `arange`):
 
 
 ```py
@@ -229,8 +213,7 @@ print(np.linspace(0, 5/3, 6))
 
 ### **np.rand and np.randn**
 
-!!! Info ""
-    A number of functions are available in NumPy's `random` module to create `ndarray`s initialized with random values. For example, here is a 3x4 matrix initialized with random floats between 0 and 1 (uniform distribution):
+A number of functions are available in NumPy's `random` module to create `ndarray`s initialized with random values. For example, here is a 3x4 matrix initialized with random floats between 0 and 1 (uniform distribution):
 
 ```py
 np.random.rand(3,4)
@@ -241,8 +224,7 @@ np.random.rand(3,4)
            [0.12016334, 0.74912183, 0.183234  , 0.105027  ],
            [0.22051959, 0.26931151, 0.02739192, 0.4721405 ]])
 
-!!! Info ""
-    Here's a 3x4 matrix containing random floats sampled from a univariate [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) (Gaussian distribution) of mean 0 and variance 1:
+Here's a 3x4 matrix containing random floats sampled from a univariate [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) (Gaussian distribution) of mean 0 and variance 1:
 
 
 ```py
@@ -253,9 +235,8 @@ np.random.randn(3,4)
     array([[ 0.09545957,  0.14828368, -0.91504156, -0.36224068],
            [ 0.55434999,  0.41143633,  0.84385243, -0.3652369 ],
            [ 1.48071803, -1.45297797,  1.24551713,  0.4508626 ]])
-
-!!! Info ""  
-    To give you a feel of what these distributions look like, let's use matplotlib (see the [matplotlib tutorial](https://colab.research.google.com/drive/tools_matplotlib.ipynb) for more details):
+ 
+To give you a feel of what these distributions look like, let's use matplotlib (see the [matplotlib tutorial](https://colab.research.google.com/drive/tools_matplotlib.ipynb) for more details):
 
 ```py
 %matplotlib inline
@@ -279,8 +260,7 @@ plt.show()
 
 ### **np.fromfunction**
 
-!!! Info "" 
-    You can also initialize an `ndarray` using a function:
+You can also initialize an `ndarray` using a function:
 
 ```py
 def my_function(z, y, x):
@@ -299,8 +279,7 @@ np.fromfunction(my_function, (3, 2, 10))
            [[200., 201., 202., 203., 204., 205., 206., 207., 208., 209.],
             [210., 211., 212., 213., 214., 215., 216., 217., 218., 219.]]])
 
-!!! Info "" 
-    NumPy first creates three `ndarrays` (one per dimension), each of shape `(3, 2, 10)`. Each array has values equal to the coordinate along a specific axis. For example, all elements in the `z` array are equal to their z-coordinate:
+NumPy first creates three `ndarrays` (one per dimension), each of shape `(3, 2, 10)`. Each array has values equal to the coordinate along a specific axis. For example, all elements in the `z` array are equal to their z-coordinate:
 
 ```md
 [[[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
@@ -313,15 +292,13 @@ np.fromfunction(my_function, (3, 2, 10))
   [ 2.  2.  2.  2.  2.  2.  2.  2.  2.  2.]]]
 ```
 
-!!! Info "" 
-    So the terms `x`, `y` and `z` in the expression `x + 10 * y + 100 * z` above are in fact `ndarrays` (we will discuss arithmetic operations on arrays below). The point is that the function `my_function` is only called once, instead of once per element. This makes initialization very efficient.
+So the terms `x`, `y` and `z` in the expression `x + 10 * y + 100 * z` above are in fact `ndarrays` (we will discuss arithmetic operations on arrays below). The point is that the function `my_function` is only called once, instead of once per element. This makes initialization very efficient.
 
 ## **Array data**
 
 ### **dtype**
 
-!!! Info "" 
-    NumPy's `ndarrays` are also efficient in part because all their elements must have the same type (usually numbers). You can check what the data type is by looking at the `dtype` attribute:
+NumPy's `ndarrays` are also efficient in part because all their elements must have the same type (usually numbers). You can check what the data type is by looking at the `dtype` attribute:
 
 ```py
 c = np.arange(1, 5)
@@ -338,19 +315,16 @@ print(c.dtype, c)
 ??? Output "Output"
     float64 [ 1.  2.  3.  4.]
 
-!!! Info "" 
-    Instead of letting NumPy guess what data type to use, you can set it explicitly when creating an array by setting the `dtype` parameter:
+Instead of letting NumPy guess what data type to use, you can set it explicitly when creating an array by setting the `dtype` parameter:
 
 ??? Output "Output"
     complex64 [ 1.+0.j  2.+0.j  3.+0.j  4.+0.j]
 
-!!! Info "" 
-    Available data types include `int8`, `int16`, `int32`, `int64`, `uint8`|`16`|`32`|`64`, `float16`|`32`|`64` and `complex64`|`128`. Check out [the documentation](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html) for the full list.
+Available data types include `int8`, `int16`, `int32`, `int64`, `uint8`|`16`|`32`|`64`, `float16`|`32`|`64` and `complex64`|`128`. Check out [the documentation](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html) for the full list.
 
 ### **itemsize**
 
-!!! Info ""
-    The `itemsize` attribute returns the size (in bytes) of each item:
+The `itemsize` attribute returns the size (in bytes) of each item:
 
 ```py
 e = np.arange(1, 5, dtype=np.complex64)
@@ -362,8 +336,7 @@ e.itemsize
 
 ### **data buffer**
 
-!!! Info ""
-    An array's data is actually stored in memory as a flat (one dimensional) byte buffer. It is available via the `data` attribute (you will rarely need it, though).
+An array's data is actually stored in memory as a flat (one dimensional) byte buffer. It is available via the `data` attribute (you will rarely need it, though).
 
 ```py
 f = np.array([[1,2],[1000, 2000]], dtype=np.int32)
@@ -373,8 +346,7 @@ f.data
 ??? Output "Output"
     <read-write buffer for 0x10f8a18a0, size 16, offset 0 at 0x10f9dbbb0>
 
-!!! Info ""
-    In python 2, `f.data` is a buffer. In python 3, it is a memoryview.
+In python 2, `f.data` is a buffer. In python 3, it is a memoryview.
 
 ```py
 if (hasattr(f.data, "tobytes")):
@@ -388,8 +360,7 @@ data_bytes
 ??? Output "Output"
     '\x01\x00\x00\x00\x02\x00\x00\x00\xe8\x03\x00\x00\xd0\x07\x00\x00'
 
-!!! Info ""
-    Several `ndarrays` can share the same data buffer, meaning that modifying one will also modify the others. We will see an example in a minute.
+Several `ndarrays` can share the same data buffer, meaning that modifying one will also modify the others. We will see an example in a minute.
 
 
 
@@ -397,8 +368,7 @@ data_bytes
 
 ### **In place**
 
-!!! Info ""
-    Changing the shape of an `ndarray` is as simple as setting its `shape` attribute. However, the array's size must remain the same.
+Changing the shape of an `ndarray` is as simple as setting its `shape` attribute. However, the array's size must remain the same.
 
 ```py
 g = np.arange(24)
@@ -443,8 +413,7 @@ print("Rank:", g.ndim)
 
 ### **reshape**
 
-!!! Info ""
-    The `reshape` function returns a new `ndarray` object pointing at the same data. This means that modifying one array will also modify the other.
+The `reshape` function returns a new `ndarray` object pointing at the same data. This means that modifying one array will also modify the other.
 
 ```py
 g2 = g.reshape(4,6)
@@ -459,8 +428,7 @@ print("Rank:", g2.ndim)
      [18 19 20 21 22 23]]
     Rank: 2
 
-!!! Info ""
-    Set item at row 1, col 2 to 999 (more about indexing below).
+Set item at row 1, col 2 to 999 (more about indexing below).
 
 ```py
 g2[1, 2] = 999
@@ -473,8 +441,7 @@ g2
            [ 12,  13,  14,  15,  16,  17],
            [ 18,  19,  20,  21,  22,  23]])
 
-!!! Info ""
-    The corresponding element in `g` has been modified.
+The corresponding element in `g` has been modified.
 
 ??? Output "Output"
     array([[[  0,   1,   2,   3],
@@ -487,8 +454,7 @@ g2
         
 ### **ravel**
 
-!!! Info ""
-    Finally, the `ravel` function returns a new one-dimensional `ndarray` that also points to the same data:
+Finally, the `ravel` function returns a new one-dimensional `ndarray` that also points to the same data:
 
 ```py
 g.ravel()
@@ -501,8 +467,7 @@ g.ravel()
 
 ## **Arithmetic operations**
 
-!!! Info ""
-    All the usual arithmetic operators (`+`, `-`, `*`, `/`, `//`, `**`, etc.) can be used with `ndarray`s. They apply elementwise:
+All the usual arithmetic operators (`+`, `-`, `*`, `/`, `//`, `**`, etc.) can be used with `ndarray`s. They apply elementwise:
 
 ```py
 a = np.array([14, 23, 32, 41])
@@ -525,21 +490,18 @@ print("a ** b =", a ** b)
     a % b  = [4 3 2 1]
     a ** b = [537824 279841  32768   1681]
 
-!!! Info ""
-    Note that the multiplication is not a matrix multiplication. We will discuss matrix operations below.
+Note that the multiplication is not a matrix multiplication. We will discuss matrix operations below.
 
-    The arrays must have the same shape. If they do not, NumPy will apply the broadcasting rules.
+The arrays must have the same shape. If they do not, NumPy will apply the broadcasting rules.
 
 
 ## **Broadcasting**
 
-!!! Info ""
-    In general, when NumPy expects arrays of the same shape but finds that this is not the case, it applies the so-called broadcasting rules:
+In general, when NumPy expects arrays of the same shape but finds that this is not the case, it applies the so-called broadcasting rules:
 
 ### **First rule**
 
-!!! Info ""
-    If the arrays do not have the same rank, then a 1 will be prepended to the smaller ranking arrays until their ranks match.
+If the arrays do not have the same rank, then a 1 will be prepended to the smaller ranking arrays until their ranks match.
 
 ```py
 h = np.arange(5).reshape(1, 1, 5)
@@ -549,8 +511,7 @@ h
 ??? Output "Output"
     array([[[0, 1, 2, 3, 4]]])
 
-!!! Info ""
-    Now let's try to add a 1D array of shape `(5,)` to this 3D array of shape `(1,1,5)`. Applying the first rule of broadcasting!
+Now let's try to add a 1D array of shape `(5,)` to this 3D array of shape `(1,1,5)`. Applying the first rule of broadcasting!
 
 ```py
 h + [10, 20, 30, 40, 50]  # same as: h + [[[10, 20, 30, 40, 50]]]
@@ -561,8 +522,7 @@ h + [10, 20, 30, 40, 50]  # same as: h + [[[10, 20, 30, 40, 50]]]
 
 ### **Second rule**
 
-!!! Info ""
-    Arrays with a 1 along a particular dimension act as if they had the size of the array with the largest shape along that dimension. The value of the array element is repeated along that dimension.
+Arrays with a 1 along a particular dimension act as if they had the size of the array with the largest shape along that dimension. The value of the array element is repeated along that dimension.
 
 ```py
 k = np.arange(6).reshape(2, 3)
@@ -573,8 +533,7 @@ k
     array([[0, 1, 2],
            [3, 4, 5]])
 
-!!! Info ""
-    Let's try to add a 2D array of shape `(2,1)` to this 2D `ndarray` of shape `(2, 3)`. NumPy will apply the second rule of broadcasting:
+Let's try to add a 2D array of shape `(2,1)` to this 2D `ndarray` of shape `(2, 3)`. NumPy will apply the second rule of broadcasting:
 
 ```py
 k + [[100], [200]]  # same as: k + [[100, 100, 100], [200, 200, 200]]
@@ -584,8 +543,7 @@ k + [[100], [200]]  # same as: k + [[100, 100, 100], [200, 200, 200]]
     array([[100, 101, 102],
            [203, 204, 205]])
 
-!!! Info ""
-    Combining rules 1 & 2, we can do this:
+Combining rules 1 & 2, we can do this:
 
 ```py
 k + [100, 200, 300]  # after rule 1: [[100, 200, 300]], and after rule 2: [[100, 200, 300], [100, 200, 300]]
@@ -595,8 +553,7 @@ k + [100, 200, 300]  # after rule 1: [[100, 200, 300]], and after rule 2: [[100,
     array([[100, 201, 302],
            [103, 204, 305]])
 
-!!! Info ""
-    And also, very simply:
+And also, very simply:
 
 ```py
 k + 1000  # same as: k + [[1000, 1000, 1000], [1000, 1000, 1000]]
@@ -608,8 +565,7 @@ k + 1000  # same as: k + [[1000, 1000, 1000], [1000, 1000, 1000]]
     
 ### **Third rule**
 
-!!! Info ""
-    After rules 1 & 2, the sizes of all arrays must match.
+After rules 1 & 2, the sizes of all arrays must match.
 
 ```py
 try:
@@ -621,13 +577,11 @@ except ValueError as e:
 ??? Output "Output"
     operands could not be broadcast together with shapes (2,3) (2,) 
 
-!!! Info ""
-    Broadcasting rules are used in many NumPy operations, not just arithmetic operations, as we will see below. For more details about broadcasting, check out [the documentation](https://docs.scipy.org/doc/numpy-dev/user/basics.broadcasting.html).
+Broadcasting rules are used in many NumPy operations, not just arithmetic operations, as we will see below. For more details about broadcasting, check out [the documentation](https://docs.scipy.org/doc/numpy-dev/user/basics.broadcasting.html).
 
 ### **Upcasting**
 
-!!! Info ""
-    When trying to combine arrays with different `dtype`s, NumPy will upcast to a type capable of handling all possible values (regardless of what the actual values are).
+When trying to combine arrays with different `dtype`s, NumPy will upcast to a type capable of handling all possible values (regardless of what the actual values are).
 
 ```py
 k1 = np.arange(0, 5, dtype=np.uint8)
@@ -644,8 +598,7 @@ print(k2.dtype, k2)
 ??? Output "Output"
     int16 [ 5  7  9 11 13]
 
-!!! Info ""
-    Note that `int16` is required to represent all possible `int8` and `uint8` values (from -128 to 255), even though in this case a uint8 would have sufficed.
+Note that `int16` is required to represent all possible `int8` and `uint8` values (from -128 to 255), even though in this case a uint8 would have sufficed.
 
 ```py
 k3 = k1 + 1.5
@@ -658,8 +611,7 @@ print(k3.dtype, k3)
 
 ## **Conditional operators**
 
-!!! Info ""
-    The conditional operators also apply elementwise:
+The conditional operators also apply elementwise:
 
 ```py
 m = np.array([20, -5, 30, 40])
@@ -669,8 +621,7 @@ m < [15, 16, 35, 36]
 ??? Output "Output"
     array([False,  True,  True, False], dtype=bool)
 
-!!! Info ""
-    And using broadcasting:
+And using broadcasting:
 
 ```py
 m < 25  # equivalent to m < [25, 25, 25, 25]
@@ -679,8 +630,7 @@ m < 25  # equivalent to m < [25, 25, 25, 25]
 ??? Output "Output"
     array([ True,  True, False, False], dtype=bool)
 
-!!! Info ""
-    This is most useful in conjunction with boolean indexing (discussed below).
+This is most useful in conjunction with boolean indexing (discussed below).
 
 ```py
 m[m < 25]
@@ -692,13 +642,11 @@ m[m < 25]
 
 ## **Mathematical and statistical functions**
 
-!!! Info ""
-    Many mathematical and statistical functions are available for `ndarray`s.
+Many mathematical and statistical functions are available for `ndarray`s.
 
 ### **ndarray methods**
 
-!!! Info ""
-    Some functions are simply `ndarray` methods, for example:
+Some functions are simply `ndarray` methods, for example:
 
 ```py
 a = np.array([[-2.5, 3.1, 7], [10, 11, 12]])
@@ -711,10 +659,9 @@ print("mean =", a.mean())
      [ 10.   11.   12. ]]
     mean = 6.76666666667
 
-!!! Info ""
-    Note that this computes the mean of all elements in the `ndarray`, regardless of its shape.
+Note that this computes the mean of all elements in the `ndarray`, regardless of its shape.
 
-    Here are a few more useful `ndarray` methods:
+Here are a few more useful `ndarray` methods:
 
 ```py
 for func in (a.min, a.max, a.sum, a.prod, a.std, a.var):
@@ -729,8 +676,7 @@ for func in (a.min, a.max, a.sum, a.prod, a.std, a.var):
     std = 5.08483584352
     var = 25.8555555556
 
-!!! Info ""
-    These functions accept an optional argument `axis` which lets you ask for the operation to be performed on elements along the given axis. For example:
+These functions accept an optional argument `axis` which lets you ask for the operation to be performed on elements along the given axis. For example:
 
 ```py
 c=np.arange(24).reshape(2,3,4)
@@ -763,8 +709,7 @@ c.sum(axis=1)  # sum across rows
     array([[12, 15, 18, 21],
            [48, 51, 54, 57]])
 
-!!! Info ""
-    You can also sum over multiple axes:
+You can also sum over multiple axes:
 
 ```py
 c.sum(axis=(0,2))  # sum across matrices and columns
@@ -783,8 +728,7 @@ c.sum(axis=(0,2))  # sum across matrices and columns
 
 ### **Universal functions**
 
-!!! Info ""
-    NumPy also provides fast elementwise functions called universal functions, or **ufunc**. They are vectorized wrappers of simple functions. For example `square` returns a new `ndarray` which is a copy of the original `ndarray` except that each element is squared:
+NumPy also provides fast elementwise functions called universal functions, or **ufunc**. They are vectorized wrappers of simple functions. For example `square` returns a new `ndarray` which is a copy of the original `ndarray` except that each element is squared:
 
 ```py
 a = np.array([[-2.5, 3.1, 7], [10, 11, 12]])
@@ -795,8 +739,7 @@ np.square(a)
     array([[   6.25,    9.61,   49.  ],
            [ 100.  ,  121.  ,  144.  ]])
         
-!!! Info ""
-    Here are a few more useful unary ufuncs:
+Here are a few more useful unary ufuncs:
 
 ```py
 print("Original ndarray")
@@ -852,8 +795,7 @@ for func in (np.abs, np.sqrt, np.exp, np.log, np.sign, np.ceil, np.modf, np.isna
 
 ### **Binary ufuncs**
 
-!!! Info ""
-    There are also many binary ufuncs, that apply elementwise on two `ndarray`s. Broadcasting rules are applied if the arrays do not have the same shape:
+There are also many binary ufuncs, that apply elementwise on two `ndarray`s. Broadcasting rules are applied if the arrays do not have the same shape:
 
 ```py
 a = np.array([1, -2, 3, 4])
@@ -890,8 +832,7 @@ np.copysign(a, b)
 
 ### **One-dimensional arrays**
 
-!!! Info ""
-    One-dimensional NumPy arrays can be accessed more or less like regular python arrays:
+One-dimensional NumPy arrays can be accessed more or less like regular python arrays:
 
 ```py
 a = np.array([1, 5, 3, 19, 13, 7, 3])
@@ -961,8 +902,7 @@ a
 
 ### **Differences with regular python arrays**
 
-!!! Info ""
-    Contrary to regular python arrays, if you assign a single value to an `ndarray` slice, it is copied across the whole slice, thanks to broadcasting rules discussed above.
+Contrary to regular python arrays, if you assign a single value to an `ndarray` slice, it is copied across the whole slice, thanks to broadcasting rules discussed above.
 
 ```py
 a[2:5] = -1
@@ -972,8 +912,7 @@ a
 ??? Output "Output"
     array([ 1,  5, -1, -1, -1,  7,  3])
 
-!!! Info ""
-    Also, you cannot grow or shrink `ndarrays` this way:
+Also, you cannot grow or shrink `ndarrays` this way:
 
 ```py
 try:
@@ -985,8 +924,7 @@ except ValueError as e:
 ??? Output "Output"
     cannot copy sequence with size 6 to array axis with dimension 3
 
-!!! Info ""
-    You cannot delete elements either:
+You cannot delete elements either:
 
 ```py
 try:
@@ -998,8 +936,7 @@ except ValueError as e:
 ??? Output "Output"
     cannot delete array elements
 
-!!! Info ""
-    Last but not least, `ndarray` **slices are actually views** on the same data buffer. This means that if you create a slice and modify it, you are actually going to modify the original `ndarray` as well!
+Last but not least, `ndarray` **slices are actually views** on the same data buffer. This means that if you create a slice and modify it, you are actually going to modify the original `ndarray` as well!
 
 
 ```py
@@ -1019,8 +956,7 @@ a_slice  # similarly, modifying the original array modifies the slice!
 ??? Output "Output"
     array([  -1, 2000,   -1,    7])
 
-!!! Info ""
-    If you want a copy of the data, you need to use the `copy` method:
+If you want a copy of the data, you need to use the `copy` method:
 
 ```py
 another_slice = a[2:6].copy()
@@ -1041,8 +977,7 @@ another_slice  # similary, modifying the original array does not affect the slic
 
 ### **Multi-dimensional arrays**
 
-!!! Info ""
-    Multi-dimensional arrays can be accessed in a similar way by providing an index or slice for each axis, separated by commas:
+Multi-dimensional arrays can be accessed in a similar way by providing an index or slice for each axis, separated by commas:
 
 ```py
 b = np.arange(48).reshape(4, 12)
@@ -1093,13 +1028,11 @@ b[1:2, :]
 ??? Output "Output"
     array([[12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]])
 
-!!! Info ""
-    The first expression returns row 1 as a 1D array of shape `(12,)`, while the second returns that same row as a 2D array of shape `(1, 12)`.
+The first expression returns row 1 as a 1D array of shape `(12,)`, while the second returns that same row as a 2D array of shape `(1, 12)`.
 
 ### **Fancy indexing**
 
-!!! Info ""
-    You may also specify a list of indices that you are interested in. This is referred to as fancy indexing.
+You may also specify a list of indices that you are interested in. This is referred to as fancy indexing.
 
 ```py
 b[(0,2), 2:5]  # rows 0 and 2, columns 2 to 4 (5-1)
@@ -1119,8 +1052,7 @@ b[:, (-1, 2, -1)]  # all rows, columns -1 (last), 2 and -1 (again, and in this o
            [35, 26, 35],
            [47, 38, 47]])
 
-!!! Info ""
-    If you provide multiple index arrays, you get a 1D `ndarray` containing the values of the elements at the specified coordinates.
+If you provide multiple index arrays, you get a 1D `ndarray` containing the values of the elements at the specified coordinates.
 
 ```py
 b[(-1, 2, -1, 2), (5, 9, 1, 9)]  # returns a 1D array with b[-1, 5], b[2, 9], b[-1, 1] and b[2, 9] (again)
@@ -1131,8 +1063,7 @@ b[(-1, 2, -1, 2), (5, 9, 1, 9)]  # returns a 1D array with b[-1, 5], b[2, 9], b[
 
 ### **Higher dimensions**
 
-!!! Info ""
-    Everything works just as well with higher dimensional arrays, but it's useful to look at a few examples:
+Everything works just as well with higher dimensional arrays, but it's useful to look at a few examples:
 
 ```py
 c = b.reshape(4,2,6)
@@ -1166,8 +1097,7 @@ c[2, :, 3]  # matrix 2, all rows, col 3
 ??? Output "Output"
     array([27, 33])
 
-!!! Info ""
-    If you omit coordinates for some axes, then all elements in these axes are returned:
+If you omit coordinates for some axes, then all elements in these axes are returned:
 
 ```py
 c[2, 1]  # Return matrix 2, row 1, all columns.  This is equivalent to c[2, 1, :]
@@ -1178,8 +1108,7 @@ c[2, 1]  # Return matrix 2, row 1, all columns.  This is equivalent to c[2, 1, :
 
 ### **Ellipsis (...)**
 
-!!! Info ""
-    You may also write an ellipsis (`...`) to ask that all non-specified axes be entirely included.
+You may also write an ellipsis (`...`) to ask that all non-specified axes be entirely included.
 
 ```py
 c[2, ...]  #  matrix 2, all rows, all columns.  This is equivalent to c[2, :, :]
@@ -1215,8 +1144,7 @@ c[..., 3]  # all matrices, all rows, column 3.  This is equivalent to c[:, :, 3]
         
 ### **Boolean indexing**
 
-!!! Info ""
-    You can also provide an `ndarray` of boolean values on one axis to specify the indices that you want to access.
+You can also provide an `ndarray` of boolean values on one axis to specify the indices that you want to access.
 
 ```py
 b = np.arange(48).reshape(4, 12)
@@ -1251,8 +1179,7 @@ b[:, cols_on]  # All rows, columns 1, 4, 7 and 10
 
 ### **np.ix_**
 
-!!! Info ""
-    You cannot use boolean indexing this way on multiple axes, but you can work around this by using the `ix_` function:
+You cannot use boolean indexing this way on multiple axes, but you can work around this by using the `ix_` function:
 
 ```py
 b[np.ix_(rows_on, cols_on)]
@@ -1270,8 +1197,7 @@ np.ix_(rows_on, cols_on)
     (array([[0],
             [2]]), array([[ 1,  4,  7, 10]]))
 
-!!! Info ""
-    If you use a boolean array that has the same shape as the `ndarray`, then you get in return a 1D array containing all the values that have `True` at their coordinate. This is generally used along with conditional operators:
+If you use a boolean array that has the same shape as the `ndarray`, then you get in return a 1D array containing all the values that have `True` at their coordinate. This is generally used along with conditional operators:
 
 ```py
 b[b % 3 == 1]
@@ -1283,8 +1209,7 @@ b[b % 3 == 1]
 
 ## **Iterating**
 
-!!! Info ""
-    Iterating over `ndarrays` is very similar to iterating over regular python arrays. Note that iterating over multidimensional arrays is done with respect to the first axis.
+Iterating over `ndarrays` is very similar to iterating over regular python arrays. Note that iterating over multidimensional arrays is done with respect to the first axis.
 
 ```py
 c = np.arange(24).reshape(2, 3, 4)  # A 3D array (composed of two 3x4 matrices)
@@ -1332,8 +1257,7 @@ for i in range(len(c)):  # Note that len(c) == c.shape[0]
      [16 17 18 19]
      [20 21 22 23]]
 
-!!! Info ""
-    If you want to iterate on all elements in the `ndarray`, simply iterate over the `flat` attribute:
+If you want to iterate on all elements in the `ndarray`, simply iterate over the `flat` attribute:
 
 ```py
 for i in c.flat:
@@ -1370,8 +1294,7 @@ for i in c.flat:
 
 ## **Stacking arrays**
 
-!!! Info ""
-    It is often useful to stack together different arrays. NumPy offers several functions to do just that. Let's start by creating a few arrays.
+It is often useful to stack together different arrays. NumPy offers several functions to do just that. Let's start by creating a few arrays.
 
 ```py
 q1 = np.full((3,4), 1.0)
@@ -1407,8 +1330,7 @@ q3
 
 ### **vstack**
 
-!!! Info ""
-    Now let's stack them vertically using `vstack`:
+Now let's stack them vertically using `vstack`:
 
 ```py
 q4 = np.vstack((q1, q2, q3))
@@ -1434,13 +1356,11 @@ q4.shape
 ??? Output "Output"
     (10, 4)
 
-!!! Info ""
-    This was possible because q1, q2 and q3 all have the same shape (except for the vertical axis, but that's ok since we are stacking on that axis).
+This was possible because q1, q2 and q3 all have the same shape (except for the vertical axis, but that's ok since we are stacking on that axis).
 
 ### **hstack**
 
-!!! Info ""
-    We can also stack arrays horizontally using `hstack`:
+We can also stack arrays horizontally using `hstack`:
 
 ```py
 q5 = np.hstack((q1, q3))
@@ -1459,8 +1379,7 @@ q5.shape
 ??? Output "Output"
     (3, 8)
 
-!!! Info ""
-    This is possible because q1 and q3 both have 3 rows. But since q2 has 4 rows, it cannot be stacked horizontally with q1 and q3:
+This is possible because q1 and q3 both have 3 rows. But since q2 has 4 rows, it cannot be stacked horizontally with q1 and q3:
 
 ```py
 try:
@@ -1474,8 +1393,7 @@ except ValueError as e:
 
 ### **concatenate**
 
-!!! Info ""
-    The `concatenate` function stacks arrays along any given existing axis.
+The `concatenate` function stacks arrays along any given existing axis.
 
 ```py
 q7 = np.concatenate((q1, q2, q3), axis=0)  # Equivalent to vstack
@@ -1501,14 +1419,12 @@ q7.shape
 ??? Output "Output"
     (10, 4)
 
-!!! Info ""
-    As you might guess, `hstack` is equivalent to calling `concatenate` with `axis=1`.
+As you might guess, `hstack` is equivalent to calling `concatenate` with `axis=1`.
 
 
 ### **stack**
 
-!!! Info ""
-    The `stack` function stacks arrays along a new axis. All arrays have to have the same shape.
+The `stack` function stacks arrays along a new axis. All arrays have to have the same shape.
 
 ```py
 q8 = np.stack((q1, q3))
@@ -1535,10 +1451,9 @@ q8.shape
 
 ## **Splitting arrays**
 
-!!! Info ""
-    Splitting is the opposite of stacking. For example, let's use the `vsplit` function to split a matrix vertically.
+Splitting is the opposite of stacking. For example, let's use the `vsplit` function to split a matrix vertically.
 
-    First let's create a 6x4 matrix:
+First let's create a 6x4 matrix:
 
 ```py
 r = np.arange(24).reshape(6,4)
@@ -1553,8 +1468,7 @@ r
            [16, 17, 18, 19],
            [20, 21, 22, 23]])
 
-!!! Info ""
-    Now let's split it in three equal parts, vertically:
+Now let's split it in three equal parts, vertically:
 
 ```py
 r1, r2, r3 = np.vsplit(r, 3)
@@ -1581,8 +1495,7 @@ r3
     array([[16, 17, 18, 19],
            [20, 21, 22, 23]])
 
-!!! Info ""
-    There is also a `split` function which splits an array along any given axis. Calling `vsplit` is equivalent to calling `split` with `axis=0`. There is also an `hsplit` function, equivalent to calling `split` with `axis=1`:
+There is also a `split` function which splits an array along any given axis. Calling `vsplit` is equivalent to calling `split` with `axis=0`. There is also an `hsplit` function, equivalent to calling `split` with `axis=1`:
 
 ```py
 r4, r5 = np.hsplit(r, 2)
@@ -1613,10 +1526,9 @@ r5
 
 ## **Transposing arrays**
 
-!!! Info ""
-    The `transpose` method creates a new view on an `ndarray`'s data, with axes permuted in the given order.
+The `transpose` method creates a new view on an `ndarray`'s data, with axes permuted in the given order.
 
-    For example, let's create a 3D array:
+For example, let's create a 3D array:
 
 ```py
 t = np.arange(24).reshape(4,2,3)
@@ -1636,8 +1548,7 @@ t
            [[18, 19, 20],
             [21, 22, 23]]])
 
-!!! Info ""
-    Now let's create an `ndarray` such that the axes `0, 1, 2` (depth, height, width) are re-ordered to `1, 2, 0` (depth→width, height→depth, width→height):
+Now let's create an `ndarray` such that the axes `0, 1, 2` (depth, height, width) are re-ordered to `1, 2, 0` (depth→width, height→depth, width→height):
 
 ```py
 t1 = t.transpose((1,2,0))
@@ -1660,8 +1571,7 @@ t1.shape
 ??? Output "Output"
     (2, 3, 4)
 
-!!! Info ""
-    By default, `transpose` reverses the order of the dimensions:
+By default, `transpose` reverses the order of the dimensions:
 
 ```py
 t2 = t.transpose()  # equivalent to t.transpose((2, 1, 0))
@@ -1685,8 +1595,7 @@ t2.shape
 ??? Output "Output"
     (3, 2, 4)
 
-!!! Info ""
-    NumPy provides a convenience function `swapaxes` to swap two axes. For example, let's create a new view of `t` with depth and height swapped:
+NumPy provides a convenience function `swapaxes` to swap two axes. For example, let's create a new view of `t` with depth and height swapped:
 
 ```py
 t3 = t.swapaxes(0,1)  # equivalent to t.transpose((1, 0, 2))
@@ -1715,13 +1624,11 @@ t3.shape
 
 ## **Linear algebra**
 
-!!! Info ""
-    NumPy 2D arrays can be used to represent matrices efficiently in python. We will just quickly go through some of the main matrix operations available. For more details about Linear Algebra, vectors and matrics, go through the [Linear Algebra tutorial](https://colab.research.google.com/drive/math_linear_algebra.ipynb).
+NumPy 2D arrays can be used to represent matrices efficiently in python. We will just quickly go through some of the main matrix operations available. For more details about Linear Algebra, vectors and matrics, go through the [Linear Algebra tutorial](https://colab.research.google.com/drive/math_linear_algebra.ipynb).
 
 ### **Matrix transpose**
 
-!!! Info ""
-    The `T` attribute is equivalent to calling `transpose()` when the rank is ≥2:
+The `T` attribute is equivalent to calling `transpose()` when the rank is ≥2:
 
 ```py
 m1 = np.arange(10).reshape(2,5)
@@ -1743,8 +1650,7 @@ m1.T
            [3, 8],
            [4, 9]])
 
-!!! Info ""
-    The `T` attribute has no effect on rank 0 (empty) or rank 1 arrays:
+The `T` attribute has no effect on rank 0 (empty) or rank 1 arrays:
 
 ```py
 m2 = np.arange(5)
@@ -1761,8 +1667,7 @@ m2.T
 ??? Output "Output"
     array([0, 1, 2, 3, 4])
 
-!!! Info ""
-    We can get the desired transposition by first reshaping the 1D array to a single-row matrix (2D):
+We can get the desired transposition by first reshaping the 1D array to a single-row matrix (2D):
 
 ```py
 m2r = m2.reshape(1,5)
@@ -1785,8 +1690,7 @@ m2r.T
     
 ### **Matrix multiplication**
 
-!!! Info ""
-    Let's create two matrices and execute a [matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication) using the `dot()` method.
+Let's create two matrices and execute a [matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication) using the `dot()` method.
 
 ```py
 n1 = np.arange(10).reshape(2, 5)
@@ -1822,8 +1726,7 @@ n1.dot(n2)
 
 ### **Matrix inverse and pseudo-inverse**
 
-!!! Info ""
-    Many of the linear algebra functions are available in the `numpy.linalg` module, in particular the `inv` function to compute a square matrix's inverse:
+Many of the linear algebra functions are available in the `numpy.linalg` module, in particular the `inv` function to compute a square matrix's inverse:
 
 ```py
 import numpy.linalg as linalg
@@ -1846,8 +1749,7 @@ linalg.inv(m3)
            [ 1.72727273, -0.72727273,  0.09090909],
            [-0.04545455,  0.29545455, -0.06818182]])
 
-!!! Info ""
-    You can also compute the [pseudoinverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_pseudoinverse) using `pinv`:
+You can also compute the [pseudoinverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_pseudoinverse) using `pinv`:
 
 ```py
 linalg.pinv(m3)
@@ -1860,8 +1762,7 @@ linalg.pinv(m3)
         
 ### **Identity matrix**
 
-!!! Info ""
-    The product of a matrix by its inverse returns the identiy matrix (with small floating point errors):
+The product of a matrix by its inverse returns the identiy matrix (with small floating point errors):
 
 ```py
 m3.dot(linalg.inv(m3))
@@ -1871,9 +1772,8 @@ m3.dot(linalg.inv(m3))
     array([[  1.00000000e+00,  -1.11022302e-16,  -6.93889390e-18],
            [ -1.33226763e-15,   1.00000000e+00,  -5.55111512e-17],
            [  2.88657986e-15,   0.00000000e+00,   1.00000000e+00]])
-
-!!! Info ""     
-    You can create an identity matrix of size NxN by calling `eye`:
+     
+You can create an identity matrix of size NxN by calling `eye`:
 
 ```py
 np.eye(3)
@@ -1885,9 +1785,8 @@ np.eye(3)
            [ 0.,  0.,  1.]])
 
 ### **QR decomposition**
-
-!!! Info ""  
-    The `qr` function computes the [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition) of a matrix:
+  
+The `qr` function computes the [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition) of a matrix:
 
 ```py
 q, r = linalg.qr(m3)
@@ -1918,9 +1817,8 @@ q.dot(r)  # q.r equals m3
            [ 21.,  29.,  31.]])
 
 ### **Determinant**
-
-!!! Info ""  
-    The `det` function computes the [matrix determinant](https://en.wikipedia.org/wiki/Determinant):
+ 
+The `det` function computes the [matrix determinant](https://en.wikipedia.org/wiki/Determinant):
 
 ```py
 linalg.det(m3)  # Computes the matrix determinant
@@ -1930,9 +1828,8 @@ linalg.det(m3)  # Computes the matrix determinant
     43.999999999999972
 
 ### **Eigenvalues and eigenvectors**
-
-!!! Info "" 
-    The `eig` function computes the [eigenvalues and eigenvectors](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of a square matrix:
+ 
+The `eig` function computes the [eigenvalues and eigenvectors](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of a square matrix:
 
 ```py
 eigenvalues, eigenvectors = linalg.eig(m3)
@@ -1962,8 +1859,7 @@ m3.dot(eigenvectors) - eigenvalues * eigenvectors  # m3.v - λ*v = 0
 
 ### **Singular Value Decomposition**
 
-!!! Info "" 
-    The `svd` function takes a matrix and returns its [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition):
+The `svd` function takes a matrix and returns its [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition):
 
 ```py
 m4 = np.array([[1,0,0,0,2], [0,0,3,0,0], [0,0,0,0,0], [0,2,0,0,0]])
@@ -1994,8 +1890,7 @@ S_diag
 ??? Output "Output"
     array([ 3.        ,  2.23606798,  2.        ,  0.        ])
 
-!!! Info "" 
-    The `svd` function just returns the values in the diagonal of Σ, but we want the full Σ matrix, so let's create it:
+The `svd` function just returns the values in the diagonal of Σ, but we want the full Σ matrix, so let's create it:
 
 ```py
 S = np.zeros((4, 5))
@@ -2048,11 +1943,10 @@ np.trace(m3)  # equivalent to np.diag(m3).sum()
 
 ### **Solving a system of linear scalar equations**
 
-!!! Info ""
-    The `solve` function solves a system of linear scalar equations, such as:
+The `solve` function solves a system of linear scalar equations, such as:
 
-    * $2x + 6y = 6$
-    * $5x + 3y = -9$
+* $2x + 6y = 6$
+* $5x + 3y = -9$
 
 ```py
 coeffs  = np.array([[2, 6], [5, 3]])
@@ -2087,10 +1981,9 @@ np.allclose(coeffs.dot(solution), depvars)
 
 ## **Vectorization**
 
-!!! Info ""
-    Instead of executing operations on individual array items, one at a time, your code is much more efficient if you try to stick to array operations. This is called *vectorization*. This way, you can benefit from NumPy's many optimizations.
+Instead of executing operations on individual array items, one at a time, your code is much more efficient if you try to stick to array operations. This is called *vectorization*. This way, you can benefit from NumPy's many optimizations.
 
-    For example, let's say we want to generate a 768x1024 array based on the formula $sin(xy/40.5)$. A **bad** option would be to do the math in python using nested loops:
+For example, let's say we want to generate a 768x1024 array based on the formula $sin(xy/40.5)$. A **bad** option would be to do the math in python using nested loops:
 
 ```py
 import math
@@ -2100,8 +1993,7 @@ for y in range(768):
         data[y, x] = math.sin(x*y/40.5)  # BAD! Very inefficient.
 ```
 
-!!! Info ""
-    Sure, this works, but it's terribly inefficient since the loops are taking place in pure python. Let's vectorize this algorithm. First, we will use NumPy's `meshgrid` function which generates coordinate matrices from coordinate vectors.
+Sure, this works, but it's terribly inefficient since the loops are taking place in pure python. Let's vectorize this algorithm. First, we will use NumPy's `meshgrid` function which generates coordinate matrices from coordinate vectors.
 
 ```py
 x_coords = np.arange(0, 1024)  # [0, 1, 2, ..., 1023]
@@ -2132,17 +2024,15 @@ Y
            [766, 766, 766, ..., 766, 766, 766],
            [767, 767, 767, ..., 767, 767, 767]])
 
-!!! Info ""
-    As you can see, both `X` and `Y` are 768x1024 arrays, and all values in `X` correspond to the horizontal coordinate, while all values in `Y` correspond to the the vertical coordinate.
+As you can see, both `X` and `Y` are 768x1024 arrays, and all values in `X` correspond to the horizontal coordinate, while all values in `Y` correspond to the the vertical coordinate.
 
-    Now we can simply compute the result using array operations:
+Now we can simply compute the result using array operations:
 
 ```py
 data = np.sin(X*Y/40.5)
 ```
 
-!!! Info ""
-    Now we can plot this data using matplotlib's `imshow` function
+Now we can plot this data using matplotlib's `imshow` function
 
 ```py
 import matplotlib.pyplot as plt
@@ -2154,13 +2044,11 @@ plt.show()
 
 ## **Saving and loading**
 
-!!! Info ""
-    NumPy makes it easy to save and load `ndarray`s in binary or text format.
+NumPy makes it easy to save and load `ndarray`s in binary or text format.
 
 ### **Binary `.npy` format**
 
-!!! Info ""
-    Let's create a random array and save it.
+Let's create a random array and save it.
 
 ```py
 a = np.random.rand(2,3)
@@ -2175,8 +2063,7 @@ a
 np.save("my_array", a)
 ```
 
-!!! Info ""
-    Done! Since the file name contains no file extension was provided, NumPy automatically added `.npy`. Let's take a peek at the file content:
+Done! Since the file name contains no file extension was provided, NumPy automatically added `.npy`. Let's take a peek at the file content:
 
 ```py
 with open("my_array.npy", "rb") as f:
@@ -2188,8 +2075,7 @@ content
 ??? Output "Output"
     "\x93NUMPY\x01\x00F\x00{'descr': '<f8', 'fortran_order': False, 'shape': (2, 3), }          \n\xa8\x96\x1d\xeb\xe5o\xda? \x06W\xa1s\xcb\xca?*\xdeB>\x12\x7f\xd4?x<h\x81\x99i\xc9?@\xa4\x027\xb0\x1c\xda?<P\x05\x8f\x90R\xe3?"
 
-!!! Info ""
-    To load this file into a NumPy array, simply call `load`:
+To load this file into a NumPy array, simply call `load`:
 
 
 ```py
@@ -2203,15 +2089,13 @@ a_loaded
 
 ### **Text format**
 
-!!! Info ""
-    Let's try saving the array in text format:
+Let's try saving the array in text format:
 
 ```py
 np.savetxt("my_array.csv", a)
 ```
 
-!!! Info ""
-    Now let's look at the file content:
+Now let's look at the file content:
 
 ```py
 with open("my_array.csv", "rt") as f:
@@ -2222,15 +2106,13 @@ with open("my_array.csv", "rt") as f:
     4.130797191668116319e-01 2.093338525574361952e-01 3.202558143634371968e-01
     1.985351449843368865e-01 4.080009972772735694e-01 6.038286965726977762e-01
 
-!!! Info ""
-    This is a CSV file with tabs as delimiters. You can set a different delimiter:
+This is a CSV file with tabs as delimiters. You can set a different delimiter:
 
 ```py
 np.savetxt("my_array.csv", a, delimiter=",")
 ```
 
-!!! Info ""
-    To load this file, just use `loadtxt`:
+To load this file, just use `loadtxt`:
 
 ```py
 a_loaded = np.loadtxt("my_array.csv", delimiter=",")
@@ -2243,8 +2125,7 @@ a_loaded
     
 ### **Zipped `.npz` format**
 
-!!! Info ""
-    It is also possible to save multiple arrays in one zipped file:
+It is also possible to save multiple arrays in one zipped file:
 
 ```py
 b = np.arange(24, dtype=np.uint8).reshape(2, 3, 4)
@@ -2264,8 +2145,7 @@ b
 np.savez("my_arrays", my_a=a, my_b=b)
 ```
 
-!!! Info ""
-    Again, let's take a peek at the file content. Note that the `.npz` file extension was automatically added.
+Again, let's take a peek at the file content. Note that the `.npz` file extension was automatically added.
 
 ```py
 with open("my_arrays.npz", "rb") as f:
@@ -2277,8 +2157,7 @@ repr(content)[:180] + "[...]"
 ??? Output "Output"
     u'"PK\\x03\\x04\\x14\\x00\\x00\\x00\\x00\\x00x\\x94cH\\xb6\\x96\\xe4{h\\x00\\x00\\x00h\\x00\\x00\\x00\\x08\\x00\\x00\\x00my_b.npy\\x93NUMPY\\x01\\x00F\\x00{\'descr\': \'|u1\', \'fortran_order\': False, \'shape\': (2,[...]'
 
-!!! Info ""
-    You then load this file like so:
+You then load this file like so:
 
 ```py
 my_arrays = np.load("my_arrays.npz")
@@ -2287,8 +2166,7 @@ my_arrays
 ??? Output "Output"
     <numpy.lib.npyio.NpzFile at 0x10fa4d4d0>
 
-!!! Info ""
-    This is a dict-like object which loads the arrays lazily:
+This is a dict-like object which loads the arrays lazily:
 
 ```py
 my_arrays.keys()
@@ -2307,5 +2185,4 @@ my_arrays["my_a"]
 
 ## **What next?**
 
-!!! Info ""
-    Now you know all the fundamentals of NumPy, but there are many more options available. The best way to learn more is to experiment with NumPy, and go through the excellent [reference documentation](http://docs.scipy.org/doc/numpy/reference/index.html) to find more functions and features you may be interested in.
+Now you know all the fundamentals of NumPy, but there are many more options available. The best way to learn more is to experiment with NumPy, and go through the excellent [reference documentation](http://docs.scipy.org/doc/numpy/reference/index.html) to find more functions and features you may be interested in.
