@@ -995,6 +995,55 @@ d5 = pd.DataFrame(
 d5
 ```
 
+You can now get a `DataFrame` containing all the `"public"` columns very simply:
+
+```py
+d5["public"]
+```
+
+```py
+d5["public", "hobby"]  # Same result as d5["public"]["hobby"]
+```
+
+??? Output
+    ```py
+    London  charles        NaN
+    Paris   alice       Biking
+            bob        Dancing
+    Name: (public, hobby), dtype: object
+    ```
+
+### **Dropping a level**
+Let's look at `d5` again:
+
+```py
+d5
+```
+
+There are two levels of columns, and two levels of indices. We can drop a column level by calling `droplevel()` (the same goes for indices):
+
+```py
+d5.columns = d5.columns.droplevel(level = 0)
+d5
+```
+
+### **Transposing**
+You can swap columns and indices using the `T` attribute:
+
+```py
+d6 = d5.T
+d6
+```
+
+### **Stacking and unstacking levels**
+
+Calling the `stack()` method will push the lowest column level after the lowest index:
+
+```py
+d7 = d6.stack()
+d7
+```
+
 
 
  
