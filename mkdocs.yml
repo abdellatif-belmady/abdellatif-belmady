@@ -121,9 +121,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Projects:
-    - Spam Datasets: projects/spam datasets.md
-    - Ozone Datasets: projects/ozone datasets.md
-    - Boston Datasets: projects/boston datasets.md
+    - Spam Dataset: projects/spam datasets.md
+    - Ozone Dataset: projects/ozone datasets.md
+    - Boston Dataset: projects/boston datasets.md
     - TP_GNN : projects/tp_gnn.md
     - Abstractive Summarization: projects/abstractive summarization.md
     - Big-Data For IoT: projects/big data for iot.md
