@@ -1044,6 +1044,357 @@ d7 = d6.stack()
 d7
 ```
 
+Note that many `NaN` values appeared. This makes sense because many new combinations did not exist before (eg. there was no `bob` in `London`).
+
+Calling `unstack()` will do the reverse, once again creating many `NaN` values.
+
+```py
+d8 = d7.unstack()
+d8
+```
+
+If we call `unstack` again, we end up with a `Series` object:
+
+```py
+d9 = d8.unstack()
+d9
+```
+
+??? Output
+    ```py
+    London  alice    children        None
+                    weight           NaN
+                    birthyear        NaN
+                    hobby            NaN
+            bob      children         NaN
+                    weight           NaN
+                    birthyear        NaN
+                    hobby            NaN
+            charles  children           0
+                    weight           112
+                    birthyear       1992
+                    hobby           None
+    Paris   alice    children        None
+                    weight            68
+                    birthyear       1985
+                    hobby         Biking
+            bob      children           3
+                    weight            83
+                    birthyear       1984
+                    hobby        Dancing
+            charles  children         NaN
+                    weight           NaN
+                    birthyear        NaN
+                    hobby           None
+    dtype: object
+    ```
+
+The `stack()` and `unstack()` methods let you select the `level` to stack/unstack. You can even stack/unstack multiple levels at once:
+
+```py
+d10 = d9.unstack(level = (0,1))
+d10
+```
+
+### **Most methods return modified copies**
+As you may have noticed, the `stack()` and `unstack()` methods do not modify the object they apply to. Instead, they work on a copy and return that copy. This is true of most methods in pandas.
+
+### **Accessing rows**
+Let's go back to the `people` `DataFrame`:
+
+```py
+people
+```
+
+??? Output
+    
+    |           |birthyear  |children   |hobby      |weight |
+    |-----------|-----------|-----------|-----------|-------|
+    |alice	    |1985	    |NaN	    |Biking	    |68     |
+    |bob	    |1984	    |3.0  	    |Dancing	|83     |
+    |charles	|1992	    |0.0        |NaN	    |112    |
+
+The `loc` attribute lets you access rows instead of columns. The result is a `Series` object in which the `DataFrame`'s column names are mapped to row index labels:
+
+```py
+people.loc["charles"]
+```
+
+??? Output
+    ```py
+    birthyear    1992
+    children        0
+    hobby         NaN
+    weight        112
+    Name: charles, dtype: object
+    ```
+
+You can also access rows by integer location using the `iloc` attribute:
+
+```py
+people.iloc[2]
+```
+
+??? Output
+    ```py
+    birthyear    1992
+    children        0
+    hobby         NaN
+    weight        112
+    Name: charles, dtype: object
+    ```
+
+You can also get a slice of rows, and this returns a `DataFrame` object:
+
+```py
+people.iloc[1:3]
+```
+
+??? Output
+    
+    |           |birthyear  |children   |hobby      |weight |
+    |-----------|-----------|-----------|-----------|-------|
+    |bob	    |1984	    |3.0  	    |Dancing	|83     |
+    |charles	|1992	    |0.0        |NaN	    |112    |
+
+Finally, you can pass a boolean array to get the matching rows:
+
+```py
+people[np.array([True, False, True])]
+```
+??? Output
+    
+    |           |birthyear  |children   |hobby      |weight |
+    |-----------|-----------|-----------|-----------|-------|
+    |alice	    |1985	    |NaN	    |Biking	    |68     |
+    |charles	|1992	    |0.0        |NaN	    |112    |
+
+This is most useful when combined with boolean expressions:
+
+```py
+people[people["birthyear"] < 1990]
+```
+??? Output
+    
+    |           |birthyear  |children   |hobby      |weight |
+    |-----------|-----------|-----------|-----------|-------|
+    |alice	    |1985	    |NaN	    |Biking	    |68     |
+    |bob	    |1984	    |3.0  	    |Dancing	|83     |
+
+### **Adding and removing columns**
+You can generally treat `DataFrame` objects like dictionaries of `Series`, so the following work fine:
+
+```py
+people
+```
+??? Output
+    
+    |           |birthyear  |children   |hobby      |weight |
+    |-----------|-----------|-----------|-----------|-------|
+    |alice	    |1985	    |NaN	    |Biking	    |68     |
+    |bob	    |1984	    |3.0  	    |Dancing	|83     |
+    |charles	|1992	    |0.0        |NaN	    |112    |
+
+```py
+people["age"] = 2018 - people["birthyear"]  # adds a new column "age"
+people["over 30"] = people["age"] > 30      # adds another column "over 30"
+birthyears = people.pop("birthyear")
+del people["children"]
+
+people
+```
+??? Output
+    
+    |           |hobby      |weight |age |over 30|
+    |-----------|-----------|-------|----|-------|
+    |alice	    |Biking	    |68     |33  |True   |
+    |bob	    |Dancing	|83     |34  |True   |
+    |charles	|NaN	    |112    |26  |False  |
+
+```py
+birthyears
+```
+
+??? Output
+    ```py
+    alice      1985
+    bob        1984
+    charles    1992
+    Name: birthyear, dtype: int64
+    ```
+
+When you add a new colum, it must have the same number of rows. Missing rows are filled with NaN, and extra rows are ignored:
+
+```py
+people["pets"] = pd.Series({"bob": 0, "charles": 5, "eugene":1})  # alice is missing, eugene is ignored
+people
+```
+??? Output
+    
+    |           |hobby      |weight |age |over 30|pets |
+    |-----------|-----------|-------|----|-------|-----|
+    |alice	    |Biking	    |68     |33  |True   |NaN  |
+    |bob	    |Dancing	|83     |34  |True   |0.0  |
+    |charles	|NaN	    |112    |26  |False  |5.0  |
+
+When adding a new column, it is added at the end (on the right) by default. You can also insert a column anywhere else using the `insert()` method:
+
+```py
+people.insert(1, "height", [172, 181, 185])
+people
+```
+??? Output
+    
+    |           |hobby      |height  |weight |age |over 30|pets |
+    |-----------|-----------|--------|-------|----|-------|-----|
+    |alice	    |Biking	    |172	 |68     |33  |True   |NaN  |
+    |bob	    |Dancing	|181	 |83     |34  |True   |0.0  |
+    |charles	|NaN	    |185	 |112    |26  |False  |5.0  |
+
+### **Assigning new columns**
+You can also create new columns by calling the `assign()` method. Note that this returns a new `DataFrame` object, the original is not modified:
+
+```py
+people.assign(
+    body_mass_index = people["weight"] / (people["height"] / 100) ** 2,
+    has_pets = people["pets"] > 0
+)
+```
+Note that you cannot access columns created within the same assignment:
+
+```py
+try:
+    people.assign(
+        body_mass_index = people["weight"] / (people["height"] / 100) ** 2,
+        overweight = people["body_mass_index"] > 25
+    )
+except KeyError as e:
+    print("Key error:", e)
+```
+
+??? Output
+    Key error: 'body_mass_index'
+
+The solution is to split this assignment in two consecutive assignments:
+
+```py
+d6 = people.assign(body_mass_index = people["weight"] / (people["height"] / 100) ** 2)
+d6.assign(overweight = d6["body_mass_index"] > 25)
+```
+
+Having to create a temporary variable `d6` is not very convenient. You may want to just chain the assigment calls, but it does not work because the `people` object is not actually modified by the first assignment:
+
+```py
+try:
+    (people
+         .assign(body_mass_index = people["weight"] / (people["height"] / 100) ** 2)
+         .assign(overweight = people["body_mass_index"] > 25)
+    )
+except KeyError as e:
+    print("Key error:", e)
+```
+
+??? Output
+    Key error: 'body_mass_index'
+
+But fear not, there is a simple solution. You can pass a function to the `assign()` method (typically a `lambda` function), and this function will be called with the `DataFrame` as a parameter:
+
+```py
+(people
+     .assign(body_mass_index = lambda df: df["weight"] / (df["height"] / 100) ** 2)
+     .assign(overweight = lambda df: df["body_mass_index"] > 25)
+)
+```
+
+Problem solved!
+
+### **Evaluating an expression**
+A great feature supported by pandas is expression evaluation. This relies on the `numexpr` library which must be installed.
+
+```py
+people.eval("weight / (height/100) ** 2 > 25")
+```
+
+??? Output
+    ```py
+    alice      False
+    bob         True
+    charles     True
+    dtype: bool
+    ```
+
+Assignment expressions are also supported. Let's set `inplace=True` to directly modify the `DataFrame` rather than getting a modified copy:
+
+```py
+people.eval("body_mass_index = weight / (height/100) ** 2", inplace=True)
+people
+```
+
+You can use a local or global variable in an expression by prefixing it with `'@'`:
+
+```py
+overweight_threshold = 30
+people.eval("overweight = body_mass_index > @overweight_threshold", inplace=True)
+people
+```
+
+### **Querying a DataFrame**
+The `query()` method lets you filter a `DataFrame` based on a query expression:
+
+```py
+people.query("age > 30 and pets == 0")
+```
+
+### **Sorting a DataFrame**
+You can sort a `DataFrame` by calling its `sort_index` method. By default it sorts the rows by their index label, in ascending order, but let's reverse the order:
+
+```py
+people.sort_index(ascending=False)
+```
+
+Note that `sort_index` returned a sorted *copy* of the `DataFrame`. To modify `people` directly, we can set the `inplace` argument to `True`. Also, we can sort the columns instead of the rows by setting `axis=1`:
+
+```py
+people.sort_index(axis=1, inplace=True)
+people
+```
+
+To sort the `DataFrame` by the values instead of the labels, we can use `sort_values` and specify the column to sort by:
+
+```py
+people.sort_values(by="age", inplace=True)
+people
+```
+
+### **Plotting a DataFrame**
+Just like for `Series`, pandas makes it easy to draw nice graphs based on a `DataFrame`.
+
+For example, it is trivial to create a line plot from a `DataFrame`'s data by calling its `plot` method:
+
+```py
+people.plot(kind = "line", x = "body_mass_index", y = ["height", "weight"])
+plt.show()
+```
+
+??? Output
+    ![Image](assets/pandas_6.png)
+
+You can pass extra arguments supported by matplotlib's functions. For example, we can create scatterplot and pass it a list of sizes using the `s` argument of matplotlib's `scatter()` function:
+
+```py
+people.plot(kind = "scatter", x = "height", y = "weight", s=[40, 120, 200])
+plt.show()
+```
+
+??? Output
+    ![Image](assets/pandas_7.png)
+
+Again, there are way too many options to list here: the best option is to scroll through the [Visualization](http://pandas.pydata.org/pandas-docs/stable/visualization.html) page in pandas' documentation, find the plot you are interested in and look at the example code.
+
+
+
+
+
 
 
  
