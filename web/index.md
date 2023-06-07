@@ -47,8 +47,8 @@ title: About
       <p><strong>End-of-studies internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
         <li>Designing and implementing innovative and high-performance algorithms. 
-        <li>Developing native applications in C++ as well as web applications using Angular/TypeScript.
-        <li>Replacing the 2D cameras used in a 3D insole scanner with 3D cameras: studying the optimal camera placement and adapting the software using the SDK of the 3D cameras.
+        <li>Developing native applications in C++ as well as web applications using <strong><a href="https://angular.io/docs">Angular/TypeScript</a></strong>.
+        <li>Replacing the 2D cameras used in a 3D insole scanner with 3D cameras: studying the optimal camera placement and adapting the software using <strong><a href="https://github.com/IntelRealSense/librealsense/releases/tag/v2.53.1">the SDK</a></strong> of the 3D cameras.
         </li>
       </ul>
       <p><strong>Data Scientist Intern <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
