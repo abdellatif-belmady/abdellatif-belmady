@@ -44,6 +44,13 @@ title: About
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - full time</p>
       <p>Currently, the possession and installation of cameras are indispensable in large organizations and in any sector. But despite their usefulness, these cameras still work in a traditional way in front of the evolution of the digital and intelligent world. Our solutions opt for intelligent cameras that integrate new technologies. Having smart cameras brings many advantages to your work and your business.
       </p>
+      <p><strong>End-of-studies internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
+      <ul>
+        <li>Designing and implementing innovative and high-performance algorithms. 
+        <li>Developing native applications in C++ as well as web applications using Angular/TypeScript.
+        <li>Replacing the 2D cameras used in a 3D insole scanner with 3D cameras: studying the optimal camera placement and adapting the software using the SDK of the 3D cameras.
+        </li>
+      </ul>
       <p><strong>Data Scientist Intern <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
       <ul>
         <li>Images collection (using the <strong><a href="https://chrome.google.com/webstore/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm">Imageye</a></strong> extention). 
