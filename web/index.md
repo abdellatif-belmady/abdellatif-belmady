@@ -44,31 +44,41 @@ title: About
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - full time</p>
       <p>Currently, the possession and installation of cameras are indispensable in large organizations and in any sector. But despite their usefulness, these cameras still work in a traditional way in front of the evolution of the digital and intelligent world. Our solutions opt for intelligent cameras that integrate new technologies. Having smart cameras brings many advantages to your work and your business.
       </p>
-      <p><strong>End-of-studies internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
+      <p><strong>End-of-Studies Internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
-        <li>Designing and implementing innovative and high-performance algorithms. 
-        <li>Developing native applications in C++ as well as web applications using <strong><a href="https://angular.io/docs">Angular/TypeScript</a></strong>.
-        <li>Replacing the 2D cameras used in a 3D insole scanner with 3D cameras: studying the optimal camera placement and adapting the software using <strong><a href="https://github.com/IntelRealSense/librealsense/releases/tag/v2.53.1">the SDK</a></strong> of the 3D cameras.
+        <li>Designed and implemented innovative and high-performance algorithms to enhance product functionalities. 
+        <li>Developed native applications in C++ and web applications using <strong><a href="https://angular.io/docs">Angular/TypeScript</a></strong> to improve user experience and accessibility.
+        <li>Led a project to upgrade the 3D insole scanner by replacing the existing 2D cameras with 3D cameras.
+        <li>Conducted a comprehensive study to determine the optimal camera placement for capturing accurate 3D scans.
+        <li>Collaborated with the team to adapt the software using <strong><a href="https://github.com/IntelRealSense/librealsense/releases/tag/v2.53.1">the SDK</a></strong> of the 3D cameras, ensuring seamless integration and compatibility.
+        <li>Tested and validated the upgraded system, ensuring its reliability and efficiency.
+        <li>Documented the entire development process, including algorithm design, software implementation, and camera integration.
         </li>
       </ul>
-      <p><strong>Data Scientist Intern <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
+      <p>During this end-of-studies internship at SOLEFARMA, I had the opportunity to work on challenging tasks, including algorithm design, software development, and hardware integration. I successfully contributed to improving product performance by implementing innovative algorithms and enhancing user interfaces. Additionally, leading the camera upgrade project allowed me to gain expertise in 3D imaging technology and software integration.</p>
+      <p><strong>Internship in Computer Vision <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
       <ul>
-        <li>Images collection (using the <strong><a href="https://chrome.google.com/webstore/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm">Imageye</a></strong> extention). 
-        <li>Image annotation with <strong><a href="https://sourceforge.net/projects/labelimg.mirror/">labelImg.exe</a></strong>. 
-        <li>Training of Deep Learning models using <strong><a href="https://towardsdatascience.com/yolo-v4-optimal-speed-accuracy-for-object-detection-79896ed47b50">the YOLO version 4 algorithm</a></strong>. 
-        <li>YOLO Model for the detection and recognition of surgical instruments. 
-        <li>YOLO Model for the detection of mask wearing. 
-        <li>YOLO Model for the detection of medical caps. 
-        <li>YOLO Model for the detection of gowns.
+        <li>Collected images (using the <strong><a href="https://chrome.google.com/webstore/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm">Imageye</a></strong> extention) to build a comprehensive dataset for computer vision tasks. 
+        <li>Conducted image annotation using <strong><a href="https://sourceforge.net/projects/labelimg.mirror/">labelImg.exe</a></strong> to create accurate ground truth labels for training purposes.
+        <li>Trained deep learning models utilizing <strong><a href="https://towardsdatascience.com/yolo-v4-optimal-speed-accuracy-for-object-detection-79896ed47b50">the YOLO version 4 algorithm</a></strong>.  for object detection and recognition.
+        <li>Focused on the detection of surgical instruments, mask wearing, medical caps, and earrings in medical images.
+        <li>Collaborated with a multidisciplinary team to refine the models and improve their performance.
+        <li>Evaluated the models' accuracy, precision, and recall, and fine-tuned them for optimal results.
+        <li>Documented the development process, including methodologies, challenges, and solutions.
         </li>
       </ul>
+      <p>During this internship, I gained hands-on experience in computer vision techniques, including dataset collection, annotation, and training of deep learning models. I developed expertise in detecting and recognizing surgical instruments, as well as detecting mask wearing, medical caps, and earrings in medical images. This experience enhanced my skills in image processing, object detection, and model evaluation.</p>
       <p><strong>Data Analyst Intern<span class="date" style=" color: inherit;">Aug 2021 - Sept 2021</span><br><a href="https://www.kerix.net/fr/annuaire-entreprise/vcr-sodalmu">VCR-Sodalmu</strong></a> - Internship</p>
       <ul>
-        <li>Realization of an <strong><a href="https://drive.google.com/file/d/1x4r7bgLm6O38PKcY0ONY0IaTBthXEc6K/view?usp=share_link">Excel application for inventory management</a></strong>. 
-        <li>Implementation of a machine learning model to identify a waste problem in the production line. 
-        <li>Development in knowing how to ask the right questions in order to get the requested data. 
+        <li>Developed an <strong><a href="https://drive.google.com/file/d/1x4r7bgLm6O38PKcY0ONY0IaTBthXEc6K/view?usp=share_link">Excel application</a></strong>.  using VBA to manage inventory efficiently.
+        <li>Implemented a machine learning model to identify and address waste issues in the production line.
+        <li>Collaborated with the team to collect and analyze data, ensuring accurate model training.
+        <li>Presented findings and recommendations to improve production efficiency and reduce waste.
+        <li>Gained hands-on experience in data preprocessing, feature engineering, and model evaluation.
+        <li>Demonstrated strong problem-solving skills and attention to detail in resolving technical challenges.
         </li>
       </ul>
+      <p>Overall, this internship provided me with valuable insights into the practical application of data science techniques in a real-world setting. I developed skills in Excel application development, machine learning implementation, data analysis, and problem-solving, which will contribute to my growth and success as a data scientist.</p>
      <h2><i class="fas fa-graduation-cap"></i> Education -</h2>
       <p><strong>Data Science and digitalization<span class="date" style=" color: inherit;">Sept 2020 - Present</span><br><a href="http://www.centrale-casablanca.ma/fr/">Ecole Centrale Casablanca</a></strong> Morocco, Casablanca</p><p> </p>
       <p><strong>Physics Chemistry Engineering Science<span class="date" style=" color: inherit;">Sept 2018 - Apr 2020</span><br><a href="https://fabacademy.org/">Preparatory Classes Errazi</a></strong> Morocco, El Jadida</p>
