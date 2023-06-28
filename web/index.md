@@ -87,7 +87,7 @@ title: About
       <p><strong>Centrale Coding Competition, 2nd Place (<a href="https://drive.google.com/file/d/1ryd9lxvUA3Qd3IUJMF8T0FRt1yWcccck/view?usp=share_link">Certification</a>)<span class="date" style=" color: inherit;">Nov 2021 - Dec 2021</span><br><a href="http://www.centrale-casablanca.ma/fr/">Ecole Centrale Casablanca</a></strong> Morocco, Casablanca</p><p> </p>
      <h2><i class="fas fa-map-marker-alt"></i> Where I'm Located -</h2>
       <center>
-        <iframe width="100%" height="350" style="margin-bottom: 12px; border:0 " loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.8183321003753!2d-7.622630085316603!3d33.480080255112334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62dfb0bd98e83%3A0x6c5587c807a6f58e!2s%C3%89cole%20centrale%20Casablanca!5e0!3m2!1sfr!2sma!4v1674305579490!5m2!1sfr!2sma"></iframe> 
+        <iframe width="100%" height="350" style="margin-bottom: 12px; border:0 " loading="lazy" allowfullscreen src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Cergy%2095000%2C%20France+(Titre)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"></iframe> 
       </center>
      <h2><i class="fas fa-city"></i> Community Involvement -</h2>
      <p><strong><a href="https://www.linkedin.com/company/techinnov-days/">TechInnov Days</a>, Organizer member<span class="date" style=" color: inherit;">Sept 2022 - Present</span><br><a href="http://www.centrale-casablanca.ma/fr/">Ecole Centrale Casablanca</a></strong> Morocco, Casablanca</p><p> </p>
