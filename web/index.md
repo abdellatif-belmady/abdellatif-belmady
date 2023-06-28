@@ -35,7 +35,7 @@ title: About
   </div>
   <div class="stuff__container">
     <div class="stuff__content">
-     <span class="resume" style=" color: inherit;"><a href="https://drive.google.com/file/d/1XEPZlp7eQP9NDvzpCd4-my32dwAzVxa7/view?usp=drive_link"><strong>Export Resume </strong><i class="far fa-file-alt"></i>
+     <span class="resume" style=" color: inherit;"><a href="https://cvdesignr.com/p/638a91a44cfe5"><strong>Export Resume </strong><i class="far fa-file-alt"></i>
      </a></span><h1>About</h1>
       <div class="underline"></div>
       <p><strong>Hey! I’m Abdellatif BELMADY,</strong> I'm a 23-year-old Moroccan student currently studying data science and digitalization at Ecole Centrale Casablanca.
