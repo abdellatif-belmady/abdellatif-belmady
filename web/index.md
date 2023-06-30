@@ -42,7 +42,15 @@ title: About
       My passion for data science stems from my belief in the power of technology to drive positive change. I'm fascinated by how data can be used to solve complex problems and improve people's lives. I also believe that hard work and dedication are essential to success. As the famous author <i>Stephen King</i> once said, " <strong>Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.</strong>"</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - full time</p>
-      <p>Currently, the possession and installation of cameras are indispensable in large organizations and in any sector. But despite their usefulness, these cameras still work in a traditional way in front of the evolution of the digital and intelligent world. Our solutions opt for intelligent cameras that integrate new technologies. Having smart cameras brings many advantages to your work and your business.
+      <p>Today, the presence and installation of cameras are indispensable in large organizations and across various sectors. However, traditional camera systems often lag behind the advancements in the digital and intelligent world. At OtherWays, we offer a range of services leveraging intelligent cameras integrated with cutting-edge technologies. Our solutions go beyond traditional surveillance by providing advanced capabilities tailored to your needs, such as:
+      <ul>
+        <li>Detection of persons authorized to access a room, enhancing security measures and access control.
+        <li>Tracking and analysis of people movement, providing valuable insights for crowd management and optimizing space utilization.
+        <li>Detection and counting of people, enabling accurate footfall analysis and facilitating crowd control measures.
+        <li>Detection of the presence/absence of employees at their workstations, allowing for efficient workforce management and improving productivity.
+        </li>
+      </ul>
+      These examples represent just a glimpse of our service offerings. At OtherWays, we understand that each organization has unique requirements, and we tailor our solutions to meet your specific needs. Whether it's facial recognition, object tracking, or customized analytics, we can provide tailored solutions to enhance your operations. Our team is committed to delivering innovative and intelligent camera solutions that maximize the value of your investment.
       </p>
       <p><strong>End-of-Studies Internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
