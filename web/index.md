@@ -16,7 +16,7 @@ title: About
      <p><img src="assets/images/photo.jpg" alt="Profile Picture" class="profilepic"></p>
       <h1>Abdellatif BELMADY</h1>
       <h2>Cergy (95000), France</h2>
-      <h3>Data Engineer | Data Analyst  | Data Scientist | Full-stack developer @Angular, @C++ & @Python<h3>
+      <h3>Data Engineer | Data Analyst  | Data Scientist | C++ & Python<h3>
       <div class="socials">
        <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/" class="ln" style=" color: inherit;" title="Linked In - Abdellatif BELMADY"><i class="fab fa-linkedin"></i></a>
        <a href="https://github.com/abdellatif-belmady" class="git" style=" color: inherit;" title="Github - Abdellatif-belmady"><i class="fab fa-github"></i></a>
@@ -40,7 +40,7 @@ title: About
       <div class="underline"></div>
       <p><strong>Hello! I’m Abdellatif BELMADY,</strong> a Moroccan student pursuing a degree in data science and digitalization at Ecole Centrale Casablanca. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King, <strong>"Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work."</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
-     <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - full time</p>
+     <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - Part Time</p>
       <p>Today, the presence and installation of cameras are indispensable in large organizations and across various sectors. However, traditional camera systems often lag behind the advancements in the digital and intelligent world. At OtherWays, we offer a range of services leveraging intelligent cameras integrated with cutting-edge technologies. Our solutions go beyond traditional surveillance by providing advanced capabilities tailored to your needs, such as:
       <ul>
         <li>Detection of persons authorized to access a room, enhancing security measures and access control.
@@ -51,7 +51,7 @@ title: About
       </ul>
       These examples represent just a glimpse of our service offerings. At OtherWays, we understand that each organization has unique requirements, and we tailor our solutions to meet your specific needs. Whether it's facial recognition, object tracking, or customized analytics, we can provide tailored solutions to enhance your operations. Our team is committed to delivering innovative and intelligent camera solutions that maximize the value of your investment.
       </p>
-      <p><strong>End-of-Studies Internship <span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
+      <p><strong>3D Modeling Developer Internship<span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
         <li>Designed and implemented innovative and high-performance algorithms to enhance product functionalities. 
         <li>Developed native applications in C++ and web applications using <strong><a href="https://angular.io/docs">Angular/TypeScript</a></strong> to improve user experience and accessibility.
@@ -63,7 +63,7 @@ title: About
         </li>
       </ul>
       <p>During this end-of-studies internship at SOLEFARMA, I had the opportunity to work on challenging tasks, including algorithm design, software development, and hardware integration. I successfully contributed to improving product performance by implementing innovative algorithms and enhancing user interfaces. Additionally, leading the camera upgrade project allowed me to gain expertise in 3D imaging technology and software integration.</p>
-      <p><strong>Internship in Computer Vision <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
+      <p><strong>Computer Vision Developer Internship <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
       <ul>
         <li>Collected images (using the <strong><a href="https://chrome.google.com/webstore/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm">Imageye</a></strong> extention) to build a comprehensive dataset for computer vision tasks. 
         <li>Conducted image annotation using <strong><a href="https://sourceforge.net/projects/labelimg.mirror/">labelImg.exe</a></strong> to create accurate ground truth labels for training purposes.
@@ -75,7 +75,7 @@ title: About
         </li>
       </ul>
       <p>During this internship, I gained hands-on experience in computer vision techniques, including dataset collection, annotation, and training of deep learning models. I developed expertise in detecting and recognizing surgical instruments, as well as detecting mask wearing, medical caps, and earrings in medical images. This experience enhanced my skills in image processing, object detection, and model evaluation.</p>
-      <p><strong>Data Analyst Intern<span class="date" style=" color: inherit;">Aug 2021 - Sept 2021</span><br><a href="https://www.kerix.net/fr/annuaire-entreprise/vcr-sodalmu">VCR-Sodalmu</strong></a> - Internship</p>
+      <p><strong>Data Analyst Internship<span class="date" style=" color: inherit;">Aug 2021 - Sept 2021</span><br><a href="https://www.kerix.net/fr/annuaire-entreprise/vcr-sodalmu">VCR-Sodalmu</strong></a> - Internship</p>
       <ul>
         <li>Developed an <strong><a href="https://drive.google.com/file/d/1x4r7bgLm6O38PKcY0ONY0IaTBthXEc6K/view?usp=share_link">Excel application</a></strong>.  using VBA to manage inventory efficiently.
         <li>Implemented a machine learning model to identify and address waste issues in the production line.
