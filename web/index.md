@@ -16,7 +16,7 @@ title: About
      <p><img src="assets/images/photo.jpg" alt="Profile Picture" class="profilepic"></p>
       <h1>Abdellatif BELMADY</h1>
       <h2>Cergy (95000), France</h2>
-      <h3>Data Scientist | Machine Learning Engineer<h3>
+      <h3>Data Scientist | AI Engineer<h3>
       <div class="socials">
        <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/" class="ln" style=" color: inherit;" title="Linked In - Abdellatif BELMADY"><i class="fab fa-linkedin"></i></a>
        <a href="https://github.com/abdellatif-belmady" class="git" style=" color: inherit;" title="Github - Abdellatif-belmady"><i class="fab fa-github"></i></a>
