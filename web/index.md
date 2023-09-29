@@ -51,18 +51,16 @@ title: About
       </ul>
       These examples represent just a glimpse of our service offerings. At OtherWays, we understand that each organization has unique requirements, and we tailor our solutions to meet your specific needs. Whether it's facial recognition, object tracking, or customized analytics, we can provide tailored solutions to enhance your operations. Our team is committed to delivering innovative and intelligent camera solutions that maximize the value of your investment.
       </p>
-      <p><strong>3D Modeling Developer Internship<span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
+      <p><strong>Deep Learning Data Scientist Internship<span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
-        <li>Designed and implemented innovative and high-performance algorithms to enhance product functionalities. 
-        <li>Developed native applications in C++ and web applications using <strong><a href="https://angular.io/docs">Angular/TypeScript</a></strong> to improve user experience and accessibility.
-        <li>Led a project to upgrade the 3D insole scanner by replacing the existing 2D cameras with 3D cameras.
-        <li>Conducted a comprehensive study to determine the optimal camera placement for capturing accurate 3D scans.
-        <li>Collaborated with the team to adapt the software using <strong><a href="https://github.com/IntelRealSense/librealsense/releases/tag/v2.53.1">the SDK</a></strong> of the 3D cameras, ensuring seamless integration and compatibility.
-        <li>Tested and validated the upgraded system, ensuring its reliability and efficiency.
-        <li>Documented the entire development process, including algorithm design, software implementation, and camera integration.
+        <li>Implemented a Deep Learning approach for Foot-Type Classification Using Heterogeneous Pressure Data.
+        <li>Developed a methodology to collect both image and numerical data for the project.
+        <li>Fine-tuned VGG16 and InceptionV3 models to process the image data effectively.
+        <li>Fine-tuned K-NN and CART models to process the numerical data efficiently.
+        <li>Employed a stacking ensemble learning technique to enhance the final model's performance.
+        <li>Successfully deployed the final model on the OVH Cloud platform.
         </li>
       </ul>
-      <p>During this end-of-studies internship at SOLEFARMA, I had the opportunity to work on challenging tasks, including algorithm design, software development, and hardware integration. I successfully contributed to improving product performance by implementing innovative algorithms and enhancing user interfaces. Additionally, leading the camera upgrade project allowed me to gain expertise in 3D imaging technology and software integration.</p>
       <p><strong>Computer Vision Developer Internship <span class="date" style=" color: inherit;">Apr 2022 - Jul 2022</span><br><a href="https://www.linkedin.com/company/6-perform/">6 PERFORM</strong></a> - Internship</p>
       <ul>
         <li>Collected images (using the <strong><a href="https://chrome.google.com/webstore/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm">Imageye</a></strong> extention) to build a comprehensive dataset for computer vision tasks. 
