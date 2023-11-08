@@ -1,12 +1,12 @@
 ## **Introduction**
 
-**``Abstractive Summarization``** est une tâche du Natural Language Processing (NLP) qui vise à générer un résumé concis d'un texte source. Contrairement au **``extractive summarization``**, Abstractive Summarization ne se contente pas de copier les phrases importantes du texte source, mais peut également en créer de nouvelles qui sont pertinentes, ce qui peut être considéré comme une paraphrase. Abstractive Summarization donne lieu à un certain nombre d'applications dans différents domaines, des livres et de la littérature, à la science et à la R&D, à la recherche financière et à l'analyse de documents juridiques.
+**``Abstractive Summarization``** is a Natural Language Processing (NLP) task that aims to generate a concise summary of a source text. Unlike **extractive summarization**, Abstractive Summarization doesn't merely copy important sentences from the source text but can also create new, relevant sentences, which can be considered paraphrases. Abstractive Summarization has numerous applications in various domains, from books and literature to science and R&D, financial research, and legal document analysis.
 
-Jusqu'à présent, l'approche la plus récente et la plus efficace en matière de Abstractive Summarization consiste à utiliser des modèles de transformation spécifiquement adaptés à un ensemble de données de résumé. Dans cette étude, nous démontrons comment vous pouvez facilement résumer un texte à l'aide d'un modèle puissant en quelques étapes simples. Tout d'abord, nous utiliserons deux modèles qui sont déjà pré-entraînés, de sorte qu'aucun entrainnement supplémentaire n'est nécessaire, puis nous affinerons l'un de ces deux modèles sur notre base de données.
+So far, the most recent and effective approach to Abstractive Summarization is to use transformation models specifically tailored to a summary dataset. In this study, we demonstrate how you can easily summarize a text using a powerful model in a few simple steps. First, we'll use two models that are already pre-trained, so no additional training is needed. Then, we'll fine-tune one of these models on our dataset.
 
-Sans plus attendre, commençons !
+Without further ado, let's get started!
 
-## **Importer les données**
+## **Importing Data**
 
 ```py
 import pandas as pd
@@ -14,50 +14,52 @@ data = pd.read_json("/content/sample_data/AgrSmall.json")
 data.head()
 ```
 
-## **Utilisation de transformer `bart-large-cnn` & `t5-base`**
+## **Using bart-large-cnn & t5-base Transformers**
 
-### **Installer la bibliothèque Transformers**
+### **Installing the Transformers Library**
 
-La bibliothèque que nous allons utiliser est Transformers par Huggingface.
+The library we're going to use is Transformers by Huggingface.
 
-Pour installer des transformateurs, il suffit d'exécuter cette cellule :
+To install Transformers, simply run this cell:
 
 ```py
 pip install transformers
 ```
 !!! Note
-    Transformers nécessite l'installation préalable de Pytorch. Si vous n'avez pas encore installé Pytorch, rendez-vous sur [le site officiel de Pytorch](https://pytorch.org/) et suivez les instructions pour l'installer.
+    Transformers requires the prior installation of PyTorch. If you haven't already installed PyTorch, visit the official PyTorch website and follow the instructions to install it.
 
-### **Importer les bibliothèques**
+### **Importing Libraries**
 
-Après avoir installé transformers avec succès, nous pouvons maintenant commencer à l'importer dans votre script Python. Nous pouvons également importer `os` afin de définir la variable d'environnement à utiliser par le GPU à l'étape suivante.
+After successfully installing Transformers, we can now start importing it into your Python script. We can also import ``os`` to set the environment variable to be used by the GPU in the next step.
 
 ```py
 from transformers import pipeline
 import os
 ```
 
-Maintenant, nous sommes prêts à sélectionner the summarization model à utiliser. Huggingface fournit deux summarization models puissants à utiliser : ``BART`` (bart-large-cnn) et ``t5`` (t5-small, t5-base, t5-large, t5-3b, t5-11b). Pour en savoir plus sur ces modèles veuillez consulter leurs documents officiels ([document BART](https://arxiv.org/abs/1910.13461), [document t5](https://arxiv.org/abs/1910.10683)).
+Now, we're ready to select the summarization model to use. Huggingface provides two powerful summarization models to use: ``BART`` (bart-large-cnn) and ``t5`` (t5-small, t5-base, t5-large, t5-3b, t5-11b). For more information about these models, please refer to their official documents ([BART document](https://arxiv.org/abs/1910.13461), [t5 document](https://arxiv.org/abs/1910.10683)).
 
-Pour utiliser le modèle BART, qui est formé sur le [CNN/Daily Mail News Dataset](https://www.tensorflow.org/datasets/catalog/cnn_dailymail), nous avons utilisés directement les paramètres par défaut via le module intégré Huggingface pipeline :
+To use the BART model, which is trained on the [CNN/Daily Mail News Dataset](https://www.tensorflow.org/datasets/catalog/cnn_dailymail), we directly use the default parameters via the built-in Huggingface pipeline module:
+
 
 ```py
 summarizer = pipeline("summarization")
 ```
 
-Pour utiliser le modèle t5 (par exemple t5-base), qui est entraîné sur [c4 Common Crawl web corpus](https://www.tensorflow.org/datasets/catalog/c4), nous avons procédé comme suit :
+To use the t5 model (e.g., t5-base), trained on the [c4 Common Crawl web corpus](https://www.tensorflow.org/datasets/catalog/c4), we proceed as follows:
+
 
 ```py
 summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
 ```
 
-Pour plus d'informations, veuillez vous référer à la [Huggingface documentation](https://huggingface.co/transformers/main_classes/pipelines.html#transformers.SummarizationPipeline).
+For more information, please refer to the [Huggingface documentation](https://huggingface.co/transformers/main_classes/pipelines.html#transformers.SummarizationPipeline).
 
-### **Entrer le texte à résumer**
+### **Entering Text to Summarize**
 
-Maintenant que notre modèle est prêt, nous pouvons commencer à choisir les textes que nous voulons résumer. Nous proposons de choisir les 4 premiers abstracts dans notre base de données :
+Now that our model is ready, we can start selecting the texts we want to summarize. We suggest choosing the first 4 abstracts in our dataset:
 
-Nous définissons nos variables :
+We define our variables:
 
 ```py
 text_1 = data["abstracts"][0]
@@ -92,16 +94,16 @@ print(text_4)
     Waste management has become pertinent in urban regions, along with rapid population growth. The current ways of managing waste, such as refuse collection and recycling, are failing to minimise waste in cities. With urban populations growing worldwide, there is the challenge of increased pressure to import food from rural areas. Urban agriculture not only presents an opportunity to explore other means of sustainable food production, but for managing organic waste in cities. However, this opportunity is not taken advantage of. Besides, there is a challenge of mixed reactions from urban planners and policymakers concerning the challenges and benefits presented by using organic waste in urban agriculture. The current paper explores the perceived challenges and opportunities for organic waste utilisation and management through urban agriculture in the Durban South Basin in eThekwini Municipality in KwaZulu-Natal (KZN) Province of South Africa. It is anticipated that this information will be of use to the eThekwini Municipality, policymakers, researchers, urban agriculture initiatives, households and relevant stakeholders in the study areas and similar contexts globally. Two hundred (200) households involved in any urban farming activity and ten (10) key informants (six (6) staff from the Cleaning and Solid Waste Unit of the eThekwini Municipality and four (4) from the urban agricultural initiative) were selected using convenient sampling. Descriptive statistics and inductive thematic analysis were used to analyse data. The significant perceived challenges and risks associated with the utilisation of organic waste through urban agriculture included lack of a supporting policy, climatic variation, lack of land tenure rights, soil contamination and food safety concerns. Qualitative data further showed that the difficulty in segregating waste, water scarcity, difficulty in accessing inputs, limited transportation of organic waste, inadequate handling and treatment of organic waste, and being a health hazard were some important challenges. On the other hand, the significant perceived benefits associated with the utilisation of organic waste through urban agriculture were enhanced food and nutrition security, and opportunities for business incubation. Other important benefits established through qualitative data were an improved market expansion for farmers and improved productivity. Overall, despite the perceived challenges and risks, there is an opportunity to manage organic waste through urban agriculture. It is imperative for an integrated policy encompassing the food, climate and waste management to be developed to support this strategy. All stakeholders—the government, municipal authorities and urban agricultural initiatives should also, guided by the policy, support urban farmers, for example, through pieces of training on how to properly manage and recycle organic waste, land distribution, inputs availability and water usage rights among other things. View Full-Text
 
 
-### **Génération de résumé**
+### **Summary Generation**
 
-Enfin, nous pouvons commencer à résumer les textes entrés. Ici, nous déclarons la longueur minimale et la longueur maximale que nous souhaitons pour la sortie des résumés, et nous désactivons également l'échantillonnage pour générer des résumés fixes. Nous pouvons le faire en exécutant les commandes suivantes :
+Finally, we can start summarizing the input texts. Here, we specify the minimum and maximum length we want for the summary output and disable sampling to generate fixed summaries. You can do this by running the following commands:
 
 ```py
 summary_text_1 = summarizer(text, max_length=100, min_length=5, do_sample=False)[0]['summary_text']
 print(summary_text_1)
 ```
 
-Voilà ! Nous obtenons le résumé de premier texte :
+There you have it! We get the summary of the first text:
 
 ??? success "Output"
     Most people in rural areas in South Africa rely on untreated drinking groundwater sources and pit latrine sanitations . Outbreaks of diarrhoea (69%) and cholera (14%) were common. Sixty percent were willing to use treated faecal sludge in agriculture .
@@ -111,7 +113,7 @@ summary_text_2 = summarizer(text_2, max_length=100, min_length=5, do_sample=Fals
 print(summary_text_2)
 ```
 
-Voilà ! Nous obtenons le résumé de deuxième texte :
+There you have it! We get the summary of the second text:
 
 ??? success "Output"
     The aim of this study was to highlight the importance of socioeconomic and psychosocial factors in the adoption of sustainable agricultural practices (SAPs) in banana farm production . Economic status, watching agricultural training programs, newspaper and radio awareness campaigns, perceptions of sustainable agriculture and the feasibility of SAPs were significant factors .
@@ -121,7 +123,7 @@ summary_text_3 = summarizer(text_3, max_length=100, min_length=5, do_sample=Fals
 print(summary_text_3)
 ```
 
-Voilà ! Nous obtenons le résumé de troisième texte :
+There you have it! We get the summary of the third text:
 
 ??? success "Output"
     Heavy metal and metalloid (HMM) contamination can result in adverse health effects for humans . In 2018, industrial slag and hazardous levels of soil contamination were detected in West Atlanta . Home gardeners were more likely to recognize HMM health effects than community gardeners .
@@ -132,7 +134,7 @@ summary_text_4 = summarizer(text_4, max_length=100, min_length=5, do_sample=Fals
 print(summary_text_4)
 ```
 
-Voilà ! Nous obtenons le résumé de quatrième texte :
+There you have it! We get the summary of the third text:
 
 ??? success "Output"
     Waste management has become pertinent in urban regions, along with rapid population growth . The current ways of managing waste, such as refuse collection and recycling, are failing to minimise waste in cities . With urban populations growing worldwide, there is the challenge of increased pressure to import food from rural areas .
