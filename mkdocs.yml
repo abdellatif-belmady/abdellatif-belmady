@@ -119,7 +119,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
+  - Portfolio: index.md
   - Projects:
     - Spam Dataset: projects/spam datasets.md
     - Ozone Dataset: projects/ozone datasets.md
@@ -149,7 +149,8 @@ nav:
     #   - Data Collection: courses/Natural Language Processing/collection.md
     #   - RNN: courses/Natural Language Processing/reseaunn.md
     #   - Modern Technics: courses/Natural Language Processing/modern.md
-  - Books: books/not yet.md
+  - Blog: books/not yet.md
+  # - Books: books/not yet.md
     # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
     #   - Preface: books/Hands on machine learning/preface.md
     #   - The Fundamentals of Machine Learning:
