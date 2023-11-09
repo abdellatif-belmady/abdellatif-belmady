@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **⚡ Day 5: Sustainable Energy⚡**
 
 Welcome to the fifth day of our ``ML & DL Morocco Challenges`` series. Today, we venture into the world of sustainable energy and how Artificial Intelligence is powering the transformation of energy sources in Morocco.

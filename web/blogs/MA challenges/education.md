@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🤖 Day 1: Education 📚**
 
 Welcome to the first day of our ``ML & DL Morocco Challenges`` series. Today, we're delving into the pivotal role of Artificial Intelligence in education, a sector that shapes the future of our nation.

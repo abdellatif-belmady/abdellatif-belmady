@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🤝 Day 12: Fostering Collaboration 🤝**
 
 Welcome to the twelfth and final day of our ``ML & DL Morocco Challenges`` series. Today, we emphasize the significance of fostering collaboration and partnerships to drive AI development in Morocco.

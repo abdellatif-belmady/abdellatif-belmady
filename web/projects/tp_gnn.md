@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # TP: Réseaux de neurones graphiques
 
 Dans ce TP, on va appliquer les concepts d'extraction de caractéristiques et de node embedding sur un dataset classique [Karate Club Network](https://en.wikipedia.org/wiki/Zachary%27s_karate_club).

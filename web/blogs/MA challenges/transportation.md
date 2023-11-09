@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🚗 Day 6: Smart Transportation 🚗**
 
 Welcome to the sixth day of our ``ML & DL Morocco Challenges`` series. Today, we hit the road to explore the future of smart transportation in Morocco, where Artificial Intelligence is steering the way.

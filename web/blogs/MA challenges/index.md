@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **Welcome to "ML & DL Morocco Challenges"**
 
 ## **Discover How Artificial Intelligence is Transforming Morocco**

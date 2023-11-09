@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🏥 Day 2: Healthcare Transformation 🏥**
 Welcome to the second day of our ``ML & DL Morocco Challenges`` series. Today, we explore the profound impact of Artificial Intelligence on healthcare, a sector that holds the key to the well-being of our nation.
 

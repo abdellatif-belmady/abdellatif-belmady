@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🧠 Day 10: Nurturing AI Talent 🧠**
 
 Welcome to the tenth day of our ``ML & DL Morocco Challenges`` series. Today, we focus on the critical aspect of nurturing AI talent in Morocco, preparing the next generation of innovators.

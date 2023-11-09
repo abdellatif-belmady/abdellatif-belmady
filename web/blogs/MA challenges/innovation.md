@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🚀 Day 7: Empowering Innovation 🚀**
 
 Welcome to the seventh day of our ``ML & DL Morocco Challenges`` series. Today, we're setting our sights on the limitless world of innovation, where Artificial Intelligence serves as a catalyst for progress.

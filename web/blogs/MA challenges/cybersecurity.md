@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🌐 Day 9: Cybersecurity Reinforcement 🌐**
 
 Welcome to the ninth day of our ``ML & DL Morocco Challenges`` series. Today, we delve into the realm of cybersecurity, exploring how Artificial Intelligence reinforces the digital defenses of Morocco.

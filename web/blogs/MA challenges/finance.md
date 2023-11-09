@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **💰 Day 4: Financial Inclusion 💰**
 
 Welcome to the fourth day of our ``ML & DL Morocco Challenges`` series. Today, we dive into the realm of financial inclusion, exploring how Artificial Intelligence is reshaping access to financial services in Morocco.

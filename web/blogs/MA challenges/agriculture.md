@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🌾 Day 3: Agriculture Revolution 🌾**
 
 Welcome to the third day of our ``ML & DL Morocco Challenges`` series. Today, we embark on a journey to discover how Artificial Intelligence is revolutionizing agriculture in Morocco, a sector that lies at the heart of our nation's prosperity.

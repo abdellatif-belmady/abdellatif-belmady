@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🏛️ Day 8: Transforming Public Services 🏛️**
 
 Welcome to the eighth day of our ``ML & DL Morocco Challenges`` series. Today, we explore the dynamic role of Artificial Intelligence in the transformation of public services, a sector at the heart of our nation's progress.

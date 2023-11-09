@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **Big-Data For IOT**
 
 !!! Info "Membres du groupe"

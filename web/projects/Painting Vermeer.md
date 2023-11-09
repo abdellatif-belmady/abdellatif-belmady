@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Algorithmes Génétiques 2: Peindre Vermeer
 
 ## **Introduction**

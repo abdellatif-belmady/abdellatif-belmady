@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Algorithmes de machine learning
 
 ## **Les algorithmes les plus utilisés en machine learning**

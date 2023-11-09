@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **🛡️ Day 11: Prioritizing Data Privacy 🛡️**
 
 Welcome to the eleventh day of our ``ML & DL Morocco Challenges`` series. Today, we address a critical aspect of the AI era: the importance of prioritizing data privacy and protection in Morocco.

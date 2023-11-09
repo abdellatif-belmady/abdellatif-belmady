@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## **Bibliothèques**
 
 Tout d'abord, exécutons la cellule ci-dessous pour importer tous les paquets dont vous aurez besoin au cours de cette étude.

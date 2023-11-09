@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## **Introduction**
 
 The objective of this project was to train a neural network to classify emails as "spam" or "non-spam." This was done using the Spambase dataset provided by the UCI Machine Learning Repository, which contains 57 features representing the word frequencies in 4601 emails.
