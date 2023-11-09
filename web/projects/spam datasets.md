@@ -1,13 +1,13 @@
 ## **Introduction**
 
-L'objectif de ce projet était d'entraîner un réseau neuronal à classer les courriels comme ``spam`` ou ``non spam``. Ceci a été fait sur le jeu de données **Spambase** fourni par le référentiel d'apprentissage automatique de l'UCI, qui contient 57 features représentant la fréquence des mots dans 4601 emails.
+The objective of this project was to train a neural network to classify emails as "spam" or "non-spam." This was done using the Spambase dataset provided by the UCI Machine Learning Repository, which contains 57 features representing the word frequencies in 4601 emails.
 
-Pour notre label (Spam) ; ``spam`` a été codé comme 1 pour la classe positive et ``non spam`` a été a été codé comme 0 pour la classe négative.
+For our label (Spam), "spam" was encoded as 1 for the positive class, and "non-spam" was encoded as 0 for the negative class.
 
-## **Préparation des données**
+## **Data Preparation**
 
 ```py
-# Importer les bibliothèques
+# Import Libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,47 +21,47 @@ from sklearn.metrics import accuracy_score
 from tensorflow.keras.layers import Dense
 ```
 ```py
-# Importer le datasets 
+# Import Datasets 
 spam = pd.read_csv("spam.csv")
 ```
 ```py
-# Lire les 5 première lignes
+# Read the first 5 lines
 spam.head(5)
 ```
-## **Étude exploratoire des données**
+## **Exploratory Data Analysis (EDA)**
 ```py
-# Afficher quelques informations du dataset
+# Display some dataset information
 spam.info()
 ```
 
-D'après le résultat de la méthode **``info()``**, il apparaît que tous les features sont de type float ce qui facilitera notre étude ultérieure (pas besoin de faire une feature engineering).
+According to the **``info()``** method results, it appears that all the features are of type float, which will make our subsequent analysis easier (no need for feature engineering).
 
 ```py
-# Afficher quelques statistiques du dataset
+# Display some dataset statistics
 spam.describe()
 ```
 
-J'ai également fait une analyse des distributions des données pour avoir une idée sur les lois suivies par les différents features, ainsi veuillez trouver ci-dessous le résultat obtenu et qui montre que la plupart des features ne suivent pas une distribution gaussienne.
+I have also conducted an analysis of the data distributions to get an idea of the distributions followed by the various features. Below is the obtained result, showing that most features do not follow a Gaussian distribution.
 
 ```py
-# Afficher quelques statistiques du dataset
+# Display some dataset statistics
 spam.describe()
 ```
 ??? success "Output"
     ![Analyse des distributions des données (Histogrammes)](../assets/images/fig1.png)
 
 ```py
-# Analyse des corrélations
+# Correlation Analysis
 matriceCorr = spam.corr().round(1)
 sns.heatmap(data=matriceCorr, annot = True)
 ```
 ??? success "Output"
     ![Matrice de corrélation](../assets/images/corr.png)
 
-## **Implémentation d’un modèle de réseau de neurones**
+## **Implementation of a Neural Network Model**
 
 ```py
-# Division de données en données d'entrainement, du test et de validation
+# Splitting data into training, testing, and validation data
 
 spam = spam.sample(frac=1, axis=0)
 
@@ -72,41 +72,41 @@ data_valid = data_train_valid.drop(data_train.index)
 
 x_train = data_train.drop('spam', axis=1)
 y_train = data_train['spam']
-print('Dimensions de X train :', x_train.shape)
-print('Dimensions de Y train :', y_train.shape)
+print('X train dimensions :', x_train.shape)
+print('Y train dimensions :', y_train.shape)
 
 x_valid = data_valid.drop('spam', axis=1)
 y_valid = data_valid['spam']
-print('Dimensions de X valid :', x_valid.shape)
-print('Dimensions de Y valid :', y_valid.shape)
+print('X valid dimensions :', x_valid.shape)
+print('Y valid dimensions :', y_valid.shape)
 
 x_test = data_test.drop('spam', axis=1)
 y_test = data_test['spam']
-print('Dimensions de X test :', x_test.shape)
-print('Dimensions de Y test :', y_test.shape)
+print('X test dimensions :', x_test.shape)
+print('Y test dimensions :', y_test.shape)
 ```
 ```py
-# Normalisation des données
+# Data Normalization
 
 min_x_train = x_train.min()
 max_x_train = x_train.max()
 
-print("Min de x_train :", min_x_train)
-print("Max de x_train :", max_x_train)
+print("Min of x_train :", min_x_train)
+print("Max of x_train :", max_x_train)
 
 x_train_norm = (x_train-min_x_train)/(max_x_train-min_x_train)
 x_test_norm = (x_test-min_x_train)/(max_x_train-min_x_train)
 x_val_norm = (x_valid-min_x_train)/(max_x_train-min_x_train)
 ```
 
-La structure du perceptron se compose **d'une couche d'entrée avec 57 neurones** correspondant à chacune des 57 features, **d'une couche cachée avec 12 neurones** et **d'une couche de sortie avec 2 neurones** : le premier peut être interprété comme la probabilité qu'un email soit « non-spam » et le second comme la probabilité de "spam". Le neurone de sortie ayant la probabilité la plus élevée détermine la classification d'un email.
+The perceptron structure consists of **an input layer with 57 neurons corresponding** to each of the 57 features, **a hidden layer with 12 neurons**, and **an output layer with 2 neurons**: the first one can be interpreted as the probability of an email being "non-spam," and the second one as the probability of "spam." The output neuron with the highest probability determines the email classification.
 
-La **``fonction sigmoïde``** a été choisie comme fonction d'activation pour chacune des trois couches, l'entropie croisée binaire comme loss function, et l'algorithme **``Adam optimizer``** pour son adaptative learning rate and momentum.
+The ``sigmoid function`` was chosen as the activation function for each of the three layers, binary cross-entropy as the loss function, and the ``Adam optimizer`` algorithm for its adaptive learning rate and momentum.
 
 ![L’architecture de réseau de neurones](../assets/images/archi.jpg)
 
 ```py
-## Implémentation de modèle DNN
+## Implementation of DNN model
 
 model = Sequential()
 model.add(Dense(57, input_dim=np.shape(x_train)[1], activation = 'sigmoid'))
@@ -125,7 +125,7 @@ callback = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=1000)
 hist = model.fit(x_train_norm, y_train, epochs = 10100, batch_size = 99999, callbacks = callback)
 ```
 ```py
-# Performance du modèle sur les données du test
+# Model Performance on Test Data
 
 preds = model.predict(x_test_norm)
 preds = [1 if x[0] > 0.5 else 0 for x in preds]
@@ -133,7 +133,7 @@ score_test_dnn = accuracy_score(y_test, preds)
 print(score_test_dnn)
 ```
 ```py
-# Performance du modèle sur les données de validation
+# Model Performance on Validation Data
 
 preds = model.predict(x_val_norm)
 preds = [1 if x[0] > 0.5 else 0 for x in preds]
@@ -143,11 +143,11 @@ print(score_valid_dnn)
 ```py
 figure = plt.gcf()
 figure.set_size_inches((20, 10))
-plt.title('Analyse des erreurs')
+plt.title('Error Analysis')
 plt.xlabel('Epoch')
-plt.ylabel('Entropie croisée')
+plt.ylabel('Cross Entropy')
 plt.plot(range(1, len(hist.history['loss']) + 1), hist.history['loss'])
-plt.legend(['Entropie croisée train'])
+plt.legend(['Training Cross-Entropy'])
 plt.show()
 ```
 ??? success "Output"
@@ -155,19 +155,19 @@ plt.show()
 ```py
 figure = plt.gcf()
 figure.set_size_inches((20, 10))
-plt.title('Analyse des erreurs')
+plt.title('Error Analysis')
 plt.xlabel('Epoch')
-plt.ylabel('Précision')
+plt.ylabel('Accuracy')
 plt.plot(range(1, len(hist.history['accuracy']) + 1), hist.history['accuracy'])
-plt.legend(["Précision d'apprentissage"])
+plt.legend(["Training Accuracy"])
 plt.show()
 ```
 ??? success "Output"
     ![Précision](../assets/images/precision.png)
 
-Ce modèle de réseau neuronal a donné un score de 0,924 pour les données de test et un score de 0,937 pour les données de validation, ce qui est très satisfaisant.
+This neural network model achieved a score of 0.924 for the test data and a score of 0.937 for the validation data, which is very satisfactory.
 
-## **Implémentation d’une Régression Logistique**
+## **Implementation of Logistic Regression**
 ```py
 from sklearn.linear_model import LogisticRegression
 
@@ -175,21 +175,21 @@ log_reg = LogisticRegression()
 log_reg.fit(x_train_norm, y_train)
 ```
 ```py
-# Performance du modèle sur les données du test
+# Model Performance on Test Data
 
 score_test_log_reg = log_reg.score(x_test_norm, y_test)
 print("Test Accuracy Score", score_test_log_reg)
 ```
 ```py
-# Performance du modèle sur les données de validation
+# Model Performance on Validation Data
 
 score_valid_log_reg = log_reg.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_log_reg)
 ```
 
-J'ai également mis en œuvre une régression logistique et j’ai obtenu un score de 0,876 pour les données de test et un score de 0,895 pour les données de validation.
+I also implemented logistic regression and obtained a score of 0.876 for the test data and a score of 0.895 for the validation data.
 
-## **Implémentation d’un SVM**
+## **Implementation of SVM (Support Vector Machine)**
 ```py
 from sklearn import svm
 
@@ -197,21 +197,21 @@ svm = svm.SVC()
 svm.fit(x_train_norm, y_train)
 ```
 ```py
-# Performance du modèle sur les données du test
+# Model Performance on Test Data
 
 score_test_svc = svm.score(x_test_norm, y_test)
 print("Test Accuracy Score", score_test_svc)
 ```
 ```py
-# Performance du modèle sur les données de validation
+# Model Performance on Validation Data
 
 score_valid_svc = svm.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_svc)
 ```
 
-Un SVC a également été mis en place et a donné un score de 0,931 pour les données de test et un score de 0,932 pour les données de validation.
+An SVC was also implemented and achieved a score of 0.931 for the test data and a score of 0.932 for the validation data.
 
-## **Implémentation d’un Random Forest**
+## **Implementation of Random Forest**
 ```py
 from sklearn.ensemble import RandomForestClassifier
 
@@ -219,27 +219,27 @@ rdf = RandomForestClassifier(max_depth=2, random_state=0)
 rdf.fit(x_train_norm, y_train)
 ```
 ```py
-# Performance du modèle sur les données du test
+# Model Performance on Test Data
 
 score_test_rdf = rdf.score(x_test_norm, y_test)
 print("Test Accuracy Score", score_test_rdf)
 ```
 ```py
-# Performance du modèle sur les données de validation
+# Model Performance on Validation Data
 
 score_valid_rdf = rdf.score(x_val_norm, y_valid)
 print("Test Accuracy Score", score_valid_rdf)
 ```
 
-Pour avoir une idée de tous les modèles de machine learning, j'ai mis en œuvre un Random Forest qui a donné un score de 0,884 pour les données de test et un score de 0,904 pour les données de validation.
+To get an idea of all machine learning models, I also implemented a Random Forest model which achieved a score of 0.884 for the test data and a score of 0.904 for the validation data.
 
 ## **Conclusion**
 
-Pour conclure, voici un tableau qui résume les différents scores de tous les modèles que j'ai mis en place :
+In conclusion, here is a table summarizing the different scores of all the models I implemented:
 
-|Modèle	                    |Score (test dataset)	    |Score (validation dataset)
-|---------------------------|---------------------------|--------------------------
-|Réseau de neurones (DNN)	|0.9246376811594202	        |0.9246376811594202
-|Régression Logistique	    |0.8768115942028986	        |0.8951406649616368
-|SVM (SVC)	                |0.9318840579710145	        |0.9322250639386189
-|Random Forest	            |0.8840579710144928	        |0.9040920716112532
+|Model	                      |Score (Test Dataset)	        |Score (Validation Dataset)
+|-----------------------------|-----------------------------|--------------------------
+|Deep Neural Network (DNN)	  |0.9246376811594202	        |0.9246376811594202
+|Logistic Regression	      |0.8768115942028986	        |0.8951406649616368
+|Support Vector Machine (SVC) |0.9318840579710145	        |0.9322250639386189
+|Random Forest	              |0.8840579710144928	        |0.9040920716112532

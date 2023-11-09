@@ -130,16 +130,16 @@ nav:
     - Profilage des chauffeurs: projects/projet R.md
     - Reciprocal n-body Collision Avoidance : projects/Reciprocal-n-body-Collision-Avoidance.md
     - Algorithmes Génétiques 2, Peindre Vermeer : projects/Painting Vermeer.md
-  - Documentations:
+  - Tutorials:
     - Libraries:
-      - Documentations/Libraries/index.md
-      - NumPy: Documentations/Libraries/numpy.md
-      - Pandas: Documentations/Libraries/pandas.md
+      - Tutorials/Libraries/index.md
+      - NumPy: Tutorials/Libraries/numpy.md
+      - Pandas: Tutorials/Libraries/pandas.md
     - Machine Learning Algorithms: 
-      - Documentations/Machine Learning Algorithms/index.md
+      - Tutorials/Machine Learning Algorithms/index.md
     - Computer Vision Algorithms:
-      - Documentations/Computer Vision Algorithms/index.md
-      - YOLO-NAS: Documentations/Computer Vision Algorithms/yolonas.md
+      - Tutorials/Computer Vision Algorithms/index.md
+      - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
     # - Natural Language Processing: 
     #   - courses/Natural Language Processing/index.md
     #   - Bases of NLP: courses/Natural Language Processing/bases.md
@@ -149,7 +149,21 @@ nav:
     #   - Data Collection: courses/Natural Language Processing/collection.md
     #   - RNN: courses/Natural Language Processing/reseaunn.md
     #   - Modern Technics: courses/Natural Language Processing/modern.md
-  - Blog: books/not yet.md
+  - Blogs:
+    - ML & DL Morocco Challenges: 
+      - blogs/MA challenges/index.md
+      - 📚 Day 1 - Education : blogs/MA challenges/education.md
+      - 🏥 Day 2 - Healthcare : blogs/MA challenges/healthcare.md
+      - 🌾 Day 3 - Agriculture : blogs/MA challenges/agriculture.md
+      - 💰 Day 4 - Finance : blogs/MA challenges/finance.md
+      - ⚡ Day 5 - Sustainable Energy : blogs/MA challenges/energy.md
+      - 🚗 Day 6 - Transportation : blogs/MA challenges/transportation.md
+      - 🚀 Day 7 - Innovation : blogs/MA challenges/innovation.md
+      - 🏛️ Day 8 - Public Services : blogs/MA challenges/public_services.md
+      - 🌐 Day 9 - Cybersecurity : blogs/MA challenges/cybersecurity.md
+      - 🧠 Day 10 - AI Talent : blogs/MA challenges/ai_talent.md
+      - 🛡️ Day 11 - Data Privacy : blogs/MA challenges/data_privacy.md
+      - 🤝 Day 12 - Collaboration : blogs/MA challenges/collaboration.md
   # - Books: books/not yet.md
     # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
     #   - Preface: books/Hands on machine learning/preface.md
