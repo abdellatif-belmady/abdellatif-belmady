@@ -8,6 +8,17 @@ The objective of this project was to train a neural network to classify emails a
 
 For our label (Spam), "spam" was encoded as 1 for the positive class, and "non-spam" was encoded as 0 for the negative class.
 
+<!-- <p align="center">
+  <br>
+  <iframe width="720" height="405" src="https://www.youtube.com/embed/LNwODJXcvt4?si=7n1UvGRLSd9p5wKs"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to Train a YOLOv8 model on Your Custom Dataset in <a href="https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/examples/tutorial.ipynb" target="_blank">Google Colab</a>.
+</p> -->
+
 ## **Data Preparation**
 
 ```py
