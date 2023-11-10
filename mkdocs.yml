@@ -121,15 +121,19 @@ markdown_extensions:
 nav:
   - Portfolio: index.md
   - Projects:
-    - Spam Dataset: projects/spam datasets.md
-    - Ozone Dataset: projects/ozone datasets.md
-    - Boston Dataset: projects/boston datasets.md
-    - TP_GNN : projects/tp_gnn.md
-    - Abstractive Summarization: projects/abstractive summarization.md
-    - Big-Data For IoT: projects/big data for iot.md
-    - Profilage des chauffeurs: projects/projet R.md
-    - Reciprocal n-body Collision Avoidance : projects/Reciprocal-n-body-Collision-Avoidance.md
-    - Algorithmes Génétiques 2, Peindre Vermeer : projects/Painting Vermeer.md
+    - Professional Projects:
+      - projects/Professional Projects/index.md
+    - Academic Projects:
+      - projects/Academic Projects/index.md
+      - Spam Dataset: projects/Academic Projects/spam datasets.md
+      - Ozone Dataset: projects/Academic Projects/ozone datasets.md
+      - Boston Dataset: projects/Academic Projects/boston datasets.md
+      - TP_GNN : projects/Academic Projects/tp_gnn.md
+      - Abstractive Summarization: projects/Academic Projects/abstractive summarization.md
+      - Big-Data For IoT: projects/Academic Projects/big data for iot.md
+      - Profilage des chauffeurs: projects/Academic Projects/projet R.md
+      - Reciprocal n-body Collision Avoidance : projects/Academic Projects/Reciprocal-n-body-Collision-Avoidance.md
+      - Algorithmes Génétiques 2, Peindre Vermeer : projects/Academic Projects/Painting Vermeer.md
   - Tutorials:
     - Libraries:
       - Tutorials/Libraries/index.md
