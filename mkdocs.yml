@@ -135,8 +135,6 @@ nav:
       - Tutorials/Libraries/index.md
       - NumPy: Tutorials/Libraries/numpy.md
       - Pandas: Tutorials/Libraries/pandas.md
-    - Machine Learning Algorithms: 
-      - Tutorials/Machine Learning Algorithms/index.md
     - Computer Vision Algorithms:
       - Tutorials/Computer Vision Algorithms/index.md
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
