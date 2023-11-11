@@ -1,7 +1,7 @@
 site_name: Abdellatif BELMADY
 site_description: >-
   Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
-  the machine learning books he has read and also free courses on the main points of machine learning and deep learning.
+  the machine learning books he has read and also free Tutorials on the main points of machine learning and deep learning.
 docs_dir: web/
 
 # Configuration
@@ -139,18 +139,18 @@ nav:
       - Tutorials/Libraries/index.md
       - NumPy: Tutorials/Libraries/numpy.md
       - Pandas: Tutorials/Libraries/pandas.md
-    - Computer Vision Algorithms:
+    - Computer Vision :
       - Tutorials/Computer Vision Algorithms/index.md
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
-    # - Natural Language Processing: 
-    #   - courses/Natural Language Processing/index.md
-    #   - Bases of NLP: courses/Natural Language Processing/bases.md
-    #   - Tools of NLP: courses/Natural Language Processing/tools.md
-    #   - Simple Analysis: courses/Natural Language Processing/simple.md
-    #   - Advanced Analysis: courses/Natural Language Processing/advanced.md
-    #   - Data Collection: courses/Natural Language Processing/collection.md
-    #   - RNN: courses/Natural Language Processing/reseaunn.md
-    #   - Modern Technics: courses/Natural Language Processing/modern.md
+    - Natural Language Processing: 
+      - Tutorials/Natural Language Processing/index.md
+    #   - Bases of NLP: Tutorials/Natural Language Processing/bases.md
+    #   - Tools of NLP: Tutorials/Natural Language Processing/tools.md
+    #   - Simple Analysis: Tutorials/Natural Language Processing/simple.md
+    #   - Advanced Analysis: Tutorials/Natural Language Processing/advanced.md
+    #   - Data Collection: Tutorials/Natural Language Processing/collection.md
+    #   - RNN: Tutorials/Natural Language Processing/reseaunn.md
+    #   - Modern Technics: Tutorials/Natural Language Processing/modern.md
   - Blogs:
     - ML & DL Morocco Challenges: 
       - blogs/MA challenges/index.md
