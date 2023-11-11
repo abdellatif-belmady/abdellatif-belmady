@@ -1,4 +1,8 @@
-# Computer Vision Algorithms
+---
+comments: true
+---
+
+# **Computer Vision**
 
 <div class="grid cards" markdown>
 

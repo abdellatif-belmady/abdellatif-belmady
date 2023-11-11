@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+comments: true
 ---
 
 !!! Info "Creation of professional documentation"
