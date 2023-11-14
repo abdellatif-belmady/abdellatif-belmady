@@ -77,6 +77,8 @@ extra:
       link: https://www.youtube.com/@otherways8368/featured
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/abdellatifbelmady/
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/AbdellatifBELM
 
 # Repository
 repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
@@ -145,7 +147,7 @@ nav:
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
     - Natural Language Processing: 
       - Tutorials/Natural Language Processing/index.md
-    #   - Bases of NLP: Tutorials/Natural Language Processing/bases.md
+      - Bases of NLP: Tutorials/Natural Language Processing/bases.md
     #   - Tools of NLP: Tutorials/Natural Language Processing/tools.md
     #   - Simple Analysis: Tutorials/Natural Language Processing/simple.md
     #   - Advanced Analysis: Tutorials/Natural Language Processing/advanced.md
