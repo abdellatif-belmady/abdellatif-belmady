@@ -1135,4 +1135,4 @@ record_video(speed = 25)
 
 ??? Output
 
-    ![video](../assets/videos/video.gif)
+    ![video](../../assets/videos/video.gif)
