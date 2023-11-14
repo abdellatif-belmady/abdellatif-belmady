@@ -337,11 +337,11 @@ evolve(0.01, 0.1, 0.01)
 
 ??? Output "Image de test (Input)"
 
-    ![image](../assets/images/test.jpg)
+    ![image](../../assets/images/test.jpg)
 
 ??? Output "Résultat final (Output)"
 
-    ![image](../assets/images/output.png)
+    ![image](../../assets/images/output.png)
 
 ## **Conclusion**
 

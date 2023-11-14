@@ -48,7 +48,7 @@ osmFeatures <- readRDS("DATA/osmfeatures.Rds")
 
 ??? success "Output"
 
-    ![image](../assets/images/img1.PNG)
+    ![image](../../assets/images/img1.PNG)
 
 
 ## **Définir la problématique**

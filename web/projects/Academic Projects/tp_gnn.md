@@ -23,7 +23,7 @@ nx.draw(G, with_labels = True)
 ```
 
 ??? success "Output"
-    ![Image](../assets/images/gnn1.png)
+    ![Image](../../assets/images/gnn1.png)
 
 ### **Question 1 : quel est le degré moyen du karaté club ?**
 
@@ -342,7 +342,7 @@ visualize_emb(emb)
 ```
 
 ??? success "Output"
-    ![Image](../assets/images/gnn2.png)
+    ![Image](../../assets/images/gnn2.png)
 
 ### **Question 7 : calcul des embeddings par descente du gradient.**
 
@@ -413,7 +413,7 @@ train(emb, loss_fn, sigmoid, train_label, train_edge)
 ```
 
 ??? success "Output"
-    ![Image](../assets/images/gnn3.png)
+    ![Image](../../assets/images/gnn3.png)
 
     loss: 3.468411684036255, accuracy: 0.13903743028640747
     loss: 3.43456768989563, accuracy: 0.13903743028640747
@@ -516,7 +516,7 @@ train(emb, loss_fn, sigmoid, train_label, train_edge)
     loss: 0.6545774936676025, accuracy: 0.625668466091156
     loss: 0.6540487408638, accuracy: 0.6274510025978088
 
-    ![Image](../assets/images/gnn4.png)
+    ![Image](../../assets/images/gnn4.png)
 
     loss: 0.65351802110672, accuracy: 0.6274510025978088
     loss: 0.6529853940010071, accuracy: 0.6274510025978088
@@ -619,7 +619,7 @@ train(emb, loss_fn, sigmoid, train_label, train_edge)
     loss: 0.5926604866981506, accuracy: 0.7130124568939209
     loss: 0.5920137763023376, accuracy: 0.7130124568939209
 
-    ![Image](../assets/images/gnn5.png)
+    ![Image](../../assets/images/gnn5.png)
 
     loss: 0.5913684368133545, accuracy: 0.7130124568939209
     loss: 0.5907245874404907, accuracy: 0.7130124568939209
@@ -722,7 +722,7 @@ train(emb, loss_fn, sigmoid, train_label, train_edge)
     loss: 0.5394647121429443, accuracy: 0.7326202988624573
     loss: 0.5390503406524658, accuracy: 0.7326202988624573
 
-    ![Image](../assets/images/gnn6.png)
+    ![Image](../../assets/images/gnn6.png)
 
     loss: 0.5386376976966858, accuracy: 0.7344028353691101
     loss: 0.538226842880249, accuracy: 0.7344028353691101
@@ -825,7 +825,7 @@ train(emb, loss_fn, sigmoid, train_label, train_edge)
     loss: 0.5041337609291077, accuracy: 0.7557932138442993
     loss: 0.5038220286369324, accuracy: 0.7557932138442993
 
-    ![Image](../assets/images/gnn7.png)
+    ![Image](../../assets/images/gnn7.png)
 
     loss: 0.5035106539726257, accuracy: 0.7557932138442993
     loss: 0.5031999349594116, accuracy: 0.7557932138442993
@@ -936,6 +936,6 @@ visualize_emb(emb)
 ```
 
 ??? success "Output"
-    ![Image](../assets/images/gnn8.png)
+    ![Image](../../assets/images/gnn8.png)
 
 

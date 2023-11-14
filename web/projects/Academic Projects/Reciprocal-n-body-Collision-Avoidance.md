@@ -1041,7 +1041,7 @@ draw(exits, obstacles, obstacles_cir, size_scene, [], 0, 'gemoetrie.png', play=T
 
 ??? Output
 
-    ![image](../assets/images/download.png)
+    ![image](../../assets/images/download.png)
 
 ## **Champs de directions**
 
@@ -1071,7 +1071,7 @@ adjust_FM()
 ```
 ??? Output
 
-    ![image](../assets/images/2.png)
+    ![image](../../assets/images/2.png)
 
 ## **Simulation**
 
@@ -1088,7 +1088,7 @@ draw(exits, obstacles, obstacles_cir, size_scene, agents, 0, 'config_init.png', 
 
 ??? Output
 
-    ![image](../assets/images/3.png)
+    ![image](../../assets/images/3.png)
 
 ```py
 K_n = 0

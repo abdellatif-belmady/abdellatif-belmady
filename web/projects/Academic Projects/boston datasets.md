@@ -312,7 +312,7 @@ matriceCorr = data.corr().round(1)
 sns.heatmap(data=matriceCorr, annot = True)
 ```
 ??? success "Output"
-    ![Matrice de Corrélation](../assets/images/matcorr.png)
+    ![Matrice de Corrélation](../../assets/images/matcorr.png)
 
 !!! Note
     Nous notons qu'il y a plusieurs correlations entre les colonnes, mais nous n'allons pas prendre en considération ces corrélations pour l'instant parce que les réseaux de neuronnes peuvent détecter les corrélations ainsi les traiter. 
@@ -324,7 +324,7 @@ sns.heatmap(data=matriceCorr, annot = True)
 sns.pairplot(dataset)
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/pairplot.png)
+    ![Pair Plot](../../assets/images/pairplot.png)
 ```py
 # Afficher "MEDV" en fonction de "CRIM"
 plt.scatter(dataset['CRIM'],dataset['MEDV'])
@@ -332,7 +332,7 @@ plt.xlabel("Crime Rate")
 plt.ylabel("Medv")
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/CRIM.png)
+    ![Pair Plot](../../assets/images/CRIM.png)
 ```py
 # Afficher "RM" en fonction de "MEDV"
 plt.scatter(dataset['RM'],dataset['MEDV'])
@@ -340,31 +340,31 @@ plt.xlabel("RM")
 plt.ylabel("Medv")
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/RM.png)
+    ![Pair Plot](../../assets/images/RM.png)
 ```py
 # Tracer les données et l'ajustement d'un modèle de régression linéaire MEDV=f(RM)
 sns.regplot(x="RM",y="MEDV",data=dataset)
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/RMReg.png)
+    ![Pair Plot](../../assets/images/RMReg.png)
 ```py
 # Tracer les données et l'ajustement d'un modèle de régression linéaire MEDV=f(LSTAT)
 sns.regplot(x="LSTAT",y="MEDV",data=dataset)
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/LSTATReg.png)
+    ![Pair Plot](../../assets/images/LSTATReg.png)
 ```py
 # Tracer les données et l'ajustement d'un modèle de régression linéaire MEDV=f(CHAS)
 sns.regplot(x="CHAS",y="MEDV",data=dataset)
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/CHASReg.png)
+    ![Pair Plot](../../assets/images/CHASReg.png)
 ```py
 # Tracer les données et l'ajustement d'un modèle de régression linéaire MEDV=f(PTRATIO)
 sns.regplot(x="PTRATIO",y="MEDV",data=dataset)
 ```
 ??? success "Output"
-    ![Pair Plot](../assets/images/PTRATIOReg.png)
+    ![Pair Plot](../../assets/images/PTRATIOReg.png)
 
 ## **Implémentation des modèles**
 

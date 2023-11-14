@@ -48,7 +48,7 @@ ozone.hist(bins=50, figsize=(20,15))
 plt.show()
 ```
 ??? success "Output"
-    ![Analyse des distributions des données (Histogrammes)](../assets/images/hist.png)
+    ![Analyse des distributions des données (Histogrammes)](../../assets/images/hist.png)
 ```py
 # Analyse des corrélations
 
@@ -56,7 +56,7 @@ matriceCorr = ozone.corr().round(1)
 sns.heatmap(data=matriceCorr, annot = True)
 ```
 ??? success "Output"
-    ![Matrice de corrélation](../assets/images/corr2.png)
+    ![Matrice de corrélation](../../assets/images/corr2.png)
 ```py
 # Afficher le nombre des valeurs manquantes dans chaque colonne
 ozone.isnull().sum()

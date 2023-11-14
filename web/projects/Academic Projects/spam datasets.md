@@ -63,7 +63,7 @@ I have also conducted an analysis of the data distributions to get an idea of th
 spam.describe()
 ```
 ??? success "Output"
-    ![Analyse des distributions des données (Histogrammes)](../assets/images/fig1.png)
+    ![Analyse des distributions des données (Histogrammes)](../../assets/images/fig1.png)
 
 ```py
 # Correlation Analysis
@@ -71,7 +71,7 @@ matriceCorr = spam.corr().round(1)
 sns.heatmap(data=matriceCorr, annot = True)
 ```
 ??? success "Output"
-    ![Matrice de corrélation](../assets/images/corr.png)
+    ![Matrice de corrélation](../../assets/images/corr.png)
 
 ## **Implementation of a Neural Network Model**
 
@@ -118,7 +118,7 @@ The perceptron structure consists of **an input layer with 57 neurons correspond
 
 The ``sigmoid function`` was chosen as the activation function for each of the three layers, binary cross-entropy as the loss function, and the ``Adam optimizer`` algorithm for its adaptive learning rate and momentum.
 
-![L’architecture de réseau de neurones](../assets/images/archi.jpg)
+![L’architecture de réseau de neurones](../../assets/images/archi.jpg)
 
 ```py
 ## Implementation of DNN model
@@ -166,7 +166,7 @@ plt.legend(['Training Cross-Entropy'])
 plt.show()
 ```
 ??? success "Output"
-    ![Enropie croisée](../assets/images/err1.png)
+    ![Enropie croisée](../../assets/images/err1.png)
 ```py
 figure = plt.gcf()
 figure.set_size_inches((20, 10))
@@ -178,7 +178,7 @@ plt.legend(["Training Accuracy"])
 plt.show()
 ```
 ??? success "Output"
-    ![Précision](../assets/images/precision.png)
+    ![Précision](../../assets/images/precision.png)
 
 This neural network model achieved a score of 0.924 for the test data and a score of 0.937 for the validation data, which is very satisfactory.
 

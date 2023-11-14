@@ -29,7 +29,7 @@ De nos jours, d'énormes volumes de données sont générés par l'IoT. Ces donn
 
 <center>
 
-![Fig. 1. Internet of things concept.](../assets/images/IoT-BigData.jpg)
+![Fig. 1. Internet of things concept.](../../assets/images/IoT-BigData.jpg)
 
 Fig. 1. Internet of things concept.
 
