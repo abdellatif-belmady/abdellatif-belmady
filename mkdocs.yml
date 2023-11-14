@@ -94,8 +94,8 @@ extra:
       link: https://www.youtube.com/@otherways8368/featured
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/abdellatifbelmady/
-    - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/AbdellatifBELM
+    # - icon: fontawesome/brands/x-twitter
+    #   link: https://twitter.com/AbdellatifBELM
 
 # Repository
 repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
