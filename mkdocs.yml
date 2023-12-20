@@ -186,6 +186,9 @@ nav:
       - 🧠 Day 10 - AI Talent : blogs/MA challenges/ai_talent.md
       - 🛡️ Day 11 - Data Privacy : blogs/MA challenges/data_privacy.md
       - 🤝 Day 12 - Collaboration : blogs/MA challenges/collaboration.md
+    - Data Pipelines:
+      - blogs/Data Pipelines/index.md
+      - Batch Processing Data Pipeline: blogs/Data Pipelines/batch_processing.md
   # - Books: books/not yet.md
     # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
     #   - Preface: books/Hands on machine learning/preface.md
