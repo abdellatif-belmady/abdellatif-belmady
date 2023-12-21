@@ -141,9 +141,9 @@ markdown_extensions:
 nav:
   - Portfolio: index.md
   - Projects:
-    - Professional Projects:
+    - 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
       - projects/Professional Projects/index.md
-    - Academic Projects:
+    - 𝐀𝐜𝐚𝐝𝐞𝐦𝐢𝐜 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
       - projects/Academic Projects/index.md
       - Spam Dataset: projects/Academic Projects/spam datasets.md
       - Ozone Dataset: projects/Academic Projects/ozone datasets.md
@@ -155,14 +155,14 @@ nav:
       - Reciprocal n-body Collision Avoidance : projects/Academic Projects/Reciprocal-n-body-Collision-Avoidance.md
       - Algorithmes Génétiques 2, Peindre Vermeer : projects/Academic Projects/Painting Vermeer.md
   - Tutorials:
-    - Libraries:
+    - 𝐋𝐢𝐛𝐫𝐚𝐫𝐢𝐞𝐬:
       - Tutorials/Libraries/index.md
       - NumPy: Tutorials/Libraries/numpy.md
       - Pandas: Tutorials/Libraries/pandas.md
-    - Computer Vision :
+    - 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧:
       - Tutorials/Computer Vision Algorithms/index.md
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
-    - Natural Language Processing: 
+    - 𝐍𝐚𝐭𝐮𝐫𝐚𝐥 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠: 
       - Tutorials/Natural Language Processing/index.md
       - Bases of NLP: Tutorials/Natural Language Processing/bases.md
     #   - Tools of NLP: Tutorials/Natural Language Processing/tools.md
@@ -172,7 +172,7 @@ nav:
     #   - RNN: Tutorials/Natural Language Processing/reseaunn.md
     #   - Modern Technics: Tutorials/Natural Language Processing/modern.md
   - Blogs:
-    - ML & DL Morocco Challenges: 
+    - 𝐌𝐋 & 𝐃𝐋 𝐌𝐨𝐫𝐨𝐜𝐜𝐨 𝐂𝐡𝐚𝐥𝐥𝐞𝐧𝐠𝐞𝐬: 
       - blogs/MA challenges/index.md
       - 📚 Day 1 - Education : blogs/MA challenges/education.md
       - 🏥 Day 2 - Healthcare : blogs/MA challenges/healthcare.md
