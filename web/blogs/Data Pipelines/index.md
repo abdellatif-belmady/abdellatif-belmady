@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# **Welcome to "Data Pipelines"**
+# **Welcome to "𝐏𝐢𝐩𝐞𝐥𝐢𝐧𝐞 𝐌𝐚𝐬𝐭𝐞𝐫𝐲 𝐒𝐞𝐫𝐢𝐞𝐬"**
 
 Data pipelines play a crucial role in modern data architecture, facilitating the efficient flow and processing of data. Let's explore different types of data pipelines and provide a real example for each:
 
