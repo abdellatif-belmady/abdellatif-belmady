@@ -13,3 +13,19 @@ Data pipelines play a crucial role in modern data architecture, facilitating the
     **Description:** Batch processing involves collecting, processing, and storing data in predefined intervals.
     
 </div>
+
+<div class="grid cards" markdown>
+
+-   [:simple-jfrogpipelines: __Real-Time Streaming Data Pipeline__](https://abdellatif-belmady.github.io/abdellatif-belmady/blogs/Data Pipelines/real_time_processing/)
+
+    **Description:** Real-time pipelines process data as it arrives, allowing for near-instantaneous insights.
+    
+</div>
+
+<div class="grid cards" markdown>
+
+-   [:simple-jfrogpipelines: __Cloud-Based Data Pipeline__](https://abdellatif-belmady.github.io/abdellatif-belmady/blogs/Data Pipelines/cloud_based_processing/)
+
+    **Description:** Cloud-based pipelines leverage cloud services to process and store data, providing scalability and flexibility.
+    
+</div>

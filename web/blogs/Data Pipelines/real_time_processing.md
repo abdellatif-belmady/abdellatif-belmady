@@ -82,6 +82,18 @@ A real-time streaming data pipeline is a system that enables the continuous inge
 
 - Use orchestration tools like Apache NiFi, Apache Airflow, or Kubernetes for managing the pipeline components.
 
+### **11. Continuous Testing:**
+
+- Establish a robust testing strategy, including unit testing and end-to-end testing of the streaming pipeline.
+
+- Implement automated testing to ensure reliability and correctness.
+
+### **12. Documentation:**
+
+- Document the entire streaming pipeline architecture, including components, configurations, and dependencies.
+
+- Provide guidelines for troubleshooting and maintenance.
+
 ## **Real-World Example: Apache Kafka for Real-Time Streaming**
 
 Let's consider a scenario where we want to build a real-time streaming application using Apache Kafka and Python. We'll create a simple producer that generates and sends messages to a Kafka topic, and a consumer that processes these messages in real-time.
