@@ -191,6 +191,7 @@ nav:
       - Batch Processing Data Pipeline: blogs/Data Pipelines/batch_processing.md
       - Real-Time Streaming Data Pipeline: blogs/Data Pipelines/real_time_processing.md
       - Cloud-Based Data Pipeline: blogs/Data Pipelines/cloud_based_processing.md
+      - Machine Learning Data Pipeline: blogs/Data Pipelines/ml_processing.md
   # - Books: books/not yet.md
     # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
     #   - Preface: books/Hands on machine learning/preface.md
