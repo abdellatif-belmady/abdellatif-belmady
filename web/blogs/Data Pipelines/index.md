@@ -29,3 +29,11 @@ Data pipelines play a crucial role in modern data architecture, facilitating the
     **Description:** Cloud-based pipelines leverage cloud services to process and store data, providing scalability and flexibility.
     
 </div>
+
+<div class="grid cards" markdown>
+
+-   [:simple-jfrogpipelines: __Machine Learning Data Pipeline__](https://abdellatif-belmady.github.io/abdellatif-belmady/blogs/Data Pipelines/ml_processing/)
+
+    **Description:** ML pipelines integrate machine learning models into data workflows for training, deployment, and monitoring.
+    
+</div>
