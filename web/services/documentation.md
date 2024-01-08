@@ -5,18 +5,17 @@ hide:
 comments: true
 ---
 
-!!! Info "Creation of professional documentation"
-    If you are a PhD student, researcher or scientist and you want to `document your projects in a professional way` then I congratulate you because you are in the right place, you just need to contact me and your documentations will be ready in 2 days :
+???+ note "Creation of professional documentation"
+    If you are a PhD student, researcher or scientist and you want to **document your projects in a professional way** then I congratulate you because you are in the right place, you just need to contact me and your documentations will be ready in 2 days :
 
-    - `abdellatif.belmady@gmail.com`
+    - [abdellatif.belmady@gmail.com](mailto:<abdellatif.belmady@gmail.com>)
     - My phone number : (+212)6 41 49 86 81
+  
+???+ note "Smart Correction"
+    Welcome to **Smart Correction**: Your Intelligent Assistant for Academic Success.
 
-    For those interested, please visit my latest documentations :
+    At Smart Correction, we are committed to revolutionizing your educational experience. Our intelligent assistant is specially designed to meet the needs of students in France and Morocco, providing personalized assistance across a variety of subjects and academic levels.
 
-    - [x] Boston Datasets : [https://abdellatif-belmady.github.io/Boston-documentation/](https://abdellatif-belmady.github.io/Boston-documentation/)
+    Join Smart Correction today and transform your study experience!
 
-    - [x] Mini Project : [https://abdellatif-belmady.github.io/Mini-Project/](https://abdellatif-belmady.github.io/Mini-Project/)
-
-    - [x] Big Data Project : [https://abdellatif-belmady.github.io/Project_Big-Data_documentation/](https://abdellatif-belmady.github.io/Project_Big-Data_documentation/)
-
-    - [x] Others Projects : [https://abdellatif-belmady.github.io/abdellatif-belmady/projects/spam%20datasets/](https://abdellatif-belmady.github.io/abdellatif-belmady/projects/spam%20datasets/)
+    [Register now](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button } [Documentation](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button }
