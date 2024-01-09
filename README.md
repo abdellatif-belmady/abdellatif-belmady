@@ -8,10 +8,6 @@ I am currently a proud graduate of Ecole Centrale Casablanca, holding a degree i
 <p align="center">
 	<a href="https://abdellatif-belmady.github.io/abdellatif-belmady/"><img img src="https://img.shields.io/badge/My_Portfolio-pink%26labelColor%3Dblack" alt="Portfolio"/></a>
 </p>
-<!---
-GIGAParviz/GIGAParviz is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
 <p>	
 <h2 align="center">✨I'm interested in</h2>
 </p>
