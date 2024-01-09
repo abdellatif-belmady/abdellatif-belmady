@@ -18,4 +18,4 @@ comments: true
 
     Join Smart Correction today and transform your study experience!
 
-    [Register now](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button } [Documentation](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button }
+    [Try It Now](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button } [Documentation](https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79){ .md-button }

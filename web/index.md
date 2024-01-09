@@ -40,6 +40,22 @@ title: About
       <div class="underline"></div>
       <p><strong>Hello! I’m Abdellatif BELMADY,</strong> a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King,"</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.</p>
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
+     <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2023 - Present</span><br><a href="https://abdellatif-belmady.github.io/smart-correction/">Smart Correction</a></strong> - Part Time</p>
+      <p>As the founder and CEO of Smart Correction, I have had the privilege of guiding this company from its exciting beginnings. Our mission at Smart Correction is to transform education by providing intelligent and personalized assistance to French and Moroccan students.</p>
+      <b>About Smart Correction:</b>
+      <p>Smart Correction is more than just an educational platform. It is a vision, a revolution in learning powered by artificial intelligence. Our dedicated team has worked tirelessly to create an educational experience that transcends boundaries and opens new opportunities for every student.</p>
+      <b>Key Achievements:</b>
+      <ul>
+        <li>Successfully designed and launched the Smart Correction platform, offering instant assistance and accurate corrections.
+        <li>Established strategic partnerships with educational institutions to integrate our solution into the educational landscape.
+        <li>Implemented rigorous security measures to ensure user confidentiality.
+        <li>Actively promoted smart and personalized education, with a commitment to continuous improvement.
+        </li>
+      </ul>
+      <b>Impact on Education:</b>
+      <p>Smart Correction has already touched the lives of thousands of students, helping them excel in their studies and prepare optimally for their exams. Our vision is to create a lasting impact on learning, making Smart Correction a benchmark in the field of smart education.</p>
+      <p>Join us in this educational adventure. Together, let's build a future where every student has access to quality, personalized, and effective education.</p>
+      <button><a href="https://youai.ai/ais/40eb0bac-eebf-4268-9e91-f5e75f6dcc79">Try It Now</a></button>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2022 - Present</span><br><a href="https://www.linkedin.com/company/other-ways25/">Other Ways</a></strong> - Part Time</p>
       <p>Today, the presence and installation of cameras are indispensable in large organizations and across various sectors. However, traditional camera systems often lag behind the advancements in the digital and intelligent world. At OtherWays, we offer a range of services leveraging intelligent cameras integrated with cutting-edge technologies. Our solutions go beyond traditional surveillance by providing advanced capabilities tailored to your needs, such as:
       <ul>
@@ -53,7 +69,7 @@ title: About
       </p>
       <p><strong>Deep Learning Data Scientist Internship<span class="date" style=" color: inherit;">Apr 2023 - Sept 2023</span><br><a href="https://www.solefarma.com/">SOLEFARMA</strong></a> - Internship</p>
       <ul>
-        <li>Implemented a Deep Learning approach for Foot-Type Classification Using Heterogeneous Pressure Data.
+        <li>Implemented a <strong><a href="https://drive.google.com/file/d/1xTInHl7H9p70nFjpsGcVQRzHEBNeH2Fi/view?usp=drive_link">Deep Learning approach</a></strong> for Foot-Type Classification Using Heterogeneous Pressure Data.
         <li>Developed a methodology to collect both image and numerical data for the project.
         <li>Fine-tuned VGG16 and InceptionV3 models to process the image data effectively.
         <li>Fine-tuned K-NN and CART models to process the numerical data efficiently.
