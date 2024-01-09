@@ -2,8 +2,8 @@
 <body>
 
 <h2 align="center">My name is Abdellatif BELMADY.👋</h2>
-<p align="center">A happy programmer full of positive energy
-I am currently a a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King," I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science. 
+<p align="center">A happy ML/AI Engineer full of positive energy
+I am currently a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King," I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science. 
 </p>
 <!---
 GIGAParviz/GIGAParviz is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -38,7 +38,7 @@ You can click the Preview link to take a look at your changes.
  </p>
 
 <p align="center">
-<a href="https://github.com/GIGAParviz/GIGAParviz">
+<a href="https://github.com/abdellatif-belmady/abdellatif-belmady">
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=GIGAParviz&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=GIGAParviz&layout=compact&langs_count=8&theme=algolia"/>
 
