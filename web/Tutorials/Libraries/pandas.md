@@ -8,7 +8,7 @@ The `pandas` library provides high-performance, easy-to-use data structures and 
 
 Prerequisites:
 
-* NumPy – if you are not familiar with NumPy, we recommend that you go through the [NumPy tutorial](https://abdellatif-belmady.github.io/abdellatif-belmady/Documentations/Libraries/numpy/) now.
+* NumPy – if you are not familiar with NumPy, we recommend that you go through the [NumPy tutorial](https://abdellatif-belmady.github.io/abdellatif-belmady/Tutorials/Libraries/numpy/) now.
 
 ## **Setup**
 
