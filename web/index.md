@@ -40,6 +40,28 @@ title: About
       <div class="underline"></div>
       <p><strong>Hello! I’m Abdellatif BELMADY,</strong> a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King <strong>“Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.”</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
+     <p><strong>Data Scientist | AI Engineer <span class="date" style=" color: inherit;">Jan 2024 - Present</span><br><a href="https://thegamechangercompany.fr/">The Game Changer Company</a></strong> - Full Time</p>
+      <p><strong>𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
+      <ul>
+        <li>Developed a Flask application for 𝐅𝐚𝐜𝐞 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧, enhancing security measures by sending email alerts (including screenshots) upon detecting unauthorized entry into a room.
+        <li>Spearheaded the development of a Flask application for 𝐅𝐚𝐜𝐢𝐚𝐥 𝐀𝐭𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬, enabling precise classification of gender, accurate prediction of age, and comprehensive emotion analysis.
+        <li>Pioneered a Flask application for 𝐎𝐛𝐣𝐞𝐜𝐭 𝐂𝐨𝐮𝐧𝐭𝐢𝐧𝐠 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐫𝐞𝐠𝐢𝐨𝐧𝐬, facilitating efficient monitoring and management of assets within specified areas.
+        </li>
+      </ul>
+      <p><strong>𝐃𝐚𝐭𝐚 𝐒𝐜𝐢𝐞𝐧𝐜𝐞 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
+      <ul>
+        <li>Designed the 𝐁𝐢𝐠 𝐃𝐚𝐭𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 for the company, adopting the 𝐋𝐚𝐦𝐛𝐝𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 𝐓𝐲𝐩𝐞 to ensure robustness and scalability.
+        </li>
+      </ul>
+      <p><i>𝑺𝒕𝒓𝒂𝒕𝒆𝒈𝒊𝒄𝒂𝒍𝒍𝒚 𝒎𝒂𝒑𝒑𝒆𝒅 𝒐𝒖𝒕:</i></p>
+      <ul>
+        <li>𝐃𝐚𝐭𝐚 𝐒𝐨𝐮𝐫𝐜𝐞𝐬 to capture diverse data streams.
+        <li>𝐃𝐚𝐭𝐚 𝐒𝐭𝐨𝐫𝐚𝐠𝐞 solutions for efficient data management.
+        <li>𝐁𝐚𝐭𝐜𝐡 𝐥𝐚𝐲𝐞𝐫, 𝐬𝐩𝐞𝐞𝐝 𝐥𝐚𝐲𝐞𝐫, 𝐚𝐧𝐝 𝐬𝐞𝐫𝐯𝐢𝐧𝐠 𝐥𝐚𝐲𝐞𝐫 for comprehensive data processing.
+        <li>𝐃𝐚𝐭𝐚 𝐂𝐨𝐧𝐬𝐮𝐦𝐩𝐭𝐢𝐨𝐧 mechanisms to extract actionable insights.
+        <li>Implemented 𝐁𝐢𝐠 𝐃𝐚𝐭𝐚 𝐆𝐨𝐯𝐞𝐫𝐧𝐚𝐧𝐜𝐞 measures to ensure data quality, security, and compliance.
+        </li>
+      </ul>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2023 - Present</span><br><a href="https://abdellatif-belmady.github.io/smart-correction/">Smart Correction</a></strong> - Part Time</p>
       <p>As the founder and CEO of Smart Correction, I have had the privilege of guiding this company from its exciting beginnings. Our mission at Smart Correction is to transform education by providing intelligent and personalized assistance to French and Moroccan students.</p>
       <b>About Smart Correction:</b>
