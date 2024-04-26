@@ -10,6 +10,9 @@ theme:
     name: material
     logo: 'logo.png'
     favicon: 'logo.png'
+    icon:
+      previous: fontawesome/solid/angle-left
+      next: fontawesome/solid/angle-right
     palette:
       - scheme: default
         primary: black
