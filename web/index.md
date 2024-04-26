@@ -47,6 +47,8 @@ title: About
         <li>Spearheaded the development of a Flask application for 𝐅𝐚𝐜𝐢𝐚𝐥 𝐀𝐭𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬, enabling precise classification of gender, accurate prediction of age, and comprehensive emotion analysis.
         <li>Pioneered a Flask application for 𝐎𝐛𝐣𝐞𝐜𝐭 𝐂𝐨𝐮𝐧𝐭𝐢𝐧𝐠 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐫𝐞𝐠𝐢𝐨𝐧𝐬, facilitating efficient monitoring and management of assets within specified areas.
         </li>
+        <li>Developed a real-time people detection and counting algorithm optimized for deployment on the 𝐍𝐯𝐢𝐝𝐢𝐚 𝐉𝐞𝐭𝐬𝐨𝐧 𝐍𝐚𝐧𝐨 𝐟𝐨𝐫 𝐞𝐝𝐠𝐞 𝐜𝐨𝐦𝐩𝐮𝐭𝐢𝐧𝐠.
+        </li>
       </ul>
       <p><strong>𝐃𝐚𝐭𝐚 𝐒𝐜𝐢𝐞𝐧𝐜𝐞 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
       <ul>
