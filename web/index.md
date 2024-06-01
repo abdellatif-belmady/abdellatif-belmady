@@ -52,6 +52,8 @@ title: About
       </ul>
       <p><strong>𝐃𝐚𝐭𝐚 𝐒𝐜𝐢𝐞𝐧𝐜𝐞 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
       <ul>
+        <li>Creating Dashboards Using the 𝐃𝐚𝐬𝐡 Framework with 𝐏𝐥𝐨𝐭𝐥𝐲 for the Company Games.
+        </li>
         <li>Designed the 𝐁𝐢𝐠 𝐃𝐚𝐭𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 for the company, adopting the 𝐋𝐚𝐦𝐛𝐝𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 𝐓𝐲𝐩𝐞 to ensure robustness and scalability.
         </li>
       </ul>
