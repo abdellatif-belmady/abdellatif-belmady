@@ -146,6 +146,7 @@ nav:
   - Projects:
     - 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
       - projects/Professional Projects/index.md
+      - Hackathon Challenge: projects/Professional Projects/hackathon.md
     - 𝐀𝐜𝐚𝐝𝐞𝐦𝐢𝐜 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
       - projects/Academic Projects/index.md
       - Spam Dataset: projects/Academic Projects/spam datasets.md
