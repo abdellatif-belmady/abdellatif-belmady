@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore how Artificial Intelligence is transforming public services in Morocco, enhancing governance, citizen engagement, and data-driven decision-making for a more efficient and inclusive society
+keywords: Artificial Intelligence, Public Services, Smart Governance, Citizen Engagement, Data-Driven Decision Making, Morocco, Natural Language Processing, Multilingual Services, Efficiency, Transparency, Machine Learning, Deep Learning
 ---
 
 # **🏛️ Day 8: Transforming Public Services 🏛️**

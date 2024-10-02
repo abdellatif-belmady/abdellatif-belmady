@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Discover how Artificial Intelligence is transforming financial inclusion in Morocco, enabling access to essential financial services through innovative solutions like credit scoring, digital payments, and NLP-driven support
+keywords: Artificial Intelligence, Financial Inclusion, Credit Scoring, Digital Payments, Risk Management, Natural Language Processing, Morocco, Economic Growth, Financial Services, Digital Literacy, Fraud Detection, Personalized Financial Recommendations, Branchless Banking.
 ---
 
 # **💰 Day 4: Financial Inclusion 💰**

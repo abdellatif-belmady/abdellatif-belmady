@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore how AI, particularly through anomaly detection, enhances cybersecurity in Morocco
+keywords: AI Cybersecurity, Anomaly Detection, Threat Detection, Machine Learning, Deep Learning, Morocco, Real-time Monitoring, Predictive Analysis, Malware Detection, Data Quality, Privacy Concerns, Cybersecurity Skills
 ---
 
 # **🌐 Day 9: Cybersecurity Reinforcement 🌐**

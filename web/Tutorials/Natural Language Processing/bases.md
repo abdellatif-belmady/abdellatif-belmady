@@ -1,5 +1,10 @@
-## **Libraries**
-### **nltk**
+
+
+
+# Bases of NLP
+
+## Libraries
+### nltk
 The Natural Language Toolkit (**``NLTK``**) is a comprehensive library for working with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources, making it a valuable tool for various NLP tasks.
 
 ```py
@@ -13,7 +18,7 @@ import nltk
 nltk.download('punkt')
 ```
 
-### **spacy**
+### spacy
 SpaCy is an open-source library designed specifically for Natural Language Processing. It offers pre-trained models for various languages and supports tasks like tokenization, part-of-speech tagging, named entity recognition, and more.
 
 ```py
@@ -24,7 +29,7 @@ pip install spacy
 python -m spacy download en
 ```
 
-### **re (Regular Expressions)**
+### re (Regular Expressions)
 The **``re``** library in Python is a powerful tool for working with regular expressions. Regular expressions enable flexible and sophisticated pattern matching in text, making it easier to extract or manipulate specific information.
 
 ```py
@@ -43,7 +48,7 @@ matches = pattern.findall(text)
 print(matches)
 ```
 
-### **gensim**
+### gensim
 **``Gensim``** is a library for topic modeling and document similarity analysis. It is particularly useful for tasks like document similarity comparison and topic modeling using techniques like Latent Semantic Analysis.
 
 ```py
@@ -51,7 +56,7 @@ print(matches)
 pip install gensim
 ```
 
-### **fasttext**
+### fasttext
 **``FastText``** is an open-source, free, lightweight library that allows users to learn text representations and perform text classification tasks efficiently. It is an extension of the Word2Vec model.
 
 ```py
@@ -59,8 +64,8 @@ pip install gensim
 pip install fasttext
 ```
 
-## **Reading Text**
-### **txt files**
+## Reading Text
+### txt files
 This section provides code examples for reading and manipulating text data stored in plain text (txt) files. It covers operations such as reading, writing, and appending text, as well as working with files containing different languages, including Arabic.
 
 ```py
@@ -95,7 +100,7 @@ with open('test.txt','r') as txt:
 print(first_line)
 ```
 
-### **csv files**
+### csv files
 For handling structured data, particularly in tabular form, this section demonstrates reading from and writing to CSV files. Additionally, it showcases reading data from an Excel file using the Pandas library.
 
 ```py
@@ -159,7 +164,7 @@ for a in f:
     print(a)
 ```
 
-## **Handling PDF**
+## Handling PDF
 **``PyPDF2``** is a Python library for reading and manipulating PDF files. This section covers basic operations like reading text from a PDF file, extracting text from specific pages, and merging PDF files.
 
 ```py
@@ -198,7 +203,7 @@ pdf_writer = PyPDF2.PdfFileWriter()
 pdf_writer.addPage(first_page)
 ```
 
-## **Search in Text**
+## Search in Text
 This section revisits the **``re``** library, demonstrating its application for searching specific patterns or keywords within text. Regular expressions are powerful tools for identifying and extracting information based on predefined patterns.
 
 ```py

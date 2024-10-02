@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Create a robust cloud-based data pipeline by following essential steps, from defining objectives to implementing ETL processes using AWS services.
+keywords: Cloud-Based Data Pipeline, ETL, AWS, Scalability, Data Ingestion, Data Transformation, Data Processing, Monitoring, Security, Orchestration
 ---
 
 # **Building a Cloud-Based Data Pipeline: A Comprehensive Guide**

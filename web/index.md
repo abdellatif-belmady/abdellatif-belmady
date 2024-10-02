@@ -15,7 +15,7 @@ title: About
      <center>
      <p><img src="assets/images/photo.jpg" alt="Profile Picture" class="profilepic"></p>
       <h1>Abdellatif BELMADY</h1>
-      <h2>Cergy (95000), France</h2>
+      <h2>Casablanca, Morocco</h2>
       <h3>ML/AI Engineer | Centralien Engineer<h3>
       <div class="socials">
        <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/" class="ln" style=" color: inherit;" title="Linked In - Abdellatif BELMADY"><i class="fab fa-linkedin"></i></a>

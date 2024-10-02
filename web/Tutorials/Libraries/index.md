@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# **Libraries**
+# Libraries
 
 <div class="grid cards" markdown>
 

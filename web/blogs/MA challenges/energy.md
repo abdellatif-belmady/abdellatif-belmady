@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore the transformative impact of Artificial Intelligence on sustainable energy in Morocco
+keywords: Artificial Intelligence, Sustainable Energy, Renewable Energy, Predictive Maintenance, Smart Grids, Energy Efficiency, Morocco, Machine Learning, Clean Energy, Environmental Stewardship, Energy Forecasting, Resource Optimization
 ---
 
 # **⚡ Day 5: Sustainable Energy⚡**

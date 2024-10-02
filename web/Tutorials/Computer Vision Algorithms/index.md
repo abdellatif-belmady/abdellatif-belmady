@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# **Computer Vision**
+# Computer Vision
 
 <div class="grid cards" markdown>
 

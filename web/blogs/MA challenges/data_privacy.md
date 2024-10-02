@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore the critical importance of data privacy in Morocco as it embraces AI technologies
+keywords: Data Privacy, AI Ethics, Machine Learning, Deep Learning, Privacy-Preserving Techniques, Federated Learning, Homomorphic Encryption, Algorithmic Fairness, Transparency, Consent Mechanisms, Data Governance, Morocco, Responsible AI
 ---
 
 # **🛡️ Day 11: Prioritizing Data Privacy 🛡️**

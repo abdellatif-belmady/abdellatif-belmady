@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Build a robust real-time streaming data pipeline to enable continuous data ingestion and analysis, allowing for immediate insights and timely decision-making
+keywords: Real-Time Streaming, Data Pipeline, Apache Kafka, Data Ingestion, Low-Latency Processing, Streaming Analytics, Event-Driven Architecture, Monitoring, Security
 ---
 
 # **Building a Real-Time Streaming Data Pipeline: A Comprehensive Guide**

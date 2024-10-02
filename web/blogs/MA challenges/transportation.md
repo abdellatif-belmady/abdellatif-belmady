@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Discover how Artificial Intelligence is revolutionizing smart transportation in Morocco, optimizing traffic management, enhancing public transit, and promoting eco-friendly mobility for a connected future
+keywords: Artificial Intelligence, Smart Transportation, Traffic Management, Autonomous Vehicles, Eco-Friendly Transport, Morocco, Machine Learning, Deep Learning, Traffic Optimization, Public Transportation, Safety Enhancements, Predictive Maintenance, Urban Planning
 ---
 
 # **🚗 Day 6: Smart Transportation 🚗**

@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore how Artificial Intelligence is transforming healthcare in Morocco, enhancing early diagnosis, treatment personalization, and data management to improve access and quality of care for all
+keywords: Artificial Intelligence, Healthcare Transformation, Early Diagnosis, Treatment Personalization, Data Management, Computer Vision, Machine Learning, Deep Learning, Telemedicine, Patient Monitoring, Healthcare Resource Management, Natural Language Processing, Disease Outbreak Prediction, Morocco
 ---
 
 # **🏥 Day 2: Healthcare Transformation 🏥**

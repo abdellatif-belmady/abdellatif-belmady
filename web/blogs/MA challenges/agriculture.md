@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore how AI is transforming agriculture in Morocco through innovative techniques like Precision Agriculture
+keywords: Agriculture, Artificial Intelligence, Machine Learning, Deep Learning, Precision Agriculture, Crop Management, Sustainable Farming, Morocco, Climate Resilience, Rural Development
 ---
 
 # **🌾 Day 3: Agriculture Revolution 🌾**

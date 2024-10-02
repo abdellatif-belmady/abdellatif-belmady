@@ -7,7 +7,7 @@ comments: true
 
 NumPy is the fundamental library for scientific computing with Python. NumPy is centered around a powerful N-dimensional array object, and it also contains useful linear algebra, Fourier transform, and random number functions.
 
-## **Creating Arrays**
+## Creating Arrays
 
 Now let's import `numpy`. Most people import it as `np`:
 
@@ -15,7 +15,7 @@ Now let's import `numpy`. Most people import it as `np`:
 import numpy as np
 ```
 
-### **np.zeros**
+### np.zeros
 
 The `zeros` function creates an array containing any number of zeros:
 
@@ -36,7 +36,7 @@ np.zeros((3,4))
            [0., 0., 0., 0.],
            [0., 0., 0., 0.]])
 
-### **Some vocabulary**
+### Some vocabulary
 
 - In NumPy, each dimension is called an ***axis***.
 
@@ -82,7 +82,7 @@ a.size
 ??? Output "Output"
     12
 
-### **N-dimensional arrays**
+### N-dimensional arrays
 
 You can also create an N-dimensional array of arbitrary rank. For example, here's a 3D array (rank=3), with shape `(2,3,4)`:
 
@@ -99,7 +99,7 @@ np.zeros((2,3,4))
             [0., 0., 0., 0.],
             [0., 0., 0., 0.]]])
 
-### **Array type**
+### Array type
 
 NumPy arrays have the type `ndarrays`:
 
@@ -110,7 +110,7 @@ type(np.zeros((3,4)))
 ??? Output "Output"
     numpy.ndarray
 
-### **np.ones**
+### np.ones
 
 Many other NumPy functions create ndarrays.
 
@@ -125,7 +125,7 @@ np.ones((3,4))
            [1., 1., 1., 1.],
            [1., 1., 1., 1.]])
         
-### **np.full**
+### np.full
 
 Creates an array of the given shape initialized with the given value. Here's a 3x4 matrix full of `π`.
 
@@ -138,7 +138,7 @@ np.full((3,4), np.pi)
            [3.14159265, 3.14159265, 3.14159265, 3.14159265],
            [3.14159265, 3.14159265, 3.14159265, 3.14159265]])
 
-### **np.empty**
+### np.empty
 
 An uninitialized 2x3 array (its content is not predictable, as it is whatever is in memory at that point):
 
@@ -150,7 +150,7 @@ np.empty((2,3))
     array([[0., 0., 0.],
            [0., 0., 0.]])
 
-### **np.array**
+### np.array
 
 Of course you can initialize an `ndarray` using a regular python array. Just call the `array` function:
 
@@ -162,7 +162,7 @@ np.array([[1,2,3,4], [10, 20, 30, 40]])
     array([[ 1,  2,  3,  4],
            [10, 20, 30, 40]])
 
-### **np.arange**
+### np.arange
 
 You can create an `ndarray` using NumPy's `arange` function, which is similar to python's built-in `range` function:
 
@@ -204,7 +204,7 @@ print(np.arange(0, 5/3, 0.333333334))
     [0.         0.33333333 0.66666667 1.         1.33333333 1.66666667]
     [0.         0.33333333 0.66666667 1.         1.33333334]
 
-### **np.linspace**
+### np.linspace
 
 For this reason, it is generally preferable to use the `linspace` function instead of `arange` when working with floats. The `linspace` function returns an array containing a specific number of points evenly distributed between two values (note that the maximum value is included, contrary to `arange`):
 
@@ -215,7 +215,7 @@ print(np.linspace(0, 5/3, 6))
 ??? Output "Output"
     [0.         0.33333333 0.66666667 1.         1.33333333 1.66666667]
 
-### **np.rand and np.randn**
+### np.rand and np.randn
 
 A number of functions are available in NumPy's `random` module to create `ndarray`s initialized with random values. For example, here is a 3x4 matrix initialized with random floats between 0 and 1 (uniform distribution):
 
@@ -262,7 +262,7 @@ plt.show()
     ![Image](../../assets/images/numpy1.png)
 
 
-### **np.fromfunction**
+### np.fromfunction
 
 You can also initialize an `ndarray` using a function:
 
@@ -298,9 +298,9 @@ NumPy first creates three `ndarrays` (one per dimension), each of shape `(3, 2, 
 
 So the terms `x`, `y` and `z` in the expression `x + 10 * y + 100 * z` above are in fact `ndarrays` (we will discuss arithmetic operations on arrays below). The point is that the function `my_function` is only called once, instead of once per element. This makes initialization very efficient.
 
-## **Array data**
+## Array data
 
-### **dtype**
+### dtyp
 
 NumPy's `ndarrays` are also efficient in part because all their elements must have the same type (usually numbers). You can check what the data type is by looking at the `dtype` attribute:
 
@@ -326,7 +326,7 @@ Instead of letting NumPy guess what data type to use, you can set it explicitly 
 
 Available data types include `int8`, `int16`, `int32`, `int64`, `uint8`|`16`|`32`|`64`, `float16`|`32`|`64` and `complex64`|`128`. Check out [the documentation](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html) for the full list.
 
-### **itemsize**
+### itemsize
 
 The `itemsize` attribute returns the size (in bytes) of each item:
 
@@ -338,7 +338,7 @@ e.itemsize
 ??? Output "Output"
     8
 
-### **data buffer**
+### data buffe
 
 An array's data is actually stored in memory as a flat (one dimensional) byte buffer. It is available via the `data` attribute (you will rarely need it, though).
 
@@ -368,9 +368,9 @@ Several `ndarrays` can share the same data buffer, meaning that modifying one wi
 
 
 
-## **Reshaping an array**
+## Reshaping an array
 
-### **In place**
+### In place
 
 Changing the shape of an `ndarray` is as simple as setting its `shape` attribute. However, the array's size must remain the same.
 
@@ -415,7 +415,7 @@ print("Rank:", g.ndim)
       [20 21 22 23]]]
     Rank: 3
 
-### **reshape**
+### reshape
 
 The `reshape` function returns a new `ndarray` object pointing at the same data. This means that modifying one array will also modify the other.
 
@@ -456,7 +456,7 @@ The corresponding element in `g` has been modified.
             [ 16,  17,  18,  19],
             [ 20,  21,  22,  23]]])
         
-### **ravel**
+### ravel
 
 Finally, the `ravel` function returns a new one-dimensional `ndarray` that also points to the same data:
 
@@ -469,7 +469,7 @@ g.ravel()
             13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23])
 
 
-## **Arithmetic operations**
+## Arithmetic operations
 
 All the usual arithmetic operators (`+`, `-`, `*`, `/`, `//`, `**`, etc.) can be used with `ndarray`s. They apply elementwise:
 
@@ -499,11 +499,11 @@ Note that the multiplication is not a matrix multiplication. We will discuss mat
 The arrays must have the same shape. If they do not, NumPy will apply the broadcasting rules.
 
 
-## **Broadcasting**
+## Broadcasting
 
 In general, when NumPy expects arrays of the same shape but finds that this is not the case, it applies the so-called broadcasting rules:
 
-### **First rule**
+### First rule
 
 If the arrays do not have the same rank, then a 1 will be prepended to the smaller ranking arrays until their ranks match.
 
@@ -524,7 +524,7 @@ h + [10, 20, 30, 40, 50]  # same as: h + [[[10, 20, 30, 40, 50]]]
 ??? Output "Output"
     array([[[10, 21, 32, 43, 54]]])
 
-### **Second rule**
+### Second rule
 
 Arrays with a 1 along a particular dimension act as if they had the size of the array with the largest shape along that dimension. The value of the array element is repeated along that dimension.
 
@@ -567,7 +567,7 @@ k + 1000  # same as: k + [[1000, 1000, 1000], [1000, 1000, 1000]]
     array([[1000, 1001, 1002],
            [1003, 1004, 1005]])
     
-### **Third rule**
+### Third rule
 
 After rules 1 & 2, the sizes of all arrays must match.
 
@@ -583,7 +583,7 @@ except ValueError as e:
 
 Broadcasting rules are used in many NumPy operations, not just arithmetic operations, as we will see below. For more details about broadcasting, check out [the documentation](https://docs.scipy.org/doc/numpy-dev/user/basics.broadcasting.html).
 
-### **Upcasting**
+### Upcasting
 
 When trying to combine arrays with different `dtype`s, NumPy will upcast to a type capable of handling all possible values (regardless of what the actual values are).
 
@@ -613,7 +613,7 @@ print(k3.dtype, k3)
     float64 [ 1.5  2.5  3.5  4.5  5.5]
 
 
-## **Conditional operators**
+## Conditional operators
 
 The conditional operators also apply elementwise:
 
@@ -644,11 +644,11 @@ m[m < 25]
     array([20, -5])
 
 
-## **Mathematical and statistical functions**
+## Mathematical and statistical functions
 
 Many mathematical and statistical functions are available for `ndarray`s.
 
-### **ndarray methods**
+### ndarray methods
 
 Some functions are simply `ndarray` methods, for example:
 

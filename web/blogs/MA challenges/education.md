@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Discover the transformative potential of Artificial Intelligence in education for Morocco
+keywords: Artificial Intelligence, Education, Personalized Learning, Adaptive Machine Learning, Accessibility, Teacher Support, Data Privacy, Digital Resources, E-learning, Morocco, Machine Learning, Digital Literacy
 ---
 
 # **🤖 Day 1: Education 📚**

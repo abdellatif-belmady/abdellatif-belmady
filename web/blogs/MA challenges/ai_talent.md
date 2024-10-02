@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Discover the vital role of nurturing AI talent in Morocco to foster innovation and economic growth
+keywords: AI Talent, Innovation, Machine Learning, Deep Learning, Morocco, Economic Growth, Education, Workforce Development, Scholarships, Industry Collaboration, Public Awareness
 ---
 
 # **🧠 Day 10: Nurturing AI Talent 🧠**

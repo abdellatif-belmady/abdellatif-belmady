@@ -1,5 +1,7 @@
 ---
 comments: true
+description: Explore the importance of collaboration in driving AI development in Morocco
+keywords: AI Collaboration, Public-Private Partnerships, Machine Learning, Deep Learning, Morocco, Knowledge Exchange, Resource Sharing, Innovation, Research Grants, Open Data, AI Competitions, Education, Regulatory Frameworks
 ---
 
 # **🤝 Day 12: Fostering Collaboration 🤝**

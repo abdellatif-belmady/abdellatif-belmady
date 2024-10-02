@@ -1,70 +1,72 @@
+# Site metadata
 site_name: Abdellatif BELMADY
 site_description: >-
-  Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, 
-  the machine learning books he has read and also free Tutorials on the main points of machine learning and deep learning.
+  Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, the machine learning books he has read and also free Tutorials on the main points of machine learning and deep learning subjects.
+site_url: https://abdellatif-belmady.github.io/abdellatif-belmady/
+site_author: Abdellatif BELMADY
+repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
+edit_uri: edit/source/web/
+repo_name: abdellatif-belmady/abdellatif-belmady
+remote_name: https://github.com/abdellatif-belmady/web
 docs_dir: web/
 
-# Configuration
+# Theme customization
 theme:
     font: false
     name: material
+    language: en
+    custom_dir: overrides
     logo: 'logo.png'
     favicon: 'logo.png'
     icon:
       previous: fontawesome/solid/angle-left
       next: fontawesome/solid/angle-right
     palette:
-      - scheme: default
+      - media: "(prefers-color-scheme)"
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
         primary: black
-        media: "(prefers-color-scheme: light)"
+        accent: indigo
+        toggle:
+          icon: material/brightness-4
+          name: Switch to system preference
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: indigo
+        accent: indigo
         toggle:
           icon: material/brightness-7
           name: Switch to dark mode
-        accent: 'indigo'
-      - scheme: slate
-        media: "(prefers-color-scheme: dark)"
-        toggle:
-          icon: material/brightness-4
-          name: Switch to light mode
-        primary: black
-        accent: 'blue'
 
     features:
         - navigation.instant
         - content.action.edit
         - content.code.copy
         - content.code.select
-        # - announce.dismiss
         - content.code.annotate
-        # - content.tabs.link
         - content.tooltips
-        # - header.autohide
-        # - navigation.expand
         - navigation.indexes
-        # - navigation.instant
-        # - navigation.prune
-        #- navigation.sections
         - navigation.tabs
-        # - navigation.tabs.sticky
         - navigation.top
         - navigation.tracking
         - search.highlight
         - search.share
         - search.suggest
         - toc.follow
-        # - navigation.expand
         - navigation.footer
-        # - toc.integrate
         - navigation.path
         - navigation.indexes
         - content.code.select
 
-    custom_dir: overrides
+    
 
 extra_css:
-    - 'stylesheets/extra.css'
-    - 'stylesheets/fonts.css'
-    - 'stylesheets/home/extra.css'
+    # - 'stylesheets/extra.css'
+    # - 'stylesheets/fonts.css'
+    # - 'stylesheets/home/extra.css'
     - 'stylesheets/home/about.css'
 
 # Customization
@@ -100,10 +102,6 @@ extra:
     # - icon: fontawesome/brands/x-twitter
     #   link: https://twitter.com/AbdellatifBELM
 
-# Repository
-repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
-edit_uri: edit/source/web/
-
 # Copyright
 copyright: Copyright &copy; 2022 - 2024 Abdellatif BELMADY
 
@@ -121,8 +119,6 @@ markdown_extensions:
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
-    # - pymdownx.emoji:
-    #     emoji_generator: !!python/name:pymdownx.emoji.to_svg
     - pymdownx.inlinehilite
     - pymdownx.magiclink
     - pymdownx.mark
@@ -144,29 +140,27 @@ markdown_extensions:
 nav:
   - Portfolio: index.md
   - Projects:
-    - 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
-      - projects/Professional Projects/index.md
-      - Hackathon Challenge: projects/Professional Projects/hackathon.md
-    - 𝐀𝐜𝐚𝐝𝐞𝐦𝐢𝐜 𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬:
-      - projects/Academic Projects/index.md
-      - Spam Dataset: projects/Academic Projects/spam datasets.md
-      - Ozone Dataset: projects/Academic Projects/ozone datasets.md
-      - Boston Dataset: projects/Academic Projects/boston datasets.md
-      - TP_GNN : projects/Academic Projects/tp_gnn.md
-      - Abstractive Summarization: projects/Academic Projects/abstractive summarization.md
-      - Big-Data For IoT: projects/Academic Projects/big data for iot.md
-      - Profilage des chauffeurs: projects/Academic Projects/projet R.md
-      - Reciprocal n-body Collision Avoidance : projects/Academic Projects/Reciprocal-n-body-Collision-Avoidance.md
-      - Algorithmes Génétiques 2, Peindre Vermeer : projects/Academic Projects/Painting Vermeer.md
+    - Spam Dataset: projects/spam datasets.md
+    - Ozone Dataset: projects/ozone datasets.md
+    - Boston Dataset: projects/boston datasets.md
+    - TP_GNN : projects/tp_gnn.md
+    - Abstractive Summarization: projects/abstractive summarization.md
+    - Big-Data For IoT: projects/big data for iot.md
+    - Profilage des chauffeurs: projects/projet R.md
+    - Reciprocal n-body Collision Avoidance : projects/Reciprocal-n-body-Collision-Avoidance.md
+    - Algorithmes Génétiques 2, Peindre Vermeer : projects/Painting Vermeer.md
   - Tutorials:
-    - 𝐋𝐢𝐛𝐫𝐚𝐫𝐢𝐞𝐬:
+    - Generative AI:
+      - Tutorials/Generative AI/index.md
+      - Host LLM Locally: Tutorials/Generative AI/host_llm_locally.md
+    - Libraries:
       - Tutorials/Libraries/index.md
       - NumPy: Tutorials/Libraries/numpy.md
       - Pandas: Tutorials/Libraries/pandas.md
-    - 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧:
+    - Computer Vision:
       - Tutorials/Computer Vision Algorithms/index.md
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
-    - 𝐍𝐚𝐭𝐮𝐫𝐚𝐥 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠: 
+    - NLP: 
       - Tutorials/Natural Language Processing/index.md
       - Bases of NLP: Tutorials/Natural Language Processing/bases.md
     #   - Tools of NLP: Tutorials/Natural Language Processing/tools.md
@@ -175,8 +169,8 @@ nav:
     #   - Data Collection: Tutorials/Natural Language Processing/collection.md
     #   - RNN: Tutorials/Natural Language Processing/reseaunn.md
     #   - Modern Technics: Tutorials/Natural Language Processing/modern.md
-  - Blogs:
-    - 𝐌𝐋 & 𝐃𝐋 𝐌𝐨𝐫𝐨𝐜𝐜𝐨 𝐂𝐡𝐚𝐥𝐥𝐞𝐧𝐠𝐞𝐬: 
+  - Blogs: 
+    - AI Morocco Challenges: 
       - blogs/MA challenges/index.md
       - 📚 Day 1 - Education : blogs/MA challenges/education.md
       - 🏥 Day 2 - Healthcare : blogs/MA challenges/healthcare.md
@@ -190,32 +184,10 @@ nav:
       - 🧠 Day 10 - AI Talent : blogs/MA challenges/ai_talent.md
       - 🛡️ Day 11 - Data Privacy : blogs/MA challenges/data_privacy.md
       - 🤝 Day 12 - Collaboration : blogs/MA challenges/collaboration.md
-    - 𝐏𝐢𝐩𝐞𝐥𝐢𝐧𝐞 𝐌𝐚𝐬𝐭𝐞𝐫𝐲 𝐒𝐞𝐫𝐢𝐞𝐬:
+    - Pipelines Mastery Serie:
       - blogs/Data Pipelines/index.md
       - Batch Processing Data Pipeline: blogs/Data Pipelines/batch_processing.md
       - Real-Time Streaming Data Pipeline: blogs/Data Pipelines/real_time_processing.md
       - Cloud-Based Data Pipeline: blogs/Data Pipelines/cloud_based_processing.md
       - Machine Learning Data Pipeline: blogs/Data Pipelines/serverless_processing.md
-  # - Books: books/not yet.md
-    # - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow: 
-    #   - Preface: books/Hands on machine learning/preface.md
-    #   - The Fundamentals of Machine Learning:
-    #     - The Machine Learning Landscape: books/Hands on machine learning/The Fundamentals of Machine Learning/3.1. The Machine Learning Landscape.md
-    #     - End-to-End Machine Learning Project: books/Hands on machine learning/The Fundamentals of Machine Learning/3.2. End-to-End Machine Learning Project.md
-    #     - Classification: books/Hands on machine learning/The Fundamentals of Machine Learning/3.3. Classification.md
-    #     - Training Models: books/Hands on machine learning/The Fundamentals of Machine Learning/3.4. Training Models.md
-    #     - Support Vector Machines: books/Hands on machine learning/The Fundamentals of Machine Learning/3.5. Support Vector Machines.md
-    #     - Decision Trees: books/Hands on machine learning/The Fundamentals of Machine Learning/3.6. Decision Trees.md
-    #     - Ensemble Learning and Random Forests: books/Hands on machine learning/The Fundamentals of Machine Learning/3.7. Ensemble Learning and Random Forests.md
-    #     - Dimensionality Reduction: books/Hands on machine learning/The Fundamentals of Machine Learning/3.8. Dimensionality Reduction.md
-    #     - Unsupervised Learning Techniques: books/Hands on machine learning/The Fundamentals of Machine Learning/3.9. Unsupervised Learning Techniques.md
-    #   - Neural Networks and Deep Learning:
-    #     - Introduction to Artificial Neural Networks with Keras: books/Hands on machine learning/Neural Networks and Deep Learning/4.1. Introduction to Artificial Neural Networks with Keras.md
-    #     - Training Deep Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.2. Training Deep Neural Networks.md
-    #     - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.3. Custom Models and Training with TensorFlow.md
-    #     - Custom Models and Training with TensorFlow: books/Hands on machine learning/Neural Networks and Deep Learning/4.4. Loading and Preprocessing Data with TensorFlow.md
-    #     - Deep Computer Vision Using Convolutional Neural Networks: books/Hands on machine learning/Neural Networks and Deep Learning/4.5. Deep Computer Vision Using Convolutional Neural Networks.md
-    #   - About the Author: books/Hands on machine learning/About the Author.md
-    #   - Colophon: books/Hands on machine learning/Colophon.md
-  - Services: services/documentation.md
-    # - Creation of professional documentation: services/documentation.md
+  # - Services: services/documentation.md
