@@ -7,7 +7,6 @@ site_author: Abdellatif BELMADY
 repo_url: https://github.com/abdellatif-belmady/abdellatif-belmady
 edit_uri: edit/source/web/
 repo_name: abdellatif-belmady/abdellatif-belmady
-remote_name: https://github.com/abdellatif-belmady/web
 docs_dir: web/
 
 # Theme customization
@@ -133,8 +132,8 @@ markdown_extensions:
     - pymdownx.tilde
     - md_in_html
     - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # Page tree
 nav:
