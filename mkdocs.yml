@@ -159,11 +159,11 @@ nav:
     - Computer Vision:
       - Tutorials/Computer Vision Algorithms/index.md
       - YOLO-NAS: Tutorials/Computer Vision Algorithms/yolonas.md
-        - Nvidia Jetson Nano: Tutorials/Computer Vision Algorithms/AI_Vision_Nvidia_Jetson_Nano.md
-        - NJN Set Up: Tutorials/Computer Vision Algorithms/AI_Vision_NJN_Set_Up.md
-        - Root File System to SD Card: Tutorials/Computer Vision Algorithms/AI_Vision_Root_File_System_to_SD_Card.md
-        - Use More Memory: Tutorials/Computer Vision Algorithms/AI_Vision_Use_More_Memory.md
-        - Jetson-inference Setup: Tutorials/Computer Vision Algorithms/AI_Vision_Jetson-inference_Setup.md
+      - Nvidia Jetson Nano: Tutorials/Computer Vision Algorithms/AI_Vision_Nvidia_Jetson_Nano.md
+      - NJN Set Up: Tutorials/Computer Vision Algorithms/AI_Vision_NJN_Set_Up.md
+      - Root File System to SD Card: Tutorials/Computer Vision Algorithms/AI_Vision_Root_File_System_to_SD_Card.md
+      - Use More Memory: Tutorials/Computer Vision Algorithms/AI_Vision_Use_More_Memory.md
+      - Jetson-inference Setup: Tutorials/Computer Vision Algorithms/AI_Vision_Jetson-inference_Setup.md
     - NLP: 
       - Tutorials/Natural Language Processing/index.md
       - Bases of NLP: Tutorials/Natural Language Processing/bases.md
