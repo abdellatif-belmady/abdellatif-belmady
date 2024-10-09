@@ -54,16 +54,9 @@ title: About
       <ul>
         <li>Creating Dashboards Using the 𝐃𝐚𝐬𝐡 Framework with 𝐏𝐥𝐨𝐭𝐥𝐲 for the Company Games.
         </li>
-        <li>Designed the 𝐁𝐢𝐠 𝐃𝐚𝐭𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 for the company, adopting the 𝐋𝐚𝐦𝐛𝐝𝐚 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 𝐓𝐲𝐩𝐞 to ensure robustness and scalability.
+        <li>Developed a conversational AI for hackathon students using Langchain, Groq API, and Llama 3.1 model. Integrated ChromaDB as a vector store and deployed via Docker with RESTful API endpoints.
         </li>
-      </ul>
-      <p><i>𝑺𝒕𝒓𝒂𝒕𝒆𝒈𝒊𝒄𝒂𝒍𝒍𝒚 𝒎𝒂𝒑𝒑𝒆𝒅 𝒐𝒖𝒕:</i></p>
-      <ul>
-        <li>𝐃𝐚𝐭𝐚 𝐒𝐨𝐮𝐫𝐜𝐞𝐬 to capture diverse data streams.
-        <li>𝐃𝐚𝐭𝐚 𝐒𝐭𝐨𝐫𝐚𝐠𝐞 solutions for efficient data management.
-        <li>𝐁𝐚𝐭𝐜𝐡 𝐥𝐚𝐲𝐞𝐫, 𝐬𝐩𝐞𝐞𝐝 𝐥𝐚𝐲𝐞𝐫, 𝐚𝐧𝐝 𝐬𝐞𝐫𝐯𝐢𝐧𝐠 𝐥𝐚𝐲𝐞𝐫 for comprehensive data processing.
-        <li>𝐃𝐚𝐭𝐚 𝐂𝐨𝐧𝐬𝐮𝐦𝐩𝐭𝐢𝐨𝐧 mechanisms to extract actionable insights.
-        <li>Implemented 𝐁𝐢𝐠 𝐃𝐚𝐭𝐚 𝐆𝐨𝐯𝐞𝐫𝐧𝐚𝐧𝐜𝐞 measures to ensure data quality, security, and compliance.
+        <li>Implemented a local LLM solution using Open WebUI, Ollama, and Stable Diffusion for image generation.
         </li>
       </ul>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2023 - Present</span><br><a href="https://abdellatif-belmady.github.io/smart-correction/">Smart Correction</a></strong> - Part Time</p>
