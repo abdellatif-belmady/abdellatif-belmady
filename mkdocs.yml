@@ -152,6 +152,7 @@ nav:
     - Generative AI:
       - Tutorials/Generative AI/index.md
       - Host LLM Locally: Tutorials/Generative AI/host_llm_locally.md
+      - LightRAG: Tutorials/Generative AI/lightrag.md
     - Libraries:
       - Tutorials/Libraries/index.md
       - NumPy: Tutorials/Libraries/numpy.md
