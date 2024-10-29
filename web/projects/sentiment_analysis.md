@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Advanced Sentiment Analysis with Movie Reviews
 
 This Python script performs an advanced sentiment analysis on movie reviews using the NLTK (Natural Language Toolkit) library and the Scikit-learn machine learning library.
