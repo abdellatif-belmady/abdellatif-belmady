@@ -139,6 +139,7 @@ markdown_extensions:
 nav:
   - Portfolio: index.md
   - Projects:
+    - Sentiment Analysis: projects/sentiment_analysis.md
     - Spam Dataset: projects/spam datasets.md
     - Ozone Dataset: projects/ozone datasets.md
     - Boston Dataset: projects/boston datasets.md
