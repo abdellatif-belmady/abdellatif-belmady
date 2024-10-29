@@ -5,6 +5,97 @@ This Python script performs an advanced sentiment analysis on movie reviews usin
 ## Introduction
 This script aims to build an advanced sentiment analysis model using the movie reviews dataset from the NLTK corpus. The model is based on the Naive Bayes classification algorithm and is trained on a combination of text features, including bag-of-words (Count Vectorizer) and term frequency-inverse document frequency (TF-IDF Vectorizer). Additionally, the script incorporates sentiment analysis using the VADER (Valence Aware Dictionary and sEntiment Reasoner) library to provide a sentiment score for each review.
 
+??? Output "Code"
+   ```py
+   import nltk
+   import pandas as pd
+   import numpy as np
+   from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+   from sklearn.model_selection import train_test_split, GridSearchCV
+   from sklearn.naive_bayes import MultinomialNB
+   from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
+   from nltk.corpus import movie_reviews
+   from nltk.sentiment import SentimentIntensityAnalyzer
+   import pickle
+   
+   # Step 1: Setup - Install necessary libraries (if not installed)
+   # !pip install nltk pandas scikit-learn
+   
+   # Step 2: Data Preparation
+   nltk.download("movie_reviews")
+   nltk.download("vader_lexicon")
+   
+   # Load the dataset
+   documents = [(" ".join(movie_reviews.words(fileid)), category)
+                for category in movie_reviews.categories()
+                for fileid in movie_reviews.fileids(category)]
+   
+   # Convert to DataFrame
+   df = pd.DataFrame(documents, columns=["review", "sentiment"])
+   
+   # Step 3: Feature Engineering
+   # 1. Count Vectorizer
+   count_vectorizer = CountVectorizer(max_features=5000, stop_words='english')
+   X_count = count_vectorizer.fit_transform(df["review"])
+   
+   # 2. TF-IDF Vectorizer
+   tfidf_vectorizer = TfidfVectorizer(max_features=5000, stop_words='english')
+   X_tfidf = tfidf_vectorizer.fit_transform(df["review"])
+   
+   # 3. Sentiment Analysis
+   sia = SentimentIntensityAnalyzer()
+   df["sentiment_score"] = df["review"].apply(lambda x: sia.polarity_scores(x)["compound"])
+   
+   # Step 4: Model Training
+   # Split the data into training and testing sets
+   X_train_count, X_test_count, y_train, y_test = train_test_split(X_count, df["sentiment"], test_size=0.2, random_state=42)
+   X_train_tfidf, X_test_tfidf, _, _ = train_test_split(X_tfidf, df["sentiment"], test_size=0.2, random_state=42)
+   
+   # Tune the Naive Bayes model using GridSearchCV
+   param_grid = {"alpha": [0.1, 1, 10]}
+   grid_search = GridSearchCV(MultinomialNB(), param_grid, cv=5, scoring="f1_macro")
+   grid_search.fit(X_train_count, y_train)
+   best_model = grid_search.best_estimator_
+   
+   # Evaluate the model
+   y_pred_count = best_model.predict(X_test_count)
+   y_pred_tfidf = best_model.predict(X_test_tfidf)
+   
+   print("Count Vectorizer:")
+   print(f"Accuracy: {accuracy_score(y_test, y_pred_count)}")
+   print(f"F1 Score: {f1_score(y_test, y_pred_count, average='macro')}")
+   print(f"Precision: {precision_score(y_test, y_pred_count, average='macro')}")
+   print(f"Recall: {recall_score(y_test, y_pred_count, average='macro')}")
+   print(f"Classification Report:\n{classification_report(y_test, y_pred_count)}")
+   
+   print("\nTF-IDF Vectorizer:")
+   print(f"Accuracy: {accuracy_score(y_test, y_pred_tfidf)}")
+   print(f"F1 Score: {f1_score(y_test, y_pred_tfidf, average='macro')}")
+   print(f"Precision: {precision_score(y_test, y_pred_tfidf, average='macro')}")
+   print(f"Recall: {recall_score(y_test, y_pred_tfidf, average='macro')}")
+   print(f"Classification Report:\n{classification_report(y_test, y_pred_tfidf)}")
+   
+   # Step 5: Sentiment Analysis
+   def predict_sentiment(text):
+       text_vector = tfidf_vectorizer.transform([text])
+       prediction = best_model.predict(text_vector)
+       sentiment_score = sia.polarity_scores(text)["compound"]
+       return prediction[0], sentiment_score
+   
+   # Save the model and vectorizers
+   with open("model.pkl", "wb") as f:
+       pickle.dump(best_model, f)
+   with open("count_vectorizer.pkl", "wb") as f:
+       pickle.dump(count_vectorizer, f)
+   with open("tfidf_vectorizer.pkl", "wb") as f:
+       pickle.dump(tfidf_vectorizer, f)
+   
+   # Test the prediction function
+   print(predict_sentiment("I absolutely loved this movie! It was fantastic."))
+   print(predict_sentiment("It was a terrible film. I hated it."))
+   print(predict_sentiment("The movie was okay, nothing special."))
+   ```
+
 ## Setup
 1. Ensure that the necessary libraries are installed:
    ```python
