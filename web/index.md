@@ -58,6 +58,8 @@ title: About
         </li>
         <li>Implemented a local LLM solution using Open WebUI, Ollama, and Stable Diffusion for image generation.
         </li>
+        <li>Developed QuizPhere, a full-stack quiz generation platform powered by Generative AI using Groq Llama 3.2. The app generates both text-based quiz content and collects relevant images via DuckDuckGo Search for a complete quiz experience. Supports multiple quiz types, including True/False, Multiple Choice, and Puzzle formats, using LangChain, FastAPI, PostgreSQL, and React.
+        </li>
       </ul>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2023 - Present</span><br><a href="https://abdellatif-belmady.github.io/smart-correction/">Smart Correction</a></strong> - Part Time</p>
       <p>As the founder and CEO of Smart Correction, I have had the privilege of guiding this company from its exciting beginnings. Our mission at Smart Correction is to transform education by providing intelligent and personalized assistance to French and Moroccan students.</p>
