@@ -41,17 +41,10 @@ title: About
       <p><strong>Hello! I’m Abdellatif BELMADY,</strong> a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King <strong>“Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.”</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
      <p><strong>Data Scientist | AI Engineer <span class="date" style=" color: inherit;">Jan 2024 - Present</span><br><a href="https://thegamechangercompany.fr/">The Game Changer Company</a></strong> - Full Time</p>
-      <p><strong>𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
-      <ul>
-        <li>Developed a Flask application for 𝐅𝐚𝐜𝐞 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧, enhancing security measures by sending email alerts (including screenshots) upon detecting unauthorized entry into a room.
-        <li>Spearheaded the development of a Flask application for 𝐅𝐚𝐜𝐢𝐚𝐥 𝐀𝐭𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬, enabling precise classification of gender, accurate prediction of age, and comprehensive emotion analysis.
-        <li>Pioneered a Flask application for 𝐎𝐛𝐣𝐞𝐜𝐭 𝐂𝐨𝐮𝐧𝐭𝐢𝐧𝐠 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐫𝐞𝐠𝐢𝐨𝐧𝐬, facilitating efficient monitoring and management of assets within specified areas.
-        </li>
-        <li>Developed a real-time people detection and counting algorithm optimized for deployment on the 𝐍𝐯𝐢𝐝𝐢𝐚 𝐉𝐞𝐭𝐬𝐨𝐧 𝐍𝐚𝐧𝐨 𝐟𝐨𝐫 𝐞𝐝𝐠𝐞 𝐜𝐨𝐦𝐩𝐮𝐭𝐢𝐧𝐠.
-        </li>
-      </ul>
       <p><strong>𝐃𝐚𝐭𝐚 𝐒𝐜𝐢𝐞𝐧𝐜𝐞 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
       <ul>
+        <li>Developed a multi-stage AI agent (LangGraph, GPT-4o-mini) to automate project initiation. The agent generates actionable tasks, identifies dependencies, creates schedules, allocates resources, assesses risks, and visualizes the project plan through automatically generated, detailed Gantt charts.
+        </li>
         <li>Creating Dashboards Using the 𝐃𝐚𝐬𝐡 Framework with 𝐏𝐥𝐨𝐭𝐥𝐲 for the Company Games.
         </li>
         <li>Developed a conversational AI for hackathon students using Langchain, Groq API, and Llama 3.1 model. Integrated ChromaDB as a vector store and deployed via Docker with RESTful API endpoints.
@@ -59,6 +52,15 @@ title: About
         <li>Implemented a local LLM solution using Open WebUI, Ollama, and Stable Diffusion for image generation.
         </li>
         <li>Developed QuizPhere, a full-stack quiz generation platform powered by Generative AI using Groq Llama 3.2. The app generates both text-based quiz content and collects relevant images via DuckDuckGo Search for a complete quiz experience. Supports multiple quiz types, including True/False, Multiple Choice, and Puzzle formats, using LangChain, FastAPI, PostgreSQL, and React.
+        </li>
+      </ul>
+      <p><strong>𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
+      <ul>
+        <li>Developed a Flask application for 𝐅𝐚𝐜𝐞 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧, enhancing security measures by sending email alerts (including screenshots) upon detecting unauthorized entry into a room.
+        <li>Spearheaded the development of a Flask application for 𝐅𝐚𝐜𝐢𝐚𝐥 𝐀𝐭𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬, enabling precise classification of gender, accurate prediction of age, and comprehensive emotion analysis.
+        <li>Pioneered a Flask application for 𝐎𝐛𝐣𝐞𝐜𝐭 𝐂𝐨𝐮𝐧𝐭𝐢𝐧𝐠 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐫𝐞𝐠𝐢𝐨𝐧𝐬, facilitating efficient monitoring and management of assets within specified areas.
+        </li>
+        <li>Developed a real-time people detection and counting algorithm optimized for deployment on the 𝐍𝐯𝐢𝐝𝐢𝐚 𝐉𝐞𝐭𝐬𝐨𝐧 𝐍𝐚𝐧𝐨 𝐟𝐨𝐫 𝐞𝐝𝐠𝐞 𝐜𝐨𝐦𝐩𝐮𝐭𝐢𝐧𝐠.
         </li>
       </ul>
      <p><strong>CEO and Founder <span class="date" style=" color: inherit;">Jan 2023 - Present</span><br><a href="https://abdellatif-belmady.github.io/smart-correction/">Smart Correction</a></strong> - Part Time</p>
