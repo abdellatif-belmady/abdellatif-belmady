@@ -1,0 +1,3313 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, the machine learning books he has read and also free Tutorials on the main points of machine learning and deep learning subjects.">
+      
+      
+        <meta name="author" content="Abdellatif BELMADY">
+      
+      
+        <link rel="canonical" href="https://abdellatif-belmady.github.io/abdellatif-belmady/projects/tp_gnn/">
+      
+      
+        <link rel="prev" href="../boston%20datasets/">
+      
+      
+        <link rel="next" href="../abstractive%20summarization/">
+      
+      
+      <link rel="icon" href="../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>TP_GNN - Abdellatif BELMADY</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/home/about.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-4GPL6MXYQ3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-4GPL6MXYQ3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-4GPL6MXYQ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-reseaux-de-neurones-graphiques" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Abdellatif BELMADY" class="md-header__button md-logo" aria-label="Abdellatif BELMADY" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Abdellatif BELMADY
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP_GNN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abdellatif-belmady/abdellatif-belmady" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdellatif-belmady/abdellatif-belmady
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Portfolio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../sentiment_analysis/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Tutorials/Generative%20AI/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blogs/MA%20challenges/" class="md-tabs__link">
+          
+  
+    
+  
+  Blogs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Abdellatif BELMADY" class="md-nav__button md-logo" aria-label="Abdellatif BELMADY" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Abdellatif BELMADY
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abdellatif-belmady/abdellatif-belmady" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdellatif-belmady/abdellatif-belmady
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Portfolio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentiment_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentiment Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spam%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spam Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ozone%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ozone Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boston%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boston Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP_GNN
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TP_GNN
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representation-graphique-avec-networkx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation graphique avec networkx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Représentation graphique avec networkx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zacharys-karate-club-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zachary's karate club network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-1-quel-est-le-degre-moyen-du-karate-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1 : quel est le degré moyen du karaté club ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-quel-est-le-coefficient-de-clustering-moyen-du-karate-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2 : quel est le coefficient de clustering moyen du karaté club ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-quelle-est-la-centralite-de-proximite-du-noeud-numero-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3 : quelle est la centralité de proximité du noeud numéro 5 ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-quelle-est-la-centralite-intermediaire-associee-a-un-noeud-donne-du-karacte-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4 : quelle est la centralité intermédiaire associée à un noeud donné du karacté club ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphe-en-tenseur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe en Tenseur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphe en Tenseur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-5-liste-des-aretes-du-karate-club-en-format-torchlongtensor-quel-le-nombe-daretes-positives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5 : Liste des arêtes du Karaté club en format torch.LongTensor. Quel le nombe d'arêtes positives ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-ecrire-une-fonction-qui-retourne-les-aretes-negatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6 : Ecrire une fonction qui retourne les arêtes négatives.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Embeddings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Embeddings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-des-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation des embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-calcul-des-embeddings-par-descente-du-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7 : calcul des embeddings par descente du gradient.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-des-embeddings-calcules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation des embeddings calculés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abstractive%20summarization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstractive Summarization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../big%20data%20for%20iot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big-Data For IoT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projet%20R/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profilage des chauffeurs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reciprocal-n-body-Collision-Avoidance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reciprocal n-body Collision Avoidance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Painting%20Vermeer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmes Génétiques 2, Peindre Vermeer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Tutorials/Generative%20AI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Generative AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Generative%20AI/host_llm_locally/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Host LLM Locally
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Generative%20AI/lightrag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LightRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Tutorials/Libraries/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Libraries/numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Libraries/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Tutorials/Computer%20Vision%20Algorithms/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Computer%20Vision%20Algorithms/yolonas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YOLO-NAS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Computer%20Vision%20Algorithms/AI_Vision_NJN_Set_Up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NJN Set Up
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Computer%20Vision%20Algorithms/AI_Vision_Root_File_System_to_SD_Card/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Root File System to SD Card
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Computer%20Vision%20Algorithms/AI_Vision_Use_More_Memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use More Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Computer%20Vision%20Algorithms/AI_Vision_Jetson-inference_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jetson-inference Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Tutorials/Natural%20Language%20Processing/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Natural%20Language%20Processing/bases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases of NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blogs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blogs/MA%20challenges/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Morocco Challenges
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            AI Morocco Challenges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📚 Day 1 - Education
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/healthcare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏥 Day 2 - Healthcare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/agriculture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌾 Day 3 - Agriculture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/finance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    💰 Day 4 - Finance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/energy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⚡ Day 5 - Sustainable Energy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/transportation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🚗 Day 6 - Transportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/innovation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🚀 Day 7 - Innovation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/public_services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Day 8 - Public Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/cybersecurity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 Day 9 - Cybersecurity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/ai_talent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🧠 Day 10 - AI Talent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/data_privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🛡️ Day 11 - Data Privacy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/MA%20challenges/collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🤝 Day 12 - Collaboration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blogs/Data%20Pipelines/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Pipelines Mastery Serie
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pipelines Mastery Serie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Data%20Pipelines/batch_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Batch Processing Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Data%20Pipelines/real_time_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Real-Time Streaming Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Data%20Pipelines/cloud_based_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud-Based Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Data%20Pipelines/serverless_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representation-graphique-avec-networkx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation graphique avec networkx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Représentation graphique avec networkx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zacharys-karate-club-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zachary's karate club network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-1-quel-est-le-degre-moyen-du-karate-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1 : quel est le degré moyen du karaté club ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-quel-est-le-coefficient-de-clustering-moyen-du-karate-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2 : quel est le coefficient de clustering moyen du karaté club ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-quelle-est-la-centralite-de-proximite-du-noeud-numero-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3 : quelle est la centralité de proximité du noeud numéro 5 ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-quelle-est-la-centralite-intermediaire-associee-a-un-noeud-donne-du-karacte-club" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4 : quelle est la centralité intermédiaire associée à un noeud donné du karacté club ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphe-en-tenseur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe en Tenseur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphe en Tenseur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-5-liste-des-aretes-du-karate-club-en-format-torchlongtensor-quel-le-nombe-daretes-positives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5 : Liste des arêtes du Karaté club en format torch.LongTensor. Quel le nombe d'arêtes positives ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-ecrire-une-fonction-qui-retourne-les-aretes-negatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6 : Ecrire une fonction qui retourne les arêtes négatives.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Embeddings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Embeddings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-des-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation des embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-calcul-des-embeddings-par-descente-du-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7 : calcul des embeddings par descente du gradient.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-des-embeddings-calcules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation des embeddings calculés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/abdellatif-belmady/abdellatif-belmady/edit/source/web/projects/tp_gnn.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="tp-reseaux-de-neurones-graphiques">TP: Réseaux de neurones graphiques</h1>
+<p>Dans ce TP, on va appliquer les concepts d'extraction de caractéristiques et de node embedding sur un dataset classique <a href="https://en.wikipedia.org/wiki/Zachary%27s_karate_club">Karate Club Network</a>.</p>
+<h2 id="representation-graphique-avec-networkx"><strong>Représentation graphique avec networkx</strong></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+</code></pre></div>
+<h3 id="zacharys-karate-club-network"><strong>Zachary's karate club network</strong></h3>
+<p>Zachary's karate club est un graphe décrivant un réseau social de 34 membres d'un club de karaté. Les liens représentent les interactions entre les membres en dehors du club.</p>
+<div class="highlight"><pre><span></span><code><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p><img alt="Image" src="../../assets/images/gnn1.png" /></p>
+</details>
+<h3 id="question-1-quel-est-le-degre-moyen-du-karate-club"><strong>Question 1 : quel est le degré moyen du karaté club ?</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">average_degree</span><span class="p">(</span><span class="n">num_edges</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">):</span>
+  <span class="c1"># Cette fonction retourne le degré moyen du graphe.</span>
+
+    <span class="n">avg_degree</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">avg_degree</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">num_edges</span><span class="o">/</span><span class="n">num_nodes</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">avg_degree</span>
+
+<span class="n">num_edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
+<span class="n">num_nodes</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nombre d&#39;arêtes :&quot;</span><span class="p">,</span> <span class="n">num_edges</span><span class="p">,</span> <span class="s2">&quot;Nombre de noeuds :&quot;</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">)</span>
+<span class="n">avg_degree</span> <span class="o">=</span> <span class="n">average_degree</span><span class="p">(</span><span class="n">num_edges</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le degré moyen du karaté club est : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_degree</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>Nombre d'arêtes : 78 Nombre de noeuds : 34
+Le degré moyen du karaté club est : 5</p>
+</details>
+<h3 id="question-2-quel-est-le-coefficient-de-clustering-moyen-du-karate-club"><strong>Question 2 : quel est le coefficient de clustering moyen du karaté club ?</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">average_clust_coef</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+  <span class="c1"># Cette fonction retourne le coefficient de clustring moyen du caracté club </span>
+
+  <span class="c1">####### Code ########</span>
+    <span class="n">avg_cluster_coef</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+  <span class="c1">#####################</span>
+
+    <span class="k">return</span> <span class="n">avg_cluster_coef</span>
+
+<span class="n">avg_cluster_coef</span> <span class="o">=</span> <span class="n">average_clust_coef</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le coefficient de clustering moyen du karaté club est : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_cluster_coef</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>Le coefficient de clustering moyen du karaté club est : 0.5706384782076823</p>
+</details>
+<h3 id="question-3-quelle-est-la-centralite-de-proximite-du-noeud-numero-5"><strong>Question 3 : quelle est la centralité de proximité du noeud numéro 5 ?</strong></h3>
+<details class="success">
+<summary>Output</summary>
+<p>La centralité de proximité est définie par :  <span class="arithmatex"><span class="MathJax_Preview">c(v) = \frac{1}{\sum_{u \neq v}\text{le chemin le plus court entre } u \text{ and } v}</span><script type="math/tex">c(v) = \frac{1}{\sum_{u \neq v}\text{le chemin le plus court entre } u \text{ and } v}</script></span></p>
+</details>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+  <span class="c1"># Cette fonction retourne la centralité de proximité d&#39;un noeud donné</span>
+
+  <span class="c1">###### Code #######</span>
+    <span class="n">degree_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">centrality</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">closeness</span> <span class="o">=</span> <span class="n">degree_centrality</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+  <span class="c1">###################</span>
+
+    <span class="k">return</span> <span class="n">closeness</span>
+
+<span class="n">node</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">closeness</span> <span class="o">=</span> <span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La centralité de proximité du noeud numéro 5 est : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">closeness</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>La centralité de proximité du noeud numéro 5 est : 0.38372093023255816</p>
+</details>
+<h3 id="question-4-quelle-est-la-centralite-intermediaire-associee-a-un-noeud-donne-du-karacte-club"><strong>Question 4 : quelle est la centralité intermédiaire associée à un noeud donné du karacté club ?</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">betweeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+  <span class="c1"># Cette fonction retourne la centralité intermédiaire d&#39;un noeud donné</span>
+
+  <span class="c1">####### Code ########</span>
+    <span class="n">btw_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">centrality</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">betweeness</span> <span class="o">=</span> <span class="n">btw_centrality</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+  <span class="c1">#####################</span>
+
+    <span class="k">return</span> <span class="n">betweeness</span>
+<span class="n">node</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">betweeness</span> <span class="o">=</span> <span class="n">betweeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La centralité intermédiaire du noeud numéro 5 est : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">closeness</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>La centralité intermédiaire du noeud numéro 5 est : 0.38372093023255816</p>
+</details>
+<h2 id="graphe-en-tenseur"><strong>Graphe en Tenseur</strong></h2>
+<p>Nous allons transformer le graphe  G  en tenseur Pytorch.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</code></pre></div>
+<h3 id="question-5-liste-des-aretes-du-karate-club-en-format-torchlongtensor-quel-le-nombe-daretes-positives"><strong>Question 5 : Liste des arêtes du Karaté club en format torch.LongTensor. Quel le nombe d'arêtes positives ?</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">graph_to_edge_list</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+
+  <span class="c1"># Cette fonction retourne la liste des arêtes d&#39;un graphe sous forme</span>
+  <span class="c1"># de couplet composé de deux noeuds.</span>
+
+    <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lst1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lst2</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="c1">############# Code ############</span>
+    <span class="n">edge_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+  <span class="c1">#########################################</span>
+
+    <span class="k">return</span> <span class="n">edge_list</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">edge_list_to_tensor</span><span class="p">(</span><span class="n">edge_list</span><span class="p">):</span>
+
+  <span class="c1"># Cette fonction transforme un liste d&#39;arêtes en Tenseur Pytorch</span>
+  <span class="c1"># de dimension [2 x len(edge_list)]</span>
+
+    <span class="n">edge_index</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([])</span>
+
+  <span class="c1">############# Code ############</span>
+    <span class="n">edge_index</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">edge_list</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">permute</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+  <span class="c1">#########################################</span>
+
+    <span class="k">return</span> <span class="n">edge_index</span>
+
+<span class="n">pos_edge_list</span> <span class="o">=</span> <span class="n">graph_to_edge_list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># print(pos_edge_list)</span>
+<span class="n">pos_edge_index</span> <span class="o">=</span> <span class="n">edge_list_to_tensor</span><span class="p">(</span><span class="n">pos_edge_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La dimension de pos_edge_index est : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_edge_index</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La somme des valeurs de pos_edge_index : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pos_edge_index</span><span class="p">)))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>La dimension de pos_edge_index est : torch.Size([2, 78])
+La somme des valeurs de pos_edge_index : 2535</p>
+</details>
+<h3 id="question-6-ecrire-une-fonction-qui-retourne-les-aretes-negatives"><strong>Question 6 : Ecrire une fonction qui retourne les arêtes négatives.</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_negative_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">num_neg_samples</span><span class="p">):</span>
+
+  <span class="c1"># Cette fonction retourne la liste des arêtes négatives. </span>
+
+    <span class="n">neg_edge_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pos_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+    <span class="n">visited_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+
+  <span class="c1">############# Code ############</span>
+    <span class="k">for</span> <span class="n">n_i</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">n_j</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">n_i</span> <span class="o">==</span> <span class="n">n_j</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n_i</span><span class="p">,</span><span class="n">n_j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pos_set</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n_j</span><span class="p">,</span><span class="n">n_i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pos_set</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n_i</span><span class="p">,</span><span class="n">n_j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">visited_set</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n_j</span><span class="p">,</span> <span class="n">n_i</span><span class="p">)</span> <span class="ow">is</span> <span class="n">visited_set</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">neg_edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n_i</span><span class="p">,</span><span class="n">n_j</span><span class="p">))</span>
+            <span class="n">visited_set</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">n_i</span><span class="p">,</span><span class="n">n_j</span><span class="p">))</span>
+            <span class="n">visited_set</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">n_j</span><span class="p">,</span><span class="n">n_i</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_edge_list</span><span class="p">)</span> <span class="o">==</span> <span class="n">num_neg_samples</span><span class="p">:</span>
+                <span class="k">break</span>
+
+  <span class="c1">###############################</span>
+
+    <span class="k">return</span> <span class="n">neg_edge_list</span>
+
+<span class="c1"># Echantillon de 78 arêtes négatives</span>
+<span class="n">neg_edge_list</span> <span class="o">=</span> <span class="n">sample_negative_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos_edge_list</span><span class="p">))</span>
+
+<span class="c1"># Convertir la liste des arêtes négatives en tenseur</span>
+<span class="n">neg_edge_index</span> <span class="o">=</span> <span class="n">edge_list_to_tensor</span><span class="p">(</span><span class="n">neg_edge_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le tenseur neg_edge_index est de dimension </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">neg_edge_index</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="c1"># Quelles sont les arêtes négatives parmi les arêtes suivantes ?</span>
+<span class="n">edge_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">edge_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="n">edge_3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">edge_4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">edge_5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>Le tenseur neg_edge_index est de dimension torch.Size([2, 483])</p>
+</details>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">negative_edge_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>False</p>
+</details>
+<h2 id="node-embeddings"><strong>Node Embeddings</strong></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+</code></pre></div>
+<p>On va utiliser ici le module <a href="https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html">nn.Embedding</a> de PyTorch.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialisation de la couche d&#39;embeddings</span>
+<span class="c1"># avec, par exemple, 4 objets de dimension 8 chacun</span>
+
+<span class="n">emb_sample</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">num_embeddings</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Embedding layer: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">emb_sample</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>Embedding layer: Embedding(4, 8)</p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>On peut sélectionner l'embedding d'un objet en utilisant l'indice correspondant.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sélectionner un seul embedding</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emb_sample</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+<span class="c1"># Sélectionner plusieurs embeddings</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emb_sample</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+
+<span class="c1"># Obtenir la dimension de la mtrice de poids de l&#39;embedding</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">emb_sample</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Affecter de nouvelles valeurs à la matrice de poids (ici des 1)</span>
+<span class="n">emb_sample</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Vérifier la nouvelle affectation</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emb_sample</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>tensor([[-0.6316,  0.5919,  0.3717, -0.0679, -1.0768,  0.7879, -0.3337,  1.6544]],
+       grad_fn=<EmbeddingBackward0>)
+tensor([[-0.6316,  0.5919,  0.3717, -0.0679, -1.0768,  0.7879, -0.3337,  1.6544],
+        [ 1.4465,  0.5489, -0.5271, -1.6461,  0.5401, -0.8992,  0.6385,  0.8055]],
+       grad_fn=<EmbeddingBackward0>)
+torch.Size([4, 8])
+tensor([[1., 1., 1., 1., 1., 1., 1., 1.],
+        [1., 1., 1., 1., 1., 1., 1., 1.]], grad_fn=<EmbeddingBackward0>)</p>
+</details>
+<p>On va appliquer à cela au jeu de données Zachary's karaté club.
+On va associer un vecteur de dimension 16 à chaque noeud du graphe.
+on va initialiser la matrice avec une distribution uniforme dans  [0,1]  en utilisant <a href="https://pytorch.org/docs/stable/generated/torch.rand.html">torch.rand</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_node_emb</span><span class="p">(</span><span class="n">num_node</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+
+  <span class="c1"># Ecrire une fonction qui implémente la matrice d&#39;embeddings pour les noeuds.</span>
+  <span class="c1"># La fonction doit retourner un embedding de format torch.nn initalisé selon</span>
+  <span class="c1"># une loi uniforme dans [0,1].</span>
+
+    <span class="n">emb</span> <span class="o">=</span> <span class="kc">None</span>
+
+  <span class="c1">############# Code ############</span>
+    <span class="n">emb</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">num_embeddings</span><span class="o">=</span><span class="n">num_nodes</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="n">embedding_dim</span><span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">emb</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">emb</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+  <span class="c1">###############################</span>
+
+    <span class="k">return</span> <span class="n">emb</span>
+
+<span class="n">emb</span> <span class="o">=</span> <span class="n">create_node_emb</span><span class="p">()</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Embedding: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">emb</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">emb</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p>Embedding: Embedding(34, 16)
+tensor([[0.2114, 0.7335, 0.1433, 0.9647, 0.2933, 0.7951, 0.5170, 0.2801, 0.8339,
+         0.1185, 0.2355, 0.5599, 0.8966, 0.2858, 0.1955, 0.1808],
+        [0.7486, 0.6546, 0.3843, 0.9820, 0.6012, 0.3710, 0.4929, 0.9915, 0.8358,
+         0.4629, 0.9902, 0.7196, 0.2338, 0.0450, 0.7906, 0.9689]],
+    grad_fn=<EmbeddingBackward0>)</p>
+</details>
+<h3 id="visualisation-des-embeddings"><strong>Visualisation des embeddings</strong></h3>
+<p>Nous allons projet les embeddings inialisés ci-dessous en deux dimensions afin de les visualiser.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">visualize_emb</span><span class="p">(</span><span class="n">emb</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">emb</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">components</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">club1_x</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">club1_y</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">club2_x</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">club2_y</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mr. Hi&#39;</span><span class="p">:</span>
+            <span class="n">club1_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">components</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">club1_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">components</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">club2_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">components</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">club2_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">components</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">club1_x</span><span class="p">,</span> <span class="n">club1_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mr. Hi&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">club2_x</span><span class="p">,</span> <span class="n">club2_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Officer&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Visualize the initial random embeddding</span>
+<span class="n">visualize_emb</span><span class="p">(</span><span class="n">emb</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p><img alt="Image" src="../../assets/images/gnn2.png" /></p>
+</details>
+<h3 id="question-7-calcul-des-embeddings-par-descente-du-gradient"><strong>Question 7 : calcul des embeddings par descente du gradient.</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="kn">import</span> <span class="n">SGD</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">accuracy</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+  <span class="c1"># Cette fonction prend les prédictions réalisées, </span>
+  <span class="c1"># les arrondit et calcul la précision du modèle.</span>
+
+    <span class="n">accu</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">accu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span> <span class="o">/</span> <span class="n">pred</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">accu</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="n">emb</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">sigmoid</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">train_edge</span><span class="p">):</span>
+  <span class="c1"># Cette fonction entraîne les embeddings par SGD.</span>
+  <span class="c1"># A faire :</span>
+  <span class="c1"># 1 : récupérer les embeddings respectifs des noeuds à partir de train_edge</span>
+  <span class="c1"># 2 : Calculer le produit scalaire des embeddings de chaque paire de noeuds</span>
+  <span class="c1"># 3 : Appliquer une fonction sigmoïde au produit scalaire calculé</span>
+  <span class="c1"># 4 : Appliquer la loss_fn au résultat de la fonction sigmoïde</span>
+  <span class="c1"># 5 : Imprimer la fonction loss et la précision à chaque epoch. </span>
+  <span class="c1"># (as a sanity check, the loss should decrease during training)</span>
+
+
+
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">emb</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+
+
+    <span class="c1">############# Code ###########</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>  <span class="c1"># Clear gradients.</span>
+
+        <span class="n">product</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">emb</span><span class="p">(</span><span class="n">train_edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">emb</span><span class="p">(</span><span class="n">train_edge</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">train_label</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>  <span class="c1"># Derive gradients.</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>  <span class="c1"># Update parameters based on gradients.</span>
+
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">accu</span> <span class="o">=</span> <span class="n">accuracy</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">train_label</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">visualize_emb</span><span class="p">(</span><span class="n">emb</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loss: </span><span class="si">{}</span><span class="s2">, accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">accu</span><span class="p">))</span>
+
+    <span class="c1">##############################</span>
+
+<span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+<span class="n">sigmoid</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+<span class="c1"># Générer les labels positifs et négatifs</span>
+<span class="n">pos_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">pos_edge_index</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">)</span>
+<span class="n">neg_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">neg_edge_index</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">)</span>
+
+<span class="c1"># Concaténer les labels positifs and négatifs dans le même tenseur</span>
+<span class="n">train_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">pos_label</span><span class="p">,</span> <span class="n">neg_label</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="n">train_edge</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">pos_edge_index</span><span class="p">,</span> <span class="n">neg_edge_index</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">train</span><span class="p">(</span><span class="n">emb</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">sigmoid</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">train_edge</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p><img alt="Image" src="../../assets/images/gnn3.png" /></p>
+<p>loss: 3.468411684036255, accuracy: 0.13903743028640747
+loss: 3.43456768989563, accuracy: 0.13903743028640747
+loss: 3.371028184890747, accuracy: 0.13903743028640747
+loss: 3.282146453857422, accuracy: 0.13903743028640747
+loss: 3.1723263263702393, accuracy: 0.13903743028640747
+loss: 3.045901298522949, accuracy: 0.13903743028640747
+loss: 2.907038450241089, accuracy: 0.13903743028640747
+loss: 2.7596638202667236, accuracy: 0.13903743028640747
+loss: 2.6074018478393555, accuracy: 0.13903743028640747
+loss: 2.4535279273986816, accuracy: 0.13903743028640747
+loss: 2.3009305000305176, accuracy: 0.13903743028640747
+loss: 2.152082920074463, accuracy: 0.13903743028640747
+loss: 2.009026050567627, accuracy: 0.13903743028640747
+loss: 1.8733632564544678, accuracy: 0.13903743028640747
+loss: 1.7462693452835083, accuracy: 0.13903743028640747
+loss: 1.6285123825073242, accuracy: 0.13903743028640747
+loss: 1.5204927921295166, accuracy: 0.14260248839855194
+loss: 1.4222900867462158, accuracy: 0.14438502490520477
+loss: 1.3337185382843018, accuracy: 0.14973261952400208
+loss: 1.254386305809021, accuracy: 0.15508021414279938
+loss: 1.183752417564392, accuracy: 0.16399286687374115
+loss: 1.1211791038513184, accuracy: 0.17290551960468292
+loss: 1.0659770965576172, accuracy: 0.18538324534893036
+loss: 1.0174411535263062, accuracy: 0.20677362382411957
+loss: 0.9748789668083191, accuracy: 0.22281639277935028
+loss: 0.937629222869873, accuracy: 0.2442067712545395
+loss: 0.9050756096839905, accuracy: 0.2549019753932953
+loss: 0.8766528964042664, accuracy: 0.27807486057281494
+loss: 0.8518502116203308, accuracy: 0.3030303120613098
+loss: 0.8302105069160461, accuracy: 0.3333333432674408
+loss: 0.8113287091255188, accuracy: 0.35650622844696045
+loss: 0.7948473691940308, accuracy: 0.38324421644210815
+loss: 0.7804537415504456, accuracy: 0.40463459491729736
+loss: 0.7678741216659546, accuracy: 0.4153297543525696
+loss: 0.7568702101707458, accuracy: 0.4367201328277588
+loss: 0.7472350597381592, accuracy: 0.4474153220653534
+loss: 0.7387885451316833, accuracy: 0.45989304780960083
+loss: 0.731374979019165, accuracy: 0.4777183532714844
+loss: 0.7248587012290955, accuracy: 0.48663100600242615
+loss: 0.7191224098205566, accuracy: 0.5080214142799377
+loss: 0.714064359664917, accuracy: 0.5222816467285156
+loss: 0.7095963358879089, accuracy: 0.5204991102218628
+loss: 0.7056415677070618, accuracy: 0.531194269657135
+loss: 0.7021337151527405, accuracy: 0.5347593426704407
+loss: 0.6990148425102234, accuracy: 0.5436720252037048
+loss: 0.6962348818778992, accuracy: 0.5472370982170105
+loss: 0.6937502026557922, accuracy: 0.5490196347236633
+loss: 0.6915227174758911, accuracy: 0.554367184638977
+loss: 0.689519464969635, accuracy: 0.5561497211456299
+loss: 0.6877117156982422, accuracy: 0.5561497211456299
+loss: 0.686074435710907, accuracy: 0.565062403678894
+loss: 0.6845855712890625, accuracy: 0.5704099535942078
+loss: 0.683226466178894, accuracy: 0.5739750266075134
+loss: 0.6819803714752197, accuracy: 0.5757575631141663
+loss: 0.68083256483078, accuracy: 0.5739750266075134
+loss: 0.6797709465026855, accuracy: 0.5739750266075134
+loss: 0.6787840723991394, accuracy: 0.5757575631141663
+loss: 0.6778624653816223, accuracy: 0.5793226361274719
+loss: 0.6769978404045105, accuracy: 0.5793226361274719
+loss: 0.6761825680732727, accuracy: 0.5828877091407776
+loss: 0.6754106283187866, accuracy: 0.5846702456474304
+loss: 0.6746761202812195, accuracy: 0.5846702456474304
+loss: 0.6739742159843445, accuracy: 0.5882353186607361
+loss: 0.6733008027076721, accuracy: 0.5900177955627441
+loss: 0.672652006149292, accuracy: 0.591800332069397
+loss: 0.6720245480537415, accuracy: 0.5900177955627441
+loss: 0.6714155673980713, accuracy: 0.5900177955627441
+loss: 0.6708226799964905, accuracy: 0.5900177955627441
+loss: 0.670243501663208, accuracy: 0.5900177955627441
+loss: 0.6696761846542358, accuracy: 0.5935828685760498
+loss: 0.6691192388534546, accuracy: 0.591800332069397
+loss: 0.6685709357261658, accuracy: 0.5900177955627441
+loss: 0.6680300831794739, accuracy: 0.5900177955627441
+loss: 0.6674955487251282, accuracy: 0.5900177955627441
+loss: 0.6669663190841675, accuracy: 0.591800332069397
+loss: 0.6664415597915649, accuracy: 0.591800332069397
+loss: 0.6659204363822937, accuracy: 0.5935828685760498
+loss: 0.6654024720191956, accuracy: 0.5935828685760498
+loss: 0.6648867726325989, accuracy: 0.5935828685760498
+loss: 0.664372980594635, accuracy: 0.5971479415893555
+loss: 0.6638606786727905, accuracy: 0.5989304780960083
+loss: 0.6633493900299072, accuracy: 0.602495551109314
+loss: 0.6628386974334717, accuracy: 0.6042780876159668
+loss: 0.6623283624649048, accuracy: 0.6078431606292725
+loss: 0.6618180274963379, accuracy: 0.6114081740379333
+loss: 0.6613075137138367, accuracy: 0.6131907105445862
+loss: 0.6607966423034668, accuracy: 0.614973247051239
+loss: 0.6602851748466492, accuracy: 0.6167557835578918
+loss: 0.6597728729248047, accuracy: 0.6167557835578918
+loss: 0.6592594981193542, accuracy: 0.614973247051239
+loss: 0.6587451696395874, accuracy: 0.6167557835578918
+loss: 0.6582295298576355, accuracy: 0.6167557835578918
+loss: 0.6577125191688538, accuracy: 0.6185383200645447
+loss: 0.6571941375732422, accuracy: 0.6185383200645447
+loss: 0.6566741466522217, accuracy: 0.6185383200645447
+loss: 0.6561526656150818, accuracy: 0.6221033930778503
+loss: 0.6556293368339539, accuracy: 0.6238859295845032
+loss: 0.6551043391227722, accuracy: 0.625668466091156
+loss: 0.6545774936676025, accuracy: 0.625668466091156
+loss: 0.6540487408638, accuracy: 0.6274510025978088</p>
+<p><img alt="Image" src="../../assets/images/gnn4.png" /></p>
+<p>loss: 0.65351802110672, accuracy: 0.6274510025978088
+loss: 0.6529853940010071, accuracy: 0.6274510025978088
+loss: 0.6524505615234375, accuracy: 0.6292335391044617
+loss: 0.6519137620925903, accuracy: 0.6292335391044617
+loss: 0.6513748168945312, accuracy: 0.6310160160064697
+loss: 0.650833785533905, accuracy: 0.6345810890197754
+loss: 0.6502905488014221, accuracy: 0.6327985525131226
+loss: 0.6497451663017273, accuracy: 0.6345810890197754
+loss: 0.6491974592208862, accuracy: 0.638146162033081
+loss: 0.6486475467681885, accuracy: 0.638146162033081
+loss: 0.6480953693389893, accuracy: 0.6434937715530396
+loss: 0.6475409865379333, accuracy: 0.6434937715530396
+loss: 0.6469841599464417, accuracy: 0.6417112350463867
+loss: 0.6464250683784485, accuracy: 0.6434937715530396
+loss: 0.6458637714385986, accuracy: 0.6452763080596924
+loss: 0.645300030708313, accuracy: 0.6452763080596924
+loss: 0.6447339057922363, accuracy: 0.6452763080596924
+loss: 0.6441654562950134, accuracy: 0.6452763080596924
+loss: 0.6435947418212891, accuracy: 0.6452763080596924
+loss: 0.6430215835571289, accuracy: 0.6452763080596924
+loss: 0.6424461603164673, accuracy: 0.648841381072998
+loss: 0.6418682932853699, accuracy: 0.6524063944816589
+loss: 0.6412880420684814, accuracy: 0.6541889309883118
+loss: 0.6407055258750916, accuracy: 0.6541889309883118
+loss: 0.6401206254959106, accuracy: 0.6524063944816589
+loss: 0.6395334601402283, accuracy: 0.6524063944816589
+loss: 0.6389438509941101, accuracy: 0.6524063944816589
+loss: 0.6383520364761353, accuracy: 0.6559714674949646
+loss: 0.6377577781677246, accuracy: 0.6559714674949646
+loss: 0.6371612548828125, accuracy: 0.6559714674949646
+loss: 0.6365625858306885, accuracy: 0.6559714674949646
+loss: 0.6359614133834839, accuracy: 0.6595365405082703
+loss: 0.6353582143783569, accuracy: 0.6595365405082703
+loss: 0.6347528100013733, accuracy: 0.6595365405082703
+loss: 0.6341450214385986, accuracy: 0.6595365405082703
+loss: 0.6335352063179016, accuracy: 0.6613190770149231
+loss: 0.6329231262207031, accuracy: 0.6631016135215759
+loss: 0.6323089599609375, accuracy: 0.6613190770149231
+loss: 0.6316927075386047, accuracy: 0.6631016135215759
+loss: 0.6310743093490601, accuracy: 0.6631016135215759
+loss: 0.6304540038108826, accuracy: 0.6648841500282288
+loss: 0.6298316717147827, accuracy: 0.6666666865348816
+loss: 0.6292073130607605, accuracy: 0.6648841500282288
+loss: 0.6285809278488159, accuracy: 0.6648841500282288
+loss: 0.6279527544975281, accuracy: 0.6648841500282288
+loss: 0.6273227334022522, accuracy: 0.6648841500282288
+loss: 0.6266907453536987, accuracy: 0.6666666865348816
+loss: 0.6260570287704468, accuracy: 0.6666666865348816
+loss: 0.6254215836524963, accuracy: 0.6702316999435425
+loss: 0.624784529209137, accuracy: 0.6720142364501953
+loss: 0.6241457462310791, accuracy: 0.6702316999435425
+loss: 0.6235052347183228, accuracy: 0.6737967729568481
+loss: 0.6228633522987366, accuracy: 0.675579309463501
+loss: 0.6222198009490967, accuracy: 0.6773618459701538
+loss: 0.6215748190879822, accuracy: 0.6809269189834595
+loss: 0.6209284067153931, accuracy: 0.6809269189834595
+loss: 0.6202806830406189, accuracy: 0.6809269189834595
+loss: 0.6196316480636597, accuracy: 0.6827094554901123
+loss: 0.6189813613891602, accuracy: 0.6827094554901123
+loss: 0.6183297634124756, accuracy: 0.6827094554901123
+loss: 0.6176772117614746, accuracy: 0.6844919919967651
+loss: 0.6170234680175781, accuracy: 0.686274528503418
+loss: 0.6163687109947205, accuracy: 0.6880570650100708
+loss: 0.6157130002975464, accuracy: 0.6898396015167236
+loss: 0.6150563955307007, accuracy: 0.6916220784187317
+loss: 0.6143988966941833, accuracy: 0.6916220784187317
+loss: 0.6137406826019287, accuracy: 0.6934046149253845
+loss: 0.6130816340446472, accuracy: 0.6951871514320374
+loss: 0.6124221086502075, accuracy: 0.6951871514320374
+loss: 0.6117619276046753, accuracy: 0.6951871514320374
+loss: 0.6111010909080505, accuracy: 0.6969696879386902
+loss: 0.6104399561882019, accuracy: 0.6969696879386902
+loss: 0.6097782850265503, accuracy: 0.7005347609519958
+loss: 0.6091163754463196, accuracy: 0.698752224445343
+loss: 0.6084542870521545, accuracy: 0.7005347609519958
+loss: 0.6077919602394104, accuracy: 0.698752224445343
+loss: 0.6071293950080872, accuracy: 0.7005347609519958
+loss: 0.6064668297767639, accuracy: 0.7005347609519958
+loss: 0.6058043241500854, accuracy: 0.7040998339653015
+loss: 0.6051419377326965, accuracy: 0.7040998339653015
+loss: 0.6044796109199524, accuracy: 0.7040998339653015
+loss: 0.6038175225257874, accuracy: 0.7040998339653015
+loss: 0.6031557321548462, accuracy: 0.7058823704719543
+loss: 0.6024941802024841, accuracy: 0.7076649069786072
+loss: 0.601833164691925, accuracy: 0.70944744348526
+loss: 0.601172685623169, accuracy: 0.70944744348526
+loss: 0.6005127429962158, accuracy: 0.7112299203872681
+loss: 0.5998533368110657, accuracy: 0.70944744348526
+loss: 0.5991947054862976, accuracy: 0.70944744348526
+loss: 0.5985367298126221, accuracy: 0.70944744348526
+loss: 0.5978797078132629, accuracy: 0.7112299203872681
+loss: 0.5972235202789307, accuracy: 0.7112299203872681
+loss: 0.5965683460235596, accuracy: 0.7112299203872681
+loss: 0.5959141254425049, accuracy: 0.70944744348526
+loss: 0.5952609777450562, accuracy: 0.7147949934005737
+loss: 0.5946089625358582, accuracy: 0.7147949934005737
+loss: 0.5939582586288452, accuracy: 0.7112299203872681
+loss: 0.593308687210083, accuracy: 0.7147949934005737
+loss: 0.5926604866981506, accuracy: 0.7130124568939209
+loss: 0.5920137763023376, accuracy: 0.7130124568939209</p>
+<p><img alt="Image" src="../../assets/images/gnn5.png" /></p>
+<p>loss: 0.5913684368133545, accuracy: 0.7130124568939209
+loss: 0.5907245874404907, accuracy: 0.7130124568939209
+loss: 0.5900822281837463, accuracy: 0.7147949934005737
+loss: 0.58944171667099, accuracy: 0.7183600664138794
+loss: 0.5888026356697083, accuracy: 0.7147949934005737
+loss: 0.5881654024124146, accuracy: 0.7147949934005737
+loss: 0.5875298976898193, accuracy: 0.7147949934005737
+loss: 0.5868962407112122, accuracy: 0.7147949934005737
+loss: 0.5862644910812378, accuracy: 0.7147949934005737
+loss: 0.5856345891952515, accuracy: 0.7147949934005737
+loss: 0.5850067138671875, accuracy: 0.7147949934005737
+loss: 0.5843808054924011, accuracy: 0.7147949934005737
+loss: 0.5837571024894714, accuracy: 0.7147949934005737
+loss: 0.5831353068351746, accuracy: 0.7147949934005737
+loss: 0.5825158357620239, accuracy: 0.7165775299072266
+loss: 0.5818983912467957, accuracy: 0.7147949934005737
+loss: 0.5812832713127136, accuracy: 0.7147949934005737
+loss: 0.5806704163551331, accuracy: 0.7147949934005737
+loss: 0.5800597667694092, accuracy: 0.7165775299072266
+loss: 0.5794515609741211, accuracy: 0.7165775299072266
+loss: 0.5788455605506897, accuracy: 0.7165775299072266
+loss: 0.5782421231269836, accuracy: 0.7165775299072266
+loss: 0.577640950679779, accuracy: 0.7147949934005737
+loss: 0.577042281627655, accuracy: 0.7147949934005737
+loss: 0.5764461755752563, accuracy: 0.7130124568939209
+loss: 0.5758525133132935, accuracy: 0.7147949934005737
+loss: 0.5752614140510559, accuracy: 0.7147949934005737
+loss: 0.5746727585792542, accuracy: 0.7147949934005737
+loss: 0.5740866661071777, accuracy: 0.7165775299072266
+loss: 0.5735033750534058, accuracy: 0.7165775299072266
+loss: 0.5729224681854248, accuracy: 0.7165775299072266
+loss: 0.5723443031311035, accuracy: 0.7183600664138794
+loss: 0.5717687606811523, accuracy: 0.7183600664138794
+loss: 0.5711959004402161, accuracy: 0.7165775299072266
+loss: 0.5706256031990051, accuracy: 0.7147949934005737
+loss: 0.5700580477714539, accuracy: 0.7147949934005737
+loss: 0.5694931745529175, accuracy: 0.7147949934005737
+loss: 0.568930983543396, accuracy: 0.7147949934005737
+loss: 0.5683714747428894, accuracy: 0.7147949934005737
+loss: 0.5678147077560425, accuracy: 0.7130124568939209
+loss: 0.5672606229782104, accuracy: 0.7130124568939209
+loss: 0.5667092204093933, accuracy: 0.7130124568939209
+loss: 0.5661605596542358, accuracy: 0.7183600664138794
+loss: 0.5656147003173828, accuracy: 0.7183600664138794
+loss: 0.5650715231895447, accuracy: 0.7183600664138794
+loss: 0.5645310282707214, accuracy: 0.7183600664138794
+loss: 0.5639932155609131, accuracy: 0.7165775299072266
+loss: 0.5634582042694092, accuracy: 0.7165775299072266
+loss: 0.5629258155822754, accuracy: 0.7165775299072266
+loss: 0.562396228313446, accuracy: 0.7165775299072266
+loss: 0.5618692636489868, accuracy: 0.7147949934005737
+loss: 0.5613449811935425, accuracy: 0.7147949934005737
+loss: 0.5608234405517578, accuracy: 0.7147949934005737
+loss: 0.5603045225143433, accuracy: 0.7147949934005737
+loss: 0.5597882866859436, accuracy: 0.7165775299072266
+loss: 0.5592747330665588, accuracy: 0.7165775299072266
+loss: 0.5587638020515442, accuracy: 0.7147949934005737
+loss: 0.5582554936408997, accuracy: 0.7165775299072266
+loss: 0.5577497482299805, accuracy: 0.7165775299072266
+loss: 0.5572466850280762, accuracy: 0.7165775299072266
+loss: 0.5567461848258972, accuracy: 0.7147949934005737
+loss: 0.5562481880187988, accuracy: 0.7147949934005737
+loss: 0.5557528138160706, accuracy: 0.7147949934005737
+loss: 0.5552600026130676, accuracy: 0.7147949934005737
+loss: 0.55476975440979, accuracy: 0.7147949934005737
+loss: 0.5542818903923035, accuracy: 0.7183600664138794
+loss: 0.5537965893745422, accuracy: 0.7165775299072266
+loss: 0.5533138513565063, accuracy: 0.7201426029205322
+loss: 0.5528334975242615, accuracy: 0.7201426029205322
+loss: 0.5523555874824524, accuracy: 0.7254902124404907
+loss: 0.5518800020217896, accuracy: 0.7254902124404907
+loss: 0.551406979560852, accuracy: 0.7254902124404907
+loss: 0.5509361624717712, accuracy: 0.7272727489471436
+loss: 0.5504679083824158, accuracy: 0.7254902124404907
+loss: 0.550001859664917, accuracy: 0.7254902124404907
+loss: 0.5495381951332092, accuracy: 0.7254902124404907
+loss: 0.5490767955780029, accuracy: 0.7254902124404907
+loss: 0.5486176609992981, accuracy: 0.7254902124404907
+loss: 0.5481607913970947, accuracy: 0.7272727489471436
+loss: 0.5477061867713928, accuracy: 0.7272727489471436
+loss: 0.5472538471221924, accuracy: 0.7272727489471436
+loss: 0.5468035936355591, accuracy: 0.7272727489471436
+loss: 0.5463555455207825, accuracy: 0.7272727489471436
+loss: 0.5459097027778625, accuracy: 0.7272727489471436
+loss: 0.545465886592865, accuracy: 0.7272727489471436
+loss: 0.5450242757797241, accuracy: 0.7272727489471436
+loss: 0.5445848107337952, accuracy: 0.7272727489471436
+loss: 0.544147253036499, accuracy: 0.7272727489471436
+loss: 0.54371178150177, accuracy: 0.7272727489471436
+loss: 0.5432783365249634, accuracy: 0.7272727489471436
+loss: 0.5428469777107239, accuracy: 0.7290552854537964
+loss: 0.5424174666404724, accuracy: 0.7290552854537964
+loss: 0.5419899821281433, accuracy: 0.7290552854537964
+loss: 0.541564404964447, accuracy: 0.7308377623558044
+loss: 0.5411407351493835, accuracy: 0.7326202988624573
+loss: 0.5407189726829529, accuracy: 0.7326202988624573
+loss: 0.5402990579605103, accuracy: 0.7326202988624573
+loss: 0.5398810505867004, accuracy: 0.7326202988624573
+loss: 0.5394647121429443, accuracy: 0.7326202988624573
+loss: 0.5390503406524658, accuracy: 0.7326202988624573</p>
+<p><img alt="Image" src="../../assets/images/gnn6.png" /></p>
+<p>loss: 0.5386376976966858, accuracy: 0.7344028353691101
+loss: 0.538226842880249, accuracy: 0.7344028353691101
+loss: 0.5378177165985107, accuracy: 0.7344028353691101
+loss: 0.537410318851471, accuracy: 0.7344028353691101
+loss: 0.5370044708251953, accuracy: 0.7344028353691101
+loss: 0.5366004705429077, accuracy: 0.7344028353691101
+loss: 0.536198079586029, accuracy: 0.7344028353691101
+loss: 0.5357974171638489, accuracy: 0.7344028353691101
+loss: 0.5353982448577881, accuracy: 0.7361853718757629
+loss: 0.535000741481781, accuracy: 0.7361853718757629
+loss: 0.5346047878265381, accuracy: 0.7361853718757629
+loss: 0.5342103838920593, accuracy: 0.7361853718757629
+loss: 0.5338175296783447, accuracy: 0.7361853718757629
+loss: 0.5334262251853943, accuracy: 0.7361853718757629
+loss: 0.5330364108085632, accuracy: 0.7361853718757629
+loss: 0.532647967338562, accuracy: 0.7379679083824158
+loss: 0.5322611331939697, accuracy: 0.7379679083824158
+loss: 0.5318756699562073, accuracy: 0.7344028353691101
+loss: 0.5314916968345642, accuracy: 0.7361853718757629
+loss: 0.531109094619751, accuracy: 0.7361853718757629
+loss: 0.5307279229164124, accuracy: 0.7361853718757629
+loss: 0.5303480625152588, accuracy: 0.7361853718757629
+loss: 0.5299695730209351, accuracy: 0.7361853718757629
+loss: 0.5295924544334412, accuracy: 0.7361853718757629
+loss: 0.5292166471481323, accuracy: 0.7361853718757629
+loss: 0.5288420915603638, accuracy: 0.7361853718757629
+loss: 0.528468906879425, accuracy: 0.7361853718757629
+loss: 0.5280970335006714, accuracy: 0.7361853718757629
+loss: 0.5277262926101685, accuracy: 0.7361853718757629
+loss: 0.5273568630218506, accuracy: 0.7344028353691101
+loss: 0.5269885659217834, accuracy: 0.7344028353691101
+loss: 0.5266215801239014, accuracy: 0.7361853718757629
+loss: 0.5262557864189148, accuracy: 0.7361853718757629
+loss: 0.5258911848068237, accuracy: 0.7361853718757629
+loss: 0.5255276560783386, accuracy: 0.7379679083824158
+loss: 0.5251653790473938, accuracy: 0.7397504448890686
+loss: 0.5248041749000549, accuracy: 0.7379679083824158
+loss: 0.524444043636322, accuracy: 0.7379679083824158
+loss: 0.5240850448608398, accuracy: 0.7379679083824158
+loss: 0.5237272381782532, accuracy: 0.7379679083824158
+loss: 0.5233704447746277, accuracy: 0.7379679083824158
+loss: 0.5230147242546082, accuracy: 0.7379679083824158
+loss: 0.5226598978042603, accuracy: 0.7397504448890686
+loss: 0.5223063230514526, accuracy: 0.7397504448890686
+loss: 0.5219537019729614, accuracy: 0.7397504448890686
+loss: 0.5216020941734314, accuracy: 0.7397504448890686
+loss: 0.5212514996528625, accuracy: 0.7397504448890686
+loss: 0.5209018588066101, accuracy: 0.7397504448890686
+loss: 0.5205531716346741, accuracy: 0.7397504448890686
+loss: 0.5202054381370544, accuracy: 0.7397504448890686
+loss: 0.519858717918396, accuracy: 0.7397504448890686
+loss: 0.5195128917694092, accuracy: 0.7397504448890686
+loss: 0.5191680192947388, accuracy: 0.7415329813957214
+loss: 0.51882404088974, accuracy: 0.7450980544090271
+loss: 0.5184809565544128, accuracy: 0.7433155179023743
+loss: 0.5181388258934021, accuracy: 0.7433155179023743
+loss: 0.5177974700927734, accuracy: 0.7433155179023743
+loss: 0.5174570083618164, accuracy: 0.7433155179023743
+loss: 0.5171175003051758, accuracy: 0.7433155179023743
+loss: 0.5167787671089172, accuracy: 0.7433155179023743
+loss: 0.5164408683776855, accuracy: 0.7433155179023743
+loss: 0.5161037445068359, accuracy: 0.7433155179023743
+loss: 0.515767514705658, accuracy: 0.7433155179023743
+loss: 0.5154321193695068, accuracy: 0.7450980544090271
+loss: 0.515097439289093, accuracy: 0.7468805909156799
+loss: 0.5147635340690613, accuracy: 0.7486631274223328
+loss: 0.514430582523346, accuracy: 0.7504456043243408
+loss: 0.5140981674194336, accuracy: 0.7504456043243408
+loss: 0.5137667059898376, accuracy: 0.7504456043243408
+loss: 0.5134359002113342, accuracy: 0.7504456043243408
+loss: 0.5131058096885681, accuracy: 0.7504456043243408
+loss: 0.5127764940261841, accuracy: 0.7504456043243408
+loss: 0.5124478936195374, accuracy: 0.7486631274223328
+loss: 0.5121200680732727, accuracy: 0.7486631274223328
+loss: 0.5117928385734558, accuracy: 0.7486631274223328
+loss: 0.5114663243293762, accuracy: 0.7486631274223328
+loss: 0.5111406445503235, accuracy: 0.7504456043243408
+loss: 0.5108155012130737, accuracy: 0.7486631274223328
+loss: 0.5104910731315613, accuracy: 0.7468805909156799
+loss: 0.5101673603057861, accuracy: 0.7468805909156799
+loss: 0.5098442435264587, accuracy: 0.7468805909156799
+loss: 0.5095217823982239, accuracy: 0.7486631274223328
+loss: 0.5092000365257263, accuracy: 0.7486631274223328
+loss: 0.5088788866996765, accuracy: 0.7486631274223328
+loss: 0.5085583329200745, accuracy: 0.7504456043243408
+loss: 0.5082384943962097, accuracy: 0.7504456043243408
+loss: 0.5079192519187927, accuracy: 0.7504456043243408
+loss: 0.5076005458831787, accuracy: 0.7504456043243408
+loss: 0.5072824954986572, accuracy: 0.7504456043243408
+loss: 0.5069650411605835, accuracy: 0.7504456043243408
+loss: 0.5066481828689575, accuracy: 0.7504456043243408
+loss: 0.5063318610191345, accuracy: 0.7504456043243408
+loss: 0.506016194820404, accuracy: 0.7504456043243408
+loss: 0.5057010650634766, accuracy: 0.7504456043243408
+loss: 0.505386471748352, accuracy: 0.7504456043243408
+loss: 0.5050725340843201, accuracy: 0.7522281408309937
+loss: 0.5047590732574463, accuracy: 0.7540106773376465
+loss: 0.5044461488723755, accuracy: 0.7557932138442993
+loss: 0.5041337609291077, accuracy: 0.7557932138442993
+loss: 0.5038220286369324, accuracy: 0.7557932138442993</p>
+<p><img alt="Image" src="../../assets/images/gnn7.png" /></p>
+<p>loss: 0.5035106539726257, accuracy: 0.7557932138442993
+loss: 0.5031999349594116, accuracy: 0.7557932138442993
+loss: 0.5028897523880005, accuracy: 0.7557932138442993
+loss: 0.5025800466537476, accuracy: 0.7557932138442993
+loss: 0.5022708773612976, accuracy: 0.7540106773376465
+loss: 0.5019621849060059, accuracy: 0.7540106773376465
+loss: 0.5016539096832275, accuracy: 0.7540106773376465
+loss: 0.501346230506897, accuracy: 0.7522281408309937
+loss: 0.5010391473770142, accuracy: 0.7522281408309937
+loss: 0.5007324814796448, accuracy: 0.7522281408309937
+loss: 0.5004262328147888, accuracy: 0.7522281408309937
+loss: 0.5001205205917358, accuracy: 0.7522281408309937
+loss: 0.4998152554035187, accuracy: 0.7540106773376465
+loss: 0.4995104670524597, accuracy: 0.7540106773376465
+loss: 0.49920615553855896, accuracy: 0.7540106773376465
+loss: 0.498902291059494, accuracy: 0.7540106773376465
+loss: 0.4985989034175873, accuracy: 0.7540106773376465
+loss: 0.49829596281051636, accuracy: 0.7540106773376465
+loss: 0.49799349904060364, accuracy: 0.7522281408309937
+loss: 0.49769142270088196, accuracy: 0.7522281408309937
+loss: 0.49738985300064087, accuracy: 0.7522281408309937
+loss: 0.4970887005329132, accuracy: 0.7522281408309937
+loss: 0.49678799510002136, accuracy: 0.7540106773376465
+loss: 0.49648764729499817, accuracy: 0.7540106773376465
+loss: 0.49618786573410034, accuracy: 0.7540106773376465
+loss: 0.49588844180107117, accuracy: 0.7540106773376465
+loss: 0.4955894351005554, accuracy: 0.7540106773376465
+loss: 0.4952908158302307, accuracy: 0.7540106773376465
+loss: 0.494992733001709, accuracy: 0.7540106773376465
+loss: 0.49469494819641113, accuracy: 0.7540106773376465
+loss: 0.4943976104259491, accuracy: 0.7540106773376465
+loss: 0.4941006302833557, accuracy: 0.7540106773376465
+loss: 0.4938041567802429, accuracy: 0.7540106773376465
+loss: 0.493507981300354, accuracy: 0.7557932138442993
+loss: 0.4932122528553009, accuracy: 0.7557932138442993
+loss: 0.49291694164276123, accuracy: 0.7575757503509521
+loss: 0.49262192845344543, accuracy: 0.7575757503509521
+loss: 0.49232742190361023, accuracy: 0.7575757503509521
+loss: 0.4920332133769989, accuracy: 0.7575757503509521
+loss: 0.491739422082901, accuracy: 0.7575757503509521
+loss: 0.49144604802131653, accuracy: 0.759358286857605
+loss: 0.4911530017852783, accuracy: 0.759358286857605
+loss: 0.49086034297943115, accuracy: 0.759358286857605
+loss: 0.4905681610107422, accuracy: 0.759358286857605
+loss: 0.49027615785598755, accuracy: 0.759358286857605
+loss: 0.4899846315383911, accuracy: 0.7611408233642578
+loss: 0.4896934926509857, accuracy: 0.7611408233642578
+loss: 0.4894026219844818, accuracy: 0.7611408233642578
+loss: 0.4891121983528137, accuracy: 0.7611408233642578
+loss: 0.4888221323490143, accuracy: 0.7611408233642578
+loss: 0.4885323941707611, accuracy: 0.7611408233642578
+loss: 0.48824307322502136, accuracy: 0.7611408233642578
+loss: 0.4879539906978607, accuracy: 0.759358286857605
+loss: 0.4876653552055359, accuracy: 0.759358286857605
+loss: 0.4873770475387573, accuracy: 0.759358286857605
+loss: 0.48708903789520264, accuracy: 0.7629233598709106
+loss: 0.48680150508880615, accuracy: 0.7629233598709106
+loss: 0.4865141212940216, accuracy: 0.7647058963775635
+loss: 0.4862271547317505, accuracy: 0.7647058963775635
+loss: 0.4859405755996704, accuracy: 0.7647058963775635
+loss: 0.485654354095459, accuracy: 0.7647058963775635
+loss: 0.48536837100982666, accuracy: 0.7647058963775635
+loss: 0.4850827753543854, accuracy: 0.7647058963775635
+loss: 0.48479750752449036, accuracy: 0.7647058963775635
+loss: 0.4845125079154968, accuracy: 0.7664884328842163
+loss: 0.4842279553413391, accuracy: 0.7647058963775635
+loss: 0.4839436113834381, accuracy: 0.7647058963775635
+loss: 0.48365965485572815, accuracy: 0.7664884328842163
+loss: 0.48337602615356445, accuracy: 0.7664884328842163
+loss: 0.483092725276947, accuracy: 0.7664884328842163
+loss: 0.48280972242355347, accuracy: 0.7664884328842163
+loss: 0.4825270175933838, accuracy: 0.7664884328842163
+loss: 0.48224470019340515, accuracy: 0.7682709693908691
+loss: 0.481962651014328, accuracy: 0.7682709693908691
+loss: 0.48168089985847473, accuracy: 0.7682709693908691
+loss: 0.4813995063304901, accuracy: 0.7700534462928772
+loss: 0.481118381023407, accuracy: 0.7700534462928772
+loss: 0.4808375835418701, accuracy: 0.7682709693908691
+loss: 0.48055708408355713, accuracy: 0.7682709693908691
+loss: 0.48027682304382324, accuracy: 0.7700534462928772
+loss: 0.4799969494342804, accuracy: 0.7700534462928772
+loss: 0.47971734404563904, accuracy: 0.77183598279953
+loss: 0.4794381260871887, accuracy: 0.7736185193061829
+loss: 0.4791591167449951, accuracy: 0.7736185193061829
+loss: 0.4788804352283478, accuracy: 0.7736185193061829
+loss: 0.4786020517349243, accuracy: 0.7736185193061829
+loss: 0.47832396626472473, accuracy: 0.7754010558128357
+loss: 0.478046178817749, accuracy: 0.7754010558128357
+loss: 0.4777686893939972, accuracy: 0.7754010558128357
+loss: 0.4774914085865021, accuracy: 0.7754010558128357
+loss: 0.4772144556045532, accuracy: 0.7754010558128357
+loss: 0.4769378900527954, accuracy: 0.7736185193061829
+loss: 0.4766616225242615, accuracy: 0.7754010558128357
+loss: 0.4763854742050171, accuracy: 0.7754010558128357
+loss: 0.4761098027229309, accuracy: 0.7754010558128357
+loss: 0.47583428025245667, accuracy: 0.7754010558128357
+loss: 0.4755590558052063, accuracy: 0.7754010558128357
+loss: 0.4752841889858246, accuracy: 0.7754010558128357
+loss: 0.47500959038734436, accuracy: 0.7754010558128357
+loss: 0.4747351408004761, accuracy: 0.7754010558128357</p>
+</details>
+<h3 id="visualisation-des-embeddings-calcules"><strong>Visualisation des embeddings calculés</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="n">visualize_emb</span><span class="p">(</span><span class="n">emb</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Output</summary>
+<p><img alt="Image" src="../../assets/images/gnn8.png" /></p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our Comments section below.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+    data-repo="abdellatif-belmady/abdellatif-belmady"
+    data-repo-id="R_kgDOIzvTfg"
+    data-category="Ideas"
+    data-category-id="DIC_kwDOIzvTfs4Ca1mg"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../boston%20datasets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Boston Dataset">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Boston Dataset
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../abstractive%20summarization/" class="md-footer__link md-footer__link--next" aria-label="Next: Abstractive Summarization">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Abstractive Summarization
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 - 2024 Abdellatif BELMADY
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/abdellatif-belmady" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/abdellatif.belmady" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@otherways8368/featured" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/abdellatifbelmady/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "content.action.edit", "content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.footer", "navigation.path", "navigation.indexes", "content.code.select"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

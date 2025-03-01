@@ -1,0 +1,2928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Abdellatif BELMADY is the personal website of Mr. Abdellatif BELMADY where he shares the projects he is working on, the machine learning books he has read and also free Tutorials on the main points of machine learning and deep learning subjects.">
+      
+      
+        <meta name="author" content="Abdellatif BELMADY">
+      
+      
+        <link rel="canonical" href="https://abdellatif-belmady.github.io/abdellatif-belmady/Tutorials/Computer%20Vision%20Algorithms/yolonas/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../AI_Vision_NJN_Set_Up/">
+      
+      
+      <link rel="icon" href="../../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>YOLO-NAS - Abdellatif BELMADY</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/home/about.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-4GPL6MXYQ3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-4GPL6MXYQ3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-4GPL6MXYQ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yolo-nas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Abdellatif BELMADY" class="md-header__button md-logo" aria-label="Abdellatif BELMADY" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Abdellatif BELMADY
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              YOLO-NAS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abdellatif-belmady/abdellatif-belmady" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdellatif-belmady/abdellatif-belmady
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Portfolio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/sentiment_analysis/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Generative%20AI/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blogs/MA%20challenges/" class="md-tabs__link">
+          
+  
+    
+  
+  Blogs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Abdellatif BELMADY" class="md-nav__button md-logo" aria-label="Abdellatif BELMADY" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    Abdellatif BELMADY
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abdellatif-belmady/abdellatif-belmady" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    abdellatif-belmady/abdellatif-belmady
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Portfolio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/sentiment_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentiment Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/spam%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spam Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/ozone%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ozone Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/boston%20datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boston Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/tp_gnn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP_GNN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/abstractive%20summarization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstractive Summarization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/big%20data%20for%20iot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big-Data For IoT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/projet%20R/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profilage des chauffeurs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/Reciprocal-n-body-Collision-Avoidance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reciprocal n-body Collision Avoidance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/Painting%20Vermeer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmes Génétiques 2, Peindre Vermeer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Generative%20AI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Generative AI
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Generative AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative%20AI/host_llm_locally/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Host LLM Locally
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative%20AI/lightrag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LightRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Libraries/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Libraries/numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NumPy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Libraries/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    YOLO-NAS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    YOLO-NAS
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supergradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuperGradients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-with-yolonas-pretrained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference with YOLONAS Pretrained Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inference with YOLONAS Pretrained Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-on-an-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference on an image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-on-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference on video
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-metrics-and-training-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define metrics and training parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-best-trained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the best trained model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluating-the-best-trained-model-on-the-test-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating the best trained model on the test set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicting-with-the-best-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicting with the best model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-training-quantization-ptq-and-quantization-aware-training-qat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post training quantization (PTQ) and quantization aware training (QAT)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Vision_NJN_Set_Up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NJN Set Up
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Vision_Root_File_System_to_SD_Card/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Root File System to SD Card
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Vision_Use_More_Memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use More Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Vision_Jetson-inference_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jetson-inference Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Natural%20Language%20Processing/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Natural%20Language%20Processing/bases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases of NLP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blogs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blogs/MA%20challenges/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Morocco Challenges
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            AI Morocco Challenges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📚 Day 1 - Education
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/healthcare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏥 Day 2 - Healthcare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/agriculture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌾 Day 3 - Agriculture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/finance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    💰 Day 4 - Finance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/energy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⚡ Day 5 - Sustainable Energy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/transportation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🚗 Day 6 - Transportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/innovation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🚀 Day 7 - Innovation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/public_services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Day 8 - Public Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/cybersecurity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🌐 Day 9 - Cybersecurity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/ai_talent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🧠 Day 10 - AI Talent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/data_privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🛡️ Day 11 - Data Privacy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/MA%20challenges/collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🤝 Day 12 - Collaboration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blogs/Data%20Pipelines/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Pipelines Mastery Serie
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pipelines Mastery Serie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/Data%20Pipelines/batch_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Batch Processing Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/Data%20Pipelines/real_time_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Real-Time Streaming Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/Data%20Pipelines/cloud_based_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud-Based Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/Data%20Pipelines/serverless_processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning Data Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supergradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuperGradients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-with-yolonas-pretrained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference with YOLONAS Pretrained Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inference with YOLONAS Pretrained Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-on-an-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference on an image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-on-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference on video
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-yolonas-on-custom-dataset_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning YOLONAS on custom dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-metrics-and-training-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define metrics and training parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-best-trained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get the best trained model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluating-the-best-trained-model-on-the-test-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating the best trained model on the test set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicting-with-the-best-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicting with the best model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-training-quantization-ptq-and-quantization-aware-training-qat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post training quantization (PTQ) and quantization aware training (QAT)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/abdellatif-belmady/abdellatif-belmady/edit/source/web/Tutorials/Computer Vision Algorithms/yolonas.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="yolo-nas">YOLO-NAS</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>A Next-Generation, Object Detection Foundational Model generated by Deci’s Neural Architecture Search Technology.</strong></p>
+<p>Deci is thrilled to announce the release of a new object detection model, YOLO-NAS - a game-changer in the world of object detection, providing superior real-time object detection capabilities and production-ready performance. Deci's mission is to provide AI teams with tools to remove development barriers and attain efficient inference performance more quickly.</p>
+<p><center></p>
+<p><img alt="Fig. 1. Internet of things concept." src="../assets/yolo_nas_frontier.png" /></p>
+<p></center></p>
+<p>The new YOLO-NAS delivers state-of-the-art (SOTA) performance with the unparalleled accuracy-speed performance, outperforming other models such as YOLOv5, YOLOv6, YOLOv7 and YOLOv8.</p>
+<p>Deci's proprietary Neural Architecture Search technology, <a href="https://deci.ai/technology/">AutoNAC™</a>, generated the YOLO-NAS model. The AutoNAC™ engine lets you input any task, data characteristics (access to data is not required), inference environment and performance targets, and then guides you to find the optimal architecture that delivers the best balance between accuracy and inference speed for your specific application. In addition to being data and hardware aware, the AutoNAC engine considers other components in the inference stack, including compilers and quantization.</p>
+<p>In terms of pure numbers, YOLO-NAS is ~0.5 mAP point more accurate and 10-20% faster than equivalent variants of YOLOv8 and YOLOv7.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>mAP</th>
+<th>Latency (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YOLO-NAS S</td>
+<td>47.5</td>
+<td>3.21</td>
+</tr>
+<tr>
+<td>YOLO-NAS M</td>
+<td>51.55</td>
+<td>5.85</td>
+</tr>
+<tr>
+<td>YOLO-NAS L</td>
+<td>52.22</td>
+<td>7.87</td>
+</tr>
+<tr>
+<td>YOLO-NAS S INT-8</td>
+<td>47.03</td>
+<td>2.36</td>
+</tr>
+<tr>
+<td>YOLO-NAS M INT-8</td>
+<td>51.0</td>
+<td>3.78</td>
+</tr>
+<tr>
+<td>YOLO-NAS L INT-8</td>
+<td>52.1</td>
+<td>4.78</td>
+</tr>
+</tbody>
+</table>
+<p>mAP numbers in table reported for Coco 2017 Val dataset and latency benchmarked for 640x640 images on Nvidia T4 GPU.</p>
+<p>YOLO-NAS's architecture employs quantization-aware blocks and selective quantization for optimized performance. When converted to its INT8 quantized version, YOLO-NAS experiences a smaller precision drop (0.51, 0.65, and 0.45 points of mAP for S, M, and L variants) compared to other models that lose 1-2 mAP points during quantization. These techniques culminate in innovative architecture with superior object detection capabilities and top-notch performance.</p>
+<h2 id="configuration">Configuration</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After installation is complete (it make take a few minutes), you'll need to restart the runtime after installation completes.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="nb">super</span><span class="o">-</span><span class="n">gradients</span><span class="o">==</span><span class="mf">3.1.0</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">imutils</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">roboflow</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pytube</span> <span class="o">--</span><span class="n">upgrade</span>
+</code></pre></div>
+<h2 id="supergradients">SuperGradients</h2>
+<p>SuperGradients is a PyTorch based training library.</p>
+<p>It provides a uniform interface for the most common computer vision use cases: </p>
+<ul>
+<li>
+<p>Classification</p>
+</li>
+<li>
+<p>Detection</p>
+</li>
+<li>
+<p>Segmentation</p>
+</li>
+<li>
+<p>Pose estimation</p>
+</li>
+</ul>
+<p>There are nearly 40 pretrained models in our model zoo. You can see the pretrained models available to you by following <a href="https://github.com/Deci-AI/super-gradients/blob/master/documentation/source/model_zoo.md">this link</a>.</p>
+<p>This notebook will focus on using SuperGradients with YOLO-NAS. If you're interested in seeing how SG is used for image classification, you can check out <a href="https://colab.research.google.com/drive/1JYyEnEh2VdmKLxd7idUfBt6vLGOZxGIp?usp=sharing">this templated notebook</a> that will make it easy to get started.</p>
+<h2 id="inference-with-yolonas-pretrained-model">Inference with YOLONAS Pretrained Model</h2>
+<p>Before jumping into the section on fine-tuning, I wanted to show you the power of YOLONAS out of the box. </p>
+<p>Start by instantiating a pretrained model. YOLONAS comes in three flavors: <code>yolo_nas_s</code>, <code>yolo_nas_m</code>, and <code>yolo_nas_l</code>.</p>
+<p>You'll use <code>yolo_nas_l</code> throughout this notebook. Because you should always go big, or go home. </p>
+<p>It's a good life philosophy.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+
+<span class="n">yolo_nas_l</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;yolo_nas_l&quot;</span><span class="p">,</span> <span class="n">pretrained_weights</span><span class="o">=</span><span class="s2">&quot;coco&quot;</span><span class="p">)</span>
+</code></pre></div>
+You can run the following cell if you're interested in the architecture:</p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">torchinfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torchinfo</span><span class="w"> </span><span class="kn">import</span> <span class="n">summary</span>
+
+<span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">yolo_nas_l</span><span class="p">,</span> 
+        <span class="n">input_size</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span>
+        <span class="n">col_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;input_size&quot;</span><span class="p">,</span> <span class="s2">&quot;output_size&quot;</span><span class="p">,</span> <span class="s2">&quot;num_params&quot;</span><span class="p">,</span> <span class="s2">&quot;trainable&quot;</span><span class="p">],</span>
+        <span class="n">col_width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">row_settings</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;var_names&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="inference-on-an-image">Inference on an image</h3>
+<p>Once the model has been instantiated all you have to do is call the <code>predict</code> method. </p>
+<p>This method operates on:
+* PIL Image
+* Numpy Image
+* A path to image file 
+* A path to video file 
+* A path to folder with images
+* URL (Image only)</p>
+<p>Allowing you to perform inference with ease.</p>
+<p>Note predict also has an argument called <code>conf</code>, which is the threshold for a detection. You change this value as you like, for example <code>model.predict("path/to/asset",conf=0.25)</code></p>
+<p>Let's perform inference on the following image:</p>
+<p><img src='https://previews.123rf.com/images/freeograph/freeograph2011/freeograph201100150/158301822-group-of-friends-gathering-around-table-at-home.jpg'></p>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://previews.123rf.com/images/freeograph/freeograph2011/freeograph201100150/158301822-group-of-friends-gathering-around-table-at-home.jpg&quot;</span>
+<span class="n">yolo_nas_l</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<details class="output">
+<summary>Output</summary>
+<p><img alt="Image" src="../assets/output_1.png" /></p>
+</details>
+<h3 id="inference-on-video">Inference on video</h3>
+<p>The following code will display and download stock footage video from YouTube. <a href="https://www.youtube.com/watch?v=4poqZjNTZjI&amp;list=PLcKa-34z76PvI5KvI5S2JGj0RcBVuz3jg">Here's a link</a> to a playlist that has a lot of stock video clips which are 2mins in length or less.</p>
+<p><strong>Find a video you like and use YOLONAS to perform some inference on it!</strong></p>
+<p>All you have to do is get the <code>video_id</code>, and replace the line <code>video_id = 'aE8I7bDf62M'</code> in the cell below with your chosen video's id.</p>
+<p>The <code>video_id</code> is everything that comes after <code>https://www.youtube.com/watch?v=</code>. For the video below, the full url was <code>https://www.youtube.com/watch?v=aE8I7bDf62M</code>, and thus the video id is <code>aE8I7bDf62M</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import the YouTubeVideo class from IPython.display</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="c1"># Define the YouTube video ID</span>
+<span class="n">video_id</span> <span class="o">=</span> <span class="s1">&#39;aE8I7bDf62M&#39;</span>  <span class="c1"># Replace YOUR_VIDEO_ID with the actual video ID</span>
+
+<span class="c1"># Create a YouTubeVideo object with the specified video ID</span>
+<span class="n">video</span> <span class="o">=</span> <span class="n">YouTubeVideo</span><span class="p">(</span><span class="n">video_id</span><span class="p">)</span>
+
+<span class="c1"># Display the video</span>
+<span class="n">display</span><span class="p">(</span><span class="n">video</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">capture</span>
+<span class="c1"># Define the URL of the YouTube video</span>
+<span class="n">video_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://www.youtube.com/watch?v=</span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s1">&#39;</span>  
+
+<span class="c1"># Download the video in mp4 format</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="s2">&quot;git+https://github.com/ytdl-org/youtube-dl.git&quot;</span>
+<span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">youtube_dl</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4&#39;</span> <span class="s2">&quot;$video_url&quot;</span>
+
+<span class="c1"># Print a success message</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Video downloaded successfully&#39;</span><span class="p">)</span>
+
+<span class="n">input_video_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/content/EXTREME SPORTS X DIVERSE-</span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s2">.mp4&quot;</span>
+<span class="n">output_video_path</span> <span class="o">=</span> <span class="s2">&quot;detections.mp4&quot;</span>
+</code></pre></div>
+<strong>Now, you'll peform inference on the video</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">yolo_nas_l</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_video_path</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output_video_path</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Inference via webcam</strong></p>
+<p>Check <a href="https://github.com/Deci-AI/super-gradients/blob/505f646728249b9b35ea9060f34936f4e88234fd/src/super_gradients/examples/predict/detection_predict_streaming.py">the documentation</a> for inference via webcam.</p>
+<h2 id="fine-tuning-yolonas-on-custom-dataset">Fine-tuning YOLONAS on custom dataset</h2>
+<p><strong>The trainer</strong>
+The first thing you need to define in SuperGradients is the Trainer.</p>
+<p>The trainer is in charge of training, evaluation, saving checkpoints, etc. If you're interested in seeing the source code for the trainer, you can do so <a href="https://github.com/Deci-AI/super-gradients/blob/master/src/super_gradients/training/sg_trainer/sg_trainer.py">here</a>.</p>
+<p><strong>There's two important arguments to the trainer:</strong>
+1. <code>ckpt_root_dir</code> - this is the directory where results from all your experiments will be saved</p>
+<ol start="2">
+<li><code>experiment_name</code> - all checkpoints, logs, and tensorboards will be saved in a directory with the name you specify here. </li>
+</ol>
+<p>In the code below, you'll instantiate the trainer with just a single GPU (since that's what Google Colab provides).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trainer</span>
+
+<span class="n">CHECKPOINT_DIR</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/YOLO-NAS/checkpoints&#39;</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="s1">&#39;my_first_yolonas_run&#39;</span><span class="p">,</span> <span class="n">ckpt_root_dir</span><span class="o">=</span><span class="n">CHECKPOINT_DIR</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="fine-tuning-yolonas-on-custom-dataset_1">Fine-tuning YOLONAS on custom dataset</h2>
+<p>SuperGradients is fully compatible with PyTorch Datasets and Dataloaders, so you can use your dataloaders as is. </p>
+<p>There are several well-known datasets for object detection, for example: </p>
+<ul>
+<li>COCO</li>
+<li>Pascal</li>
+<li>YOLODarkNet</li>
+<li>YOLOv5</li>
+</ul>
+<p>SuperGradients provides ready-to-use dataloaders for these datasets. If you're interested in learning more about working with <code>COCOFormatDetectionDataset</code> and the more general <code>DetectionDataset</code> <a href="https://docs.deci.ai/super-gradients/docstring/training/datasets/#training.datasets.detection_datasets.coco_detection.COCODetectionDataset">check out the SuperGradients documentation on this topic</a></p>
+<p>You can learn more about working with SuperGradients datasets, dataloaders, and configuration files <a href="https://github.com/Deci-AI/super-gradients/blob/master/documentation/source/Data.md">here.</a></p>
+<p>SuperGradients supports a number of dataset formats, you can learn more about that <a href="https://github.com/Deci-AI/super-gradients/blob/master/documentation/source/ObjectDetection.md">here.</a></p>
+<p>For this example you'll use the the <a href="https://universe.roboflow.com/atathamuscoinsdataset/u.s.-coins-dataset-a.tatham/dataset/5">U.S. Coins Dataset</a> from <a href="https://app.roboflow.com/login">RoboFlow</a> with the dataset in YOLOv5 format.</p>
+<p><strong>Some datasets you might want to try:</strong>
+- <a href="https://huggingface.co/spaces/competitions/ship-detection">HuggingFace competition: Ship detection</a></p>
+<ul>
+<li>
+<p><a href="https://public.roboflow.com/object-detection/aquarium">Aquarium dataset on RoboFlow</a></p>
+</li>
+<li>
+<p><a href="https://public.roboflow.com/object-detection/vehicles-openimages">Vehicles-OpenImages Dataset on RoboFlow</a></p>
+</li>
+<li>
+<p><a href="https://github.com/thsant/wgisd">Winegrape detection</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cs-chan/Exclusively-Dark-Image-Dataset">Low light object detection</a></p>
+</li>
+<li>
+<p><a href="https://camel.ece.gatech.edu/">Infrafred person detection</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/datasets/chitholian/annotated-potholes-dataset">Pothole detection</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/datasets/solesensei/solesensei_bdd100k">100k Labeled Road Images | Day, Night</a></p>
+</li>
+<li>
+<p><a href="https://github.com/switchablenorms/DeepFashion2">Deep Fashion dataset</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/datasets/luantm/playing-card">Playing card detection</a></p>
+</li>
+<li>
+<p><a href="https://www.crcv.ucf.edu/projects/real-world/">Anaomoly detection in videos</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/datasets/aalborguniversity/brackish-dataset">Underwater fish recognition</a></p>
+</li>
+<li>
+<p><a href="https://www.primaresearch.org/datasets/Layout_Analysis">Document layout detection</a></p>
+</li>
+<li>
+<p><a href="http://tacodataset.org/">Trash Annotations in Context</a></p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">roboflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Roboflow</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">Roboflow</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;&lt;your-roboflow-key-here&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">&quot;atathamuscoinsdataset&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;u.s.-coins-dataset-a.tatham&quot;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;yolov5&quot;</span><span class="p">)</span>
+</code></pre></div>
+Start by importing the required modules, which will help you create SuperGradients dataloaders.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataloaders</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training.dataloaders.dataloaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">coco_detection_yolo_format_train</span><span class="p">,</span> <span class="n">coco_detection_yolo_format_val</span>
+</code></pre></div>
+You'll need to load your dataset parameters into a dictionary, specifically defining:</p>
+<ul>
+<li>path to the parent directory where your data lives</li>
+<li>the child directory names for training, validation, and test (if you have testing set) images and labels</li>
+<li>class names</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">dataset_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data_dir&#39;</span><span class="p">:</span><span class="s1">&#39;/content/U.S.-Coins-Dataset---A.Tatham-5&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;train_images_dir&#39;</span><span class="p">:</span><span class="s1">&#39;train/images&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;train_labels_dir&#39;</span><span class="p">:</span><span class="s1">&#39;train/labels&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;val_images_dir&#39;</span><span class="p">:</span><span class="s1">&#39;valid/images&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;val_labels_dir&#39;</span><span class="p">:</span><span class="s1">&#39;valid/labels&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_images_dir&#39;</span><span class="p">:</span><span class="s1">&#39;test/images&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test_labels_dir&#39;</span><span class="p">:</span><span class="s1">&#39;test/labels&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Dime&#39;</span><span class="p">,</span> <span class="s1">&#39;Nickel&#39;</span><span class="p">,</span> <span class="s1">&#39;Penny&#39;</span><span class="p">,</span> <span class="s1">&#39;Quarter&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+You pass the values for <code>dataset_params</code> into the <code>dataset_params</code> argument as shown below.</p>
+<p>You can also pass PyTorch DataLoaders arguments when instantiating your dataset. Here you'll set <code>batch_size=16</code> and <code>num_workers=2</code>.</p>
+<p>Repeat this for the validation and testing datasets, note that for training and testing data we use <code>coco_detection_yolo_format_val</code> to instantiate the dataloader.</p>
+<p>The dataloaders will print warnings when an annotation does not conform to the expected format. This particular dataset has many such annotations, thus the warnings will be muted.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">clear_output</span>
+
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">coco_detection_yolo_format_train</span><span class="p">(</span>
+    <span class="n">dataset_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;data_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;images_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;train_images_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;labels_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;train_labels_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">dataloader_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
+        <span class="s1">&#39;num_workers&#39;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">val_data</span> <span class="o">=</span> <span class="n">coco_detection_yolo_format_val</span><span class="p">(</span>
+    <span class="n">dataset_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;data_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;images_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;val_images_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;labels_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;val_labels_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">dataloader_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
+        <span class="s1">&#39;num_workers&#39;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">coco_detection_yolo_format_val</span><span class="p">(</span>
+    <span class="n">dataset_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;data_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;data_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;images_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;test_images_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;labels_dir&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;test_labels_dir&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="n">dataloader_params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
+        <span class="s1">&#39;num_workers&#39;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">clear_output</span><span class="p">()</span>
+</code></pre></div>
+<strong>Now inspect the dataset defined earlier.</strong>
+SuperGradients added <code>transforms</code> for you. You're free to experiment with these transformations as you please. You can also add in your own transformations from <code>torchvision.transforms</code>, <code>albumentations</code> or a custom tranformaton.</p>
+<div class="highlight"><pre><span></span><code><span class="n">train_data</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">transforms</span>
+</code></pre></div>
+<p>The transforms are in a dictionary, so you'll need to slice it to modify.</p>
+<p>For example...</p>
+<div class="highlight"><pre><span></span><code><span class="n">train_data</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;transforms&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">train_data</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;transforms&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;DetectionRandomAffine&#39;</span><span class="p">][</span><span class="s1">&#39;degrees&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.42</span>
+</code></pre></div>
+<p>You can plot a batch of training data with their augmentations applied to see what they look like:</p>
+<div class="highlight"><pre><span></span><code><span class="n">train_data</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<details class="output">
+<summary>Output</summary>
+<p><img alt="Image" src="../assets/output2.png" /></p>
+</details>
+<h2 id="fine-tuning-yolonas-on-custom-dataset_2">Fine-tuning YOLONAS on custom dataset</h2>
+<p>You saw how to instantiate the model for inference earlier. </p>
+<p>Below is how to instantiate the model for finetuning. Note you need to add the <code>num_classes</code> argument here.</p>
+<p>Note, for this tutorial you're using <code>yolo_nas_l</code>, but SuperGradients has two other flavors of YOLONAS available to you: <code>yolo_nas_s</code> and <code>yolo_nas_m</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;yolo_nas_l&#39;</span><span class="p">,</span> 
+                   <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]),</span> 
+                   <span class="n">pretrained_weights</span><span class="o">=</span><span class="s2">&quot;coco&quot;</span>
+                   <span class="p">)</span>
+</code></pre></div>
+<h2 id="define-metrics-and-training-parameters">Define metrics and training parameters</h2>
+<p>You need to define the training parameters for your training run. </p>
+<p>Full details about the training parameters can be found <a href="https://github.com/Deci-AI/super-gradients/blob/master/src/super_gradients/recipes/training_hyperparams/default_train_params.yaml">here</a>.</p>
+<p><strong>There are a few ***mandatory*</strong> arguments that you must define for training params**</p>
+<ul>
+<li>
+<p><code>max_epochs</code> - Max number of training epochs</p>
+</li>
+<li>
+<p><code>loss</code> - the loss function you want to use</p>
+</li>
+<li>
+<p><code>optimizer</code> - Optimizer you will be using</p>
+</li>
+<li>
+<p><code>train_metrics_list</code> - Metrics to log during training</p>
+</li>
+<li>
+<p><code>valid_metrics_list</code> - Metrics to log during training</p>
+</li>
+<li>
+<p><code>metric_to_watch</code> - metric which the model checkpoint will be saved according to</p>
+</li>
+</ul>
+<p>You can choose from a variety of <code>optimizer</code>'s such as: Adam, AdamW, SGD, Lion, or RMSProps. If you choose to change the defualt parameters of these optimizrs you pass them into <code>optimizer_params</code>. </p>
+<p><strong>Integrations with experiment monitoring tools</strong>
+SuperGradients has native integrations with Tensorboard, Weights and Biases, ClearML, and DagsHub. </p>
+<p>If your favorite monitoring tool is not supported by SuperGradients, you can simply implement a class inheriting from BaseSGLogger that you will then pass to the training parameters.</p>
+<p>If you're interested in monitoring experiments, you can learn more <a href="https://github.com/Deci-AI/super-gradients/blob/0fe46cd39572db34eb83d68e343fed97b8886fe9/documentation/source/experiment_monitoring.md">in the docs</a>.</p>
+<p><strong>SuperGradients offers a number of training tricks right out of the box, such as:</strong></p>
+<ul>
+<li>Exponential moving average</li>
+<li>Zero weight decay on bias and batch normalizatiom</li>
+<li>Weight averaging</li>
+<li>Batch accumulation</li>
+<li>Precise BatchNorm</li>
+</ul>
+<p>You can read more details about these training tricks <a href="https://heartbeat.comet.ml/a-better-way-to-train-your-neural-networks-813b60a5bd6a">here</a>.</p>
+<p>If you're interested in building a using a custom metric with SuperGradients you can learn how <a href="https://github.com/Deci-AI/super-gradients/blob/master/documentation/source/Metrics.md">here</a>.</p>
+<p>Note you will have to set number of classes in two places below: <code>PPYoloELoss</code> and <code>DetectionMetrics_050</code>.</p>
+<p>You probably noticed that we make use of a post prediction callback, for details on how phase callbacks work in SuperGradients <a href="https://github.com/Deci-AI/super-gradients/blob/master/documentation/source/PhaseCallbacks.md">check out our documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I've enabled <code>silent_mode</code> so the notebook doesn't get longer than it already is. You should disable it so you can see what SuperGradients outputs during training.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training.losses</span><span class="w"> </span><span class="kn">import</span> <span class="n">PPYoloELoss</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">DetectionMetrics_050</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">super_gradients.training.models.detection_models.pp_yolo_e</span><span class="w"> </span><span class="kn">import</span> <span class="n">PPYoloEPostPredictionCallback</span>
+
+<span class="n">train_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># ENABLING SILENT MODE</span>
+    <span class="s1">&#39;silent_mode&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;average_best_models&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;warmup_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;linear_epoch_step&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;warmup_initial_lr&quot;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>
+    <span class="s2">&quot;lr_warmup_epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;initial_lr&quot;</span><span class="p">:</span> <span class="mf">5e-4</span><span class="p">,</span>
+    <span class="s2">&quot;lr_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;cosine&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cosine_final_lr_ratio&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;optimizer_params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;weight_decay&quot;</span><span class="p">:</span> <span class="mf">0.0001</span><span class="p">},</span>
+    <span class="s2">&quot;zero_weight_decay_on_bias_and_bn&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;ema&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;ema_params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;decay&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s2">&quot;decay_type&quot;</span><span class="p">:</span> <span class="s2">&quot;threshold&quot;</span><span class="p">},</span>
+    <span class="c1"># ONLY TRAINING FOR 10 EPOCHS FOR THIS EXAMPLE NOTEBOOK</span>
+    <span class="s2">&quot;max_epochs&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;mixed_precision&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">PPYoloELoss</span><span class="p">(</span>
+        <span class="n">use_static_assigner</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># NOTE: num_classes needs to be defined here</span>
+        <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]),</span>
+        <span class="n">reg_max</span><span class="o">=</span><span class="mi">16</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;valid_metrics_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">DetectionMetrics_050</span><span class="p">(</span>
+            <span class="n">score_thres</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">top_k_predictions</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+            <span class="c1"># NOTE: num_classes needs to be defined here</span>
+            <span class="n">num_cls</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]),</span>
+            <span class="n">normalize_targets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">post_prediction_callback</span><span class="o">=</span><span class="n">PPYoloEPostPredictionCallback</span><span class="p">(</span>
+                <span class="n">score_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+                <span class="n">nms_top_k</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                <span class="n">max_predictions</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                <span class="n">nms_threshold</span><span class="o">=</span><span class="mf">0.7</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;metric_to_watch&quot;</span><span class="p">:</span> <span class="s1">&#39;mAP@0.50&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="training-the-model">Training the model</h2>
+<p>You've covered a lot of ground so far:</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Instantiated the trainer</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Defined your dataset parameters and dataloaders</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Instantiated a model</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set up your training parameters</p>
+</li>
+</ul>
+<p><strong>Now, its time to train a model</strong></p>
+<p>Training a model using a SuperGradients is done using the <code>trainer</code>.</p>
+<p>It's as easy as...</p>
+<p>trainer.train(model=model, 
+              training_params=train_params, 
+              train_loader=train_data, 
+              valid_loader=val_data)</p>
+<h2 id="get-the-best-trained-model">Get the best trained model</h2>
+<p>Now that training is complete, you need to get the best trained model.</p>
+<p>You used checkpoint averaging so the following code will use weights averaged across training runs. </p>
+<p>If you want to use the best weights, or weights from the last epoch you'd use one of the following in the code below:</p>
+<ul>
+<li>
+<p>best weights: <code>checkpoint_path = checkpoints/my_first_yolonas_run/ckpt_best.pth</code></p>
+</li>
+<li>
+<p>last weights: <code>checkpoint_path = checkpoints/my_first_yolonas_run/ckpt_latest.pth</code></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">best_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;yolo_nas_l&#39;</span><span class="p">,</span>
+                        <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]),</span>
+                        <span class="n">checkpoint_path</span><span class="o">=</span><span class="s2">&quot;checkpoints/my_first_yolonas_run/average_model.pth&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="evaluating-the-best-trained-model-on-the-test-set">Evaluating the best trained model on the test set</h2>
+<div class="highlight"><pre><span></span><code><span class="n">trainer</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">best_model</span><span class="p">,</span>
+            <span class="n">test_loader</span><span class="o">=</span><span class="n">test_data</span><span class="p">,</span>
+            <span class="n">test_metrics_list</span><span class="o">=</span><span class="n">DetectionMetrics_050</span><span class="p">(</span><span class="n">score_thres</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+                                                   <span class="n">top_k_predictions</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> 
+                                                   <span class="n">num_cls</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_params</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]),</span> 
+                                                   <span class="n">normalize_targets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                                   <span class="n">post_prediction_callback</span><span class="o">=</span><span class="n">PPYoloEPostPredictionCallback</span><span class="p">(</span><span class="n">score_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> 
+                                                                                                          <span class="n">nms_top_k</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+                                                                                                          <span class="n">max_predictions</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>                                                                              
+                                                                                                          <span class="n">nms_threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+                                                  <span class="p">))</span>
+</code></pre></div>
+<h2 id="predicting-with-the-best-model">Predicting with the best model</h2>
+<p>The next line will perform detection on the following image. Note, we didn't have a class for the half dollar coin. So it will likely get classified as something else.</p>
+<p><img alt="Image" src="../assets/1.jpg" /></p>
+<p>The results aren't too bad after just a few epochs!</p>
+<div class="highlight"><pre><span></span><code><span class="n">img_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.mynumi.net/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/s/e/serietta_usa_2_1/www.mynumi.net-USASE5AD160-31.jpg&#39;</span>
+<span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="post-training-quantization-ptq-and-quantization-aware-training-qat">Post training quantization (PTQ) and quantization aware training (QAT)</h2>
+<p>SuperGradients offers PTQ and QAT out of the box. That's beyond the scope of this introductory tutorial. It is, in my opinion, a truly awesome feature. </p>
+<p>Not many training libaries offer this out of the box.  You can learn more about PTQ and QAT <a href="https://github.com/Deci-AI/super-gradients/blob/c339e2619616878172c060e6491c8c2129ed3fd4/documentation/source/ptq_qat.md">here</a>.</p>
+<p>An example specific to YOLONAS can be found <a href="https://github.com/Deci-AI/super-gradients/blob/feature/SG-736_deci_yolo_rf100/documentation/source/qat_ptq_yolo_nas.md">here</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our Comments section below.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+    data-repo="abdellatif-belmady/abdellatif-belmady"
+    data-repo-id="R_kgDOIzvTfg"
+    data-category="Ideas"
+    data-category-id="DIC_kwDOIzvTfs4Ca1mg"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Computer Vision">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Computer Vision
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../AI_Vision_NJN_Set_Up/" class="md-footer__link md-footer__link--next" aria-label="Next: NJN Set Up">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                NJN Set Up
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 - 2024 Abdellatif BELMADY
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/abdellatif-belmady" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/abdellatif.belmady" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@otherways8368/featured" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/abdellatifbelmady/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "content.action.edit", "content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.footer", "navigation.path", "navigation.indexes", "content.code.select"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
