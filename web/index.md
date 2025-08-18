@@ -40,7 +40,16 @@ title: About
       <div class="underline"></div>
       <p><strong>Hello! I’m Abdellatif BELMADY,</strong> a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King <strong>“Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.”</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.
      <h2><i class="fas fa-briefcase"></i> Experience -</h2>
-     <p><strong>Data Scientist | AI Engineer <span class="date" style=" color: inherit;">Jan 2024 - Present</span><br><a href="https://thegamechangercompany.fr/">The Game Changer Company</a></strong> - Full Time</p>
+      <p><strong>ML Engineer<span class="date" style=" color: inherit;">July 2025 - Present</span><br><a href="https://thegamechangercompany.fr/">Wineo IA</a></strong> - Full Time</p>
+      <ul>
+        <li>Development of a semantic search engine to leverage historical production data, reducing by 70% the time required to identify similar projects for an industrial sector client.
+        </li>
+        <li>Implementation of a real-time tracking application for manufacturing components, ensuring complete traceability of the production flow and improving inter-workshop efficiency.
+        </li>
+        <li>Creation and training of Machine Learning models (one per work center) for manufacturing time prediction, achieving over 85% accuracy (MAPE < 15%) and increasing the reliability of production planning.
+        </li>
+      </ul>
+     <p><strong>Data Scientist | AI Engineer <span class="date" style=" color: inherit;">Jan 2024 - July 2025</span><br><a href="https://thegamechangercompany.fr/">The Game Changer Company</a></strong> - Full Time</p>
       <p><strong>𝐃𝐚𝐭𝐚 𝐒𝐜𝐢𝐞𝐧𝐜𝐞 𝐌𝐢𝐬𝐬𝐢𝐨𝐧𝐬:</strong></p>
       <ul>
         <li>Developed a multi-stage AI agent (LangGraph, GPT-4o-mini) to automate project initiation. The agent generates actionable tasks, identifies dependencies, creates schedules, allocates resources, assesses risks, and visualizes the project plan through automatically generated, detailed Gantt charts.
