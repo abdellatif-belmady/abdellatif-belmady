@@ -1,0 +1,40 @@
+# Builds the Zensical site and publishes it to the gh-pages branch,
+# which GitHub Pages already serves: https://abdellatif-belmady.github.io/abdellatif-belmady/
+name: Deploy portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Zensical
+        run: pip install -r requirements.txt
+
+      - name: Build
+        run: zensical build --clean
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          commit_message: "Deploy ${{ github.sha }}"

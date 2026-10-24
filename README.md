@@ -1,63 +1,75 @@
-<p align="center">
-<body>
+<a href="https://abdellatif-belmady.github.io/abdellatif-belmady/">
+  <img src="docs/assets/portfolio/img/social-card.png" alt="Abdellatif Belmady, Data Scientist Confirmé at AXA Assurance Maroc" width="100%">
+</a>
 
-<h2 align="center">My name is Abdellatif BELMADY.👋</h2> 
-<p align="center">A happy ML/AI Engineer full of positive energy. I am currently a proud graduate of Ecole Centrale Casablanca, holding a degree in data science and digitalization. With a firm belief in the transformative potential of technology, I am passionate about harnessing the power of data to drive positive change. My fascination lies in utilizing data science techniques to unravel complex problems and make meaningful improvements in people's lives. I strongly advocate for the value of hard work and dedication as crucial ingredients for success. In the words of renowned author Stephen King <strong>“Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work.”</strong> I am dedicated to continuous learning, growth, and applying my skills to make a significant impact in the field of data science.
-</p>
-<p align="center">
-	<a href="https://abdellatif-belmady.github.io/abdellatif-belmady/"><img img src="https://img.shields.io/badge/My_Portfolio-pink%26labelColor%3Dblack" alt="Portfolio"/></a>
-</p>
-<p>	
-<h2 align="center">✨I'm interested in</h2>
-</p>
-<p align="center">
-<img src="https://img.shields.io/badge/Machine Learning-green"> <img src="https://img.shields.io/badge/Deep Learning-red"> <img src="https://img.shields.io/badge/Computer Vision-magenta"> <img src="https://img.shields.io/badge/Natural Language Processing-yellow"> <img src="https://img.shields.io/badge/Reinforcement Learning-blue">
-</p>
-
-<p>	
-<h2 align="center">⚡Technologies</h2>
+<h2 align="center">Hi, I'm Abdellatif Belmady 👋</h2>
 
 <p align="center">
-<img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg">
-<img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg">
-<img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg"> 
-																			  
+  <strong>Data Scientist Confirmé at AXA Assurance Maroc</strong> · Casablanca, Morocco<br>
+  Machine learning for auto insurance fraud detection · Generative AI · Computer vision
 </p>
-<h2 align="center">🤝🏻 &nbsp;Connect with Me</h2>
-<p align="center">	
-	<a href="mailto:abdellatif.belmady@gmail.com"><img img src="https://img.shields.io/badge/gmail-%23EA4335.svg?style=plastic&logo=gmail&logoColor=white" alt="Gmail"/></a>
-	<a href="https://www.instagram.com/abdellatifbelmady/"><img src="https://img.shields.io/badge/instagram-%23E4405F.svg?style=plastic&logo=instagram&logoColor=white" alt="Instagram"/></a>
- 	<a href="https://t.me/abdellatifbelmady/"><img src="https://img.shields.io/badge/telegram-%230088CC.svg?style=plastic&logo=telegram&logoColor=white" alt="Telegram"/></a>
-</p>
-
-
- <p>
-	 <h2 align="center">⚙️ &nbsp;GitHub Analytics</h2>
- </p>
 
 <p align="center">
-<a href="https://github.com/abdellatif-belmady/abdellatif-belmady">
-  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=abdellatif-belmady&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=abdellatif-belmady&layout=compact&langs_count=8&theme=algolia"/>
+  <a href="https://abdellatif-belmady.github.io/abdellatif-belmady/"><img src="https://img.shields.io/badge/Portfolio-5CD6FF?style=for-the-badge&logo=githubpages&logoColor=070A13" alt="Portfolio"></a>
+  <a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:abdellatif.belmady@gmail.com"><img src="https://img.shields.io/badge/Email-9A86FF?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://abdellatif-belmady.github.io/abdellatif-belmady/assets/cv/Abdellatif-Belmady-CV.pdf"><img src="https://img.shields.io/badge/CV-PDF-0C1222?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="CV (PDF)"></a>
+</p>
 
+## About me
 
+I'm a data scientist and a graduate of **École Centrale Casablanca** (M.Sc. in Data Science & Digitalization). Since June 2026 I have been working at **AXA Assurance Maroc** on a machine-learning project to detect fraud in auto insurance.
 
+Before that, I spent two and a half years building AI products end to end:
 
-<br>
-<br>
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/38964964/167205200-026483f2-8b0f-4101-b76f-96347a246889.png" width="50%" alt="Python fake tip: to improve the readability of your code, you can import __future__ as tomorrow">
-</div>
-<br>
+- **Wineo Artificial Intelligence** (ML Engineer, 2025 – 2026): a semantic search engine over historical production data that cut by 70% the time needed to find similar projects, and manufacturing-time prediction models (one per work centre, MAPE < 15%).
+- **The Game Changer Company** (Data Scientist | AI Engineer, 2024 – 2025): a multi-stage LangGraph agent that turns a project brief into a full plan and Gantt chart, RAG chatbots, a generative quiz platform, and computer-vision applications running on the edge (NVIDIA Jetson Nano).
+- **Internships** in France and Morocco (2021 – 2023): deep learning on health data at Solefarma, object detection in operating rooms at 6 PERFORM, industrial analytics at VCR Sodalmou.
 
+## What I work on
 
-<div align="center">
+| | |
+|---|---|
+| 🛡️ **Fraud detection & ML** | Supervised learning, feature engineering, model evaluation, ensemble stacking |
+| ✨ **Generative AI** | LangGraph agents, RAG with LangChain and ChromaDB, semantic search, local LLMs with Ollama |
+| 👁️ **Computer vision** | YOLO object detection, face and facial-attribute analysis, fine-tuned CNNs, edge AI |
+| ⚙️ **ML engineering** | FastAPI and Flask services, Docker, REST APIs, Dash & Plotly dashboards, cloud and on-premise deployment |
 
-<img height="120" alt="Thanks for visiting me" width="100%" src="https://raw.githubusercontent.com/BrunnerLivio/brunnerlivio/master/images/marquee.svg" />
-<br />
+## Toolbox
 
-</div>
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain">
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langgraph&logoColor=white" alt="LangGraph">
+  <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly">
+  <img src="https://img.shields.io/badge/NVIDIA_Jetson-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA Jetson">
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black" alt="Power BI">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+</p>
 
-<img src="https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg" width="100%">
+## Latest on my blog
 
+- [AI near-misses as incidents: what the UK regulator's latest message means for fraud models](https://abdellatif-belmady.github.io/abdellatif-belmady/blog/fca-ai-failures-near-misses/)
+- [Meta opens the weights of an 816B agentic model: what it changes for regulated data teams](https://abdellatif-belmady.github.io/abdellatif-belmady/blog/meta-muse-spark-open/)
 
+Opinions are my own and do not represent my employer.
+
+## GitHub stats
+
+<p align="center">
+  <img height="170" src="https://github-readme-stats-eight-theta.vercel.app/api?username=abdellatif-belmady&show_icons=true&theme=algolia&include_all_commits=true&count_private=true" alt="GitHub stats">
+  <img height="170" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=abdellatif-belmady&layout=compact&langs_count=8&theme=algolia" alt="Top languages">
+</p>
+
+---
+
+<sub>This repository also hosts the source of my portfolio, built with <a href="https://zensical.org/">Zensical</a> and published to GitHub Pages. Maintenance notes: <a href="tools/README.md">tools/README.md</a>.</sub>

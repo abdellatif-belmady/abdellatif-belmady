@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+
+{#-
+  Home page: full-width hero driven by the page front matter.
+
+  hero:
+    eyebrow: ...
+    name: ...
+    role: ...            (one line under the name)
+    lead: ...
+    now: { label: ..., title: ..., text: ..., since: ... }
+-#}
+{% block hero %}
+  {% set hero = page.meta.hero %}
+  {% if hero %}
+  <section class="ab-hero">
+    <div class="ab-hero__glow" aria-hidden="true"></div>
+    <div class="ab-hero__inner md-grid">
+      <div class="ab-hero__text">
+        {% if hero.eyebrow %}<p class="ab-eyebrow">{{ hero.eyebrow }}</p>{% endif %}
+        <h1 class="ab-hero__name">{{ hero.name }}</h1>
+        {% if hero.role %}<p class="ab-hero__role">{{ hero.role }}</p>{% endif %}
+        {% if hero.lead %}<p class="ab-hero__lead">{{ hero.lead }}</p>{% endif %}
+        <div class="ab-hero__actions">
+          {% if config.extra.cv %}
+          <a class="ab-btn ab-btn--primary" href="{{ config.extra.cv | url }}" download>
+            {% include ".icons/lucide/file-down.svg" %}<span>Download CV</span>
+          </a>
+          {% endif %}
+          {% if config.extra.email %}
+          <a class="ab-btn ab-btn--ghost" href="mailto:{{ config.extra.email }}">
+            {% include ".icons/lucide/mail.svg" %}<span>Get in touch</span>
+          </a>
+          {% endif %}
+          {% for social in config.extra.social if social.name != "Email" %}
+          <a class="ab-btn ab-btn--icon" href="{{ social.link }}" title="{{ social.name }}" aria-label="{{ social.name }}" rel="noopener" target="_blank">
+            {% include ".icons/" ~ social.icon ~ ".svg" %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="ab-hero__visual">
+        {% include "partials/hero-network.html" %}
+        <img class="ab-hero__photo" src="{{ 'assets/images/portrait.jpg' | url }}" alt="Portrait of {{ hero.name }}" width="800" height="800">
+        {% if hero.now %}
+        <div class="ab-now">
+          <span class="ab-now__label"><i aria-hidden="true"></i>{{ hero.now.label }}</span>
+          <strong>{{ hero.now.title }}</strong>
+          <span>{{ hero.now.text }}</span>
+          {% if hero.now.since %}<small>{{ hero.now.since }}</small>{% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+{% endblock %}
+
+{#- The name (h1) lives in the hero: no automatic h1 in the content -#}
+{% block content %}
+  {{ page.content }}
+{% endblock %}

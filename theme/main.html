@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{#- Portfolio layer shared by every page: social preview, theme colour, assistant endpoint -#}
+{% block site_meta %}
+  {{ super() }}
+  <link rel="apple-touch-icon" href="{{ 'assets/portfolio/img/apple-touch-icon.png' | url }}">
+  <meta name="theme-color" content="#0A0F1E">
+  <meta property="og:type" content="{{ 'article' if page.meta and page.meta.date else 'website' }}">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ page.meta.title if page.meta and page.meta.title else (page.title | striptags) if page.title and not page.is_homepage else config.site_name }}">
+  <meta property="og:description" content="{{ page.meta.description if page.meta and page.meta.description else config.site_description }}">
+  {%- if page.canonical_url %}
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  {%- endif %}
+  <meta property="og:image" content="{{ config.site_url }}assets/portfolio/img/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- if config.extra.chatbot_url %}
+  <meta name="ab:chatbot" content="{{ config.extra.chatbot_url }}">
+  {%- endif %}
+{% endblock %}

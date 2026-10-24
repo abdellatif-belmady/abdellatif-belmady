@@ -1,3 +1,6 @@
-/_venv
+/.venv
 /site
+/.cache
 /.vscode
+/n8n
+__pycache__/

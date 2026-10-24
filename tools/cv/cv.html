@@ -1,0 +1,259 @@
+<!doctype html>
+<!--
+  CV source → docs/assets/cv/Abdellatif-Belmady-CV.pdf (see tools/cv/README.md).
+  Same facts as the site pages (experience.md, education.md): update both together.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abdellatif Belmady · CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #0E1424; --muted: #4B5470; --soft: #6B7491; --line: #E3E7F1;
+    --night: #070A13; --cyan: #1A9FCC; --violet: #6F5BEA; --chip: #F1F3FA;
+    --gradient: linear-gradient(100deg, #5CD6FF, #9A86FF);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #FFFFFF; }
+  body { font: 400 8.6pt/1.45 Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+  strong { font-weight: 600; }
+
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  /* header band */
+  .top { background: radial-gradient(70mm 40mm at 180mm 0, rgba(154, 134, 255, .28), transparent 70%), linear-gradient(100deg, #070A13, #0C1222); color: #E8ECF6; padding: 11mm 14mm 9mm; display: grid; grid-template-columns: 29mm 1fr; gap: 7mm; align-items: center; }
+  .top::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1.4mm; background: var(--gradient); }
+  .photo { width: 29mm; height: 29mm; border-radius: 50%; object-fit: cover; object-position: 50% 30%; padding: 1mm; background: var(--gradient); }
+  .eyebrow { font: 600 7pt/1 "JetBrains Mono", monospace; letter-spacing: .22em; text-transform: uppercase; color: #5CD6FF; }
+  h1 { font-size: 25pt; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF; margin: 2mm 0 1.2mm; }
+  .role { font-size: 11pt; font-weight: 600; color: #C9C2FF; }
+  .contact { display: flex; flex-wrap: wrap; gap: 1.2mm 5mm; margin-top: 3.2mm; font-size: 7.8pt; color: rgba(232, 236, 246, .82); }
+  .contact span::before { content: ""; display: inline-block; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: #5CD6FF; margin-right: 1.6mm; vertical-align: .2mm; }
+  .top--slim { grid-template-columns: 1fr auto; padding: 7mm 14mm 6mm; }
+  .top--slim h1 { font-size: 15pt; margin: 0; }
+  .top--slim .eyebrow { align-self: center; }
+
+  /* body */
+  .body { display: grid; grid-template-columns: 1fr 57mm; gap: 8mm; padding: 8mm 14mm 0; }
+  h2 { font: 600 7.4pt/1 "JetBrains Mono", monospace; letter-spacing: .2em; text-transform: uppercase; color: var(--violet); margin: 0 0 3mm; padding-bottom: 1.6mm; border-bottom: .3mm solid var(--line); }
+  section + section { margin-top: 5.5mm; }
+  .summary { color: var(--muted); font-size: 8.8pt; line-height: 1.55; }
+  .summary strong { color: var(--ink); }
+
+  .job { position: relative; padding-left: 4.5mm; break-inside: avoid; }
+  .job + .job { margin-top: 4.2mm; }
+  .job::before { content: ""; position: absolute; left: 0; top: 1.3mm; width: 1.8mm; height: 1.8mm; border-radius: 50%; border: .35mm solid var(--violet); background: #FFFFFF; }
+  .job.is-current::before { background: #5CD6FF; border-color: #5CD6FF; box-shadow: 0 0 0 .8mm rgba(92, 214, 255, .25); }
+  .job__head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+  .job h3 { font-size: 9.6pt; font-weight: 700; line-height: 1.3; }
+  .job__date { font: 600 7pt/1.3 "JetBrains Mono", monospace; color: var(--cyan); white-space: nowrap; }
+  .job__org { font-size: 8.2pt; color: var(--muted); margin-top: .4mm; }
+  .job__org b { color: var(--ink); font-weight: 600; }
+  .job ul { margin: 1.4mm 0 0 3.6mm; color: #2A3149; }
+  .job li { margin-top: .7mm; padding-left: .6mm; }
+  .job li::marker { color: var(--soft); }
+  .job__sub { font-size: 7.6pt; font-weight: 600; color: var(--violet); margin-top: 1.8mm; }
+  .tags { font: 500 6.8pt/1.4 "JetBrains Mono", monospace; color: var(--soft); margin-top: 1.4mm; }
+  .compact p { color: var(--muted); margin-top: .8mm; }
+
+  /* sidebar */
+  aside section + section { margin-top: 5mm; }
+  .skill + .skill { margin-top: 2.6mm; }
+  .skill h4 { font-size: 7.8pt; font-weight: 700; margin-bottom: 1.2mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1mm; }
+  .chips span { font-size: 7pt; line-height: 1.2; padding: .8mm 1.8mm; border-radius: 1.2mm; background: var(--chip); color: #2A3149; }
+  .item + .item { margin-top: 2.6mm; }
+  .item strong { display: block; font-size: 8.2pt; line-height: 1.3; }
+  .item span { display: block; color: var(--muted); font-size: 7.6pt; }
+  .item small { font: 600 6.8pt/1.4 "JetBrains Mono", monospace; color: var(--cyan); }
+
+  .foot { position: absolute; left: 14mm; right: 14mm; bottom: 7mm; display: flex; justify-content: space-between; font: 500 6.6pt/1 "JetBrains Mono", monospace; color: var(--soft); border-top: .3mm solid var(--line); padding-top: 2.4mm; }
+</style>
+</head>
+<body>
+
+<!-- ======================= PAGE 1 ======================= -->
+<div class="page">
+  <header class="top">
+    <img class="photo" src="../../docs/assets/images/portrait.jpg" alt="">
+    <div>
+      <p class="eyebrow">Data Scientist · Casablanca, Morocco</p>
+      <h1>Abdellatif Belmady</h1>
+      <p class="role">Data Scientist Confirmé at AXA Assurance Maroc</p>
+      <div class="contact">
+        <span><a href="mailto:abdellatif.belmady@gmail.com">abdellatif.belmady@gmail.com</a></span>
+        <span><a href="https://www.linkedin.com/in/abdellatif-belmady-ab999a133/">linkedin.com/in/abdellatif-belmady-ab999a133</a></span>
+        <span><a href="https://github.com/abdellatif-belmady">github.com/abdellatif-belmady</a></span>
+        <span><a href="https://abdellatif-belmady.github.io/abdellatif-belmady/">abdellatif-belmady.github.io/abdellatif-belmady</a></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">Data scientist and <strong>École Centrale Casablanca</strong> engineer (M.Sc. in Data Science &amp; Digitalization). Since June 2026, <strong>Data Scientist Confirmé at AXA Assurance Maroc</strong>, working on a machine-learning project to detect fraud in auto insurance. Before that, two and a half years building AI products end to end: semantic search and manufacturing-time prediction, LLM agents, RAG chatbots and computer-vision applications, plus internships in France and Morocco in deep learning, object detection and industrial analytics.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <article class="job is-current">
+          <div class="job__head"><h3>Data Scientist Confirmé</h3><span class="job__date">Jun 2026 – Present</span></div>
+          <p class="job__org"><b>AXA Assurance Maroc</b> · Full-time · Casablanca, hybrid</p>
+          <ul>
+            <li>Working on a <strong>machine-learning project to detect fraud in auto insurance</strong>.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head"><h3>ML Engineer</h3><span class="job__date">Jul 2025 – Jun 2026</span></div>
+          <p class="job__org"><b>Wineo Artificial Intelligence</b> · Full-time · Casablanca, hybrid</p>
+          <ul>
+            <li>Developed a <strong>semantic search engine</strong> over historical production data, cutting by <strong>70%</strong> the time needed to identify similar projects for an industrial client.</li>
+            <li>Built a <strong>real-time tracking application</strong> for manufacturing components, ensuring complete traceability of the production flow between workshops.</li>
+            <li>Created and trained <strong>one machine-learning model per work centre</strong> to predict manufacturing times, reaching over <strong>85% accuracy (MAPE &lt; 15%)</strong>.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head"><h3>Data Scientist | AI Engineer</h3><span class="job__date">Jan 2024 – Jul 2025</span></div>
+          <p class="job__org"><b>The Game Changer Company</b> · Full-time · Casablanca, on-site</p>
+          <p class="job__sub">Generative AI &amp; data science</p>
+          <ul>
+            <li>Developed a <strong>multi-stage AI agent</strong> (LangGraph, GPT-4o-mini) that turns a project brief into tasks, dependencies, schedule, resources, risks and automatically generated <strong>Gantt charts</strong>.</li>
+            <li>Built <strong>QuizPhere</strong>, a full-stack quiz generation platform (Groq, Llama 3.2, LangChain, FastAPI, PostgreSQL, React) with images found through DuckDuckGo Search.</li>
+            <li>Developed a <strong>RAG conversational assistant</strong> for hackathon students (LangChain, Groq, Llama 3.1, ChromaDB), deployed with Docker behind REST endpoints.</li>
+            <li>Set up a <strong>local LLM platform</strong> (Open WebUI, Ollama) with Stable Diffusion; built <strong>Dash &amp; Plotly dashboards</strong>.</li>
+          </ul>
+          <p class="job__sub">Computer vision</p>
+          <ul>
+            <li><strong>Face recognition</strong> Flask application with e-mail alerts on unauthorised entry; <strong>facial attribute analysis</strong> (gender, age, emotion).</li>
+            <li><strong>Object counting by region</strong>, and <strong>real-time people detection and counting</strong> optimised for the NVIDIA Jetson Nano.</li>
+          </ul>
+        </article>
+
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Skills</h2>
+        <div class="skill"><h4>Languages &amp; data</h4><div class="chips"><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>pandas</span><span>NumPy</span><span>C++</span><span>Excel &amp; VBA</span><span>Power BI</span></div></div>
+        <div class="skill"><h4>Machine learning</h4><div class="chips"><span>scikit-learn</span><span>Supervised learning</span><span>Ensemble stacking</span><span>K-NN · CART</span><span>Feature engineering</span><span>Model evaluation</span><span>Azure Machine Learning</span></div></div>
+        <div class="skill"><h4>Deep learning &amp; vision</h4><div class="chips"><span>TensorFlow · Keras</span><span>PyTorch</span><span>CNNs</span><span>VGG16 · InceptionV3</span><span>YOLO</span><span>Face analysis</span><span>NVIDIA Jetson Nano</span><span>Roboflow</span></div></div>
+        <div class="skill"><h4>Generative AI</h4><div class="chips"><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>ChromaDB</span><span>Semantic search</span><span>Ollama · Open WebUI</span><span>Llama 3.x · Groq</span><span>GPT-4o-mini</span><span>Stable Diffusion</span></div></div>
+        <div class="skill"><h4>Engineering</h4><div class="chips"><span>FastAPI</span><span>Flask</span><span>Docker</span><span>REST APIs</span><span>React</span><span>Dash &amp; Plotly</span><span>OVH Cloud</span><span>Git</span></div></div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="item"><small>2020 – 2023</small><strong>Centralien engineering degree · M.Sc. Data Science &amp; Digitalization</strong><span>École Centrale Casablanca</span></div>
+        <div class="item"><small>2018 – 2020</small><strong>Preparatory classes · Physics, Chemistry &amp; Engineering Science</strong><span>Lycée Errazi, El Jadida</span></div>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <div class="item"><strong>French</strong><span>Full professional · DALF C1</span></div>
+        <div class="item"><strong>English</strong><span>Professional working · TOEIC 830/990</span></div>
+      </section>
+    </aside>
+  </div>
+  <p class="foot"><span>Abdellatif Belmady · CV</span><span>1 / 2</span></p>
+</div>
+
+<!-- ======================= PAGE 2 ======================= -->
+<div class="page">
+  <header class="top top--slim">
+    <h1>Abdellatif Belmady</h1>
+    <p class="eyebrow">Data Scientist · CV</p>
+  </header>
+
+  <div class="body">
+    <main>
+      <section>
+        <h2>Experience (continued)</h2>
+
+        <article class="job">
+          <div class="job__head"><h3>Deep Learning Data Scientist · Internship</h3><span class="job__date">Apr – Sep 2023</span></div>
+          <p class="job__org"><b>Solefarma</b> · Paris, France</p>
+          <ul>
+            <li><strong>Foot-type classification from heterogeneous pressure data</strong>: fine-tuned VGG16 and InceptionV3 on images, K-NN and CART on numerical data, combined in a <strong>stacking ensemble</strong> deployed on OVH Cloud.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head"><h3>Computer Vision Data Scientist · Internship</h3><span class="job__date">Apr – Jul 2022</span></div>
+          <p class="job__org"><b>6 PERFORM</b> · Saint-Cannat, France</p>
+          <ul>
+            <li>Led a project to <strong>detect sources of infection in operating rooms</strong>: built and annotated the image dataset with Roboflow.</li>
+            <li>Trained <strong>YOLOv4</strong> object-detection models (surgical instruments, mask wearing, medical caps, earrings) and deployed them on the company's local servers.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head"><h3>Data Scientist · Internship</h3><span class="job__date">Aug 2021</span></div>
+          <p class="job__org"><b>VCR Sodalmou</b> · Morocco</p>
+          <ul>
+            <li>Developed an <strong>Excel/VBA application</strong> to manage inventory more efficiently and accurately.</li>
+            <li>Implemented a machine-learning model to identify and reduce waste on the production line, with recommendations to improve production efficiency.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Entrepreneurship</h2>
+        <article class="job compact">
+          <div class="job__head"><h3>Founder &amp; CEO · Smart Correction</h3><span class="job__date">Dec 2023 – Jan 2024</span></div>
+          <p>AI-powered education platform giving French and Moroccan students personalised assistance, instant corrections and exam preparation.</p>
+        </article>
+        <article class="job compact">
+          <div class="job__head"><h3>Founder &amp; CEO · Other Ways</h3><span class="job__date">Jan 2022 – Jan 2024</span></div>
+          <p>Intelligent camera services built on computer vision: access control, people tracking and counting, presence detection at workstations.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Community &amp; leadership</h2>
+        <article class="job compact">
+          <div class="job__head"><h3>Class of 2023 Ambassador · École Centrale Casablanca</h3><span class="job__date">Apr 2025 – Present</span></div>
+          <p>Connects students and young graduates with alumni, organises networking events and supports the school's careers unit.</p>
+        </article>
+        <article class="job compact">
+          <div class="job__head"><h3>Organising member · TechInnov Days &amp; Spring School Data Science</h3><span class="job__date">2022</span></div>
+          <p>École Centrale Casablanca. Earlier, member of the Rotaract, CentraleComm' and Enactus student associations (2020 – 2021).</p>
+        </article>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Certifications</h2>
+        <div class="item"><small>Feb 2025</small><strong>AI Agents Fundamentals</strong><span>Hugging Face</span></div>
+        <div class="item"><small>Aug 2024</small><strong>Getting Started with AI on Jetson Nano</strong><span>NVIDIA</span></div>
+        <div class="item"><small>Nov 2023</small><strong>TOEIC · 830/990</strong><span>ETS</span></div>
+        <div class="item"><small>Oct 2022</small><strong>DALF C1</strong><span>Institut français</span></div>
+        <div class="item"><small>Jun 2022</small><strong>Machine Learning · Python Data Structures</strong><span>Sololearn</span></div>
+        <div class="item"><small>Mar 2022</small><strong>Getting Started with Power BI Desktop</strong><span>Coursera</span></div>
+        <div class="item"><small>Mar 2022</small><strong>Web Development with HTML, CSS &amp; JavaScript</strong><span>Coursera</span></div>
+      </section>
+
+      <section>
+        <h2>Awards</h2>
+        <div class="item"><small>2022</small><strong>2nd place · TechInnov Days poster session</strong><span>École Centrale Casablanca</span></div>
+        <div class="item"><small>Dec 2021</small><strong>2nd place · Centrale Coding Competition</strong><span>École Centrale Casablanca</span></div>
+      </section>
+    </aside>
+  </div>
+  <p class="foot"><span>abdellatif-belmady.github.io/abdellatif-belmady</span><span>2 / 2</span></p>
+</div>
+
+</body>
+</html>

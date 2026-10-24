@@ -1,0 +1,126 @@
+# ============================================================
+#  Abdellatif Belmady — portfolio (Zensical)
+#  Preview : zensical serve        Build : zensical build --clean
+#  Published by .github/workflows/deploy.yml to the gh-pages branch
+#  → https://abdellatif-belmady.github.io/abdellatif-belmady/
+# ============================================================
+[project]
+site_name = "Abdellatif Belmady"
+site_url = "https://abdellatif-belmady.github.io/abdellatif-belmady/"
+site_description = "Abdellatif Belmady, Data Scientist at AXA Assurance Maroc (Casablanca): machine learning for auto insurance fraud detection, generative AI, computer vision and ML engineering."
+site_author = "Abdellatif Belmady"
+copyright = "© 2022 – 2026 Abdellatif Belmady · Casablanca, Morocco"
+docs_dir = "docs"
+site_dir = "site"
+
+nav = [
+  { "Home" = "index.md" },
+  { "Experience" = "experience.md" },
+  { "Education" = "education.md" },
+  { "Blog" = ["blog/index.md"] },
+]
+
+extra_css = ["assets/portfolio/css/portfolio.css"]
+extra_javascript = ["assets/portfolio/js/assistant.js"]
+
+[project.extra]
+# AI assistant: Chat Trigger URL of the n8n workflow (n8n/portfolio-assistant.json).
+# Format: https://<n8n-instance>/webhook/<webhookId>/chat — empty string ("") disables the assistant.
+chatbot_url = "https://hooks.exploria.ma/webhook/5c115a05-d7b1-5f3b-b95c-4129ae8ec4af/chat"
+email = "abdellatif.belmady@gmail.com"
+cv = "assets/cv/Abdellatif-Belmady-CV.pdf"
+generator = false
+
+[project.extra.analytics]
+provider = "google"
+property = "G-4GPL6MXYQ3"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/abdellatif-belmady-ab999a133/"
+name = "LinkedIn"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/abdellatif-belmady"
+name = "GitHub"
+
+[[project.extra.social]]
+icon = "lucide/mail"
+link = "mailto:abdellatif.belmady@gmail.com"
+name = "Email"
+
+[project.theme]
+custom_dir = "theme"
+language = "en"
+logo = "assets/portfolio/img/logo.svg"
+favicon = "assets/portfolio/img/favicon.png"
+features = [
+  "content.code.copy",
+  "content.tooltips",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to light mode"
+
+[project.plugins.blog]
+blog_dir = "blog"
+blog_toc = false
+post_date_format = "long"
+post_url_format = "{slug}"
+post_readtime = true
+post_excerpt = "required"
+archive = false
+categories = false
+authors = true
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
